@@ -20,6 +20,19 @@ Pipeline de ingeniería de datos y modelo predictivo de rendimiento para el **Tr
  
 ---
  
+## 📅 Estado del proyecto por sprint
+ 
+| Sprint | Qué hace | Fechas | Estado |
+|---|---|---|---|
+| [Sprint 1 →](sprints/sprint1.md) | ETL, limpieza y enriquecimiento de datos | 07/04 – 04/05 | 🟡 En curso |
+| [Sprint 2 →](sprints/sprint2.md) | Entrenamiento del modelo predictivo (AutoML) | 04/05 – 18/05 | ⚪ Pendiente |
+| [Sprint 3 →](sprints/sprint3.md) | API REST + Chatbot con Azure OpenAI | 18/05 – 01/06 | ⚪ Pendiente |
+| [Sprint 4 →](sprints/sprint4.md) | Dashboard Blazor + integración final | 01/06 – 22/06 | ⚪ Pendiente |
+ 
+> Actualiza los emojis de estado conforme avancéis: 🟡 En curso · ✅ Completado · 🔴 Bloqueado · ⚪ Pendiente
+ 
+---
+ 
 ## 📁 Estructura del repositorio
  
 ```
@@ -70,20 +83,7 @@ La solución se divide en **4 capas** desplegadas en Azure:
 │  Static Web Apps (Blazor WASM) + GitHub Actions         │
 └─────────────────────────────────────────────────────────┘
 ```
- 
----
- 
-## 📅 Estado del proyecto por sprint
- 
-| Sprint | Qué hace | Fechas | Estado |
-|---|---|---|---|
-| [Sprint 1 →](sprints/sprint1.md) | ETL, limpieza y enriquecimiento de datos | 07/04 – 04/05 | 🟡 En curso |
-| [Sprint 2 →](sprints/sprint2.md) | Entrenamiento del modelo predictivo (AutoML) | 04/05 – 18/05 | ⚪ Pendiente |
-| [Sprint 3 →](sprints/sprint3.md) | API REST + Chatbot con Azure OpenAI | 18/05 – 01/06 | ⚪ Pendiente |
-| [Sprint 4 →](sprints/sprint4.md) | Dashboard Blazor + integración final | 01/06 – 22/06 | ⚪ Pendiente |
- 
-> Actualiza los emojis de estado conforme avancéis: 🟡 En curso · ✅ Completado · 🔴 Bloqueado · ⚪ Pendiente
- 
+
 ---
  
 ## ⚡ Cómo empezar a trabajar
@@ -111,7 +111,7 @@ AZURE_BLOB_CONNECTION_STRING=tu-cadena-de-conexion
  
 ### 4. Ejecutar el pipeline ETL
 ```bash
-# Abrir en Jupyter o Azure ML Notebooks
+# Abrir en Jupyter o Azure ML Notebooks — Tutores: Miguel Ángel Pablo Lope · José Antonio Ureta Santacreu
 ml_pipeline/importacion_y_limpieza.ipynb
 ```
  
