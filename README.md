@@ -15,12 +15,12 @@ Mario García · Alejandro Benítez
  
 | Tarea | Responsable | Estado |
 |---|---|---|
-| Carga CSV bruto a Blob Storage | Mario | ✅ Hecho |
-| Notebook EDA (exploración inicial) | Alejandro | 🟡 En curso |
-| Limpieza de nulos y outliers | Mario | ⚪ Pendiente |
-| Enriquecimiento (altitud, temp, desnivel) | Alejandro | ⚪ Pendiente |
-| Carga a Azure SQL Database | Ambos | ⚪ Pendiente |
-| Identificar registros DSQ/DNF | Ambos | ⚪ Pendiente |
+| Carga CSV bruto a Blob Storage | Alejandro | 🟡 En curso |
+| Notebook EDA (exploración inicial) | ???? | ⚪ Pendiente |
+| Limpieza de nulos y outliers | ???? | ⚪ Pendiente |
+| Enriquecimiento (altitud, temp, desnivel) | ???? | ⚪ Pendiente |
+| Carga a Azure SQL Database | ???? | ⚪ Pendiente |
+| Identificar registros DSQ/DNF | ???? | ⚪ Pendiente |
 
 > **Estados:** ✅ Hecho · 🟡 En curso · ⚪ Pendiente · 🔴 AVISAR YA
  
