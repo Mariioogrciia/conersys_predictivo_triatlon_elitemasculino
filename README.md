@@ -168,5 +168,5 @@ conersys_predictivo_triatlon_elitemasculino/
 │   └── prepare_azure_automl_data     # Prepara los datos para Azure AutoML
 │
 ├── 📂 sprints/# 🏊🚴🏃 Predictivo Triatlón Élite Masculino.
- 
+```
 Entrega final: 22/06/2026*
