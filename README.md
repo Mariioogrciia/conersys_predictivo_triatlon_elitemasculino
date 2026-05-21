@@ -1,140 +1,171 @@
-# 🏆 Proyecto TFM: Análisis Predictivo y Almacenamiento Relacional (FETRI 2025)
-
-¡Bienvenido al repositorio oficial del TFM de Triatlón! Este proyecto implementa una solución integral de ingeniería de datos y ciencia de datos orientada al **Triatlón Masculino 2025 (TRM)**. 
-
-La arquitectura combina un **pipeline local de procesamiento y limpieza (ETL)**, un **almacén de datos analítico en Azure SQL Database**, y un **modelo predictivo de alto rendimiento entrenado en la nube con Azure Machine Learning AutoML**.
-
+# 🏊🚴🏃 Predictivo Triatlón Élite Masculino
+### Conersys · TFM Máster IA · Tajamar Tech 2025-26
+ 
+> **Mario García · Alejandro Benítez**
+ 
+Pipeline de ingeniería de datos y modelo predictivo de rendimiento para el **Triatlón de Rango Mundial Masculino (TRM 2025)**, desplegado íntegramente en **Microsoft Azure**.
+ 
 ---
-
-## 🏗️ Arquitectura de la Solución
-
-El flujo de información se divide en dos fases principales (Local y Azure Cloud), garantizando modularidad, seguridad y alto rendimiento:
-
-```mermaid
-graph TD
-    %% Entradas
-    A1[Excel de Rankings TRM] -->|Lectura| B1[ETL: generate_normalized_datasets.py]
-    A1 -->|Lectura| B2[ML: prepare_azure_automl_dataset.py]
-    A2[JSON de Campeonatos] -->|Lectura| B1
-    A2 -->|Lectura| B2
-    
-    %% Pipelines Locales
-    subgraph Fase 1: Ingeniería de Datos Local
-        B1 -->|Genera| C1[(CSVs Normalizados<br>atletas, pruebas, clubes, resultados)]
-        B2 -->|Genera| C2[trm_2025_azure_automl.csv]
-    end
-
-    %% Carga a Azure
-    C1 -->|Inserción Masiva| D1[database/load_to_azure_sql.py]
-    D1 -->|Carga Segura| E1[(Azure SQL Database)]
-    
-    %% Machine Learning Azure
-    C2 -->|Carga de Dataset| F1[Azure ML Studio Data Asset]
-    F1 -->|Entrenamiento Automático| F2[AutoML Regression Run]
-    F2 -->|Produce| F3[Modelo Predictivo Optimo]
-    
-    %% Estilos
-    style E1 fill:#0078d4,stroke:#333,stroke-width:2px,color:#fff
-    style F2 fill:#00a4ef,stroke:#333,stroke-width:2px,color:#fff
+ 
+## 🗺️ Índice rápido — ¿dónde está cada cosa?
+ 
+| Quiero... | Voy a... |
+|---|---|
+| Entender el proyecto desde cero | [📄 Contexto del proyecto](docs/CONTEXTO_PROYECTO.md) |
+| Ver qué datos manejamos | [📋 Lista de ficheros Excel](docs/lista_todos_los_excel.md) |
+| Ver o modificar el esquema de base de datos | [🗄️ Schema SQL](database/azure_sql_schema.sql) |
+| Cargar datos en Azure SQL | [⬆️ Script de carga](database/load_to_azure_sql.py) |
+| Ejecutar el pipeline ETL completo | [🔧 ml_pipeline/](ml_pipeline/) |
+| Ver el plan de sprints y tareas | [📅 sprints/](sprints/) |
+ 
+---
+ 
+## 📁 Estructura del repositorio
+ 
 ```
-
----
-
-## 📂 Mapa del Directorio y Componentes
-
-El espacio de trabajo ha sido optimizado y reestructurado bajo la regla de **"solo lo esencial"**, agrupando el código según su función lógica:
-
-```text
-/ (Raíz del proyecto)
-│   .gitignore               # Filtros de Git para excluir datos sensibles y temporales
-│   README.md                # Esta guía de uso y documentación de arquitectura
+conersys_predictivo_triatlon_elitemasculino/
 │
-├───data                     # Contenedor de datos del proyecto (ignorado en Git por RGPD)
-│   ├───processed            # Datasets limpios generados en CSV listos para BD y AutoML
-│   │       clubes_geo_2025.csv
-│   │       deportistas_2025.csv
-│   │       pruebas_2025.csv
-│   │       resultados_2025.csv
-│   │       trm_2025_azure_automl.csv
-│   │
-│   └───raw                  # Datos de entrada originales e inmutables (Excel y JSONs)
-│       │   calendar_cities_db.json
-│       │   club_coords_cache.json
-│       │
-│       ├───Campeonatos      # Calendarios oficiales de campeonatos FETRI
-│       │       championships%3A2025.json (y otros años)
-│       │
-│       └───triatlon_masculino # Rankings masculinos originales federativos
-│               trm_2025_original.xlsx
-│               trm_2025_limpio.xlsx
+├── 📂 database/                  # Base de datos Azure SQL
+│   ├── azure_sql_schema.sql      # Esquema de tablas (atletas, pruebas, resultados)
+│   └── load_to_azure_sql.py      # Script para cargar los datos limpios
 │
-├───database                 # Base de Datos Relacional
-│       azure_sql_schema.sql # Esquema DDL físico y poblado inicial para Azure SQL (T-SQL)
-│       load_to_azure_sql.py # Cargador de CSVs directo y de alto rendimiento hacia Azure SQL
+├── 📂 docs/                      # Documentación del proyecto
+│   ├── CONTEXTO_PROYECTO.md      # Descripción completa del problema y solución
+│   └── lista_todos_los_excel.md  # Inventario de ficheros de datos del cliente
 │
-├───docs                     # Documentación de negocio y académica
-│       CONTEXTO_PROYECTO.md # Descripción, objetivos y decisiones de diseño del TFM
-│       lista_todos_los_excel.md # Detalles, campos e interpretación de los rankings
+├── 📂 ml_pipeline/               # Pipeline de datos y modelo ML
+│   ├── generate_normalized_datasets...  # Generación de datasets normalizados
+│   ├── geocode_clubs.py          # Geocodificación de clubes
+│   ├── importacion_y_limpieza.ipynb     # ETL principal (notebook)
+│   └── prepare_azure_automl_data...     # Preparación datos para AutoML
 │
-└───ml_pipeline              # Ciencia de Datos y Machine Learning
-        generate_normalized_datasets.py # Script ETL para normalización y creación del modelo estrella (CSV)
-        prepare_azure_automl_dataset.py # Script de preparación del dataset enriquecido para Azure AutoML
-        importacion_y_limpieza.ipynb    # Notebook de exploración de datos y prototipado rápido
+├── 📂 sprints/                   # Planificación y documentación ágil
+│   ├── sprint1.md                # ETL y datos
+│   ├── sprint2.md                # Modelo ML
+│   ├── sprint3.md                # API y Chatbot
+│   ├── sprint4.md                # Dashboard y entrega
+│   └── img/                     # Diagramas y esquemas visuales
+│
+└── README.md                     # Este archivo
 ```
-
+ 
 ---
-
-## 🚀 Guía de Ejecución Paso a Paso
-
-Sigue este orden cronológico para reproducir los resultados o actualizar la base de datos y el modelo predictivo:
-
-### 📋 Requisitos Previos
-Asegúrate de tener instaladas las bibliotecas de Python necesarias para procesamiento de datos, conexión SQL y Excel:
+ 
+## 🏗️ Arquitectura de la solución
+ 
+La solución se divide en **4 capas** desplegadas en Azure:
+ 
+```
+┌─────────────────────────────────────────────────────────┐
+│  CAPA 1 · DATOS                                         │
+│  Blob Storage (raw) → Azure SQL Database → Redis Cache  │
+├─────────────────────────────────────────────────────────┤
+│  CAPA 2 · MACHINE LEARNING  (Azure ML)                  │
+│  ML Notebooks → ML Model Registry → ML Online Endpoint  │
+├─────────────────────────────────────────────────────────┤
+│  CAPA 3 · BACKEND                                       │
+│  Container Apps (FastAPI) + Azure OpenAI (GPT-4o)       │
+├─────────────────────────────────────────────────────────┤
+│  CAPA 4 · FRONTEND + CI/CD                              │
+│  Static Web Apps (Blazor WASM) + GitHub Actions         │
+└─────────────────────────────────────────────────────────┘
+```
+ 
+---
+ 
+## 📅 Estado del proyecto por sprint
+ 
+| Sprint | Qué hace | Fechas | Estado |
+|---|---|---|---|
+| [Sprint 1 →](sprints/sprint1.md) | ETL, limpieza y enriquecimiento de datos | 07/04 – 04/05 | 🟡 En curso |
+| [Sprint 2 →](sprints/sprint2.md) | Entrenamiento del modelo predictivo (AutoML) | 04/05 – 18/05 | ⚪ Pendiente |
+| [Sprint 3 →](sprints/sprint3.md) | API REST + Chatbot con Azure OpenAI | 18/05 – 01/06 | ⚪ Pendiente |
+| [Sprint 4 →](sprints/sprint4.md) | Dashboard Blazor + integración final | 01/06 – 22/06 | ⚪ Pendiente |
+ 
+> Actualiza los emojis de estado conforme avancéis: 🟡 En curso · ✅ Completado · 🔴 Bloqueado · ⚪ Pendiente
+ 
+---
+ 
+## ⚡ Cómo empezar a trabajar
+ 
+### 1. Clonar el repositorio
 ```bash
-pip install pandas openpyxl sqlalchemy pyodbc
+git clone https://github.com/Mariioograciia/conersys_predictivo_triatlon_elitemasculino.git
+cd conersys_predictivo_triatlon_elitemasculino
 ```
-
-### Paso 1: Ejecutar la Limpieza y Normalización ETL
-Este script lee las fuentes originales de `/data/raw` y genera las 4 tablas normalizadas del esquema de estrella en `/data/processed`:
+ 
+### 2. Instalar dependencias Python
 ```bash
-python ml_pipeline/generate_normalized_datasets.py
+pip install pandas numpy scikit-learn xgboost shap pyodbc azure-storage-blob python-dotenv
 ```
-
-### Paso 2: Generar el Dataset para Machine Learning (Azure AutoML)
-Este script procesa las participaciones en orden cronológico estricto para calcular estadísticas acumuladas (*rolling features*) sin fuga de datos, aplica hashing SHA-256 a los DNIs para cumplir la ley de protección de datos (**RGPD**) y estima las distancias de viaje de los clubes por Haversine. Guarda el archivo resultante en `/data/processed/trm_2025_azure_automl.csv`:
+ 
+### 3. Configurar credenciales Azure
+Crea un fichero `.env` en la raíz (nunca lo subas a GitHub — ya está en `.gitignore`):
+```
+AZURE_SQL_SERVER=tu-servidor.database.windows.net
+AZURE_SQL_DATABASE=tu-base-de-datos
+AZURE_SQL_USER=tu-usuario
+AZURE_SQL_PASSWORD=tu-contraseña
+AZURE_BLOB_CONNECTION_STRING=tu-cadena-de-conexion
+```
+ 
+### 4. Ejecutar el pipeline ETL
 ```bash
-python ml_pipeline/prepare_azure_automl_dataset.py
+# Abrir en Jupyter o Azure ML Notebooks
+ml_pipeline/importacion_y_limpieza.ipynb
 ```
-
-### Paso 3: Crear el Esquema en Azure SQL Database
-1. Crea tu recurso de **Azure SQL Database** en el portal de Azure (`portal.azure.com`).
-2. Configura el Firewall de tu servidor en Azure para **permitir el acceso desde tu dirección IP pública**.
-3. Conéctate a la base de datos usando Azure Data Studio, DBeaver o el Query Editor de Azure y ejecuta el archivo:
-   👉 `database/azure_sql_schema.sql`
-
-### Paso 4: Cargar los CSVs a la Nube
-1. Abre el script `database/load_to_azure_sql.py`.
-2. Completa tus credenciales de Azure SQL en las variables del bloque de configuración (líneas 14 a 17):
-   * `AZURE_SERVER`, `AZURE_DB`, `AZURE_USER`, `AZURE_PASSWORD`.
-3. Ejecuta el script para realizar la carga masiva optimizada (`fast_executemany`):
-   ```bash
-   python database/load_to_azure_sql.py
-   ```
-
-### Paso 5: Entrenar el Modelo en Azure Machine Learning Studio
-1. Entra a **Azure ML Studio** (`ml.azure.com`).
-2. Ve a **Data** $\rightarrow$ **Create Data Asset** $\rightarrow$ *From local files* y sube el archivo `/data/processed/trm_2025_azure_automl.csv`.
-3. Ve a **Automated ML** $\rightarrow$ **New Automated ML Job**:
-   * Selecciona el Data Asset creado.
-   * Elige la tarea de **Regresión** (Regression).
-   * Define la columna objetivo como **`PUNTOS_TARGET`**.
-   * En la configuración de características, **excluye** `ATLETA_ID_HASH` y `PUESTO_TARGET` para que no afecten al entrenamiento del modelo predictivo (y mantén el resto de las variables como variables predictoras).
-4. ¡Lanza el experimento y deja que Azure AutoML encuentre automáticamente el mejor algoritmo!
-
+ 
 ---
-
-## 🛡️ Aspectos Destacados de Diseño e Ingeniería
-
-* **🛡️ Cumplimiento estricto del RGPD:** Los DNIs reales se cifran utilizando hash SHA-256 truncado a 16 caracteres (`ATLETA_ID_HASH`), lo que permite que el modelo identifique la recurrencia de un atleta sin exponer sus datos personales en la nube pública.
-* **⚡ Alto Rendimiento Relacional:** El esquema relacional en Azure SQL cuenta con claves primarias y foráneas (`PRIMARY KEY`, `FOREIGN KEY`), asegurando consistencia referencial estricta. El cargador de Python usa `fast_executemany=True` para acelerar las inserciones hasta 100 veces sobre la red.
-* **📈 Cero Fuga de Datos (Data Leakage):** Las variables de Machine Learning (*rolling statistics*) de cada atleta se calculan estrictamente de forma cronológica sobre las carreras anteriores a la fecha del evento evaluado, simulando un entorno de predicción real.
+ 
+## 🎯 Qué predice el modelo
+ 
+Dado un **atleta** y una **prueba**, el sistema devuelve:
+ 
+- ⏱️ **Tiempo final esperado** (ej: `1h 44m 32s`)
+- 📊 **Intervalo de confianza al 90%**
+- 🔍 **Top 3 factores más influyentes** (via SHAP):
+  - *"Temperatura +8°C sobre su media habitual → +45s"*
+  - *"Altitud elevada → +30s"*
+  - *"Solo 3 días de descanso → +20s"*
+- ⚠️ **Riesgo de descalificación** (si hay datos suficientes)
+---
+ 
+## 📊 Datos del proyecto
+ 
+| Fuente | Contenido | Formato |
+|---|---|---|
+| Cliente Conersys | Rankings TRM históricos | Excel |
+| Cliente Conersys | Resultados por campeonato | JSON |
+| Open-Meteo API | Meteorología histórica por prueba | API REST |
+| World Triathlon | Características de circuitos | Web scraping / manual |
+ 
+Las variables originales de "nombre de carrera" se transforman en variables numéricas (altitud, temperatura, humedad, desnivel, tipo de agua) antes de entrar al modelo. Ver [Sprint 1](sprints/sprint1.md) para el detalle.
+ 
+---
+ 
+## 🛠️ Stack tecnológico
+ 
+| Área | Tecnología |
+|---|---|
+| Lenguaje principal | Python 3.11 |
+| ETL y análisis | pandas · numpy · Jupyter |
+| Machine Learning | Azure AutoML · scikit-learn · XGBoost · SHAP |
+| Base de datos | Azure SQL Database |
+| Almacenamiento | Azure Blob Storage (LRS) |
+| Modelo en producción | Azure ML Online Endpoint |
+| API backend | FastAPI · Azure Container Apps |
+| Chatbot | Azure OpenAI (GPT-4o) |
+| Frontend | Blazor WebAssembly (.NET 8) |
+| CI/CD | GitHub Actions |
+| Secretos | Azure Key Vault |
+ 
+---
+ 
+## 👥 Equipo
+ 
+| Rol | Persona |
+|---|---|
+| Desarrolladores | Mario García · Alejandro Benítez |
+| Product Owner | Miguel Ángel Pablo Lope |
+| Scrum Master | José Antonio Ureta Santacreu |
+| Institución | Tajamar Tech · Máster IA 2025-26 |
