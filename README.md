@@ -5,7 +5,7 @@ Mario García · Alejandro Benítez
 ---
  
 ## 🟡 Sprint actual — Sprint 1: ETL y datos
- 📋 **Detalle completo del sprint → [sprints/sprint1.md](sprints/sprint1.md)**
+ 📋 **Detalle completo del sprint → [📁 Sprint 1](sprints/sprint1.md)**
 
 > **18/05/2026 → 25/05/2026**
  
