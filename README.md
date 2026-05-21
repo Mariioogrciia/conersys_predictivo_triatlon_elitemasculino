@@ -30,13 +30,13 @@ Mario García · Alejandro Benítez
  
 | Quiero... | Voy a... |
 |---|---|
-| Entender el proyecto desde cero | [📄 docs/CONTEXTO_PROYECTO.md](docs/CONTEXTO_PROYECTO.md) |
-| Ver qué ficheros de datos tenemos | [📋 docs/lista_todos_los_excel.md](docs/lista_todos_los_excel.md) |
-| Ver o tocar el esquema de base de datos | [🗄️ database/azure_sql_schema.sql](database/azure_sql_schema.sql) |
-| Cargar datos en Azure SQL | [⬆️ database/load_to_azure_sql.py](database/load_to_azure_sql.py) |
-| Ejecutar el ETL | [🔧 ml_pipeline/importacion_y_limpieza.ipynb](ml_pipeline/importacion_y_limpieza.ipynb) |
-| Preparar datos para AutoML | [🤖 ml_pipeline/prepare_azure_automl_data...](ml_pipeline/) |
-| Ver la planificación completa | [📅 sprints/](sprints/) |
+| Entender el proyecto desde cero | [📄 Contexto del proyecto](docs/CONTEXTO_PROYECTO.md) |
+| Ver qué ficheros de datos tenemos | [📋 Excels](docs/lista_todos_los_excel.md) |
+| Ver o tocar el esquema de base de datos | [🗄️ Esquema de la BBDD](database/azure_sql_schema.sql) |
+| Cargar datos en Azure SQL | [⬆️ Carga a la BBDD](database/load_to_azure_sql.py) |
+| Ejecutar el ETL | [🔧 Importación y limpieza](ml_pipeline/importacion_y_limpieza.ipynb) |
+| Preparar datos para AutoML | [🤖 ML Pipeline](ml_pipeline/) |
+| Ver la planificación completa | [📅 Sprints](sprints/) |
  
 ---
  
