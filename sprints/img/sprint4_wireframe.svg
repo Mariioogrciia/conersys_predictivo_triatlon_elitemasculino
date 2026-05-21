@@ -1,0 +1,93 @@
+<svg width="800" height="440" viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="800" height="440" fill="#f8f9fa" rx="12"/>
+  <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#1a1a2e">Sprint 4 — Wireframe del Dashboard (Blazor)</text>
+
+  <!-- Browser chrome -->
+  <rect x="30" y="48" width="740" height="375" rx="10" fill="#1e1e2e" stroke="#444" stroke-width="1.5"/>
+  <!-- Browser bar -->
+  <rect x="30" y="48" width="740" height="32" rx="10" fill="#2d2d3f" stroke="#444" stroke-width="1.5"/>
+  <circle cx="55" cy="64" r="5" fill="#E24B4A"/>
+  <circle cx="73" cy="64" r="5" fill="#EF9F27"/>
+  <circle cx="91" cy="64" r="5" fill="#63a830"/>
+  <rect x="110" y="56" width="400" height="16" rx="8" fill="#444"/>
+  <text x="310" y="69" text-anchor="middle" font-size="10" fill="#aaa">conersys-triatlon.azurestaticapps.net</text>
+
+  <!-- Header -->
+  <rect x="30" y="80" width="740" height="40" fill="#16213e"/>
+  <text x="60" y="106" font-size="13" font-weight="700" fill="#7cc9ff">CONERSYS · Predictivo Triatlón Élite</text>
+  <rect x="640" y="88" width="120" height="24" rx="6" fill="#185FA5"/>
+  <text x="700" y="105" text-anchor="middle" font-size="11" fill="#fff">Carrera en directo</text>
+
+  <!-- Left panel: Ranking -->
+  <rect x="38" y="128" width="430" height="280" rx="8" fill="#16213e" stroke="#2a2a4a" stroke-width="1"/>
+  <text x="58" y="152" font-size="12" font-weight="700" fill="#7cc9ff">Ranking predictivo — Top 10</text>
+  <text x="400" y="152" text-anchor="end" font-size="10" fill="#aaa">ver clasificación completa ↓</text>
+
+  <!-- Table header -->
+  <rect x="46" y="160" width="414" height="24" rx="4" fill="#0f3460"/>
+  <text x="66" y="177" font-size="10" font-weight="700" fill="#7cc9ff">Pos</text>
+  <text x="110" y="177" font-size="10" font-weight="700" fill="#7cc9ff">Atleta</text>
+  <text x="290" y="177" font-size="10" font-weight="700" fill="#7cc9ff">Tiempo pred.</text>
+  <text x="390" y="177" font-size="10" font-weight="700" fill="#7cc9ff">Confianza</text>
+
+  <!-- Rows -->
+  <rect x="46" y="188" width="414" height="22" rx="3" fill="#1a2a50"/>
+  <text x="66" y="203" font-size="11" font-weight="700" fill="#EF9F27">1</text>
+  <text x="110" y="203" font-size="11" fill="#eee">Blummenfelt, K.</text>
+  <text x="290" y="203" font-size="11" fill="#7cc9ff">1h 44m 32s</text>
+  <rect x="382" y="193" width="55" height="10" rx="5" fill="#444"/>
+  <rect x="382" y="193" width="48" height="10" rx="5" fill="#1D9E75"/>
+
+  <rect x="46" y="214" width="414" height="22" rx="3" fill="#16213e"/>
+  <text x="66" y="229" font-size="11" fill="#ccc">2</text>
+  <text x="110" y="229" font-size="11" fill="#eee">Yee, A.</text>
+  <text x="290" y="229" font-size="11" fill="#7cc9ff">1h 44m 58s</text>
+  <rect x="382" y="219" width="55" height="10" rx="5" fill="#444"/>
+  <rect x="382" y="219" width="44" height="10" rx="5" fill="#1D9E75"/>
+
+  <rect x="46" y="240" width="414" height="22" rx="3" fill="#1a2a50"/>
+  <text x="66" y="255" font-size="11" fill="#ccc">3</text>
+  <text x="110" y="255" font-size="11" fill="#eee">Wilde, H.</text>
+  <text x="290" y="255" font-size="11" fill="#7cc9ff">1h 45m 20s</text>
+  <rect x="382" y="245" width="55" height="10" rx="5" fill="#444"/>
+  <rect x="382" y="245" width="38" height="10" rx="5" fill="#EF9F27"/>
+
+  <!-- Alert row -->
+  <rect x="46" y="266" width="414" height="22" rx="3" fill="#2a1a1a"/>
+  <text x="66" y="281" font-size="11" fill="#ccc">4</text>
+  <text x="110" y="281" font-size="11" fill="#eee">Van Riel, M.</text>
+  <text x="290" y="281" font-size="11" fill="#7cc9ff">1h 45m 45s</text>
+  <rect x="382" y="271" width="55" height="10" rx="5" fill="#444"/>
+  <rect x="382" y="271" width="25" height="10" rx="5" fill="#E24B4A"/>
+  <text x="444" y="281" font-size="10" fill="#E24B4A">⚠ anomalía</text>
+
+  <!-- Dots remaining rows -->
+  <text x="253" y="316" text-anchor="middle" font-size="14" fill="#666">· · · · · · ·</text>
+  <rect x="46" y="330" width="414" height="26" rx="6" fill="#0f3460" stroke="#185FA5" stroke-width="1"/>
+  <text x="253" y="348" text-anchor="middle" font-size="11" fill="#7cc9ff">Ver clasificación completa (86 atletas)</text>
+
+  <!-- Right panel: Chat -->
+  <rect x="480" y="128" width="280" height="280" rx="8" fill="#16213e" stroke="#2a2a4a" stroke-width="1"/>
+  <text x="500" y="152" font-size="12" font-weight="700" fill="#7cc9ff">Chat del locutor</text>
+
+  <!-- Chat messages -->
+  <rect x="492" y="162" width="220" height="44" rx="8" fill="#0f3460"/>
+  <text x="504" y="180" font-size="10" fill="#aaa">Locutor</text>
+  <text x="504" y="196" font-size="11" fill="#eee">¿Cuántas victorias tiene</text>
+  <text x="504" y="209" font-size="11" fill="#eee">Blummenfelt en Kona?</text>
+
+  <rect x="492" y="212" width="220" height="62" rx="8" fill="#1a3a2a"/>
+  <text x="504" y="230" font-size="10" fill="#7cc9ff">Conersys AI</text>
+  <text x="504" y="246" font-size="11" fill="#ccc">Kristian tiene 2 victorias</text>
+  <text x="504" y="260" font-size="11" fill="#ccc">en Kona (2021, 2023).</text>
+  <rect x="492" y="272" width="105" height="18" rx="6" fill="#185FA5"/>
+  <text x="545" y="285" text-anchor="middle" font-size="10" fill="#fff">Ver perfil completo →</text>
+
+  <!-- Input box -->
+  <rect x="492" y="356" width="220" height="36" rx="8" fill="#2d2d3f" stroke="#444" stroke-width="1"/>
+  <text x="504" y="378" font-size="11" fill="#666">Pregunta algo sobre la carrera...</text>
+
+  <!-- Label annotations outside browser -->
+  <text x="253" y="420" text-anchor="middle" font-size="11" fill="#555">← Carga Top 10 instantánea · resto en background →</text>
+  <text x="620" y="420" text-anchor="middle" font-size="11" fill="#555">Chat &lt;2s · siempre visible</text>
+</svg>

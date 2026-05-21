@@ -1,0 +1,92 @@
+<svg width="800" height="620" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="620" fill="#f8f9fa" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a2e">Arquitectura Azure — Predictivo Triatlón Élite</text>
+
+  <!-- CAPA 1: DATOS -->
+  <rect x="30" y="60" width="740" height="110" rx="12" fill="#e1f5ee" stroke="#1D9E75" stroke-width="1.5"/>
+  <text x="50" y="82" font-size="12" font-weight="700" fill="#0F6E56">CAPA 1 · DATOS</text>
+
+  <rect x="52" y="90" width="190" height="64" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="1"/>
+  <text x="147" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#085041">Blob Storage</text>
+  <text x="147" y="134" text-anchor="middle" font-size="11" fill="#0F6E56">Datos raw y procesados</text>
+
+  <rect x="305" y="90" width="190" height="64" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="1"/>
+  <text x="400" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#085041">SQL Database</text>
+  <text x="400" y="134" text-anchor="middle" font-size="11" fill="#0F6E56">Atletas, pruebas, resultados</text>
+
+  <rect x="558" y="90" width="190" height="64" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="1"/>
+  <text x="653" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#085041">Cache for Redis</text>
+  <text x="653" y="134" text-anchor="middle" font-size="11" fill="#0F6E56">Predicciones en tiempo real</text>
+
+  <!-- Arrows 1→2 -->
+  <line x1="147" y1="175" x2="147" y2="210" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="400" y1="175" x2="400" y2="210" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="653" y1="175" x2="653" y2="210" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- CAPA 2: ML -->
+  <rect x="30" y="210" width="740" height="110" rx="12" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+  <text x="50" y="232" font-size="12" font-weight="700" fill="#3C3489">CAPA 2 · MACHINE LEARNING (Azure ML)</text>
+
+  <rect x="52" y="240" width="190" height="64" rx="8" fill="#fff" stroke="#534AB7" stroke-width="1"/>
+  <text x="147" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#26215C">ML Notebooks</text>
+  <text x="147" y="284" text-anchor="middle" font-size="11" fill="#3C3489">ETL, EDA, entrenamiento</text>
+
+  <rect x="305" y="240" width="190" height="64" rx="8" fill="#fff" stroke="#534AB7" stroke-width="1"/>
+  <text x="400" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#26215C">ML Model Registry</text>
+  <text x="400" y="284" text-anchor="middle" font-size="11" fill="#3C3489">Versiones del modelo</text>
+
+  <rect x="558" y="240" width="190" height="64" rx="8" fill="#fff" stroke="#534AB7" stroke-width="1"/>
+  <text x="653" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#26215C">ML Online Endpoint</text>
+  <text x="653" y="284" text-anchor="middle" font-size="11" fill="#3C3489">Modelo en producción</text>
+
+  <!-- Arrows 2→3 -->
+  <line x1="147" y1="325" x2="147" y2="360" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="400" y1="325" x2="400" y2="360" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="653" y1="325" x2="653" y2="360" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- CAPA 3: BACKEND -->
+  <rect x="30" y="360" width="740" height="110" rx="12" fill="#FAEEDA" stroke="#BA7517" stroke-width="1.5"/>
+  <text x="50" y="382" font-size="12" font-weight="700" fill="#854F0B">CAPA 3 · BACKEND</text>
+
+  <rect x="52" y="390" width="190" height="64" rx="8" fill="#fff" stroke="#BA7517" stroke-width="1"/>
+  <text x="147" y="416" text-anchor="middle" font-size="13" font-weight="700" fill="#633806">Container Apps</text>
+  <text x="147" y="434" text-anchor="middle" font-size="11" fill="#854F0B">API REST (FastAPI)</text>
+
+  <rect x="305" y="390" width="190" height="64" rx="8" fill="#fff" stroke="#BA7517" stroke-width="1"/>
+  <text x="400" y="416" text-anchor="middle" font-size="13" font-weight="700" fill="#633806">Azure OpenAI</text>
+  <text x="400" y="434" text-anchor="middle" font-size="11" fill="#854F0B">Chatbot GPT-4o</text>
+
+  <rect x="558" y="390" width="190" height="64" rx="8" fill="#fff" stroke="#BA7517" stroke-width="1"/>
+  <text x="653" y="416" text-anchor="middle" font-size="13" font-weight="700" fill="#633806">Key Vault</text>
+  <text x="653" y="434" text-anchor="middle" font-size="11" fill="#854F0B">Secretos y claves API</text>
+
+  <!-- Arrows 3→4 -->
+  <line x1="147" y1="475" x2="147" y2="510" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="400" y1="475" x2="400" y2="510" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="653" y1="475" x2="653" y2="510" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- CAPA 4: FRONTEND -->
+  <rect x="30" y="510" width="740" height="90" rx="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+  <text x="50" y="532" font-size="12" font-weight="700" fill="#0C447C">CAPA 4 · FRONTEND Y CI/CD</text>
+
+  <rect x="52" y="542" width="210" height="46" rx="8" fill="#fff" stroke="#185FA5" stroke-width="1"/>
+  <text x="157" y="562" text-anchor="middle" font-size="13" font-weight="700" fill="#042C53">Static Web Apps</text>
+  <text x="157" y="578" text-anchor="middle" font-size="11" fill="#185FA5">Dashboard Blazor WASM</text>
+
+  <rect x="295" y="542" width="210" height="46" rx="8" fill="#fff" stroke="#185FA5" stroke-width="1"/>
+  <text x="400" y="562" text-anchor="middle" font-size="13" font-weight="700" fill="#042C53">Container Registry</text>
+  <text x="400" y="578" text-anchor="middle" font-size="11" fill="#185FA5">Imágenes Docker API</text>
+
+  <rect x="538" y="542" width="210" height="46" rx="8" fill="#fff" stroke="#185FA5" stroke-width="1"/>
+  <text x="643" y="562" text-anchor="middle" font-size="13" font-weight="700" fill="#042C53">GitHub Actions</text>
+  <text x="643" y="578" text-anchor="middle" font-size="11" fill="#185FA5">CI/CD automático</text>
+</svg>
