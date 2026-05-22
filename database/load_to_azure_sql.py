@@ -12,10 +12,10 @@ from sqlalchemy import create_engine
 
 # 1. Configuración de Conexión a Azure SQL Database
 # Reemplaza con tus credenciales de Azure
-AZURE_SERVER = "tu-servidor-azure.database.windows.net"  # Ej: tfm-server.database.windows.net
-AZURE_DB = "tu-base-de-datos"                          # Ej: fetri_db
-AZURE_USER = "tu-usuario-admin"                        # Ej: admin_tfm
-AZURE_PASSWORD = "tu-contraseña-segura"                # Ej: P@ssw0rd123!
+AZURE_SERVER = "predictivomas-db-server.database.windows.net"  # Ej: tfm-server.database.windows.net
+AZURE_DB = "predictivomasc_database"                          # Ej: fetri_db
+AZURE_USER = "conersysadmin"                        # Ej: coner
+AZURE_PASSWORD = "contraseña"                # Ej: P@ssw0rd123!
 
 # Rutas de los CSVs generados en tu máquina local
 WORKSPACE = r"c:\Users\mario\Downloads\Re_ Reunión TFM Conersys "
