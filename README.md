@@ -29,7 +29,7 @@ Mario García · Alejandro Benítez
 | <sub>Sustituir nombre de prueba por variables numéricas usando Open-Meteo API y World Triathlon</sub> | | |
 | Identificar registros DSQ/DNF | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Buscar si hay columna de resultado en el dataset y crear la variable `descalificado` (0/1)</sub> | | |
-| Crear Azure SQL Database | Alejandro | 🟡 En curso |
+| Crear Azure SQL Database | Alejandro | ✅ Hecho |
 | <sub>Crear el recurso en Azure Portal y ejecutar `database/azure_sql_schema.sql` para generar las tablas</sub> | | |
 | Carga a Azure SQL Database | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Ejecutar `database/load_to_azure_sql.py` con el `.env` configurado, una vez el schema esté listo</sub> | | |
