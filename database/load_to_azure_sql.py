@@ -29,6 +29,13 @@ CSV_DEPORTISTAS = os.path.join(WORKSPACE, "data", "processed", "deportistas_2025
 CSV_PRUEBAS = os.path.join(WORKSPACE, "data", "processed", "pruebas_2025.csv")
 CSV_RESULTADOS = os.path.join(WORKSPACE, "data", "processed", "resultados_2025.csv")
 
+MISSING_TOKENS = {'NAN', 'NONE', 'NULL', ''}
+
+
+def normalize_missing_strings(series):
+    normalized = series.astype('string').str.strip()
+    return normalized.mask(normalized.str.upper().isin(MISSING_TOKENS))
+
 def connect_and_load():
     print("Iniciando proceso de carga a Azure SQL Database...")
     
@@ -63,6 +70,9 @@ def connect_and_load():
         print("\n[1/4] Cargando Clubes Geocodificados...")
         df_clubes = pd.read_csv(CSV_CLUBES)
         # Limpieza de nulos si existieran
+        df_clubes['club'] = normalize_missing_strings(df_clubes['club'].astype(str).str.strip())
+        df_clubes['ciudad_sede'] = normalize_missing_strings(df_clubes['ciudad_sede'].astype(str).str.strip())
+        df_clubes['provincia'] = normalize_missing_strings(df_clubes['provincia'].astype(str).str.strip())
         df_clubes = df_clubes.dropna(subset=['club'])
         df_clubes.to_sql('clubes_geo', con=engine, if_exists='replace', index=False, schema='dbo')
         print(f"-> ¡Éxito! {len(df_clubes)} clubes cargados en 'dbo.clubes_geo'.")
@@ -71,6 +81,8 @@ def connect_and_load():
         print("\n[2/4] Cargando Deportistas...")
         df_deportistas = pd.read_csv(CSV_DEPORTISTAS)
         df_deportistas.columns = [c.lower() for c in df_deportistas.columns]
+        for col in ['documento', 'nombre', 'club', 'ggee']:
+            df_deportistas[col] = normalize_missing_strings(df_deportistas[col].astype(str).str.strip())
         df_deportistas = df_deportistas.dropna(subset=['documento'])
         # Reemplazar nulos en Club por None (NULL en SQL) para evitar romper la FK
         df_deportistas['club'] = df_deportistas['club'].replace({np.nan: None})

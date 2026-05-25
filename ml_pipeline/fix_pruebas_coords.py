@@ -140,7 +140,7 @@ PROVINCE_COORDS = {
 }
 
 
-def load_city_lookup():
+def load_city_db_lookup():
     lookup = {}
     db_path = os.path.join(WORKSPACE, 'data', 'raw', 'calendar_cities_db.json')
     if os.path.exists(db_path):
@@ -153,11 +153,18 @@ def load_city_lookup():
         except Exception:
             pass
 
-    lookup.update(CITY_COORDS)
     return lookup
 
 
-CITY_LOOKUP = load_city_lookup()
+def load_prueba_city_lookup():
+    lookup = {}
+    for key, coords in PRUEBA_COORDS.items():
+        lookup[normalize_key(key)] = coords
+    return lookup
+
+
+CITY_DB_LOOKUP = load_city_db_lookup()
+PRUEBA_CITY_LOOKUP = load_prueba_city_lookup()
 
 def get_elevation(lat, lng):
     """Obtiene la altitud real usando Open-Meteo Elevation API."""
@@ -198,8 +205,14 @@ def resolve_coords(nombre, ciudad, provincia):
     provincia_key = normalize_key(provincia)
     nombre_norm = strip_accents(nombre)
 
-    if ciudad_key in CITY_LOOKUP:
-        return CITY_LOOKUP[ciudad_key], 'city'
+    if ciudad_key in CITY_COORDS:
+        return CITY_COORDS[ciudad_key], 'city'
+
+    if ciudad_key in PRUEBA_CITY_LOOKUP:
+        return PRUEBA_CITY_LOOKUP[ciudad_key], 'city'
+
+    if ciudad_key in CITY_DB_LOOKUP:
+        return CITY_DB_LOOKUP[ciudad_key], 'db'
 
     if ciudad_key in PROVINCE_COORDS:
         return PROVINCE_COORDS[ciudad_key], 'province'
