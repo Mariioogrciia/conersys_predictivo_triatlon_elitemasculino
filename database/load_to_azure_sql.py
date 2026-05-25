@@ -10,15 +10,20 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde el archivo .env
+load_dotenv()
+
 # 1. Configuración de Conexión a Azure SQL Database
 # Reemplaza con tus credenciales de Azure
-AZURE_SERVER = "predictivomas-db-server.database.windows.net"  # Ej: tfm-server.database.windows.net
-AZURE_DB = "predictivomasc_database"                          # Ej: fetri_db
-AZURE_USER = "conersysadmin"                        # Ej: coner
-AZURE_PASSWORD = "contraseña"                # Ej: P@ssw0rd123!
+AZURE_SERVER = os.getenv("AZURE_SERVER", "tu-servidor.database.windows.net")
+AZURE_DB = os.getenv("AZURE_DB", "tu-base-de-datos")
+AZURE_USER = os.getenv("AZURE_USER", "tu-usuario")
+AZURE_PASSWORD = os.getenv("AZURE_PASSWORD", "tu-contraseña")
 
 # Rutas de los CSVs generados en tu máquina local
-WORKSPACE = r"c:\Users\mario\Downloads\Re_ Reunión TFM Conersys "
+WORKSPACE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_CLUBES = os.path.join(WORKSPACE, "data", "processed", "clubes_geo_2025.csv")
 CSV_DEPORTISTAS = os.path.join(WORKSPACE, "data", "processed", "deportistas_2025.csv")
 CSV_PRUEBAS = os.path.join(WORKSPACE, "data", "processed", "pruebas_2025.csv")
@@ -59,12 +64,13 @@ def connect_and_load():
         df_clubes = pd.read_csv(CSV_CLUBES)
         # Limpieza de nulos si existieran
         df_clubes = df_clubes.dropna(subset=['club'])
-        df_clubes.to_sql('clubes_geo', con=engine, if_exists='append', index=False, schema='dbo')
+        df_clubes.to_sql('clubes_geo', con=engine, if_exists='replace', index=False, schema='dbo')
         print(f"-> ¡Éxito! {len(df_clubes)} clubes cargados en 'dbo.clubes_geo'.")
         
         # 2. Cargar Deportistas
         print("\n[2/4] Cargando Deportistas...")
         df_deportistas = pd.read_csv(CSV_DEPORTISTAS)
+        df_deportistas.columns = [c.lower() for c in df_deportistas.columns]
         df_deportistas = df_deportistas.dropna(subset=['documento'])
         # Reemplazar nulos en Club por None (NULL en SQL) para evitar romper la FK
         df_deportistas['club'] = df_deportistas['club'].replace({np.nan: None})
@@ -74,14 +80,14 @@ def connect_and_load():
         valid_clubs = set(df_clubes['club'])
         df_deportistas['club'] = df_deportistas['club'].apply(lambda x: x if x in valid_clubs else None)
         
-        df_deportistas.to_sql('deportistas', con=engine, if_exists='append', index=False, schema='dbo')
+        df_deportistas.to_sql('deportistas', con=engine, if_exists='replace', index=False, schema='dbo')
         print(f"-> ¡Éxito! {len(df_deportistas)} deportistas cargados en 'dbo.deportistas'.")
         
         # 3. Cargar Pruebas
         print("\n[3/4] Cargando Pruebas (Campeonatos)...")
         df_pruebas = pd.read_csv(CSV_PRUEBAS)
         df_pruebas = df_pruebas.dropna(subset=['id'])
-        df_pruebas.to_sql('pruebas', con=engine, if_exists='append', index=False, schema='dbo')
+        df_pruebas.to_sql('pruebas', con=engine, if_exists='replace', index=False, schema='dbo')
         print(f"-> ¡Éxito! {len(df_pruebas)} pruebas cargadas en 'dbo.pruebas'.")
         
         # 4. Cargar Resultados (Tabla de Hechos Central)
@@ -101,7 +107,7 @@ def connect_and_load():
         if initial_count != filtered_count:
             print(f"   [Aviso] Se omitieron {initial_count - filtered_count} filas de resultados para mantener la integridad referencial.")
             
-        df_resultados.to_sql('resultados', con=engine, if_exists='append', index=False, schema='dbo')
+        df_resultados.to_sql('resultados', con=engine, if_exists='replace', index=False, schema='dbo')
         print(f"-> ¡Éxito! {len(df_resultados)} participaciones cargadas en 'dbo.resultados'.")
         
         print("\n=========================================================================")

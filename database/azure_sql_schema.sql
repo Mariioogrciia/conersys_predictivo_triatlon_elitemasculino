@@ -23,6 +23,7 @@ CREATE TABLE dbo.ranking_types (
 CREATE TABLE dbo.clubes_geo (
     club VARCHAR(255) PRIMARY KEY,
     ciudad_sede VARCHAR(255) NOT NULL,
+    provincia VARCHAR(100) NOT NULL,
     lat FLOAT NOT NULL,
     lng FLOAT NOT NULL
 );
@@ -47,7 +48,12 @@ CREATE TABLE dbo.pruebas (
     ciudad VARCHAR(255) NOT NULL,
     provincia VARCHAR(255) NOT NULL,
     lat FLOAT NOT NULL,
-    lng FLOAT NOT NULL
+    lng FLOAT NOT NULL,
+    altitud FLOAT NULL,
+    temperatura_max FLOAT NULL,
+    humedad_media FLOAT NULL,
+    precipitacion FLOAT NULL,
+    viento_max FLOAT NULL
 );
 
 -- 5. Tabla de Resultados (Tabla de Hechos Central / Relación N:M)
