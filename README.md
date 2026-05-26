@@ -4,37 +4,38 @@ Mario García · Alejandro Benítez
  
 ---
  
-## 🟡 Sprint actual — Sprint 1: ETL y datos
- 📋 **Detalle completo del sprint → [📁 Sprint 1](sprints/sprint1.md)**
-
+## 🟡 Sprint actual — Sprint 2: Modelo predictivo ML
+ 
 > **18/05/2026 → 25/05/2026**
  
-**Objetivo:** Tener los datos limpios, enriquecidos y cargados en Azure antes de tocar ningún modelo.
+**Objetivo:** Entrenar el modelo que predice el tiempo final de cada atleta y dejarlo registrado en Azure ML listo para ser consumido por una API.
  
 ### ¿En qué estamos ahora mismo?
  
 | Tarea | Responsable | Estado |
 |---|---|---|
-| Crear Storage Account | Alejandro | ✅ Hecho |
-| <sub>Recurso base de almacenamiento en Azure · contiene los contenedores `raw/` y `bronze/`</sub> | | |
-| Carga CSV bruto a Blob Storage | Alejandro | ✅ Hecho |
-| <sub>Fichero original del cliente sin tocar en el contenedor `raw/`</sub> | | |
-| Limpieza inicial y carga a bronze | Mario | ✅ Hecho |
-| <sub>Primera pasada de limpieza básica y subida al contenedor `bronze/`</sub> | | |
-| Notebook EDA | Ambos | ⚪ Pendiente  |
+| 📖 Leer [sprint2.md](sprints/sprint2.md) | Ambos | ⚪ Pendiente |
+| <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
+| Notebook EDA _(arrastrado del Sprint 1)_ | Ambos | ⚪ Pendiente |
 | <sub>Explorar el dataset: distribuciones, % nulos por columna, outliers y correlaciones básicas</sub> | | |
-| Limpieza de nulos y outliers | Mario | ✅ Hecho  |
-| <sub>Aplicar estrategia de nulos (no imputar tiempos faltantes) y eliminar/flaggear outliers estadísticos</sub> | | |
-| Enriquecimiento (altitud, temp, desnivel) | Alejandro | ✅ Hecho  |
-| <sub>Sustituir nombre de prueba por variables numéricas usando Open-Meteo API y World Triathlon</sub> | | |
-| Identificar registros DSQ/DNF | ❓ Por asignar | ⚪ Pendiente |
-| <sub>Buscar si hay columna de resultado en el dataset y crear la variable `descalificado` (0/1)</sub> | | |
-| Crear Azure SQL Database | Alejandro | ✅ Hecho |
-| <sub>Crear el recurso en Azure Portal y ejecutar `database/azure_sql_schema.sql` para generar las tablas</sub> | | |
-| Carga a Azure SQL Database | ❓ Por asignar | ✅ Hecho  |
-| <sub>Ejecutar `database/load_to_azure_sql.py` con el `.env` configurado, una vez el schema esté listo</sub> | | |
-
+| Identificar registros DSQ/DNF _(arrastrado del Sprint 1)_ | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Buscar si hay columna de resultado en el dataset y crear la variable `descalificado` (0/1) — condiciona la tarea de clasificador</sub> | | |
+| Crear Azure ML Workspace | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Azure Portal → Machine Learning → Create · crea automáticamente su Key Vault y App Insights</sub> | | |
+| Feature engineering | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Construir las variables de entrada del modelo: media últimas 5 pruebas, mejor marca, altitud, temp, desnivel...</sub> | | |
+| Entrenamiento Random Forest y XGBoost | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Entrenar ambos modelos con k-fold temporal (pruebas recientes = test, antiguas = train) y comparar por RMSE</sub> | | |
+| Selección de modelo y registro en Azure ML | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Elegir el ganador (objetivo: RMSE < 120s) y registrarlo en Azure ML Model Registry con sus métricas</sub> | | |
+| Módulo SHAP | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Implementar explicabilidad: para cada predicción devolver los 3 factores más influyentes y su efecto en segundos</sub> | | |
+| Clasificador DSQ/DNF | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Si hay ≥30 casos DSQ → clasificador binario · si no → Isolation Forest (anomalías) · depende de la tarea de identificación</sub> | | |
+ 
 > **Estados:** ✅ Hecho · 🟡 En curso · ⚪ Pendiente · 🔴 AVISAR YA
+
+📋 **Detalle completo del sprint → [sprints/sprint2.md](sprints/sprint2.md)**
  
 ---
  
