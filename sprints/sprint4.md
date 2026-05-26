@@ -147,13 +147,3 @@ Modo offline funcional + memoria del TFM finalizada.
 | Chatbot | Azure OpenAI GPT-4o | Latencia controlable, contexto inyectable |
 
 ---
-
-## ✅ Definition of Done
-
-- [ ] Dashboard desplegado en Azure Static Web Apps con URL pública
-- [ ] Top 10 carga en <2s; clasificación completa en background sin spinner
-- [ ] Chatbot responde en <2s y los enlaces contextuales funcionan
-- [ ] Los 6 escenarios E2E pasan sin errores
-- [ ] Modo demo offline funcional y probado sin conexión
-- [ ] Memoria del TFM entregada y revisada por el tutor/Product Owner
-- [ ] README del repositorio completo con instrucciones de despliegue
