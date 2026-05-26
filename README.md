@@ -18,22 +18,45 @@ Mario García · Alejandro Benítez
 | <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
 | 📖 Leer [sprint2.md](sprints/sprint2.md) | Alejandro | ⚪ Pendiente |
 | <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
-| Notebook EDA _(arrastrado del Sprint 1)_ | ❓ Por asignar | ⚪ Pendiente |
+| **— PENDIENTES DE SPRINT 1 —** | | |
+| Notebook EDA | Ambos | ⚪ Pendiente |
 | <sub>Explorar el dataset: distribuciones, % nulos por columna, outliers y correlaciones básicas</sub> | | |
-| Identificar registros DSQ/DNF _(arrastrado del Sprint 1)_ | ❓ Por asignar | ⚪ Pendiente |
-| <sub>Buscar si hay columna de resultado en el dataset y crear la variable `descalificado` (0/1) — condiciona la tarea de clasificador</sub> | | |
+| Identificar registros DSQ/DNF | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Buscar si hay columna de resultado en el dataset y crear la variable `descalificado` (0/1) — condiciona el clasificador</sub> | | |
+| **— INFRAESTRUCTURA —** | | |
 | Crear Azure ML Workspace | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Azure Portal → Machine Learning → Create · crea automáticamente su Key Vault y App Insights</sub> | | |
-| Feature engineering | ❓ Por asignar | ⚪ Pendiente |
-| <sub>Construir las variables de entrada del modelo: media últimas 5 pruebas, mejor marca, altitud, temp, desnivel...</sub> | | |
-| Entrenamiento Random Forest y XGBoost | ❓ Por asignar | ⚪ Pendiente |
-| <sub>Entrenar ambos modelos con k-fold temporal (pruebas recientes = test, antiguas = train) y comparar por RMSE</sub> | | |
-| Selección de modelo y registro en Azure ML | ❓ Por asignar | ⚪ Pendiente |
-| <sub>Elegir el ganador (objetivo: RMSE < 120s) y registrarlo en Azure ML Model Registry con sus métricas</sub> | | |
-| Módulo SHAP | ❓ Por asignar | ⚪ Pendiente |
-| <sub>Implementar explicabilidad: para cada predicción devolver los 3 factores más influyentes y su efecto en segundos</sub> | | |
-| Clasificador DSQ/DNF | ❓ Por asignar | ⚪ Pendiente |
-| <sub>Si hay ≥30 casos DSQ → clasificador binario · si no → Isolation Forest (anomalías) · depende de la tarea de identificación</sub> | | |
+| **— FEATURE ENGINEERING —** | | |
+| Calcular variables de rendimiento del atleta | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Calcular: media últimas 5 pruebas, mejor marca personal, nº pruebas completadas en la temporada</sub> | | |
+| Calcular variables de contexto de la prueba | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Unir altitud, temperatura, humedad, desnivel y tipo de agua (ya enriquecidos en Sprint 1) al dataset del modelo</sub> | | |
+| Calcular variable de recuperación | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Calcular `dias_desde_ultima_prueba` por atleta para cada fila del dataset</sub> | | |
+| Documentar todas las features | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Crear tabla en `docs/` con nombre, descripción, unidad, rango esperado y cómo se calcula cada variable</sub> | | |
+| Verificar que no hay data leakage | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Comprobar que ninguna feature usa información posterior a la fecha de la prueba que se predice</sub> | | |
+| **— MODELO —** | | |
+| Preparar splits de entrenamiento y test | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Separar temporalmente: pruebas antiguas = train, pruebas recientes = test · nunca aleatorio</sub> | | |
+| Entrenar Random Forest | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Entrenar con k-fold temporal (k=5) y registrar RMSE, MAE y R² en Azure ML Experiments</sub> | | |
+| Entrenar XGBoost | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Entrenar con los mismos splits y métricas que Random Forest para que la comparación sea justa</sub> | | |
+| Comparar modelos y seleccionar el ganador | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Si diferencia de RMSE < 3% → Random Forest (más interpretable) · si no → XGBoost</sub> | | |
+| Registrar modelo ganador en Azure ML Model Registry | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Subir el modelo con nombre, versión, métricas y fecha · objetivo: RMSE < 120s</sub> | | |
+| Documentar métricas finales del modelo | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Añadir tabla de resultados (RMSE, MAE, R²) al `sprint2.md` y al `docs/`</sub> | | |
+| **— EXPLICABILIDAD Y DSQ —** | | |
+| Implementar módulo SHAP | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Para cada predicción devolver los 3 factores más influyentes con su efecto en segundos (+/-)</sub> | | |
+| Probar SHAP con ejemplos reales | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Ejecutar SHAP sobre 5-10 atletas reales y verificar que la explicación tiene sentido deportivo</sub> | | |
+| Clasificador / detector DSQ | ❓ Por asignar | ⚪ Pendiente |
+| <sub>Si ≥30 casos DSQ → clasificador binario · si no → Isolation Forest · registrar en Azure ML Model Registry</sub> | | |
  
 > **Estados:** ✅ Hecho · 🟡 En curso · ⚪ Pendiente · 🔴 AVISAR YA
 
