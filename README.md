@@ -6,7 +6,7 @@ Mario García · Alejandro Benítez
  
 ## 🟡 Sprint actual — Sprint 2: Modelo predictivo ML
  
-> **18/05/2026 → 25/05/2026**
+> **25/05/2026 → 05/06/2026** · 2 semanas  
  
 **Objetivo:** Entrenar el modelo que predice el tiempo final de cada atleta y dejarlo registrado en Azure ML listo para ser consumido por una API.
  
