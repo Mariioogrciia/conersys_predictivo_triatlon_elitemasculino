@@ -94,11 +94,3 @@ Si el dataset incluye resultados DSQ/DNF/DNS, los etiquetamos. Si no, se lo comu
 | Muy pocos casos DSQ (<30) | Alto | Alta | Se documenta y se aborda en Sprint 2 con detección de anomalías |
 
 ---
-
-## ✅ Definition of Done
-
-- [ ] Dataset procesado en Azure Blob Storage capa `processed/`
-- [ ] Notebook de EDA revisado por el equipo
-- [ ] Tabla de enriquecimiento de pruebas completada y versionada
-- [ ] Informe de calidad de datos entregado al Product Owner
-- [ ] Decisión sobre DSQ documentada y acordada
