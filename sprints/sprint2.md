@@ -1,6 +1,6 @@
 # Sprint 2 — Motor Predictivo ML
 
-> **Fechas:** 04/05/2026 → 18/05/2026 · 2 semanas  
+> **Fechas:** 25/05/2026 → 05/06/2026 · 2 semanas  
 > **Equipo:** Mario García · Alejandro Benítez  
 > **Proyecto:** Predictivo Triatlón Élite Masculino — Conersys
 
