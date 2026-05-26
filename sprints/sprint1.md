@@ -1,6 +1,6 @@
 # Sprint 1 — Ingesta de Datos, ETL y Análisis Exploratorio
 
-> **Fechas:** 07/04/2026 → 04/05/2026 · 4 semanas  
+> **Fechas:** 11/05/2026 → 22/05/2026 · 4 semanas  
 > **Equipo:** Mario García · Alejandro Benítez  
 > **Proyecto:** Predictivo Triatlón Élite Masculino — Conersys
 
