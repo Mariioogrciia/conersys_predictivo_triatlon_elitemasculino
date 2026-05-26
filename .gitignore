@@ -2,18 +2,6 @@
 # .gitignore - PROYECTO TFM TRIATLÓN (FETRI)
 # ============================================================================
 
-# --- Archivos de Datos (Evitar subir datasets grandes o con datos sensibles/GDPR) ---
-data/
-*.xlsx
-*.xls
-*.csv
-*.db
-*.sqlite
-# Excluir archivos JSON temporales o grandes de datos (pero permitir JSONs de configuración)
-calendar_cities_db.json
-club_coords_cache.json
-Campeonatos/*.json
-
 # --- Entorno Virtual de Python ---
 venv/
 .venv/

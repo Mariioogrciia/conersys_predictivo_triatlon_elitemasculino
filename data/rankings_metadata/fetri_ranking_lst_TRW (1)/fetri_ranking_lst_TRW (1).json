@@ -1,0 +1,102 @@
+[
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2025-10-13T13:40:18.827",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/2/2025_10_13 RANKING-Triatlon-Femenina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20251013134028_strip_10_13 RANKING-Triatlon-Femenina.xlsx",
+    "isActive": true,
+    "Key": "1760362818827",
+    "dateCreated": "2025-10-13T13:40:29.19"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2025-08-24T00:00:00",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250828142924_2025_08_24 RANKING-Triatlon-Femenina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250828142925_strip_2025_08_24 RANKING-Triatlon-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1755993600000",
+    "dateCreated": "2025-08-28T14:29:25.587"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2025-06-11T00:00:00",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250612142018_2025_06_11 RANKING-Triatlon-Femenina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250612142019_strip_2025_06_11 RANKING-Triatlon-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1749600000000",
+    "dateCreated": "2025-06-12T14:20:19.55"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2025-05-14T13:32:27.47",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250514133233_2025_05_14 RANKING-Triatlon-Femenina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250514133234_strip_2025_05_14 RANKING-Triatlon-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1747229547470",
+    "dateCreated": "2025-05-14T13:32:34.357"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2025-05-13T19:24:16.353",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250513192424_2025_05_13 RANKING-Triatlon-Femenina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250513192425_strip_2025_05_13 RANKING-Triatlon-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1747164256353",
+    "dateCreated": "2025-05-13T19:24:26.17"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2024-11-15T17:59:25",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250113175944_2024_11_15 RANKING-Triatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/2/20250113175944_strip_2024_11_15 RANKING-Triatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1731693565000",
+    "dateCreated": "2025-01-13T17:59:44.99"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2024-08-19T11:16:47",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/2/20240920111702_2024_08_19 RANKING-Triatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/2/20240920111704_strip_2024_08_19%20RANKING-Triatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1724066207000",
+    "dateCreated": "2024-09-20T11:17:04.303"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2024-07-03T11:15:49",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/2/20240920111613_2024_07_03 RANKING-Triatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/2/20240920111614_strip_2024_07_03%20RANKING-Triatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1720005349000",
+    "dateCreated": "2024-09-20T11:16:15.08"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2024-06-03T14:44:04",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/2/20240920144723_2024_06_03 RANKING-Triatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/2/20240920144724_strip_2024_06_03%20RANKING-Triatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1717425844000",
+    "dateCreated": "2024-09-20T14:47:24.16"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 2.0,
+    "date": "2024-05-28T16:43:53",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/2/20240920164414_2024_05_28 RANKING-Triatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/2/20240920164415_strip_2024_05_28%20RANKING-Triatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1716914633000",
+    "dateCreated": "2024-09-20T16:44:15.947"
+  }
+]

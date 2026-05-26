@@ -1,0 +1,1696 @@
+{
+  "41.602477580535506,-0.9274494542161227,2025-12-31": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "42.8146201173339,-1.6373893515512727,2025-05-17": {
+    "altitud": 454.0,
+    "temperatura_max": 20.9,
+    "humedad_media": 80.0,
+    "precipitacion": 0.0,
+    "viento_max": 14.0
+  },
+  "42.81721580036355,-1.6444816805991858,2025-05-17": {
+    "altitud": 463.0,
+    "temperatura_max": 20.9,
+    "humedad_media": 80.0,
+    "precipitacion": 0.0,
+    "viento_max": 14.0
+  },
+  "41.75500835764875,-2.4695531258008097,2025-02-09": {
+    "altitud": 1050.0,
+    "temperatura_max": 9.7,
+    "humedad_media": 83.0,
+    "precipitacion": 0.0,
+    "viento_max": 18.9
+  },
+  "37.407382202460006,-1.5665790742121288,2025-02-16": {
+    "altitud": 3.0,
+    "temperatura_max": 22.1,
+    "humedad_media": 62.0,
+    "precipitacion": 0.0,
+    "viento_max": 11.9
+  },
+  "40.54052221189061,-3.6476688782317535,2025-03-02": {
+    "altitud": 681.0,
+    "temperatura_max": 3.7,
+    "humedad_media": 91.0,
+    "precipitacion": 16.3,
+    "viento_max": 17.7
+  },
+  "37.722985028295476,-1.170416033699262,2025-04-26": {
+    "altitud": 132.0,
+    "temperatura_max": 27.1,
+    "humedad_media": 66.0,
+    "precipitacion": 0.4,
+    "viento_max": 19.7
+  },
+  "0.0,0.0,2025-05-10": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-05-11": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-05-24": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "43.36967607868185,-8.395464420318604,2025-05-31": {
+    "altitud": 13.0,
+    "temperatura_max": 21.1,
+    "humedad_media": 80.0,
+    "precipitacion": 0.2,
+    "viento_max": 16.8
+  },
+  "38.60466401953676,-0.12213706970214844,2025-06-07": {
+    "altitud": 240.0,
+    "temperatura_max": 29.3,
+    "humedad_media": 48.0,
+    "precipitacion": 0.0,
+    "viento_max": 9.5
+  },
+  "38.91391005208429,-6.355268955230713,2025-07-05": {
+    "altitud": 207.0,
+    "temperatura_max": 35.9,
+    "humedad_media": 42.0,
+    "precipitacion": 0.0,
+    "viento_max": 15.2
+  },
+  "0.0,0.0,2025-07-12": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-06-07": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-09-13": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "38.98915244682287,-3.9188146591186523,2025-04-12": {
+    "altitud": 628.0,
+    "temperatura_max": 18.5,
+    "humedad_media": 87.0,
+    "precipitacion": 9.0,
+    "viento_max": 18.3
+  },
+  "39.474036258266956,-6.372101739657296,2025-03-29": {
+    "altitud": 453.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 61.0,
+    "precipitacion": 0.0,
+    "viento_max": 19.2
+  },
+  "42.191102284886355,0.33790420420487965,2025-03-01": {
+    "altitud": 462.0,
+    "temperatura_max": 12.9,
+    "humedad_media": 87.0,
+    "precipitacion": 10.9,
+    "viento_max": 9.4
+  },
+  "38.60448758654064,-0.12267636639117452,2025-02-22": {
+    "altitud": 240.0,
+    "temperatura_max": 18.1,
+    "humedad_media": 76.0,
+    "precipitacion": 9.6,
+    "viento_max": 9.1
+  },
+  "38.9878081267163,-1.857105553588625,2025-03-23": {
+    "altitud": 683.0,
+    "temperatura_max": 10.7,
+    "humedad_media": 67.0,
+    "precipitacion": 0.3,
+    "viento_max": 23.6
+  },
+  "38.60416459522487,-0.12322682317462919,2025-02-23": {
+    "altitud": 240.0,
+    "temperatura_max": 13.1,
+    "humedad_media": 86.0,
+    "precipitacion": 9.6,
+    "viento_max": 21.1
+  },
+  "43.555515149559746,-5.92212438583374,2025-03-08": {
+    "altitud": 20.0,
+    "temperatura_max": 16.5,
+    "humedad_media": 72.0,
+    "precipitacion": 2.9,
+    "viento_max": 23.2
+  },
+  "43.555500477405175,-5.921957263016875,2025-03-09": {
+    "altitud": 20.0,
+    "temperatura_max": 16.4,
+    "humedad_media": 65.0,
+    "precipitacion": 0.1,
+    "viento_max": 19.3
+  },
+  "38.98782778292023,-1.8571820856243937,2025-03-22": {
+    "altitud": 683.0,
+    "temperatura_max": 11.5,
+    "humedad_media": 69.0,
+    "precipitacion": 3.7,
+    "viento_max": 35.2
+  },
+  "38.60416416264895,-0.12299567214457241,2025-02-22": {
+    "altitud": 240.0,
+    "temperatura_max": 18.1,
+    "humedad_media": 76.0,
+    "precipitacion": 9.6,
+    "viento_max": 9.1
+  },
+  "0.0,0.0,2025-09-28": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "42.30034070936365,-1.9666580302797154,2025-07-26": {
+    "altitud": 325.0,
+    "temperatura_max": 28.5,
+    "humedad_media": 57.0,
+    "precipitacion": 0.0,
+    "viento_max": 22.8
+  },
+  "0.0,0.0,2025-07-27": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "42.3001642197045,-1.9664071810687123,2025-07-26": {
+    "altitud": 325.0,
+    "temperatura_max": 28.5,
+    "humedad_media": 57.0,
+    "precipitacion": 0.0,
+    "viento_max": 22.8
+  },
+  "0.0,0.0,2025-05-25": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "42.81695906592689,-1.64291924641919,2025-05-15": {
+    "altitud": 462.0,
+    "temperatura_max": 15.2,
+    "humedad_media": 88.0,
+    "precipitacion": 2.3,
+    "viento_max": 28.9
+  },
+  "38.60464725101453,-0.12213706970214844,2025-07-13": {
+    "altitud": 240.0,
+    "temperatura_max": 28.4,
+    "humedad_media": 79.0,
+    "precipitacion": 0.0,
+    "viento_max": 12.2
+  },
+  "38.60466401953676,-0.12213706970214844,2025-06-08": {
+    "altitud": 240.0,
+    "temperatura_max": 30.0,
+    "humedad_media": 55.0,
+    "precipitacion": 0.0,
+    "viento_max": 13.5
+  },
+  "0.0,0.0,2025-07-19": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-07-20": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "35.29214983266873,-2.9383224095126903,2025-07-19": {
+    "altitud": 5.0,
+    "temperatura_max": 28.6,
+    "humedad_media": 51.0,
+    "precipitacion": 0.0,
+    "viento_max": 32.8
+  },
+  "39.4696185873191,-0.36474189725907324,2025-09-20": {
+    "altitud": 14.0,
+    "temperatura_max": 28.2,
+    "humedad_media": 72.0,
+    "precipitacion": 0.0,
+    "viento_max": 13.6
+  },
+  "0.0,0.0,2025-10-05": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "43.555515149559746,-5.922113656997681,2025-03-08": {
+    "altitud": 20.0,
+    "temperatura_max": 16.5,
+    "humedad_media": 72.0,
+    "precipitacion": 2.9,
+    "viento_max": 23.2
+  },
+  "43.55566287938193,-5.922076106071472,2025-03-09": {
+    "altitud": 20.0,
+    "temperatura_max": 16.4,
+    "humedad_media": 65.0,
+    "precipitacion": 0.1,
+    "viento_max": 19.3
+  },
+  "38.98915244682287,-3.9188146591186523,2025-04-13": {
+    "altitud": 628.0,
+    "temperatura_max": 18.5,
+    "humedad_media": 85.0,
+    "precipitacion": 4.2,
+    "viento_max": 13.0
+  },
+  "54.570186119424875,18.397063815997065,2025-04-26": {
+    "altitud": 26.0,
+    "temperatura_max": 7.7,
+    "humedad_media": 68.0,
+    "precipitacion": 0.0,
+    "viento_max": 11.9
+  },
+  "50.87371685979596,6.158008849422449,2025-04-26": {
+    "altitud": 168.0,
+    "temperatura_max": 17.5,
+    "humedad_media": 75.0,
+    "precipitacion": 0.0,
+    "viento_max": 14.6
+  },
+  "42.433192236161815,-8.632835709718682,2025-06-21": {
+    "altitud": 9.0,
+    "temperatura_max": 24.7,
+    "humedad_media": 81.0,
+    "precipitacion": 0.0,
+    "viento_max": 11.2
+  },
+  "42.426911638468546,-8.633996295191489,2025-06-22": {
+    "altitud": 31.0,
+    "temperatura_max": 27.4,
+    "humedad_media": 76.0,
+    "precipitacion": 0.0,
+    "viento_max": 15.4
+  },
+  "42.43068140446946,-8.647084507052789,2025-06-24": {
+    "altitud": 24.0,
+    "temperatura_max": 25.3,
+    "humedad_media": 81.0,
+    "precipitacion": 0.0,
+    "viento_max": 11.4
+  },
+  "42.42354779910267,-8.644459654771659,2025-06-26": {
+    "altitud": 19.0,
+    "temperatura_max": 24.7,
+    "humedad_media": 83.0,
+    "precipitacion": 0.2,
+    "viento_max": 13.4
+  },
+  "42.42893442283729,-8.64063660366737,2025-06-27": {
+    "altitud": 29.0,
+    "temperatura_max": 27.2,
+    "humedad_media": 84.0,
+    "precipitacion": 0.0,
+    "viento_max": 11.6
+  },
+  "42.42646990346212,-8.643764793381731,2025-06-29": {
+    "altitud": 12.0,
+    "temperatura_max": 30.3,
+    "humedad_media": 82.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.3
+  },
+  "42.42833808942758,-8.64439035885899,2025-06-29": {
+    "altitud": 22.0,
+    "temperatura_max": 30.3,
+    "humedad_media": 82.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.3
+  },
+  "41.00279574336703,28.97230269482492,2025-09-05": {
+    "altitud": 10.0,
+    "temperatura_max": 28.3,
+    "humedad_media": 68.0,
+    "precipitacion": 0.0,
+    "viento_max": 25.2
+  },
+  "47.292917002264424,7.940333463896834,2025-09-07": {
+    "altitud": 435.0,
+    "temperatura_max": 23.3,
+    "humedad_media": 86.0,
+    "precipitacion": 0.0,
+    "viento_max": 6.8
+  },
+  "-34.41167981596991,150.8873623188486,2025-10-15": {
+    "altitud": 14.0,
+    "temperatura_max": 22.8,
+    "humedad_media": 76.0,
+    "precipitacion": 0.0,
+    "viento_max": 20.0
+  },
+  "39.467565574958265,-0.3743123832911466,2025-04-27": {
+    "altitud": 32.0,
+    "temperatura_max": 21.9,
+    "humedad_media": 53.0,
+    "precipitacion": 0.0,
+    "viento_max": 14.5
+  },
+  "0.0,0.0,2025-05-17": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-07-13": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "36.49105460466771,-4.947885134575649,2025-11-08": {
+    "altitud": 8.0,
+    "temperatura_max": 22.6,
+    "humedad_media": 67.0,
+    "precipitacion": 0.0,
+    "viento_max": 7.3
+  },
+  "39.53504342366116,2.455740759872058,2025-10-18": {
+    "altitud": 10.0,
+    "temperatura_max": 22.9,
+    "humedad_media": 68.0,
+    "precipitacion": 0.2,
+    "viento_max": 9.2
+  },
+  "39.47320126788993,-0.3746216248353784,2025-09-20": {
+    "altitud": 29.0,
+    "temperatura_max": 28.2,
+    "humedad_media": 72.0,
+    "precipitacion": 0.0,
+    "viento_max": 13.6
+  },
+  "39.46880408417444,-0.3687562276625034,2025-09-21": {
+    "altitud": 22.0,
+    "temperatura_max": 29.9,
+    "humedad_media": 70.0,
+    "precipitacion": 0.0,
+    "viento_max": 25.7
+  },
+  "43.001201340946416,-4.137828693563015,2025-02-02": {
+    "altitud": 856.0,
+    "temperatura_max": 5.2,
+    "humedad_media": 88.0,
+    "precipitacion": 6.9,
+    "viento_max": 11.4
+  },
+  "40.364608998880584,0.4011247610557156,2025-04-06": {
+    "altitud": 0.0,
+    "temperatura_max": 21.3,
+    "humedad_media": 69.0,
+    "precipitacion": 0.0,
+    "viento_max": 15.0
+  },
+  "42.997177820452556,-4.13396667854305,2025-02-02": {
+    "altitud": 845.0,
+    "temperatura_max": 5.3,
+    "humedad_media": 88.0,
+    "precipitacion": 6.9,
+    "viento_max": 11.4
+  },
+  "35.2919404381818,-2.936371794894841,2025-07-20": {
+    "altitud": 9.0,
+    "temperatura_max": 29.9,
+    "humedad_media": 48.0,
+    "precipitacion": 0.0,
+    "viento_max": 29.2
+  },
+  "0.0,0.0,2025-05-03": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-05-31": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-06-28": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-08-10": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-09-14": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-09-21": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-03-23": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-06-14": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "38.98420766186581,1.5358053208557454,2025-03-15": {
+    "altitud": 15.0,
+    "temperatura_max": 13.7,
+    "humedad_media": 66.0,
+    "precipitacion": 0.7,
+    "viento_max": 23.0
+  },
+  "42.994762535655255,-4.133851980966734,2025-03-16": {
+    "altitud": 845.0,
+    "temperatura_max": 4.7,
+    "humedad_media": 83.0,
+    "precipitacion": 1.5,
+    "viento_max": 10.2
+  },
+  "0.0,0.0,2025-05-18": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-08-23": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "37.41592677197399,-5.992438546640108,2025-03-16": {
+    "altitud": 10.0,
+    "temperatura_max": 17.5,
+    "humedad_media": 83.0,
+    "precipitacion": 3.6,
+    "viento_max": 18.1
+  },
+  "41.51714898658153,0.3449155610087029,2025-01-25": {
+    "altitud": 96.0,
+    "temperatura_max": 13.4,
+    "humedad_media": 91.0,
+    "precipitacion": 0.2,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-06-29": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-02-02": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-04-27": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "45.608733301555816,7.355961168231349,2025-02-21": {
+    "altitud": 1540.0,
+    "temperatura_max": 8.4,
+    "humedad_media": 66.0,
+    "precipitacion": 0.0,
+    "viento_max": 2.8
+  },
+  "39.769308018565766,-0.1593177387486744,2025-02-16": {
+    "altitud": 0.0,
+    "temperatura_max": 15.3,
+    "humedad_media": 84.0,
+    "precipitacion": 0.0,
+    "viento_max": 8.3
+  },
+  "39.46697902259354,-0.37111170530577775,2025-04-05": {
+    "altitud": 26.0,
+    "temperatura_max": 24.1,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 16.2
+  },
+  "0.0,0.0,2025-09-06": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-03-16": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-06-15": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "37.675382282864625,-1.6967484175580272,2025-02-01": {
+    "altitud": 343.0,
+    "temperatura_max": 17.4,
+    "humedad_media": 58.0,
+    "precipitacion": 0.0,
+    "viento_max": 15.9
+  },
+  "0.0,0.0,2025-06-01": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "28.463044667558748,-16.259275709585182,2025-10-11": {
+    "altitud": 64.0,
+    "temperatura_max": 23.8,
+    "humedad_media": 69.0,
+    "precipitacion": 0.3,
+    "viento_max": 18.2
+  },
+  "28.463635335172,-16.251206060089558,2025-10-11": {
+    "altitud": 15.0,
+    "temperatura_max": 24.1,
+    "humedad_media": 69.0,
+    "precipitacion": 0.3,
+    "viento_max": 18.2
+  },
+  "28.647300152768235,-17.75926677075548,2025-02-22": {
+    "altitud": 37.0,
+    "temperatura_max": 22.3,
+    "humedad_media": 84.0,
+    "precipitacion": 0.0,
+    "viento_max": 14.5
+  },
+  "27.884063892889948,-15.723601924109522,2025-09-20": {
+    "altitud": 250.0,
+    "temperatura_max": 35.9,
+    "humedad_media": 29.0,
+    "precipitacion": 0.0,
+    "viento_max": 30.6
+  },
+  "0.0,0.0,2025-09-20": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "0.0,0.0,2025-02-15": {
+    "altitud": 0.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 60.0,
+    "precipitacion": 0.0,
+    "viento_max": 10.0
+  },
+  "35.293558643933466,-2.9326263403465713,2025-02-14": {
+    "altitud": 31.0,
+    "temperatura_max": 18.3,
+    "humedad_media": 74.0,
+    "precipitacion": 0.0,
+    "viento_max": 12.8
+  },
+  "35.29320289563474,-2.9332726063937486,2025-06-21": {
+    "altitud": 24.0,
+    "temperatura_max": 30.6,
+    "humedad_media": 65.0,
+    "precipitacion": 0.0,
+    "viento_max": 16.7
+  },
+  "36.7644,-2.6148,2025-05-10": {
+    "altitud": 13.0,
+    "temperatura_max": 22.8,
+    "humedad_media": 69,
+    "precipitacion": 1.0,
+    "viento_max": 23.9
+  },
+  "36.7644,-2.6148,2025-05-11": {
+    "altitud": 13.0,
+    "temperatura_max": 23.2,
+    "humedad_media": 56,
+    "precipitacion": 0.0,
+    "viento_max": 26.9
+  },
+  "43.5357,-5.6615,2025-05-24": {
+    "altitud": 22.0,
+    "temperatura_max": 18.7,
+    "humedad_media": 77,
+    "precipitacion": 0.0,
+    "viento_max": 16.1
+  },
+  "40.4168,-3.7038,2025-05-24": {
+    "altitud": 666.0,
+    "temperatura_max": 27.0,
+    "humedad_media": 33,
+    "precipitacion": 0.0,
+    "viento_max": 13.9
+  },
+  "40.0986,0.1372,2025-05-24": {
+    "altitud": 4.0,
+    "temperatura_max": 22.1,
+    "humedad_media": 55,
+    "precipitacion": 0.0,
+    "viento_max": 14.9
+  },
+  "42.1194,2.7644,2025-07-12": {
+    "altitud": 174.0,
+    "temperatura_max": 25.1,
+    "humedad_media": 92,
+    "precipitacion": 14.8,
+    "viento_max": 9.3
+  },
+  "36.6222,-4.4994,2025-06-07": {
+    "altitud": 48.0,
+    "temperatura_max": 27.5,
+    "humedad_media": 59,
+    "precipitacion": 0.0,
+    "viento_max": 10.8
+  },
+  "37.4062,-1.5839,2025-09-13": {
+    "altitud": 18.0,
+    "temperatura_max": 30.2,
+    "humedad_media": 61,
+    "precipitacion": 0.0,
+    "viento_max": 10.5
+  },
+  "42.431,-8.6444,2025-09-28": {
+    "altitud": 23.0,
+    "temperatura_max": 24.1,
+    "humedad_media": 74,
+    "precipitacion": 12.7,
+    "viento_max": 27.5
+  },
+  "42.305,-1.9653,2025-07-27": {
+    "altitud": 352.0,
+    "temperatura_max": 28.8,
+    "humedad_media": 58,
+    "precipitacion": 0.0,
+    "viento_max": 26.5
+  },
+  "40.0986,0.1372,2025-05-25": {
+    "altitud": 4.0,
+    "temperatura_max": 24.1,
+    "humedad_media": 57,
+    "precipitacion": 0.0,
+    "viento_max": 12.6
+  },
+  "41.4858,-2.5317,2025-07-19": {
+    "altitud": 959.0,
+    "temperatura_max": 28.2,
+    "humedad_media": 42,
+    "precipitacion": 0.0,
+    "viento_max": 18.0
+  },
+  "41.4858,-2.5317,2025-07-20": {
+    "altitud": 959.0,
+    "temperatura_max": 26.6,
+    "humedad_media": 42,
+    "precipitacion": 0.1,
+    "viento_max": 24.4
+  },
+  "35.8894,-5.3198,2025-10-05": {
+    "altitud": 8.0,
+    "temperatura_max": 24.8,
+    "humedad_media": 75,
+    "precipitacion": 0.0,
+    "viento_max": 22.2
+  },
+  "41.6147,2.6536,2025-10-05": {
+    "altitud": 16.0,
+    "temperatura_max": 19.9,
+    "humedad_media": 74,
+    "precipitacion": 3.3,
+    "viento_max": 21.6
+  },
+  "39.8531,3.1208,2025-05-10": {
+    "altitud": 14.0,
+    "temperatura_max": 22.3,
+    "humedad_media": 80,
+    "precipitacion": 0.0,
+    "viento_max": 18.2
+  },
+  "28.9638,-13.5477,2025-05-17": {
+    "altitud": 20.0,
+    "temperatura_max": 23.0,
+    "humedad_media": 60,
+    "precipitacion": 0.0,
+    "viento_max": 24.1
+  },
+  "42.8467,-2.6717,2025-07-13": {
+    "altitud": 543.0,
+    "temperatura_max": 27.3,
+    "humedad_media": 78,
+    "precipitacion": 0.7,
+    "viento_max": 18.0
+  },
+  "41.0764,1.1414,2025-05-11": {
+    "altitud": 11.0,
+    "temperatura_max": 22.6,
+    "humedad_media": 77,
+    "precipitacion": 7.2,
+    "viento_max": 14.9
+  },
+  "39.7558,-0.1958,2025-05-11": {
+    "altitud": 7.0,
+    "temperatura_max": 25.2,
+    "humedad_media": 73,
+    "precipitacion": 0.1,
+    "viento_max": 21.0
+  },
+  "28.9638,-13.5477,2025-05-03": {
+    "altitud": 20.0,
+    "temperatura_max": 22.8,
+    "humedad_media": 67,
+    "precipitacion": 0.1,
+    "viento_max": 18.6
+  },
+  "28.6835,-17.7642,2025-05-31": {
+    "altitud": 28.0,
+    "temperatura_max": 25.9,
+    "humedad_media": 73,
+    "precipitacion": 0.0,
+    "viento_max": 14.5
+  },
+  "42.8467,-2.6717,2025-06-07": {
+    "altitud": 543.0,
+    "temperatura_max": 20.6,
+    "humedad_media": 77,
+    "precipitacion": 0.3,
+    "viento_max": 20.3
+  },
+  "43.263,-2.935,2025-06-28": {
+    "altitud": 24.0,
+    "temperatura_max": 32.3,
+    "humedad_media": 73,
+    "precipitacion": 0.0,
+    "viento_max": 13.0
+  },
+  "41.6523,-4.7245,2025-08-10": {
+    "altitud": 698.0,
+    "temperatura_max": 38.8,
+    "humedad_media": 24,
+    "precipitacion": 0.0,
+    "viento_max": 18.0
+  },
+  "40.4168,-3.7038,2025-09-14": {
+    "altitud": 666.0,
+    "temperatura_max": 30.5,
+    "humedad_media": 28,
+    "precipitacion": 0.0,
+    "viento_max": 7.9
+  },
+  "43.4623,-3.81,2025-09-21": {
+    "altitud": 12.0,
+    "temperatura_max": 18.1,
+    "humedad_media": 83,
+    "precipitacion": 8.3,
+    "viento_max": 29.9
+  },
+  "38.9942,-1.8585,2025-03-23": {
+    "altitud": 690.0,
+    "temperatura_max": 10.7,
+    "humedad_media": 67,
+    "precipitacion": 0.3,
+    "viento_max": 23.6
+  },
+  "43.2835,-2.1723,2025-06-14": {
+    "altitud": 9.0,
+    "temperatura_max": 20.6,
+    "humedad_media": 89,
+    "precipitacion": 18.0,
+    "viento_max": 15.7
+  },
+  "42.431,-8.6444,2025-05-03": {
+    "altitud": 23.0,
+    "temperatura_max": 19.7,
+    "humedad_media": 85,
+    "precipitacion": 5.5,
+    "viento_max": 12.9
+  },
+  "39.5696,2.6502,2025-05-18": {
+    "altitud": 32.0,
+    "temperatura_max": 26.6,
+    "humedad_media": 57,
+    "precipitacion": 0.0,
+    "viento_max": 11.1
+  },
+  "43.4623,-3.81,2025-08-23": {
+    "altitud": 12.0,
+    "temperatura_max": 25.5,
+    "humedad_media": 78,
+    "precipitacion": 0.0,
+    "viento_max": 20.1
+  },
+  "37.3891,-5.9845,2025-05-18": {
+    "altitud": 18.0,
+    "temperatura_max": 28.2,
+    "humedad_media": 46,
+    "precipitacion": 0.0,
+    "viento_max": 20.9
+  },
+  "41.6488,-0.8891,2025-06-29": {
+    "altitud": 228.0,
+    "temperatura_max": 40.3,
+    "humedad_media": 35,
+    "precipitacion": 0.0,
+    "viento_max": 17.0
+  },
+  "40.4168,-3.7038,2025-02-02": {
+    "altitud": 666.0,
+    "temperatura_max": 10.1,
+    "humedad_media": 79,
+    "precipitacion": 0.3,
+    "viento_max": 8.0
+  },
+  "40.4168,-3.7038,2025-05-17": {
+    "altitud": 666.0,
+    "temperatura_max": 25.0,
+    "humedad_media": 49,
+    "precipitacion": 0.0,
+    "viento_max": 12.0
+  },
+  "43.3603,-5.8448,2025-04-27": {
+    "altitud": 245.0,
+    "temperatura_max": 17.2,
+    "humedad_media": 82,
+    "precipitacion": 0.0,
+    "viento_max": 14.0
+  },
+  "43.3603,-5.8448,2025-09-28": {
+    "altitud": 245.0,
+    "temperatura_max": 18.7,
+    "humedad_media": 84,
+    "precipitacion": 5.5,
+    "viento_max": 15.4
+  },
+  "39.8628,-4.0273,2025-05-18": {
+    "altitud": 467.0,
+    "temperatura_max": 29.2,
+    "humedad_media": 43,
+    "precipitacion": 0.0,
+    "viento_max": 20.1
+  },
+  "39.8628,-4.0273,2025-09-06": {
+    "altitud": 467.0,
+    "temperatura_max": 35.5,
+    "humedad_media": 41,
+    "precipitacion": 0.0,
+    "viento_max": 21.5
+  },
+  "42.4627,-2.445,2025-03-16": {
+    "altitud": 393.0,
+    "temperatura_max": 9.3,
+    "humedad_media": 80,
+    "precipitacion": 1.5,
+    "viento_max": 11.4
+  },
+  "42.4627,-2.445,2025-06-29": {
+    "altitud": 393.0,
+    "temperatura_max": 39.3,
+    "humedad_media": 49,
+    "precipitacion": 0.0,
+    "viento_max": 18.7
+  },
+  "38.9161,-6.3436,2025-03-16": {
+    "altitud": 232.0,
+    "temperatura_max": 15.4,
+    "humedad_media": 78,
+    "precipitacion": 7.5,
+    "viento_max": 17.7
+  },
+  "38.9161,-6.3436,2025-06-15": {
+    "altitud": 232.0,
+    "temperatura_max": 35.2,
+    "humedad_media": 42,
+    "precipitacion": 0.0,
+    "viento_max": 14.2
+  },
+  "42.8157,-1.6522,2025-03-16": {
+    "altitud": 448.0,
+    "temperatura_max": 8.1,
+    "humedad_media": 79,
+    "precipitacion": 0.5,
+    "viento_max": 15.1
+  },
+  "42.8157,-1.6522,2025-06-28": {
+    "altitud": 448.0,
+    "temperatura_max": 31.1,
+    "humedad_media": 71,
+    "precipitacion": 0.0,
+    "viento_max": 15.3
+  },
+  "37.9922,-1.1307,2025-05-18": {
+    "altitud": 41.0,
+    "temperatura_max": 27.4,
+    "humedad_media": 62,
+    "precipitacion": 0.0,
+    "viento_max": 14.4
+  },
+  "36.834,-2.4637,2025-06-01": {
+    "altitud": 5.0,
+    "temperatura_max": 32.2,
+    "humedad_media": 40,
+    "precipitacion": 0.0,
+    "viento_max": 9.9
+  },
+  "35.8894,-5.3198,2025-04-27": {
+    "altitud": 8.0,
+    "temperatura_max": 20.5,
+    "humedad_media": 83,
+    "precipitacion": 0.2,
+    "viento_max": 28.5
+  },
+  "39.4699,-0.3763,2025-09-20": {
+    "altitud": 17.0,
+    "temperatura_max": 28.2,
+    "humedad_media": 72,
+    "precipitacion": 0.0,
+    "viento_max": 13.6
+  },
+  "41.6523,-4.7245,2025-02-15": {
+    "altitud": 698.0,
+    "temperatura_max": 15.6,
+    "humedad_media": 76,
+    "precipitacion": 0.0,
+    "viento_max": 10.9
+  },
+  "41.6523,-4.7245,2025-06-14": {
+    "altitud": 698.0,
+    "temperatura_max": 30.0,
+    "humedad_media": 51,
+    "precipitacion": 0.0,
+    "viento_max": 18.1
+  },
+  "40.81206451296932,-2.7811880556264246,2025-12-31": {
+    "altitud": 1043.0,
+    "temperatura_max": 7.7,
+    "humedad_media": 82,
+    "precipitacion": 0.0,
+    "viento_max": 11.3
+  },
+  "42.81642026221795,-1.64188468764142,2025-05-17": {
+    "altitud": 452.0,
+    "temperatura_max": 20.9,
+    "humedad_media": 80,
+    "precipitacion": 0.0,
+    "viento_max": 14.0
+  },
+  "41.76226558180273,-2.4691660277118626,2025-02-09": {
+    "altitud": 1065.0,
+    "temperatura_max": 9.4,
+    "humedad_media": 84,
+    "precipitacion": 0.0,
+    "viento_max": 17.7
+  },
+  "37.40844706024374,-1.5760483206663627,2025-02-16": {
+    "altitud": 8.0,
+    "temperatura_max": 22.1,
+    "humedad_media": 62,
+    "precipitacion": 0.0,
+    "viento_max": 11.9
+  },
+  "40.5405180080329,-3.6473567292042675,2025-03-02": {
+    "altitud": 675.0,
+    "temperatura_max": 3.7,
+    "humedad_media": 91,
+    "precipitacion": 16.3,
+    "viento_max": 17.7
+  },
+  "36.76421871301257,-2.6076324693102206,2025-05-10": {
+    "altitud": 7.0,
+    "temperatura_max": 22.9,
+    "humedad_media": 69,
+    "precipitacion": 1.0,
+    "viento_max": 23.9
+  },
+  "36.76421871301257,-2.6076324693102206,2025-05-11": {
+    "altitud": 7.0,
+    "temperatura_max": 23.3,
+    "humedad_media": 56,
+    "precipitacion": 0.0,
+    "viento_max": 26.9
+  },
+  "43.5322493,-5.660973299999999,2025-05-24": {
+    "altitud": 23.0,
+    "temperatura_max": 18.7,
+    "humedad_media": 77,
+    "precipitacion": 0.0,
+    "viento_max": 16.1
+  },
+  "43.370404855646065,-8.395752872478734,2025-05-31": {
+    "altitud": 11.0,
+    "temperatura_max": 21.1,
+    "humedad_media": 80,
+    "precipitacion": 0.2,
+    "viento_max": 16.8
+  },
+  "37.61332285976838,-2.311032884851074,2025-06-07": {
+    "altitud": 1265.0,
+    "temperatura_max": 30.9,
+    "humedad_media": 31,
+    "precipitacion": 0.0,
+    "viento_max": 19.4
+  },
+  "38.91768837135293,-6.351036005243143,2025-07-05": {
+    "altitud": 204.0,
+    "temperatura_max": 35.9,
+    "humedad_media": 42,
+    "precipitacion": 0.0,
+    "viento_max": 15.2
+  },
+  "41.726520131064326,2.449885775405284,2025-07-12": {
+    "altitud": 349.0,
+    "temperatura_max": 24.6,
+    "humedad_media": 92,
+    "precipitacion": 15.6,
+    "viento_max": 10.5
+  },
+  "37.40844706024374,-1.5760483206663627,2025-09-13": {
+    "altitud": 8.0,
+    "temperatura_max": 30.2,
+    "humedad_media": 61,
+    "precipitacion": 0.0,
+    "viento_max": 10.5
+  },
+  "38.97863397824626,-3.921871936711401,2025-04-12": {
+    "altitud": 635.0,
+    "temperatura_max": 18.5,
+    "humedad_media": 87,
+    "precipitacion": 9.0,
+    "viento_max": 18.3
+  },
+  "39.47149626661041,-6.38499771925585,2025-03-29": {
+    "altitud": 447.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 61,
+    "precipitacion": 0.0,
+    "viento_max": 19.2
+  },
+  "38.60306087211086,-0.12499086284650573,2025-02-22": {
+    "altitud": 228.0,
+    "temperatura_max": 18.1,
+    "humedad_media": 76,
+    "precipitacion": 9.6,
+    "viento_max": 9.1
+  },
+  "38.9874341325612,-1.8516228973547488,2025-03-23": {
+    "altitud": 693.0,
+    "temperatura_max": 10.7,
+    "humedad_media": 67,
+    "precipitacion": 0.3,
+    "viento_max": 23.6
+  },
+  "38.60306087211086,-0.12499086284650573,2025-02-23": {
+    "altitud": 228.0,
+    "temperatura_max": 13.1,
+    "humedad_media": 86,
+    "precipitacion": 9.6,
+    "viento_max": 21.1
+  },
+  "43.55583456661731,-5.922946749861934,2025-03-08": {
+    "altitud": 16.0,
+    "temperatura_max": 16.5,
+    "humedad_media": 72,
+    "precipitacion": 2.9,
+    "viento_max": 23.2
+  },
+  "43.55583456661731,-5.922946749861934,2025-03-09": {
+    "altitud": 16.0,
+    "temperatura_max": 16.4,
+    "humedad_media": 65,
+    "precipitacion": 0.1,
+    "viento_max": 19.3
+  },
+  "38.9874341325612,-1.8516228973547488,2025-03-22": {
+    "altitud": 693.0,
+    "temperatura_max": 11.5,
+    "humedad_media": 69,
+    "precipitacion": 3.7,
+    "viento_max": 35.2
+  },
+  "38.9067,1.4206,2025-09-28": {
+    "altitud": 12.0,
+    "temperatura_max": 27.1,
+    "humedad_media": 70,
+    "precipitacion": 0.0,
+    "viento_max": 16.0
+  },
+  "42.3008368633696,-1.9570603275063896,2025-07-26": {
+    "altitud": 358.0,
+    "temperatura_max": 28.5,
+    "humedad_media": 57,
+    "precipitacion": 0.0,
+    "viento_max": 22.8
+  },
+  "42.3008368633696,-1.9570603275063896,2025-07-27": {
+    "altitud": 358.0,
+    "temperatura_max": 28.8,
+    "humedad_media": 58,
+    "precipitacion": 0.0,
+    "viento_max": 26.5
+  },
+  "42.81642026221795,-1.64188468764142,2025-05-15": {
+    "altitud": 452.0,
+    "temperatura_max": 15.2,
+    "humedad_media": 88,
+    "precipitacion": 2.3,
+    "viento_max": 28.9
+  },
+  "41.726520131064326,2.449885775405284,2025-07-13": {
+    "altitud": 349.0,
+    "temperatura_max": 26.0,
+    "humedad_media": 81,
+    "precipitacion": 0.8,
+    "viento_max": 12.8
+  },
+  "37.61332285976838,-2.311032884851074,2025-06-08": {
+    "altitud": 1265.0,
+    "temperatura_max": 31.0,
+    "humedad_media": 32,
+    "precipitacion": 1.4,
+    "viento_max": 13.0
+  },
+  "41.48591657556463,-2.54033272666981,2025-07-19": {
+    "altitud": 934.0,
+    "temperatura_max": 28.2,
+    "humedad_media": 42,
+    "precipitacion": 0.0,
+    "viento_max": 18.0
+  },
+  "41.48591657556463,-2.54033272666981,2025-07-20": {
+    "altitud": 934.0,
+    "temperatura_max": 26.6,
+    "humedad_media": 42,
+    "precipitacion": 0.1,
+    "viento_max": 24.4
+  },
+  "35.29275393434908,-2.9401799240033992,2025-07-19": {
+    "altitud": 11.0,
+    "temperatura_max": 28.6,
+    "humedad_media": 51,
+    "precipitacion": 0.0,
+    "viento_max": 32.8
+  },
+  "39.46446559086315,-0.3626312538892215,2025-09-20": {
+    "altitud": 24.0,
+    "temperatura_max": 28.2,
+    "humedad_media": 72,
+    "precipitacion": 0.0,
+    "viento_max": 13.6
+  },
+  "35.8893874,-5.3213455,2025-10-05": {
+    "altitud": 18.0,
+    "temperatura_max": 24.7,
+    "humedad_media": 75,
+    "precipitacion": 0.0,
+    "viento_max": 22.2
+  },
+  "38.97863397824626,-3.921871936711401,2025-04-13": {
+    "altitud": 635.0,
+    "temperatura_max": 18.5,
+    "humedad_media": 85,
+    "precipitacion": 4.2,
+    "viento_max": 13.0
+  },
+  "50.87390677989798,6.1598629247112235,2025-04-26": {
+    "altitud": 167.0,
+    "temperatura_max": 17.5,
+    "humedad_media": 75,
+    "precipitacion": 0.0,
+    "viento_max": 14.6
+  },
+  "42.42917004566286,-8.64350563175256,2025-06-21": {
+    "altitud": 31.0,
+    "temperatura_max": 23.4,
+    "humedad_media": 82,
+    "precipitacion": 0.0,
+    "viento_max": 13.7
+  },
+  "42.42917004566286,-8.64350563175256,2025-06-22": {
+    "altitud": 31.0,
+    "temperatura_max": 26.4,
+    "humedad_media": 75,
+    "precipitacion": 0.0,
+    "viento_max": 17.2
+  },
+  "42.42917004566286,-8.64350563175256,2025-06-24": {
+    "altitud": 31.0,
+    "temperatura_max": 25.3,
+    "humedad_media": 81,
+    "precipitacion": 0.0,
+    "viento_max": 11.4
+  },
+  "42.42917004566286,-8.64350563175256,2025-06-26": {
+    "altitud": 31.0,
+    "temperatura_max": 24.6,
+    "humedad_media": 83,
+    "precipitacion": 0.2,
+    "viento_max": 13.4
+  },
+  "42.42917004566286,-8.64350563175256,2025-06-27": {
+    "altitud": 31.0,
+    "temperatura_max": 27.2,
+    "humedad_media": 84,
+    "precipitacion": 0.0,
+    "viento_max": 11.6
+  },
+  "42.42917004566286,-8.64350563175256,2025-06-29": {
+    "altitud": 31.0,
+    "temperatura_max": 30.2,
+    "humedad_media": 82,
+    "precipitacion": 0.0,
+    "viento_max": 10.3
+  },
+  "47.29077656045446,7.943490402616313,2025-09-07": {
+    "altitud": 439.0,
+    "temperatura_max": 23.3,
+    "humedad_media": 86,
+    "precipitacion": 0.0,
+    "viento_max": 6.8
+  },
+  "39.46446559086315,-0.3626312538892215,2025-04-27": {
+    "altitud": 24.0,
+    "temperatura_max": 21.9,
+    "humedad_media": 53,
+    "precipitacion": 0.0,
+    "viento_max": 14.5
+  },
+  "41.610788642602415,2.654972798542321,2025-10-05": {
+    "altitud": 3.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 74,
+    "precipitacion": 3.3,
+    "viento_max": 21.6
+  },
+  "39.84241250992374,3.1347538285829035,2025-05-10": {
+    "altitud": 10.0,
+    "temperatura_max": 22.3,
+    "humedad_media": 80,
+    "precipitacion": 0.0,
+    "viento_max": 18.2
+  },
+  "28.9639,-13.6495,2025-05-17": {
+    "altitud": 226.0,
+    "temperatura_max": 22.5,
+    "humedad_media": 63,
+    "precipitacion": 0.0,
+    "viento_max": 24.2
+  },
+  "42.85218001984149,-2.6684620106801415,2025-07-13": {
+    "altitud": 522.0,
+    "temperatura_max": 27.3,
+    "humedad_media": 78,
+    "precipitacion": 0.7,
+    "viento_max": 18.0
+  },
+  "41.07581002423283,1.1321953846405286,2025-05-11": {
+    "altitud": 5.0,
+    "temperatura_max": 22.6,
+    "humedad_media": 77,
+    "precipitacion": 7.2,
+    "viento_max": 14.9
+  },
+  "39.535897946818906,2.4545886014812046,2025-10-18": {
+    "altitud": 16.0,
+    "temperatura_max": 22.2,
+    "humedad_media": 67,
+    "precipitacion": 0.2,
+    "viento_max": 9.2
+  },
+  "39.46446559086315,-0.3626312538892215,2025-09-21": {
+    "altitud": 24.0,
+    "temperatura_max": 29.9,
+    "humedad_media": 70,
+    "precipitacion": 0.0,
+    "viento_max": 25.7
+  },
+  "42.99910584950904,-4.1377013921788,2025-02-02": {
+    "altitud": 851.0,
+    "temperatura_max": 5.3,
+    "humedad_media": 88,
+    "precipitacion": 6.9,
+    "viento_max": 11.4
+  },
+  "35.29275393434908,-2.9401799240033992,2025-07-20": {
+    "altitud": 11.0,
+    "temperatura_max": 29.9,
+    "humedad_media": 48,
+    "precipitacion": 0.0,
+    "viento_max": 29.2
+  },
+  "39.769308018565766,-0.1593177387486744,2025-05-11": {
+    "altitud": 0.0,
+    "temperatura_max": 24.7,
+    "humedad_media": 73,
+    "precipitacion": 0.0,
+    "viento_max": 24.8
+  },
+  "29.0617,-13.6756,2025-05-03": {
+    "altitud": 221.0,
+    "temperatura_max": 22.5,
+    "humedad_media": 71,
+    "precipitacion": 0.0,
+    "viento_max": 20.8
+  },
+  "28.665479599999998,-17.76185675,2025-05-31": {
+    "altitud": 0.0,
+    "temperatura_max": 26.1,
+    "humedad_media": 73,
+    "precipitacion": 0.0,
+    "viento_max": 14.5
+  },
+  "42.85218001984149,-2.6684620106801415,2025-06-07": {
+    "altitud": 522.0,
+    "temperatura_max": 20.6,
+    "humedad_media": 77,
+    "precipitacion": 0.3,
+    "viento_max": 20.3
+  },
+  "40.81206451296932,-2.7811880556264246,2025-09-14": {
+    "altitud": 1043.0,
+    "temperatura_max": 27.8,
+    "humedad_media": 37,
+    "precipitacion": 0.0,
+    "viento_max": 10.6
+  },
+  "43.460079197589806,-3.819510541904292,2025-09-21": {
+    "altitud": 33.0,
+    "temperatura_max": 18.0,
+    "humedad_media": 83,
+    "precipitacion": 8.3,
+    "viento_max": 29.9
+  },
+  "43.28677793448926,-2.171951846610425,2025-06-14": {
+    "altitud": 0.0,
+    "temperatura_max": 20.7,
+    "humedad_media": 89,
+    "precipitacion": 18.0,
+    "viento_max": 15.7
+  },
+  "38.984741480932904,1.5354508604278727,2025-03-15": {
+    "altitud": 15.0,
+    "temperatura_max": 13.7,
+    "humedad_media": 66,
+    "precipitacion": 0.7,
+    "viento_max": 23.0
+  },
+  "42.99910584950904,-4.1377013921788,2025-03-16": {
+    "altitud": 851.0,
+    "temperatura_max": 4.6,
+    "humedad_media": 83,
+    "precipitacion": 1.5,
+    "viento_max": 10.2
+  },
+  "39.565,2.503,2025-05-18": {
+    "altitud": 109.0,
+    "temperatura_max": 23.3,
+    "humedad_media": 62,
+    "precipitacion": 0.0,
+    "viento_max": 13.9
+  },
+  "43.4069,-3.845,2025-08-23": {
+    "altitud": 59.0,
+    "temperatura_max": 25.2,
+    "humedad_media": 78,
+    "precipitacion": 0.0,
+    "viento_max": 20.1
+  },
+  "37.402509585987,-5.9884487233200545,2025-03-16": {
+    "altitud": 11.0,
+    "temperatura_max": 17.5,
+    "humedad_media": 83,
+    "precipitacion": 3.6,
+    "viento_max": 18.1
+  },
+  "36.4173,-6.1458,2025-05-18": {
+    "altitud": 20.0,
+    "temperatura_max": 24.0,
+    "humedad_media": 62,
+    "precipitacion": 0.0,
+    "viento_max": 27.0
+  },
+  "40.600727,-3.7079745,2025-05-17": {
+    "altitud": 728.0,
+    "temperatura_max": 23.6,
+    "humedad_media": 58,
+    "precipitacion": 0.0,
+    "viento_max": 12.8
+  },
+  "43.5358,-5.9744,2025-04-27": {
+    "altitud": 132.0,
+    "temperatura_max": 16.4,
+    "humedad_media": 82,
+    "precipitacion": 0.0,
+    "viento_max": 20.3
+  },
+  "43.5424,-6.5355,2025-09-28": {
+    "altitud": 23.0,
+    "temperatura_max": 19.1,
+    "humedad_media": 84,
+    "precipitacion": 2.3,
+    "viento_max": 20.8
+  },
+  "40.122,-3.8459,2025-05-18": {
+    "altitud": 588.0,
+    "temperatura_max": 28.8,
+    "humedad_media": 45,
+    "precipitacion": 0.0,
+    "viento_max": 22.3
+  },
+  "42.4669092,-2.9107298,2025-03-16": {
+    "altitud": 600.0,
+    "temperatura_max": 8.4,
+    "humedad_media": 79,
+    "precipitacion": 2.7,
+    "viento_max": 10.1
+  },
+  "42.062083725644094,-1.603036458163593,2025-06-29": {
+    "altitud": 262.0,
+    "temperatura_max": 39.3,
+    "humedad_media": 40,
+    "precipitacion": 0.0,
+    "viento_max": 17.1
+  },
+  "42.7962,-1.6158,2025-03-16": {
+    "altitud": 439.0,
+    "temperatura_max": 8.9,
+    "humedad_media": 81,
+    "precipitacion": 0.4,
+    "viento_max": 15.9
+  },
+  "42.062083725644094,-1.603036458163593,2025-06-28": {
+    "altitud": 262.0,
+    "temperatura_max": 38.6,
+    "humedad_media": 44,
+    "precipitacion": 0.0,
+    "viento_max": 20.0
+  },
+  "37.6051,-0.9862,2025-05-18": {
+    "altitud": 9.0,
+    "temperatura_max": 25.7,
+    "humedad_media": 66,
+    "precipitacion": 0.0,
+    "viento_max": 16.9
+  },
+  "36.8512151,-2.4521658,2025-06-01": {
+    "altitud": 54.0,
+    "temperatura_max": 31.9,
+    "humedad_media": 40,
+    "precipitacion": 0.0,
+    "viento_max": 9.9
+  },
+  "35.8893874,-5.3213455,2025-04-27": {
+    "altitud": 18.0,
+    "temperatura_max": 20.5,
+    "humedad_media": 83,
+    "precipitacion": 0.2,
+    "viento_max": 28.5
+  },
+  "27.88383182415349,-15.723825267285005,2025-09-20": {
+    "altitud": 250.0,
+    "temperatura_max": 35.9,
+    "humedad_media": 29,
+    "precipitacion": 0.0,
+    "viento_max": 30.6
+  },
+  "41.6096487,-3.400636,2025-02-15": {
+    "altitud": 846.0,
+    "temperatura_max": 16.3,
+    "humedad_media": 74,
+    "precipitacion": 0.0,
+    "viento_max": 14.5
+  },
+  "42.7946,-4.2602,2025-06-14": {
+    "altitud": 903.0,
+    "temperatura_max": 20.0,
+    "humedad_media": 86,
+    "precipitacion": 0.1,
+    "viento_max": 23.5
+  },
+  "35.29275393434908,-2.9401799240033992,2025-02-14": {
+    "altitud": 11.0,
+    "temperatura_max": 18.5,
+    "humedad_media": 74,
+    "precipitacion": 0.0,
+    "viento_max": 12.8
+  },
+  "35.29275393434908,-2.9401799240033992,2025-06-21": {
+    "altitud": 11.0,
+    "temperatura_max": 30.7,
+    "humedad_media": 65,
+    "precipitacion": 0.0,
+    "viento_max": 16.7
+  },
+  "40.4168,-3.7038,2025-12-31": {
+    "altitud": 666.0,
+    "temperatura_max": 7.9,
+    "humedad_media": 83,
+    "precipitacion": 0.0,
+    "viento_max": 8.0
+  },
+  "37.4062,-1.5839,2025-02-16": {
+    "altitud": 18.0,
+    "temperatura_max": 22.0,
+    "humedad_media": 62,
+    "precipitacion": 0.0,
+    "viento_max": 11.9
+  },
+  "38.9942,-1.8585,2025-03-22": {
+    "altitud": 690.0,
+    "temperatura_max": 11.5,
+    "humedad_media": 69,
+    "precipitacion": 3.7,
+    "viento_max": 35.2
+  },
+  "42.305,-1.9653,2025-07-26": {
+    "altitud": 352.0,
+    "temperatura_max": 28.5,
+    "humedad_media": 57,
+    "precipitacion": 0.0,
+    "viento_max": 22.8
+  },
+  "42.1194,2.7644,2025-07-13": {
+    "altitud": 174.0,
+    "temperatura_max": 27.0,
+    "humedad_media": 82,
+    "precipitacion": 2.0,
+    "viento_max": 11.6
+  },
+  "36.6222,-4.4994,2025-06-08": {
+    "altitud": 48.0,
+    "temperatura_max": 29.1,
+    "humedad_media": 50,
+    "precipitacion": 0.0,
+    "viento_max": 11.5
+  },
+  "35.2923,-2.9381,2025-07-19": {
+    "altitud": 5.0,
+    "temperatura_max": 28.6,
+    "humedad_media": 51,
+    "precipitacion": 0.0,
+    "viento_max": 32.8
+  },
+  "39.4699,-0.3763,2025-04-27": {
+    "altitud": 17.0,
+    "temperatura_max": 21.9,
+    "humedad_media": 53,
+    "precipitacion": 0.0,
+    "viento_max": 14.5
+  },
+  "39.4699,-0.3763,2025-09-21": {
+    "altitud": 17.0,
+    "temperatura_max": 29.9,
+    "humedad_media": 70,
+    "precipitacion": 0.0,
+    "viento_max": 25.7
+  },
+  "35.2923,-2.9381,2025-07-20": {
+    "altitud": 5.0,
+    "temperatura_max": 29.9,
+    "humedad_media": 48,
+    "precipitacion": 0.0,
+    "viento_max": 29.2
+  },
+  "35.2923,-2.9381,2025-02-14": {
+    "altitud": 5.0,
+    "temperatura_max": 18.5,
+    "humedad_media": 74,
+    "precipitacion": 0.0,
+    "viento_max": 12.8
+  },
+  "35.2923,-2.9381,2025-06-21": {
+    "altitud": 5.0,
+    "temperatura_max": 30.7,
+    "humedad_media": 65,
+    "precipitacion": 0.0,
+    "viento_max": 16.7
+  }
+}

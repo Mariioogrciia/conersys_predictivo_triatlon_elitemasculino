@@ -1,0 +1,72 @@
+[
+  {
+    "rankingID": 0,
+    "rankingTypeId": 9.0,
+    "date": "2025-10-12T22:46:00.803",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/9/2025_10_12 RK JV y JN MASCULINO.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/9/20251012224726_strip_10_12 RK JV y JN MASCULINO.xlsx",
+    "isActive": true,
+    "Key": "1760309160803",
+    "dateCreated": "2025-10-12T22:47:26.59"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 9.0,
+    "date": "2025-06-10T18:48:12.093",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/9/20250610184821_2025_06_10 RK JV y JN MASCULINO.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/9/20250610184822_strip_2025_06_10 RK JV y JN MASCULINO.xlsx",
+    "isActive": false,
+    "Key": "1749581292093",
+    "dateCreated": "2025-06-10T18:48:22.373"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 9.0,
+    "date": "2025-04-29T00:00:00",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/9/20250430103403_2025_04_29 RK JV y JN MASCULINO.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/9/20250430103403_strip_2025_04_29 RK JV y JN MASCULINO.xls",
+    "isActive": false,
+    "Key": "1745884800000",
+    "dateCreated": "2025-04-30T10:34:03.863"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 9.0,
+    "date": "2024-11-21T18:01:27.733",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/9/20241121180141_2024_11_21 RK JV y JN MASCULINO.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/9/20241121180141_strip_2024_11_21 RK JV y JN MASCULINO.xls",
+    "isActive": false,
+    "Key": "1732212087733",
+    "dateCreated": "2024-11-21T18:01:41.793"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 9.0,
+    "date": "2024-07-08T15:10:51",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/9/20240920151139_2024_07_08 RK JV y JN MASCULINO.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/9/20240920151139_strip_2024_07_08%20RK%20JV%20y%20JN%20MASCULINO.xls",
+    "isActive": false,
+    "Key": "1720451451000",
+    "dateCreated": "2024-09-20T15:11:39.743"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 9.0,
+    "date": "2024-06-07T15:06:58",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/9/20240920150720_2024_06_07 RK JV y JN MASCULINO.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/9/20240920150720_strip_2024_06_07%20RK%20JV%20y%20JN%20MASCULINO.xls",
+    "isActive": false,
+    "Key": "1717772818000",
+    "dateCreated": "2024-09-20T15:07:20.81"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 9.0,
+    "date": "2024-04-26T15:01:46",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/9/20240920150446_2024_04_26 RK JV y JN MASCULINO.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/9/20240920150446_strip_2024_04_26%20RK%20JV%20y%20JN%20MASCULINO.xls",
+    "isActive": false,
+    "Key": "1714143706000",
+    "dateCreated": "2024-09-20T15:04:46.833"
+  }
+]

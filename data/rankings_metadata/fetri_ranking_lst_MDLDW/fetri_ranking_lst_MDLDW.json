@@ -1,0 +1,122 @@
+[
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2025-11-19T00:00:00",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/4/2025_11_19 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20251201205052_strip_11_19 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "isActive": true,
+    "Key": "1763510400000",
+    "dateCreated": "2025-12-01T20:50:53.16"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2025-11-14T16:05:06.81",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/4/2025_11_14 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20251114160517_strip_11_14 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1763136306810",
+    "dateCreated": "2025-11-14T16:05:17.69"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2025-10-11T00:00:00",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/4/2025_10_11 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20251012124249_strip_10_11 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1760140800000",
+    "dateCreated": "2025-10-12T12:42:49.427"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2025-06-12T18:23:54.913",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20250612182401_2025_06_12 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20250612182401_strip_2025_06_12 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1749752634913",
+    "dateCreated": "2025-06-12T18:24:01.493"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2025-05-14T00:00:00",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20250515023639_2025_05_14 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20250515023639_strip_2025_05_14 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1747180800000",
+    "dateCreated": "2025-05-15T02:36:39.633"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2024-11-14T16:35:15.607",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20241114163526_2024_11_14 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20241114163527_strip_2024_11_14 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1731602115607",
+    "dateCreated": "2024-11-14T16:35:27.28"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2024-11-14T00:00:00",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20241121181704_2024_11_14 RANKING-Triatlon Media y Larga Distancia-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20241121181704_strip_2024_11_14 RANKING-Triatlon Media y Larga Distancia-Femenina.xls",
+    "isActive": false,
+    "Key": "1731542400000",
+    "dateCreated": "2024-11-21T18:17:04.663"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2024-11-11T12:40:17",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/4/20241112124024_2024_11_11 RANKING-Triatlon Media y Larga Distancia-Femenina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/4/20241112153114_RANKING-Triatlon Media y Larga Distancia-Femenina.xls",
+    "isActive": false,
+    "Key": "1731328817000",
+    "dateCreated": "2024-11-12T12:40:26.89"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2024-09-05T09:46:19",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/4/20240930094627_RANKING-Triatlon Media y Larga Distancia-Femenina.xls",
+    "strippedDocumentUrl": null,
+    "isActive": false,
+    "Key": "1725529579000",
+    "dateCreated": "2024-09-30T09:46:28.183"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2024-09-02T10:52:05",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/4/20240920105223_2024_09_02 RANKING-Triatlon Media y Larga Distancia-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/4/20240920105224_strip_2024_09_02%20RANKING-Triatlon%20Media%20y%20Larga%20Distancia-Femenina.xls",
+    "isActive": false,
+    "Key": "1725274325000",
+    "dateCreated": "2024-09-20T10:52:24.41"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2024-06-11T00:00:00",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/4/20240923085947_20240920105124_2024_06_11 RANKING-Triatlon Media y Larga Distancia-Femenina (1).xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/4/20240923085947_strip_20240920105124_2024_06_11%20RANKING-Triatlon%20Media%20y%20Larga%20Distancia-Femenina%20(1).xls",
+    "isActive": false,
+    "Key": "1718064000000",
+    "dateCreated": "2024-09-23T08:59:48.127"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 4.0,
+    "date": "2024-06-10T18:17:22",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/4/20240920181735_2024_06_10 RANKING-Triatlon Media y Larga Distancia-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/4/20240920181735_strip_2024_06_10%20RANKING-Triatlon%20Media%20y%20Larga%20Distancia-Femenina.xls",
+    "isActive": false,
+    "Key": "1718043442000",
+    "dateCreated": "2024-09-20T18:17:35.72"
+  }
+]

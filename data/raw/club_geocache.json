@@ -1,0 +1,1976 @@
+{
+  "UNIVERSIDAD DE ALICANTE": {
+    "lat": 38.3850684,
+    "lng": -0.5146732,
+    "ciudad": "ALICANTE",
+    "provincia": "ALICANTE"
+  },
+  "PEÑOTA DENTAL ALUSIGMA": {
+    "lat": 43.3189646,
+    "lng": -3.0198633,
+    "ciudad": "PORTUGALETE",
+    "provincia": "BIZKAIA"
+  },
+  "SALTOKI TRIKIDEAK": {
+    "lat": 42.815686,
+    "lng": -1.6522353,
+    "ciudad": "PAMPLONA",
+    "provincia": "COMARCA DE PAMPLONA"
+  },
+  "TRIATLON INFORHOUSE SANTIAGO": {
+    "lat": 42.9127086,
+    "lng": -8.5142195,
+    "ciudad": "SANTIAGO DE COMPOSTELA",
+    "provincia": "SANTIAGO"
+  },
+  "CLUB DEPORTIVO DELIKIA": {
+    "lat": 40.4932097,
+    "lng": -3.5909321,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "CIDADE DE LUGO FLUVIAL": {
+    "lat": 42.8071209,
+    "lng": -7.6160914,
+    "ciudad": "PORTOMARÍN",
+    "provincia": "LUGO"
+  },
+  "C.T. LA BARROSA": {
+    "lat": 36.373594,
+    "lng": -6.1833806,
+    "ciudad": "CHICLANA DE LA FRONTERA",
+    "provincia": "BAHIA DE CADIZ"
+  },
+  "AMANDARRI TRIATLOI KLUBA": {
+    "lat": 43.3143976,
+    "lng": -2.6778593,
+    "ciudad": "GUERNICA Y LUNO",
+    "provincia": "BIZKAIA"
+  },
+  "TRIATLON FERROL": {
+    "lat": 43.5113053,
+    "lng": -8.2624767,
+    "ciudad": "FERROL",
+    "provincia": "FERROL"
+  },
+  "MONTILLA-CORDOBA TRIATLON": {
+    "lat": 37.5811178,
+    "lng": -4.6414726,
+    "ciudad": "MONTILLA",
+    "provincia": "CORDOBA"
+  },
+  "CLUB TRIATLÓN ORIHUELA": {
+    "lat": 38.0275575,
+    "lng": -0.9130957,
+    "ciudad": "ORIHUELA",
+    "provincia": "LA VEGA BAJA"
+  },
+  "CLUB TRIATLON OVIEDO": {
+    "lat": 43.3533452,
+    "lng": -5.8795096,
+    "ciudad": "OVIEDO",
+    "provincia": "ASTURIAS"
+  },
+  "C.E. ILLES BALEARS": {
+    "lat": 38.985918,
+    "lng": 1.5357983,
+    "ciudad": "SANTA EULÀRIA DES RIU",
+    "provincia": "EIVISSA"
+  },
+  "CLUB NATACIÓN LAS PALMAS": {
+    "lat": 28.1232455,
+    "lng": -15.4269342,
+    "ciudad": "LAS PALMAS DE GRAN CANARIA",
+    "provincia": "LAS PALMAS"
+  },
+  "CLUB TRIATLON MELILLA": {
+    "lat": 35.2918698,
+    "lng": -2.9409026,
+    "ciudad": "DESCONOCIDA",
+    "provincia": "MELILLA"
+  },
+  "ISBILYA - SLOPPY JOE´S": {
+    "lat": 37.3943436,
+    "lng": -5.9778413,
+    "ciudad": "SEVILLA",
+    "provincia": "SEVILLA"
+  },
+  "TRIATLON VICALVARO": {
+    "lat": 40.4018377,
+    "lng": -3.5950537,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "CLUB TRIATLÓN LORCA": {
+    "lat": 37.6951954,
+    "lng": -1.772291,
+    "ciudad": "LORCA",
+    "provincia": "ALTO GUADALENTIN"
+  },
+  "CLUB TRIATLON BOADILLA - BEONE": {
+    "lat": 40.7967565,
+    "lng": -6.2205344,
+    "ciudad": "LA FUENTE DE SAN ESTEBAN",
+    "provincia": "SALAMANCA"
+  },
+  "TRIATLÓN SANTANDER": {
+    "lat": 43.4618932,
+    "lng": -3.8100255,
+    "ciudad": "SANTANDER",
+    "provincia": "CANTABRIA"
+  },
+  "CASTRILLÓN TRIATLON": {
+    "lat": 43.5458244,
+    "lng": -5.9924295,
+    "ciudad": "CASTRILLÓN",
+    "provincia": "ASTURIAS"
+  },
+  "C.T. ARABI-YECLA": {
+    "lat": 38.6972612,
+    "lng": -1.2827652,
+    "ciudad": "YECLA",
+    "provincia": "ALTIPLANO"
+  },
+  "CLUB TRIATLON LAS ROZAS": {
+    "lat": 40.4942937,
+    "lng": -3.867936,
+    "ciudad": "LAS ROZAS DE MADRID",
+    "provincia": "MADRID"
+  },
+  "TENERIFE - RÉACTIVITÉ FISIOTERAPIA - IN SIDE LOGISTICS": {
+    "lat": 28.2935785,
+    "lng": -16.6214471,
+    "ciudad": "DESCONOCIDA",
+    "provincia": "CANARIAS"
+  },
+  "COMPLUTUM TRIATLÓN": {
+    "lat": 40.481954,
+    "lng": -3.363981,
+    "ciudad": "ALCALÁ DE HENARES",
+    "provincia": "MADRID"
+  },
+  "CLUB TRIATLON COMPOSTELA": {
+    "lat": 42.9064576,
+    "lng": -8.5192983,
+    "ciudad": "SANTIAGO DE COMPOSTELA",
+    "provincia": "SANTIAGO"
+  },
+  "TRIATLÓN TORRELAVEGA": {
+    "lat": 43.3487303,
+    "lng": -4.0515082,
+    "ciudad": "TORRELAVEGA",
+    "provincia": "CANTABRIA"
+  },
+  "CLUB TRIATLON LUGONES": {
+    "lat": 43.4043717,
+    "lng": -5.8121188,
+    "ciudad": "SIERO",
+    "provincia": "ASTURIAS"
+  },
+  "CLUB TRIATLON CASTELLON": {
+    "lat": 40.2518568,
+    "lng": -0.0615052,
+    "ciudad": "DESCONOCIDA",
+    "provincia": "CASTELLON"
+  },
+  "TRIATLON GIJON": {
+    "lat": 43.5449422,
+    "lng": -5.66275,
+    "ciudad": "GIJÓN",
+    "provincia": "ASTURIAS"
+  },
+  "C.D. TRIATLÓN FORJADORES CIUDAD REAL": {
+    "lat": 38.9419202,
+    "lng": -3.2581087,
+    "ciudad": "LA SOLANA",
+    "provincia": "CIUDAD REAL"
+  },
+  "OCEAN TRIATLÓN": {
+    "lat": 28.9961416,
+    "lng": -13.4907047,
+    "ciudad": "TEGUISE",
+    "provincia": "LAS PALMAS"
+  },
+  "ATLETICO S.SEBASTIAN": {
+    "lat": 43.3017713,
+    "lng": -1.9947094,
+    "ciudad": "SAN SEBASTIÁN",
+    "provincia": "GUIPUZCOA"
+  },
+  "C.D. OZONO-TCQ": {
+    "lat": 43.2562527,
+    "lng": -2.9242505,
+    "ciudad": "BILBAO",
+    "provincia": "BIZKAIA"
+  },
+  "CLUB TRIATLON LAS AMERICAS PARLA": {
+    "lat": 40.2199245,
+    "lng": -3.7656478,
+    "ciudad": "PARLA",
+    "provincia": "MADRID"
+  },
+  "CLUB TRIATLÓN ALMANSA": {
+    "lat": 38.8682065,
+    "lng": -1.0978627,
+    "ciudad": "ALMANSA",
+    "provincia": "ALBACETE"
+  },
+  "TRIATLON RIAS BAIXAS": {
+    "lat": 42.4014538,
+    "lng": -8.8519506,
+    "ciudad": "SANGENJO",
+    "provincia": "O SALNES"
+  },
+  "ALISIOS TRIATHLON": {
+    "lat": 28.4288621,
+    "lng": -16.3070755,
+    "ciudad": "SANTA CRUZ DE TENERIFE",
+    "provincia": "SANTA CRUZ DE TENERIFE"
+  },
+  "C.T. MÁLAGA": {
+    "lat": 36.7615185,
+    "lng": -4.4748558,
+    "ciudad": "MÁLAGA",
+    "provincia": "MALAGA-COSTA DEL SOL"
+  },
+  "C.D. VAS": {
+    "lat": 40.4278814,
+    "lng": -3.6853272,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "C.D. TRIATLON GRANADA": {
+    "lat": 37.1734995,
+    "lng": -3.5995337,
+    "ciudad": "GRANADA",
+    "provincia": "COMARCA DE LA VEGA DE GRANADA"
+  },
+  "C.D. CADIZ COSTA DE LA LUZ": {
+    "lat": 36.4538632,
+    "lng": -6.1554437,
+    "ciudad": "CHICLANA DE LA FRONTERA",
+    "provincia": "BAHIA DE CADIZ"
+  },
+  "C.D. LA MOLINERA": {
+    "lat": 40.8165575,
+    "lng": 0.0157003,
+    "ciudad": "MATARRAÑA",
+    "provincia": "TERUEL"
+  },
+  "C.D. TRIATLON EL EJIDO": {
+    "lat": 36.7743863,
+    "lng": -2.8124886,
+    "ciudad": "EL EJIDO",
+    "provincia": "ALMERIA"
+  },
+  "C.T. AL-FANADIC": {
+    "lat": 40.7355276,
+    "lng": -1.9442753,
+    "ciudad": "TIERZO",
+    "provincia": "GUADALAJARA"
+  },
+  "C.D. TRIATLÓN LAGUNA DE DUERO": {
+    "lat": 41.582811,
+    "lng": -4.7214404,
+    "ciudad": "LAGUNA DE DUERO",
+    "provincia": "VALLADOLID"
+  },
+  "TRIATLON VILAGARCIA": {
+    "lat": 42.5947625,
+    "lng": -8.7669178,
+    "ciudad": "VILAGARCÍA",
+    "provincia": "O SALNES"
+  },
+  "360 TEAM": {
+    "lat": 41.7235836,
+    "lng": 0.6640232,
+    "ciudad": "LA PORTELLA",
+    "provincia": "SEGRIA"
+  },
+  "TRIATLON GUERRITA ALCANTARILLA": {
+    "lat": 37.9685794,
+    "lng": -1.2124271,
+    "ciudad": "ALCANTARILLA",
+    "provincia": "MURCIA"
+  },
+  "VALLE ARANGUREN": {
+    "lat": 42.7752661,
+    "lng": -1.5754567,
+    "ciudad": "ARANGUREN",
+    "provincia": "COMARCA DE PAMPLONA"
+  },
+  "TRI-UR GAZIA": {
+    "lat": 41.6103056,
+    "lng": 1.7865735,
+    "ciudad": "EL BRUC",
+    "provincia": "ANOIA"
+  },
+  "CENTRO ASTURIANO DE OVIEDO TRIATLÓN": {
+    "lat": 43.3800085,
+    "lng": -5.8730206,
+    "ciudad": "OVIEDO",
+    "provincia": "ASTURIAS"
+  },
+  "C.D. TRIATLÓN GUADIATO": {
+    "lat": 38.1625319,
+    "lng": -5.0402195,
+    "ciudad": "DESCONOCIDA",
+    "provincia": "ANDALUCIA"
+  },
+  "CLUB TRIATHLON ALOHA": {
+    "lat": 40.4054878,
+    "lng": -3.7014668,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "C.P. MIJAS TRIATLON": {
+    "lat": 36.5466993,
+    "lng": -4.6304506,
+    "ciudad": "FUENGIROLA",
+    "provincia": "COSTA DEL SOL OCCIDENTAL"
+  },
+  "REAL CLUB MEDITERRANEO": {
+    "lat": 36.7144693,
+    "lng": -4.4137972,
+    "ciudad": "MÁLAGA",
+    "provincia": "MALAGA-COSTA DEL SOL"
+  },
+  "C.D. TRIATLON AL-ANDALUS": {
+    "lat": 37.2989468,
+    "lng": -6.2988636,
+    "ciudad": "PILAS",
+    "provincia": "SEVILLA"
+  },
+  "C.T. SULAYR": {
+    "lat": 36.9227089,
+    "lng": -3.492831,
+    "ciudad": "LANJARÓN",
+    "provincia": "COMARCA DE LA ALPUJARRA GRANADINA"
+  },
+  "TRIATLON MEZQUITA": {
+    "lat": 35.2957667,
+    "lng": -2.9451075,
+    "ciudad": "MELILLA",
+    "provincia": "MELILLA"
+  },
+  "TRIATLON CIERZO": {
+    "lat": 42.03501,
+    "lng": -1.6024291,
+    "ciudad": "TUDELA",
+    "provincia": "RIBERA"
+  },
+  "VK TRIATLON": {
+    "lat": 40.3858232,
+    "lng": -3.6486266,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "CLUB TRIATLÓN ACADEMIA CIVIL-CNSO": {
+    "lat": 43.5356098,
+    "lng": -5.6685485,
+    "ciudad": "GIJÓN",
+    "provincia": "ASTURIAS"
+  },
+  "PRO-TEAM TECNOLUZ": {
+    "lat": 38.3146073,
+    "lng": -0.5180258,
+    "ciudad": "ALICANTE",
+    "provincia": "ALICANTE"
+  },
+  "C.T. ALMERIA": {
+    "lat": 36.8685739,
+    "lng": -2.3120282,
+    "ciudad": "ALMERÍA",
+    "provincia": "ALMERIA"
+  },
+  "EMC TRIATLON": {
+    "lat": 37.4447894,
+    "lng": -5.9783984,
+    "ciudad": "SEVILLA",
+    "provincia": "SEVILLA"
+  },
+  "CT CARAVACA": {
+    "lat": 38.1046979,
+    "lng": -1.861118,
+    "ciudad": "CARAVACA DE LA CRUZ",
+    "provincia": "NOROESTE"
+  },
+  "TRIATLÓN PALENCIA": {
+    "lat": 42.4096322,
+    "lng": -4.6161004,
+    "ciudad": "DESCONOCIDA",
+    "provincia": "PALENCIA"
+  },
+  "CLUB TRIATLÓN ONDARRETA ALCORCÓN": {
+    "lat": 40.3445268,
+    "lng": -3.8174582,
+    "ciudad": "ALCORCÓN",
+    "provincia": "MADRID"
+  },
+  "C.A. ORIPPO DOS HERMANAS": {
+    "lat": 37.2888435,
+    "lng": -5.9142192,
+    "ciudad": "DOS HERMANAS",
+    "provincia": "SEVILLA"
+  },
+  "C.T. CAMALEÓN": {
+    "lat": 41.6647661,
+    "lng": -4.7198708,
+    "ciudad": "VALLADOLID",
+    "provincia": "VALLADOLID"
+  },
+  "C.D. TRIATLON NAZARI": {
+    "lat": 28.4675254,
+    "lng": -16.2536656,
+    "ciudad": "SANTA CRUZ DE TENERIFE",
+    "provincia": "SANTA CRUZ DE TENERIFE"
+  },
+  "TRIATLÓN ASTUDILLO": {
+    "lat": 42.1927215,
+    "lng": -4.2938662,
+    "ciudad": "ASTUDILLO",
+    "provincia": "PALENCIA"
+  },
+  "C.D. TRIATLON CARBONERAS": {
+    "lat": 36.9968699,
+    "lng": -1.8946552,
+    "ciudad": "CARBONERAS",
+    "provincia": "ALMERIA"
+  },
+  "TRIATLÓN TÍJOLA - OCIODEPORTE BAZA": {
+    "lat": 37.4014554,
+    "lng": -2.4982675,
+    "ciudad": "TÍJOLA",
+    "provincia": "VALLE DEL ALMANZORA"
+  },
+  "CLUB NATACIO OLOT": {
+    "lat": 42.1895139,
+    "lng": 2.5091035,
+    "ciudad": "OLOT",
+    "provincia": "GARROTXA"
+  },
+  "TRICAM - VILLAVICIOSA": {
+    "lat": 39.0122037,
+    "lng": -1.8878337,
+    "ciudad": "ALBACETE",
+    "provincia": "ALBACETE"
+  },
+  "TRIATLON VALDEBEBAS": {
+    "lat": 40.4818094,
+    "lng": -3.6164188,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "C.N. CATALUNYA": {
+    "lat": 41.7525512,
+    "lng": 0.6578036,
+    "ciudad": "ALBESA",
+    "provincia": "NOGUERA"
+  },
+  "C.N. SABADELL": {
+    "lat": 41.5397989,
+    "lng": 2.1326764,
+    "ciudad": "SABADELL",
+    "provincia": "VALLES OCCIDENTAL"
+  },
+  "C.T. TORREMOLINOS": {
+    "lat": 36.6242841,
+    "lng": -4.4995448,
+    "ciudad": "TORREMOLINOS",
+    "provincia": "COSTA DEL SOL OCCIDENTAL"
+  },
+  "A.D. CEHEGIN": {
+    "lat": 38.0902195,
+    "lng": -1.7953432,
+    "ciudad": "CEHEGÍN",
+    "provincia": "NOROESTE"
+  },
+  "C.T. FUENTE ÁLAMO": {
+    "lat": 38.7053213,
+    "lng": -1.4492231,
+    "ciudad": "FUENTE-ÁLAMO",
+    "provincia": "ALBACETE"
+  },
+  "TRIATLON PUERTO REAL": {
+    "lat": 36.5286856,
+    "lng": -6.1902161,
+    "ciudad": "PUERTO REAL",
+    "provincia": "BAHIA DE CADIZ"
+  },
+  "C.D. GALISPORT": {
+    "lat": 37.3693733,
+    "lng": -5.9811218,
+    "ciudad": "SEVILLA",
+    "provincia": "SEVILLA"
+  },
+  "DSC TRIATLON": {
+    "lat": 39.0008715,
+    "lng": -1.8580777,
+    "ciudad": "ALBACETE",
+    "provincia": "ALBACETE"
+  },
+  "TRIATLON ANTSOAIN": {
+    "lat": 42.8338,
+    "lng": -1.6396906,
+    "ciudad": "ANSOÁIN",
+    "provincia": "COMARCA DE PAMPLONA"
+  },
+  "CLUB NATACION METROPOLE": {
+    "lat": 28.1232455,
+    "lng": -15.4269342,
+    "ciudad": "LAS PALMAS DE GRAN CANARIA",
+    "provincia": "LAS PALMAS"
+  },
+  "GARRAITZ KIROL TALDEA": {
+    "lat": 43.366828,
+    "lng": -2.4954585,
+    "ciudad": "LEQUEITIO",
+    "provincia": "BIZKAIA"
+  },
+  "C.E. CERDANYOLA A.T.": {
+    "lat": 41.3917526,
+    "lng": 1.3350802,
+    "ciudad": "CABRA DEL CAMP",
+    "provincia": "ALTO CAMPO"
+  },
+  "TRIATLON LA VAL": {
+    "lat": 41.5187495,
+    "lng": -0.8412491,
+    "ciudad": "ZARAGOZA",
+    "provincia": "ZARAGOZA"
+  },
+  "TRIATLON BUELNA": {
+    "lat": 43.3928475,
+    "lng": -4.6146643,
+    "ciudad": "LLANES",
+    "provincia": "ASTURIAS"
+  },
+  "CLUB TRIATLON MORALEJA DE ENMEDIO": {
+    "lat": 40.2615532,
+    "lng": -3.8612117,
+    "ciudad": "MORALEJA DE ENMEDIO",
+    "provincia": "MADRID"
+  },
+  "TRIATLON DON BENITO": {
+    "lat": 38.9540269,
+    "lng": -5.8619466,
+    "ciudad": "DON BENITO",
+    "provincia": "BADAJOZ"
+  },
+  "ABLITAS TRIATLÓN": {
+    "lat": 41.9632692,
+    "lng": -1.5995123,
+    "ciudad": "ABLITAS",
+    "provincia": "RIBERA"
+  },
+  "C.N. MATARO": {
+    "lat": 41.5471331,
+    "lng": 2.4709929,
+    "ciudad": "MATARÓ",
+    "provincia": "MARESME"
+  },
+  "R3 RIPOLLET TRIATLÓN": {
+    "lat": 41.4967086,
+    "lng": 2.182112,
+    "ciudad": "MONTCADA I REIXAC",
+    "provincia": "VALLES OCCIDENTAL"
+  },
+  "CLUB TRIATLÓN CARTAGENA": {
+    "lat": 37.6155018,
+    "lng": -0.987511,
+    "ciudad": "CARTAGENA",
+    "provincia": "CAMPO DE CARTAGENA Y MAR MENOR"
+  },
+  "Z5 X-TREME": {
+    "lat": 43.2655352,
+    "lng": -5.7374453,
+    "ciudad": "MIERES",
+    "provincia": "ASTURIAS"
+  },
+  "A.D. SAN JUAN - DONIBANE K.E.": {
+    "lat": 41.7175163,
+    "lng": -0.8412902,
+    "ciudad": "ZARAGOZA",
+    "provincia": "ZARAGOZA"
+  },
+  "TRIATLÓN TETUÁN": {
+    "lat": 40.4605781,
+    "lng": -3.6982806,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "CLUB TRIATLON 28300 ARANJUEZ": {
+    "lat": 40.0438512,
+    "lng": -3.594262,
+    "ciudad": "ARANJUEZ",
+    "provincia": "MADRID"
+  },
+  "AMISTAT-NOVOMARHOTEL": {
+    "lat": 39.4703713,
+    "lng": -0.3506966,
+    "ciudad": "VALENCIA",
+    "provincia": "VALENCIA"
+  },
+  "C.D. TRIATLÓN HELLÍN": {
+    "lat": 38.5106649,
+    "lng": -1.6995137,
+    "ciudad": "HELLÍN",
+    "provincia": "ALBACETE"
+  },
+  "CLUB LAS ENCINAS DE BOADILLA": {
+    "lat": 40.4069,
+    "lng": -3.8761,
+    "ciudad": "BOADILLA DEL MONTE",
+    "provincia": "MADRID"
+  },
+  "CLUB DE TRIATLÓN KORPOREA SANTURTZI": {
+    "lat": 43.3283,
+    "lng": -3.0315,
+    "ciudad": "SANTURTZI",
+    "provincia": "BIZKAIA"
+  },
+  "GETXO TRIATLOI TALDEA": {
+    "lat": 43.3484,
+    "lng": -3.0119,
+    "ciudad": "GETXO",
+    "provincia": "BIZKAIA"
+  },
+  "C.D. CHICLANERO": {
+    "lat": 37.4006699,
+    "lng": -5.9607491,
+    "ciudad": "SEVILLA",
+    "provincia": "SEVILLA"
+  },
+  "SESTAO TRIATLOI TALDEA": {
+    "lat": 43.3081,
+    "lng": -3.0089,
+    "ciudad": "SESTAO",
+    "provincia": "BIZKAIA"
+  },
+  "E.M. EL OLIVAR": {
+    "lat": 36.6543252,
+    "lng": -4.5160239,
+    "ciudad": "CORTIJO DE MAZA-EL OLIVAR",
+    "provincia": "MALAGA-COSTA DEL SOL"
+  },
+  "CLUB NATACIÓN PAMPLONA IZ4": {
+    "lat": 42.8157,
+    "lng": -1.6522,
+    "ciudad": "PAMPLONA",
+    "provincia": "NAVARRA"
+  },
+  "TKRONO TRIATLON GETXO": {
+    "lat": 43.3484,
+    "lng": -3.0119,
+    "ciudad": "GETXO",
+    "provincia": "BIZKAIA"
+  },
+  "CLUB DEPORTIVO BILBAO": {
+    "lat": 43.2630018,
+    "lng": -2.9350039,
+    "ciudad": "BILBAO",
+    "provincia": "BIZKAIA"
+  },
+  "CC VIANES": {
+    "lat": 36.9685136,
+    "lng": -3.2244726,
+    "ciudad": "JUVILES",
+    "provincia": "COMARCA DE LA ALPUJARRA GRANADINA"
+  },
+  "PANGEA TRIATLON": {
+    "lat": 41.3904067,
+    "lng": 2.1142626,
+    "ciudad": "BARCELONA",
+    "provincia": "BARCELONES"
+  },
+  "C.D. POSEIDON": {
+    "lat": 37.4044331,
+    "lng": -5.9559269,
+    "ciudad": "SEVILLA",
+    "provincia": "SEVILLA"
+  },
+  "CLUB DEPORTIVO TRIATLÓN ARANDA": {
+    "lat": 41.583371,
+    "lng": -1.6780373,
+    "ciudad": "DESCONOCIDA",
+    "provincia": "ARANDA"
+  },
+  "CDE ROZASPORT": {
+    "lat": 40.4943,
+    "lng": -3.8679,
+    "ciudad": "LAS ROZAS DE MADRID",
+    "provincia": "MADRID"
+  },
+  "CLUB NATACION CEDEIRA DELIKIA": {
+    "lat": 38.9681,
+    "lng": -0.1803,
+    "ciudad": "GANDIA",
+    "provincia": "VALENCIA"
+  },
+  "TRIGIJON": {
+    "lat": 43.5357,
+    "lng": -5.6615,
+    "ciudad": "GIJÓN",
+    "provincia": "ASTURIAS"
+  },
+  "CLUB ATLETISME ES RAIGUER DE MALLORCA": {
+    "lat": 37.6715,
+    "lng": -1.7017,
+    "ciudad": "LORCA",
+    "provincia": "MURCIA"
+  },
+  "CLUB MULTIDEPORTES OVIEDO - ADARSA": {
+    "lat": 43.3603,
+    "lng": -5.8448,
+    "ciudad": "OVIEDO",
+    "provincia": "ASTURIAS"
+  },
+  "TRI OURENSE": {
+    "lat": 42.3358,
+    "lng": -7.8639,
+    "ciudad": "OURENSE",
+    "provincia": "OURENSE"
+  },
+  "CLUB TRIATLON MAR DE VIGO": {
+    "lat": 42.2319009,
+    "lng": -8.7341672,
+    "ciudad": "VIGO",
+    "provincia": "VIGO"
+  },
+  "C.T. BENALMADENA": {
+    "lat": 36.594519,
+    "lng": -4.572284,
+    "ciudad": "BENALMÁDENA",
+    "provincia": "COSTA DEL SOL OCCIDENTAL"
+  },
+  "C.A. PUEBLA": {
+    "lat": 42.0515835,
+    "lng": -6.6334809,
+    "ciudad": "PUEBLA DE SANABRIA",
+    "provincia": "ZAMORA"
+  },
+  "TRIATLÓN ALPEDRETE": {
+    "lat": 40.6599262,
+    "lng": -4.0251362,
+    "ciudad": "ALPEDRETE",
+    "provincia": "MADRID"
+  },
+  "TRIBIKE": {
+    "lat": 39.6632181,
+    "lng": -0.2101956,
+    "ciudad": "SAGUNTO",
+    "provincia": "VALENCIA"
+  },
+  "C.T.  JUMILLA": {
+    "lat": 38.4735408,
+    "lng": -1.3285417,
+    "ciudad": "JUMILLA",
+    "provincia": "ALTIPLANO"
+  },
+  "C.D. TRIATLON HUELVA": {
+    "lat": 37.2575874,
+    "lng": -6.9484945,
+    "ciudad": "HUELVA",
+    "provincia": "COMARCA METROPOLITANA DE HUELVA"
+  },
+  "C.T. BAHIA DE MALAGA": {
+    "lat": 36.8675226,
+    "lng": -2.4092414,
+    "ciudad": "ALMERÍA",
+    "provincia": "ALMERIA"
+  },
+  "TRIATLÓN POZUELO - LOS TIGRES": {
+    "lat": 38.8093497,
+    "lng": -2.101456,
+    "ciudad": "POZUELO",
+    "provincia": "ALBACETE"
+  },
+  "CLUB TRIATLÓN CAMPOS DE CASTILLA": {
+    "lat": 41.7852767,
+    "lng": -2.4772162,
+    "ciudad": "SORIA",
+    "provincia": "SORIA"
+  },
+  "C.T. AL-BALLUT": {
+    "lat": 40.7355276,
+    "lng": -1.9442753,
+    "ciudad": "TIERZO",
+    "provincia": "GUADALAJARA"
+  },
+  "TRIATLON VILLALBILLA": {
+    "lat": 40.4323665,
+    "lng": -3.2987815,
+    "ciudad": "VILLALBILLA",
+    "provincia": "MADRID"
+  },
+  "MUNIBE K.T.": {
+    "lat": 43.3125431,
+    "lng": -2.0025496,
+    "ciudad": "SAN SEBASTIÁN",
+    "provincia": "GUIPUZCOA"
+  },
+  "TRIATLÓN ARGANDA": {
+    "lat": 41.1162048,
+    "lng": -4.9611667,
+    "ciudad": "MORALEJA DE MATACABRAS",
+    "provincia": "AVILA"
+  },
+  "SLY": {
+    "lat": 42.3400844,
+    "lng": -3.7036225,
+    "ciudad": "BURGOS",
+    "provincia": "BURGOS"
+  },
+  "BILBAOTRI": {
+    "lat": 43.263,
+    "lng": -2.935,
+    "ciudad": "BILBAO",
+    "provincia": "BIZKAIA"
+  },
+  "CLUB TRIATLON TRES CANTOS": {
+    "lat": 40.6012354,
+    "lng": -3.7038475,
+    "ciudad": "TRES CANTOS",
+    "provincia": "MADRID"
+  },
+  "C.T. CHICLANA": {
+    "lat": 43.5658924,
+    "lng": -7.2653169,
+    "ciudad": "FOZ",
+    "provincia": "MARIÑA CENTRAL"
+  },
+  "CLUB TRIATLÓN ALBACETE RES": {
+    "lat": 38.9942,
+    "lng": -1.8585,
+    "ciudad": "ALBACETE",
+    "provincia": "ALBACETE"
+  },
+  "CLUB DE TRIATLÓN DIABLILLOS DE RIVAS": {
+    "lat": 40.3543,
+    "lng": -3.5308,
+    "ciudad": "RIVAS-VACIAMADRID",
+    "provincia": "MADRID"
+  },
+  "DEPORAMA TRIATLÓN SORIANO": {
+    "lat": 41.764,
+    "lng": -2.4688,
+    "ciudad": "SORIA",
+    "provincia": "SORIA"
+  },
+  "CLUB TRIATLON TRITONES RIOJA": {
+    "lat": 42.4627,
+    "lng": -2.445,
+    "ciudad": "LOGROÑO",
+    "provincia": "LA RIOJA"
+  },
+  "C.E.A. BETERA": {
+    "lat": 39.5921,
+    "lng": -0.4578,
+    "ciudad": "BÉTERA",
+    "provincia": "VALENCIA"
+  },
+  "STADIUM CASABLANCA MAPEI": {
+    "lat": 41.6488,
+    "lng": -0.8891,
+    "ciudad": "ZARAGOZA",
+    "provincia": "ZARAGOZA"
+  },
+  "C.D.T RESISTENTIA T3": {
+    "lat": 28.1394395,
+    "lng": -16.7394564,
+    "ciudad": "ADEJE",
+    "provincia": "SANTA CRUZ DE TENERIFE"
+  },
+  "TRIATLÓ ALGEMESI": {
+    "lat": 39.1891,
+    "lng": -0.4366,
+    "ciudad": "ALGEMESÍ",
+    "provincia": "VALENCIA"
+  },
+  "A.D. NAUTICO DE NARON": {
+    "lat": 43.5014,
+    "lng": -8.1925,
+    "ciudad": "NARÓN",
+    "provincia": "A CORUÑA"
+  },
+  "CLUB NATACIÓ BARCELONA FASTTRIATLON": {
+    "lat": 41.3851,
+    "lng": 2.1734,
+    "ciudad": "BARCELONA",
+    "provincia": "BARCELONA"
+  },
+  "AD TRIATLÓN ECOSPORT ALCOBENDAS": {
+    "lat": 40.5475,
+    "lng": -3.6421,
+    "ciudad": "ALCOBENDAS",
+    "provincia": "MADRID"
+  },
+  "C.E. KATOA BARCELONA": {
+    "lat": 41.3851,
+    "lng": 2.1734,
+    "ciudad": "BARCELONA",
+    "provincia": "BARCELONA"
+  },
+  "BULL PROJECT TRIATLON": {
+    "lat": 43.4618932,
+    "lng": -3.8100255,
+    "ciudad": "SANTANDER",
+    "provincia": "CANTABRIA"
+  },
+  "C.T. TRAGAMILLAS-VIATOR-MERCALUZ": {
+    "lat": 41.0506674,
+    "lng": -0.1299694,
+    "ciudad": "ALCAÑIZ",
+    "provincia": "BAJO ARAGON"
+  },
+  "TRI INFINITY MÓSTOLES": {
+    "lat": 40.3232,
+    "lng": -3.8676,
+    "ciudad": "MÓSTOLES",
+    "provincia": "MADRID"
+  },
+  "CLUB NATACION REALES": {
+    "lat": 28.350311,
+    "lng": -16.5849518,
+    "ciudad": "LOS REALEJOS",
+    "provincia": "SANTA CRUZ DE TENERIFE"
+  },
+  "LA 208 TRIATLON CLUB DE ELCHE": {
+    "lat": 38.2653307,
+    "lng": -0.6988391,
+    "ciudad": "ELCHE",
+    "provincia": "ALICANTE"
+  },
+  "C.D.E.TRIATLON SAN SEBASTIAN DE LOS REYES": {
+    "lat": 43.3183,
+    "lng": -1.9812,
+    "ciudad": "SAN SEBASTIÁN",
+    "provincia": "GIPUZKOA"
+  },
+  "CD TRIATLÓN LACERTA": {
+    "lat": 40.9481192,
+    "lng": -4.1172101,
+    "ciudad": "SEGOVIA",
+    "provincia": "SEGOVIA"
+  },
+  "C.T.  MURCIA UNIDATA": {
+    "lat": 37.9922,
+    "lng": -1.1307,
+    "ciudad": "MURCIA",
+    "provincia": "MURCIA"
+  },
+  "TRANSNATUR TRIATLÓN EUROPA": {
+    "lat": 41.6915847,
+    "lng": -0.9101268,
+    "ciudad": "ZARAGOZA",
+    "provincia": "ZARAGOZA"
+  },
+  "CLUB NORTH SPORT OVIEDO": {
+    "lat": 43.3603,
+    "lng": -5.8448,
+    "ciudad": "OVIEDO",
+    "provincia": "ASTURIAS"
+  },
+  "TRIPUÇOL": {
+    "lat": 39.6172229,
+    "lng": -0.3028272,
+    "ciudad": "PUZOL",
+    "provincia": "VALENCIA"
+  },
+  "C.D. TRICLUB BABYSCHOOL": {
+    "lat": 37.7728858,
+    "lng": -3.7883289,
+    "ciudad": "JAÉN",
+    "provincia": "JAÉN"
+  },
+  "TRIFENIX TOLEDO": {
+    "lat": 39.8628,
+    "lng": -4.0273,
+    "ciudad": "TOLEDO",
+    "provincia": "TOLEDO"
+  },
+  "TRIATLON SQUALI CARABANCHEL": {
+    "lat": 40.416782,
+    "lng": -3.703507,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "CHAMO DIAZ": {
+    "lat": 39.4745175,
+    "lng": -6.3716761,
+    "ciudad": "CÁCERES",
+    "provincia": "CÁCERES"
+  },
+  "TRITRAIN4YOU MÁLAGA": {
+    "lat": 36.7213,
+    "lng": -4.4214,
+    "ciudad": "MÁLAGA",
+    "provincia": "MÁLAGA"
+  },
+  "TRIATLÓN ARCHENA SIPCAM": {
+    "lat": 38.1178119,
+    "lng": -1.3025236,
+    "ciudad": "ARCHENA",
+    "provincia": "VALLE DE RICOTE"
+  },
+  "ANTHUS TRIATLON": {
+    "lat": 37.2575874,
+    "lng": -6.9484945,
+    "ciudad": "HUELVA",
+    "provincia": "HUELVA"
+  },
+  "HIRU HERRI A. T.": {
+    "lat": 42.8230299,
+    "lng": -1.614076,
+    "ciudad": "BURLADA",
+    "provincia": "NAVARRA"
+  },
+  "APTRI-UNIVERSIDAD DE OVIEDO": {
+    "lat": 43.3603,
+    "lng": -5.8448,
+    "ciudad": "OVIEDO",
+    "provincia": "ASTURIAS"
+  },
+  "CD TRIATLÓN BOMBEROS VALLADOLID": {
+    "lat": 41.6523,
+    "lng": -4.7245,
+    "ciudad": "VALLADOLID",
+    "provincia": "VALLADOLID"
+  },
+  "GALDAKAOKO MOZOILO TRIATHLON KLUB": {
+    "lat": 43.2307,
+    "lng": -2.8449,
+    "ciudad": "GALDAKAO",
+    "provincia": "BIZKAIA"
+  },
+  "C.D. GALOSPORT": {
+    "lat": 36.8685739,
+    "lng": -2.3120282,
+    "ciudad": "ALMERÍA",
+    "provincia": "ALMERÍA"
+  },
+  "ZARAUZKO TRIATLOI ELKARTEA": {
+    "lat": 43.2834873,
+    "lng": -2.1723467,
+    "ciudad": "ZARAUZ",
+    "provincia": "GIPUZKOA"
+  },
+  "BIOSNAR HONDARRIBIKO T.K.": {
+    "lat": 43.3624468,
+    "lng": -1.7914309,
+    "ciudad": "FUENTERRABÍA",
+    "provincia": "GIPUZKOA"
+  },
+  "VETUSTA UNIVERSIDAD DE OVIEDO TRIATLÓN": {
+    "lat": 43.3603,
+    "lng": -5.8448,
+    "ciudad": "OVIEDO",
+    "provincia": "ASTURIAS"
+  },
+  "AZKOITRI TRIATLOI KLUBA": {
+    "lat": 43.1781602,
+    "lng": -2.3114989,
+    "ciudad": "AZCOITIA",
+    "provincia": "GIPUZKOA"
+  },
+  "C.D.A. 42195.ES VITORIA-GASTEIZ": {
+    "lat": 42.8467,
+    "lng": -2.6717,
+    "ciudad": "VITORIA-GASTEIZ",
+    "provincia": "ÁLAVA"
+  },
+  "C.T.  ÁGUILAS PRIMAFLOR": {
+    "lat": 37.4062,
+    "lng": -1.5839,
+    "ciudad": "ÁGUILAS",
+    "provincia": "MURCIA"
+  },
+  "CLUB DEPORTIVO CAMPUS UNIVERSITARIO DE CEUTA": {
+    "lat": 35.8894,
+    "lng": -5.3198,
+    "ciudad": "CEUTA",
+    "provincia": "CEUTA"
+  },
+  "CLUB ATLETICO MELILLA": {
+    "lat": 35.2923,
+    "lng": -2.9381,
+    "ciudad": "MELILLA",
+    "provincia": "MELILLA"
+  },
+  "TRIDINGOTEAMCEUTA": {
+    "lat": 35.8894,
+    "lng": -5.3198,
+    "ciudad": "CEUTA",
+    "provincia": "CEUTA"
+  },
+  "ESCUELA DE TRIATLÓN SALMANTINA": {
+    "lat": 40.9701,
+    "lng": -5.6635,
+    "ciudad": "SALAMANCA",
+    "provincia": "SALAMANCA"
+  },
+  "CLUB ATLÈTIC MALLORCA": {
+    "lat": 37.6715,
+    "lng": -1.7017,
+    "ciudad": "LORCA",
+    "provincia": "MURCIA"
+  },
+  "NATACION PABELLON OURENSE": {
+    "lat": 42.3358,
+    "lng": -7.8639,
+    "ciudad": "OURENSE",
+    "provincia": "OURENSE"
+  },
+  "CLUB TRIDENTE TRIATLÓN TINAJO": {
+    "lat": 29.0617,
+    "lng": -13.6756,
+    "ciudad": "TINAJO",
+    "provincia": "LAS PALMAS"
+  },
+  "ADSEVILLA": {
+    "lat": 37.3891,
+    "lng": -5.9845,
+    "ciudad": "SEVILLA",
+    "provincia": "SEVILLA"
+  },
+  "CLUB RIOJA TRIATLÓN": {
+    "lat": 42.2814642,
+    "lng": -2.482805,
+    "ciudad": "DESCONOCIDA",
+    "provincia": "LA RIOJA"
+  },
+  "CD AOIZ": {
+    "lat": 42.7825786,
+    "lng": -1.3711469,
+    "ciudad": "AOIZ",
+    "provincia": "PREPIRINEO"
+  },
+  "TRIATLÓN PISUERGA-TRIPI": {
+    "lat": 42.5359838,
+    "lng": -4.2680635,
+    "ciudad": "ZARZOSA DE RÍO PISUERGA",
+    "provincia": "BURGOS"
+  },
+  "CLUB TRIATLÓ GANDIA": {
+    "lat": 38.9681,
+    "lng": -0.1803,
+    "ciudad": "GANDIA",
+    "provincia": "VALENCIA"
+  },
+  "CLUB TRIATLON CEUTA": {
+    "lat": 35.8894,
+    "lng": -5.3198,
+    "ciudad": "CEUTA",
+    "provincia": "CEUTA"
+  },
+  "C.D. TRIATLÓN FUENTES": {
+    "lat": 39.9503682,
+    "lng": -2.0210007,
+    "ciudad": "FUENTES",
+    "provincia": "CUENCA"
+  },
+  "CLUB TRIATLON ÁNADE": {
+    "lat": 40.4234383,
+    "lng": -3.7073733,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "CLUB TRIATLÓN JEREZ DE LOS CABALLEROS": {
+    "lat": 38.3201991,
+    "lng": -6.7713389,
+    "ciudad": "JEREZ DE LOS CABALLEROS",
+    "provincia": "BADAJOZ"
+  },
+  "CLUB MARATHON MALLORCA": {
+    "lat": 39.5696,
+    "lng": 2.6502,
+    "ciudad": "PALMA DE MALLORCA",
+    "provincia": "BALEARES"
+  },
+  "TRIATLON VILLALBA": {
+    "lat": 41.4615631,
+    "lng": -2.4823235,
+    "ciudad": "COSCURITA",
+    "provincia": "SORIA"
+  },
+  "HOSPITAL PERPETUO SOCORRO TRIATLON": {
+    "lat": 38.9896128,
+    "lng": -1.8720843,
+    "ciudad": "ALBACETE",
+    "provincia": "ALBACETE"
+  },
+  "CLUB TRIATLON NH": {
+    "lat": 40.4390277,
+    "lng": -3.692912,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "ANTXINTXIKA DEBAGOIENA TRIATLOI TALDEA": {
+    "lat": 43.1248632,
+    "lng": -2.4294921,
+    "ciudad": "VERGARA",
+    "provincia": "GIPUZKOA"
+  },
+  "C.D.CICLISTA VIBIKE": {
+    "lat": 42.8505845,
+    "lng": -2.66145,
+    "ciudad": "VITORIA",
+    "provincia": "CUADRILLA DE VITORIA"
+  },
+  "CLUB DE TRIATLÓN CALIMA": {
+    "lat": 40.3445852,
+    "lng": -3.8120965,
+    "ciudad": "ALCORCÓN",
+    "provincia": "MADRID"
+  },
+  "YEPA! TRIATLOI KLUBA": {
+    "lat": 43.3224219,
+    "lng": -1.9838889,
+    "ciudad": "SAN SEBASTIÁN",
+    "provincia": "GIPUZKOA"
+  },
+  "CLUB TRIATLÓN VILLANUEVA DE LA SERENA": {
+    "lat": 38.9736819,
+    "lng": -5.8003669,
+    "ciudad": "VILLANUEVA DE LA SERENA",
+    "provincia": "BADAJOZ"
+  },
+  "CLUB TRIATLÓN MARCHAMALO": {
+    "lat": 40.668958,
+    "lng": -3.2013493,
+    "ciudad": "MARCHAMALO",
+    "provincia": "GUADALAJARA"
+  },
+  "QUIJOTES TRIATLÓN ALCALÁ": {
+    "lat": 40.482,
+    "lng": -3.364,
+    "ciudad": "ALCALÁ DE HENARES",
+    "provincia": "MADRID"
+  },
+  "TRIATLÓN UNIVERSITARIO DE MADRID": {
+    "lat": 40.4813101,
+    "lng": -3.6872735,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "TRI-MUNDOS": {
+    "lat": 41.6103056,
+    "lng": 1.7865735,
+    "ciudad": "EL BRUC",
+    "provincia": "BARCELONA"
+  },
+  "CD SORIA 9": {
+    "lat": 41.764,
+    "lng": -2.4688,
+    "ciudad": "SORIA",
+    "provincia": "SORIA"
+  },
+  "TRIATLÓN ÁVILA": {
+    "lat": 40.657195,
+    "lng": -4.6626677,
+    "ciudad": "ÁVILA",
+    "provincia": "ÁVILA"
+  },
+  "C.D. LAURUS TRIATLON": {
+    "lat": 42.4655182,
+    "lng": -2.4481631,
+    "ciudad": "LOGROÑO",
+    "provincia": "LA RIOJA"
+  },
+  "TADER MOLINA": {
+    "lat": 38.0583404,
+    "lng": -1.2101836,
+    "ciudad": "MOLINA DE SEGURA",
+    "provincia": "VEGA MEDIA DEL SEGURA"
+  },
+  "TRIATLON ATLANTICO": {
+    "lat": 37.8843326,
+    "lng": -0.966938,
+    "ciudad": "MURCIA",
+    "provincia": "MURCIA"
+  },
+  "TRIATLON ALMENDRALEJO": {
+    "lat": 38.6846791,
+    "lng": -6.4067802,
+    "ciudad": "ALMENDRALEJO",
+    "provincia": "BADAJOZ"
+  },
+  "C.N. TERRASSA": {
+    "lat": 41.5430872,
+    "lng": 2.0672075,
+    "ciudad": "SABADELL",
+    "provincia": "VALLES OCCIDENTAL"
+  },
+  "CLUB TRIATLON TORREVIEJA": {
+    "lat": 37.9775416,
+    "lng": -0.6828446,
+    "ciudad": "TORREVIEJA",
+    "provincia": "ALICANTE"
+  },
+  "TRIKUA KIROL ELKARTEA": {
+    "lat": 43.3224219,
+    "lng": -1.9838889,
+    "ciudad": "SAN SEBASTIÁN",
+    "provincia": "GIPUZKOA"
+  },
+  "CLUB TRIATLON CORUÑA": {
+    "lat": 43.3623,
+    "lng": -8.4115,
+    "ciudad": "A CORUÑA",
+    "provincia": "A CORUÑA"
+  },
+  "MARLINS TRIATLON MADRID": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "TRIKATLÓN TRES CANTOS": {
+    "lat": 40.6009,
+    "lng": -3.7074,
+    "ciudad": "TRES CANTOS",
+    "provincia": "MADRID"
+  },
+  "TRIMAD": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "CDE RETIRO TRIATLÓN MADRID": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "TRIATLÓN ATLETI": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "TRI + MORALZARZAL": {
+    "lat": 40.6733,
+    "lng": -3.9622,
+    "ciudad": "MORALZARZAL",
+    "provincia": "MADRID"
+  },
+  "UNION ATLETICA COSLADA": {
+    "lat": 40.4239,
+    "lng": -3.5615,
+    "ciudad": "COSLADA",
+    "provincia": "MADRID"
+  },
+  "CLUB TRIATLON 401 TETRASOD": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "TRICANET DE BERENGUER": {
+    "lat": 39.6833,
+    "lng": -0.2167,
+    "ciudad": "CANET DE BERENGUER",
+    "provincia": "VALENCIA"
+  },
+  "TRIPICASSENT C.T.": {
+    "lat": 39.3583,
+    "lng": -0.4583,
+    "ciudad": "PICASSENT",
+    "provincia": "VALENCIA"
+  },
+  "CLUB AVANT MONCADA TRIATLO Y PARATRIATLO": {
+    "lat": 39.5486,
+    "lng": -0.3953,
+    "ciudad": "MONCADA",
+    "provincia": "VALENCIA"
+  },
+  "3 REPTES TRIATLÒ L'OLLERIA": {
+    "lat": 38.9167,
+    "lng": -0.55,
+    "ciudad": "L'OLLERIA",
+    "provincia": "VALENCIA"
+  },
+  "TRIATLO CARCAIXENT": {
+    "lat": 39.1244,
+    "lng": -0.4417,
+    "ciudad": "CARCAIXENT",
+    "provincia": "VALENCIA"
+  },
+  "A CORRE-CUITA": {
+    "lat": 39.4699,
+    "lng": -0.3763,
+    "ciudad": "VALENCIA",
+    "provincia": "VALENCIA"
+  },
+  "S.D. DE LA UNIVERSITAT POLITECNICA DE VALENCIA": {
+    "lat": 39.4799,
+    "lng": -0.3405,
+    "ciudad": "VALENCIA",
+    "provincia": "VALENCIA"
+  },
+  "CLUB TRIATLÒ VINARÒS": {
+    "lat": 40.4706,
+    "lng": 0.4753,
+    "ciudad": "VINARÒS",
+    "provincia": "CASTELLÓN"
+  },
+  "3PW ALMAZORA": {
+    "lat": 39.9469,
+    "lng": -0.0608,
+    "ciudad": "ALMASSORA",
+    "provincia": "CASTELLÓN"
+  },
+  "CLUB TRIATLÒ TRITRAIL CASTELLÓ DE LA PLANA": {
+    "lat": 39.9864,
+    "lng": -0.0513,
+    "ciudad": "CASTELLÓN DE LA PLANA",
+    "provincia": "CASTELLÓN"
+  },
+  "CD ADESAVI SAN VICENTE TRIATLON": {
+    "lat": 38.3964,
+    "lng": -0.5253,
+    "ciudad": "SAN VICENTE DEL RASPEIG",
+    "provincia": "ALICANTE"
+  },
+  "A.D. IBIZA HALF TRIATHLON": {
+    "lat": 38.9067,
+    "lng": 1.4206,
+    "ciudad": "IBIZA",
+    "provincia": "BALEARES"
+  },
+  "PRAT TRIATLO 1994": {
+    "lat": 41.3244,
+    "lng": 2.0953,
+    "ciudad": "EL PRAT DE LLOBREGAT",
+    "provincia": "BARCELONA"
+  },
+  "C.N. VIC-ETB": {
+    "lat": 41.8855,
+    "lng": 2.2549,
+    "ciudad": "VIC",
+    "provincia": "BARCELONA"
+  },
+  "CREU GROGA CALELLA TRIATLÒ": {
+    "lat": 41.6147,
+    "lng": 2.6536,
+    "ciudad": "CALELLA",
+    "provincia": "BARCELONA"
+  },
+  "CLUB TRIATLÒ GRANOLLERS": {
+    "lat": 41.6082,
+    "lng": 2.2876,
+    "ciudad": "GRANOLLERS",
+    "provincia": "BARCELONA"
+  },
+  "CLUB TRIATLO SABADELL": {
+    "lat": 41.5463,
+    "lng": 2.1079,
+    "ciudad": "SABADELL",
+    "provincia": "BARCELONA"
+  },
+  "CLUB TRIATLÒ LA GARRIGA": {
+    "lat": 41.6808,
+    "lng": 2.2836,
+    "ciudad": "LA GARRIGA",
+    "provincia": "BARCELONA"
+  },
+  "C.E. TRIATLÒ PICORNELL": {
+    "lat": 41.3642,
+    "lng": 2.1506,
+    "ciudad": "BARCELONA",
+    "provincia": "BARCELONA"
+  },
+  "CLUB TRIATLO CORNELLA": {
+    "lat": 41.3531,
+    "lng": 2.0706,
+    "ciudad": "CORNELLÀ DE LLOBREGAT",
+    "provincia": "BARCELONA"
+  },
+  "SALOU TRIATLÒ COSTA DAURADA": {
+    "lat": 41.0764,
+    "lng": 1.1414,
+    "ciudad": "SALOU",
+    "provincia": "TARRAGONA"
+  },
+  "FLOR DE TRIATLÒ PLATJA LLARGA": {
+    "lat": 41.1189,
+    "lng": 1.2445,
+    "ciudad": "TARRAGONA",
+    "provincia": "TARRAGONA"
+  },
+  "ORDIZIA TRIATLOI ELKARTEA": {
+    "lat": 43.0539,
+    "lng": -2.1736,
+    "ciudad": "ORDIZIA",
+    "provincia": "GIPUZKOA"
+  },
+  "TOLOSALDEKO T.T.": {
+    "lat": 43.1346,
+    "lng": -2.0781,
+    "ciudad": "TOLOSA",
+    "provincia": "GIPUZKOA"
+  },
+  "AÑORGA K.K.E.": {
+    "lat": 43.2883,
+    "lng": -1.9976,
+    "ciudad": "SAN SEBASTIÁN",
+    "provincia": "GIPUZKOA"
+  },
+  "UROLA TRIATLOI KLUBA": {
+    "lat": 43.1833,
+    "lng": -2.2667,
+    "ciudad": "AZPEITIA",
+    "provincia": "GIPUZKOA"
+  },
+  "GETAITRI TRIATLOI KLUBA": {
+    "lat": 43.3067,
+    "lng": -2.2028,
+    "ciudad": "GETARIA",
+    "provincia": "GIPUZKOA"
+  },
+  "JAZ EIBAR TRIATLOI TALDEA": {
+    "lat": 43.1847,
+    "lng": -2.4722,
+    "ciudad": "EIBAR",
+    "provincia": "GIPUZKOA"
+  },
+  "ZUMAIAKO TRIATLOI TALDEA": {
+    "lat": 43.2953,
+    "lng": -2.2531,
+    "ciudad": "ZUMAIA",
+    "provincia": "GIPUZKOA"
+  },
+  "ALOÑA MENDI K.E.": {
+    "lat": 43.0333,
+    "lng": -2.4167,
+    "ciudad": "OÑATI",
+    "provincia": "GIPUZKOA"
+  },
+  "TRIGOI T.T.": {
+    "lat": 43.18,
+    "lng": -2.3167,
+    "ciudad": "AZKOITIA",
+    "provincia": "GIPUZKOA"
+  },
+  "URDAITRI T.T": {
+    "lat": 43.4217,
+    "lng": -2.7222,
+    "ciudad": "BERMEO",
+    "provincia": "BIZKAIA"
+  },
+  "MUGARRA TRIATLOI TALDEA": {
+    "lat": 43.3544,
+    "lng": -2.8472,
+    "ciudad": "MUNGIA",
+    "provincia": "BIZKAIA"
+  },
+  "USANSOLOKO U113 LEKUBASO TRIATLOI K.": {
+    "lat": 43.2307,
+    "lng": -2.8449,
+    "ciudad": "GALDAKAO",
+    "provincia": "BIZKAIA"
+  },
+  "ENKARTERRI TRIATLOI.": {
+    "lat": 43.1947,
+    "lng": -3.1906,
+    "ciudad": "BALMASEDA",
+    "provincia": "BIZKAIA"
+  },
+  "ALARABI LEA-ARTIBAI MARKINA": {
+    "lat": 43.2689,
+    "lng": -2.4928,
+    "ciudad": "MARKINA-XEMEIN",
+    "provincia": "BIZKAIA"
+  },
+  "BIZI TRIATLOI TALDEA": {
+    "lat": 43.263,
+    "lng": -2.935,
+    "ciudad": "BILBAO",
+    "provincia": "BIZKAIA"
+  },
+  "EGURRE K3": {
+    "lat": 43.1711,
+    "lng": -2.6328,
+    "ciudad": "DURANGO",
+    "provincia": "BIZKAIA"
+  },
+  "LEA LA BLANCA": {
+    "lat": 43.3633,
+    "lng": -2.5025,
+    "ciudad": "LEKEITIO",
+    "provincia": "BIZKAIA"
+  },
+  "ZUMEATARRA TALDEA TRIATLOI": {
+    "lat": 43.0886,
+    "lng": -2.3153,
+    "ciudad": "ZUMARRAGA",
+    "provincia": "GIPUZKOA"
+  },
+  "HIRUKO TRIATLOI TALDEA": {
+    "lat": 43.2956,
+    "lng": -2.9925,
+    "ciudad": "BARAKALDO",
+    "provincia": "BIZKAIA"
+  },
+  "INDARPAK KIROL KLUBA": {
+    "lat": 43.263,
+    "lng": -2.935,
+    "ciudad": "BILBAO",
+    "provincia": "BIZKAIA"
+  },
+  "CAFES FORONDA DIDA KIROL TALDEA": {
+    "lat": 42.8467,
+    "lng": -2.6717,
+    "ciudad": "VITORIA-GASTEIZ",
+    "provincia": "ÁLAVA"
+  },
+  "C.D.A. OINKARIAK AMURRIO": {
+    "lat": 43.0531,
+    "lng": -3.0003,
+    "ciudad": "AMURRIO",
+    "provincia": "ÁLAVA"
+  },
+  "CD OBERENA": {
+    "lat": 42.8157,
+    "lng": -1.6522,
+    "ciudad": "PAMPLONA",
+    "provincia": "NAVARRA"
+  },
+  "HIRUKI VALLE DE EGUES TRIATLON": {
+    "lat": 42.8333,
+    "lng": -1.5833,
+    "ciudad": "VALLE DE EGÜÉS",
+    "provincia": "NAVARRA"
+  },
+  "CA PEÑA AZAGRESA": {
+    "lat": 42.3153,
+    "lng": -1.8928,
+    "ciudad": "AZAGRA",
+    "provincia": "NAVARRA"
+  },
+  "CLUB CERVECERIA O COTON NEGREIRA": {
+    "lat": 42.9067,
+    "lng": -8.5583,
+    "ciudad": "NEGREIRA",
+    "provincia": "A CORUÑA"
+  },
+  "TRI ARTEIXO-ACEA DE AMA": {
+    "lat": 43.3044,
+    "lng": -8.5089,
+    "ciudad": "ARTEIXO",
+    "provincia": "A CORUÑA"
+  },
+  "CLUB OLIMPICO DE VEDRA": {
+    "lat": 42.7789,
+    "lng": -8.4761,
+    "ciudad": "VEDRA",
+    "provincia": "A CORUÑA"
+  },
+  "A.D. FOGAR": {
+    "lat": 43.2131,
+    "lng": -8.6911,
+    "ciudad": "CARBALLO",
+    "provincia": "A CORUÑA"
+  },
+  "A.D. DUATLÓN POLANCO": {
+    "lat": 43.3917,
+    "lng": -4.0253,
+    "ciudad": "POLANCO",
+    "provincia": "CANTABRIA"
+  },
+  "C.D. TRIRUNNER POZO ESTRECHO": {
+    "lat": 37.6017,
+    "lng": -1.0017,
+    "ciudad": "CARTAGENA",
+    "provincia": "MURCIA"
+  },
+  "CD TRIATLÓN MANDARACHE SANTA ANA": {
+    "lat": 37.6017,
+    "lng": -1.0017,
+    "ciudad": "CARTAGENA",
+    "provincia": "MURCIA"
+  },
+  "ATLETISMO MANDARACHE CARTAGENA": {
+    "lat": 37.6017,
+    "lng": -1.0017,
+    "ciudad": "CARTAGENA",
+    "provincia": "MURCIA"
+  },
+  "TRIALHAMA": {
+    "lat": 37.8508,
+    "lng": -1.4267,
+    "ciudad": "ALHAMA DE MURCIA",
+    "provincia": "MURCIA"
+  },
+  "CAPA CC LOS ALCORES": {
+    "lat": 37.3378,
+    "lng": -5.8442,
+    "ciudad": "ALCALÁ DE GUADAÍRA",
+    "provincia": "SEVILLA"
+  },
+  "C.D.E. JEREZANA DE TRIATLÓN": {
+    "lat": 36.6817,
+    "lng": -6.1378,
+    "ciudad": "JEREZ DE LA FRONTERA",
+    "provincia": "CÁDIZ"
+  },
+  "OCTAVUS TRIATLÓN - SKODA ZARATECNO": {
+    "lat": 41.6488,
+    "lng": -0.8891,
+    "ciudad": "ZARAGOZA",
+    "provincia": "ZARAGOZA"
+  },
+  "JAB TRIATLÓN HELIOS": {
+    "lat": 41.6488,
+    "lng": -0.8891,
+    "ciudad": "ZARAGOZA",
+    "provincia": "ZARAGOZA"
+  },
+  "SYB SOLAR - TRIATLON CLUB CICLISTA OSCENSE": {
+    "lat": 42.1401,
+    "lng": -0.4089,
+    "ciudad": "HUESCA",
+    "provincia": "HUESCA"
+  },
+  "CD TRIATLÓN TRIWILD FUENSALIDA": {
+    "lat": 39.9275,
+    "lng": -4.3283,
+    "ciudad": "FUENSALIDA",
+    "provincia": "TOLEDO"
+  },
+  "CLUB TRIATLÓN TRISAGRA": {
+    "lat": 39.9328,
+    "lng": -3.9911,
+    "ciudad": "OLÍAS DEL REY",
+    "provincia": "TOLEDO"
+  },
+  "C.D. ATLETISMO TARANCÓN": {
+    "lat": 40.0128,
+    "lng": -3.0053,
+    "ciudad": "TARANCÓN",
+    "provincia": "CUENCA"
+  },
+  "CAPEX": {
+    "lat": 38.5667,
+    "lng": -6.3333,
+    "ciudad": "VILLAFRANCA DE LOS BARROS",
+    "provincia": "BADAJOZ"
+  },
+  "CD TRIMEDANO": {
+    "lat": 28.0447,
+    "lng": -16.5358,
+    "ciudad": "EL MÉDANO",
+    "provincia": "SANTA CRUZ DE TENERIFE"
+  },
+  "CD FUERTRI": {
+    "lat": 28.5004,
+    "lng": -13.8627,
+    "ciudad": "PUERTO DEL ROSARIO",
+    "provincia": "LAS PALMAS"
+  },
+  "C.E. CONECTA BALEAR XTREM CALVIÀ": {
+    "lat": 39.5653,
+    "lng": 2.5067,
+    "ciudad": "CALVIÀ",
+    "provincia": "BALEARES"
+  },
+  "C.E. PALMARUNNERS": {
+    "lat": 39.5696,
+    "lng": 2.6502,
+    "ciudad": "PALMA DE MALLORCA",
+    "provincia": "BALEARES"
+  },
+  "CLUB ESPORTIU ESPALMADOR": {
+    "lat": 38.7068,
+    "lng": 1.4342,
+    "ciudad": "FORMENTERA",
+    "provincia": "BALEARES"
+  },
+  "CLUB ATLETISME JOAN COMES SA POBLA": {
+    "lat": 39.7622,
+    "lng": 3.0203,
+    "ciudad": "SA POBLA",
+    "provincia": "BALEARES"
+  },
+  "CLUB ATLETISME SON SERVERA": {
+    "lat": 39.6258,
+    "lng": 3.3861,
+    "ciudad": "SON SERVERA",
+    "provincia": "BALEARES"
+  },
+  "TRIATLO PORTOCOLOM": {
+    "lat": 39.4258,
+    "lng": 3.1489,
+    "ciudad": "FELANITX",
+    "provincia": "BALEARES"
+  },
+  "TRAGALEGUAS BURGOS": {
+    "lat": 42.3439,
+    "lng": -3.6969,
+    "ciudad": "BURGOS",
+    "provincia": "BURGOS"
+  },
+  "ENTRENO LR CLUB DEPORTIVO": {
+    "lat": 42.4627,
+    "lng": -2.445,
+    "ciudad": "LOGROÑO",
+    "provincia": "LA RIOJA"
+  },
+  "C.T. TRIYAIZA": {
+    "lat": 28.9528,
+    "lng": -13.7647,
+    "ciudad": "YAIZA",
+    "provincia": "LAS PALMAS"
+  },
+  "CLUB DEPORTIVO TRIDAN": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "TRIBOOST": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "C.E. TRIACADEMY": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "TRIFLAVI": {
+    "lat": 43.5558,
+    "lng": -5.9248,
+    "ciudad": "AVILÉS",
+    "provincia": "ASTURIAS"
+  },
+  "SALOU TRIATLÓ COSTA DAURADA": {
+    "lat": 41.0764,
+    "lng": 1.1414,
+    "ciudad": "SALOU",
+    "provincia": "TARRAGONA"
+  },
+  "CD TRIATLÓN K1T": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "CLUB TRIATLÓ VINARÒS": {
+    "lat": 40.4706,
+    "lng": 0.4753,
+    "ciudad": "VINARÒS",
+    "provincia": "CASTELLÓN"
+  },
+  "CREU GROGA CALELLA TRIATLÓ": {
+    "lat": 41.6147,
+    "lng": 2.6536,
+    "ciudad": "CALELLA",
+    "provincia": "BARCELONA"
+  },
+  "CLUB TRIATOR": {
+    "lat": 43.3487,
+    "lng": -4.0515,
+    "ciudad": "TORRELAVEGA",
+    "provincia": "CANTABRIA"
+  },
+  "CLUB TRIATLÓ LA GARRIGA": {
+    "lat": 41.6808,
+    "lng": 2.2836,
+    "ciudad": "LA GARRIGA",
+    "provincia": "BARCELONA"
+  },
+  "C.T. CANDETLÓN": {
+    "lat": 43.4917,
+    "lng": -6.1042,
+    "ciudad": "PRAVIA",
+    "provincia": "ASTURIAS"
+  },
+  "3 REPTES TRIATLÓ L'OLLERIA": {
+    "lat": 38.9167,
+    "lng": -0.55,
+    "ciudad": "L'OLLERIA",
+    "provincia": "VALENCIA"
+  },
+  "CLUB TRIATLÓ GRANOLLERS": {
+    "lat": 41.6082,
+    "lng": 2.2876,
+    "ciudad": "GRANOLLERS",
+    "provincia": "BARCELONA"
+  },
+  "CLUB TRIATLO PROSAN": {
+    "lat": 39.4699,
+    "lng": -0.3763,
+    "ciudad": "VALENCIA",
+    "provincia": "VALENCIA"
+  },
+  "EL CID TRIATLON CLUB": {
+    "lat": 39.4699,
+    "lng": -0.3763,
+    "ciudad": "VALENCIA",
+    "provincia": "VALENCIA"
+  },
+  "FUENSANTA IMPULSO": {
+    "lat": 39.0,
+    "lng": -2.07,
+    "ciudad": "FUENSANTA",
+    "provincia": "ALBACETE"
+  },
+  "CLUB TRIATLÓ TRITRAIL CASTELLÓ DE LA PLANA": {
+    "lat": 39.9864,
+    "lng": -0.0513,
+    "ciudad": "CASTELLÓN DE LA PLANA",
+    "provincia": "CASTELLÓN"
+  },
+  "CDE  AGUAVERDE": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "C.E. TRIATLÓ PICORNELL": {
+    "lat": 41.3642,
+    "lng": 2.1506,
+    "ciudad": "BARCELONA",
+    "provincia": "BARCELONA"
+  },
+  "FLOR DE TRIATLÓ PLATJA LLARGA": {
+    "lat": 41.1189,
+    "lng": 1.2445,
+    "ciudad": "TARRAGONA",
+    "provincia": "TARRAGONA"
+  },
+  "CLUB ESPORTIU PRORUNNERS": {
+    "lat": 41.3851,
+    "lng": 2.1734,
+    "ciudad": "BARCELONA",
+    "provincia": "BARCELONA"
+  },
+  "NOSPORTLIMIT": {
+    "lat": 39.5696,
+    "lng": 2.6502,
+    "ciudad": "PALMA DE MALLORCA",
+    "provincia": "BALEARES"
+  },
+  "CLUB DEPORTIVO TRIASPE": {
+    "lat": 38.3452,
+    "lng": -0.481,
+    "ciudad": "ALICANTE",
+    "provincia": "ALICANTE"
+  },
+  "TRIGLOBEROS": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  },
+  "CLUB TRIATLONCIEM": {
+    "lat": 40.4168,
+    "lng": -3.7038,
+    "ciudad": "MADRID",
+    "provincia": "MADRID"
+  }
+}

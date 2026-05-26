@@ -1,0 +1,122 @@
+[
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2026-02-09T11:14:20.107",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/3/2026_02_08 RANKING-Duatlon-Femenina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20260209111429_strip_02_08 RANKING-Duatlon-Femenina.xlsx",
+    "isActive": true,
+    "Key": "1770635660107",
+    "dateCreated": "2026-02-09T11:14:29.46"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2025-06-09T00:00:00",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250610155509_2025_06_09 RANKING-Duatlon-Femenina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250610155510_strip_2025_06_09 RANKING-Duatlon-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1749427200000",
+    "dateCreated": "2025-06-10T15:55:10.657"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2025-04-24T12:21:56.927",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250424122210_2025_04_24 RANKING-Duatlon-Femenina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250424122210_strip_2025_04_24 RANKING-Duatlon-Femenina.xlsx",
+    "isActive": false,
+    "Key": "1745497316927",
+    "dateCreated": "2025-04-24T12:22:11.46"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2025-04-24T11:54:03.68",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250424115416_2025_04_24 RANKING-Duatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250424115417_strip_2025_04_24 RANKING-Duatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1745495643680",
+    "dateCreated": "2025-04-24T11:54:17.38"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2025-03-11T11:19:55.88",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250311112004_2025_03_11_RANKING-Duatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250311112005_strip_2025_03_11_RANKING-Duatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1741691995880",
+    "dateCreated": "2025-03-11T11:20:05.213"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2025-03-04T15:42:24.683",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250304155014_2025_03_04_RANKING-Duatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250304155014_strip_2025_03_04_RANKING-Duatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1741102944683",
+    "dateCreated": "2025-03-04T15:50:15.123"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2025-02-18T15:18:14",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250219151852_2025_02_18_RANKING-Duatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/3/20250219151853_strip_2025_02_18_RANKING-Duatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1739891894000",
+    "dateCreated": "2025-02-19T15:18:53.543"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2024-07-09T10:21:41",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920103719_2024_07_09_RANKING-Duatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920103720_strip_2024_07_09_RANKING-Duatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1720520501000",
+    "dateCreated": "2024-09-20T10:37:20.527"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2024-06-03T13:29:40",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920133006_2024_06_03_RANKING-Duatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920133007_strip_2024_06_03_RANKING-Duatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1717421380000",
+    "dateCreated": "2024-09-20T13:30:07.297"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2024-04-25T13:29:06",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920132921_2024_04_25_RANKING-Duatlon-Femenino.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920132921_strip_2024_04_25_RANKING-Duatlon-Femenino.xls",
+    "isActive": false,
+    "Key": "1714051746000",
+    "dateCreated": "2024-09-20T13:29:21.703"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2024-04-05T13:23:43",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920132843_2024_04_05_RANKING-Duatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920132843_strip_2024_04_05_RANKING-Duatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1712323423000",
+    "dateCreated": "2024-09-20T13:28:43.723"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 3.0,
+    "date": "2024-03-19T13:38:58",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920133911_2024_03_19_RANKING-Duatlon-Femenina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/3/20240920133911_strip_2024_03_19_RANKING-Duatlon-Femenina.xls",
+    "isActive": false,
+    "Key": "1710855538000",
+    "dateCreated": "2024-09-20T13:39:12.03"
+  }
+]

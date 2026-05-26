@@ -1,0 +1,152 @@
+[
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2025-10-13T13:28:09.1",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/2025_10_13 RANKING-Triatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20251013132829_strip_10_13 RANKING-Triatlon-Masculina.xlsx",
+    "isActive": true,
+    "Key": "1760362089100",
+    "dateCreated": "2025-10-13T13:28:30.143"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2025-10-13T13:21:10.713",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/2025_10_13 RANKING-Triatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20251013132127_strip_10_13 RANKING-Triatlon-Masculina.xlsx",
+    "isActive": false,
+    "Key": "1760361670713",
+    "dateCreated": "2025-10-13T13:21:28.727"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2025-08-26T00:00:00",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250827173103_2025_08_26 RANKING-Triatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250827173105_strip_2025_08_26 RANKING-Triatlon-Masculina.xlsx",
+    "isActive": false,
+    "Key": "1756166400000",
+    "dateCreated": "2025-08-27T17:31:06.487"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2025-08-26T00:00:00",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250827173428_2025_08_26 RANKING-Triatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250827173429_strip_2025_08_26 RANKING-Triatlon-Masculina.xlsx",
+    "isActive": false,
+    "Key": "1756166400000",
+    "dateCreated": "2025-08-27T17:34:29.83"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2025-08-26T00:00:00",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250827173708_2025_08_26 RANKING-Triatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250827173709_strip_2025_08_26 RANKING-Triatlon-Masculina.xlsx",
+    "isActive": false,
+    "Key": "1756166400000",
+    "dateCreated": "2025-08-27T17:37:09.88"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2025-06-11T00:00:00",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250612143820_2025_06_11 RANKING-Triatlon-Masculina v2.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250612143821_strip_2025_06_11 RANKING-Triatlon-Masculina v2.xlsx",
+    "isActive": false,
+    "Key": "1749600000000",
+    "dateCreated": "2025-06-12T14:38:21.41"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2025-05-14T13:18:07.497",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250514131813_2025_05_14 RANKING-Triatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250514131814_strip_2025_05_14 RANKING-Triatlon-Masculina.xlsx",
+    "isActive": false,
+    "Key": "1747228687497",
+    "dateCreated": "2025-05-14T13:18:14.453"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2025-05-13T18:33:30.247",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250513183349_2025_05_13 RANKING-Triatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250513183351_strip_2025_05_13 RANKING-Triatlon-Masculina.xlsx",
+    "isActive": false,
+    "Key": "1747161210247",
+    "dateCreated": "2025-05-13T18:33:51.9"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2024-11-15T17:54:50",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250113175514_2024_11_15 RANKING-Triatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/6/20250113175515_strip_2024_11_15 RANKING-Triatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1731693290000",
+    "dateCreated": "2025-01-13T17:55:15.86"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2024-08-19T11:20:24",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920112041_2024_08_19 RANKING-Triatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920112057_strip_2024_08_19%20RANKING-Triatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1724066424000",
+    "dateCreated": "2024-09-20T11:20:57.38"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2024-07-03T11:19:02",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920111917_2024_07_03 RANKING-Triatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920111931_strip_2024_07_03%20RANKING-Triatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1720005542000",
+    "dateCreated": "2024-09-20T11:19:32.057"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2024-06-24T14:36:54",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920143920_2024_06_24 RANKING-Triatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920143921_strip_2024_06_24%20RANKING-Triatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1719239814000",
+    "dateCreated": "2024-09-20T14:39:21.863"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2024-06-03T14:35:25",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920143534_2024_06_03 RANKING-Triatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920143535_strip_2024_06_03%20RANKING-Triatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1717425325000",
+    "dateCreated": "2024-09-20T14:35:35.867"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2024-05-29T14:34:03",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920143415_2024_05_29 RANKING-Triatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920143416_strip_2024_05_29%20RANKING-Triatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1716993243000",
+    "dateCreated": "2024-09-20T14:34:16.39"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 6.0,
+    "date": "2024-05-28T14:32:31",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920143252_2024_05_28 RANKING-Triatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/6/20240920143253_strip_2024_05_28%20RANKING-Triatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1716906751000",
+    "dateCreated": "2024-09-20T14:32:53.333"
+  }
+]

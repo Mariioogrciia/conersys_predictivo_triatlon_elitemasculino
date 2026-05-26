@@ -1,0 +1,122 @@
+[
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2026-02-08T00:00:00",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/7/2026_02_08 RANKING-Duatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20260209102419_strip_02_08 RANKING-Duatlon-Masculina.xlsx",
+    "isActive": true,
+    "Key": "1770508800000",
+    "dateCreated": "2026-02-09T10:24:19.853"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2026-02-08T00:00:00",
+    "sourceDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/7/2026_02_08 RANKING-Duatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://fetri2025-media.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20260209160005_strip_02_08 RANKING-Duatlon-Masculina.xlsx",
+    "isActive": true,
+    "Key": "1770508800000",
+    "dateCreated": "2026-02-09T16:00:06.02"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2025-06-09T19:45:27.507",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250609194605_2025_06_09 RANKING-Duatlon-Masculina.xlsx",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250609194606_strip_2025_06_09 RANKING-Duatlon-Masculina.xlsx",
+    "isActive": false,
+    "Key": "1749498327507",
+    "dateCreated": "2025-06-09T19:46:07.283"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2025-04-24T12:23:45.113",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250424122353_2025_04_24 RANKING-Duatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250424122354_strip_2025_04_24 RANKING-Duatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1745497425113",
+    "dateCreated": "2025-04-24T12:23:54.553"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2025-03-11T11:22:01.323",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250311112210_2025_03_11_RANKING-Duatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250311112210_strip_2025_03_11_RANKING-Duatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1741692121323",
+    "dateCreated": "2025-03-11T11:22:10.76"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2025-03-04T15:51:21.843",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250304155135_2025_03_04_RANKING-Duatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250304155135_strip_2025_03_04_RANKING-Duatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1741103481843",
+    "dateCreated": "2025-03-04T15:51:35.71"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2025-02-18T15:21:56",
+    "sourceDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250219152213_2025_02_18_RANKING-Duatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.eu-west-3.amazonaws.com/pablo/rankings/7/20250219152214_strip_2025_02_18_RANKING-Duatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1739892116000",
+    "dateCreated": "2025-02-19T15:22:14.897"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2024-07-09T10:45:58",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920104730_2024_07_09_RANKING-Duatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920104739_strip_2024_07_09_RANKING-Duatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1720521958000",
+    "dateCreated": "2024-09-20T10:47:39.517"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2024-06-03T13:57:15",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920135730_2024_06_03_RANKING-Duatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920135731_strip_2024_06_03_RANKING-Duatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1717423035000",
+    "dateCreated": "2024-09-20T13:57:31.56"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2024-04-25T13:56:09",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920135628_2024_04_25_RANKING-Duatlon-Masculino.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920135629_strip_2024_04_25_RANKING-Duatlon-Masculino.xls",
+    "isActive": false,
+    "Key": "1714053369000",
+    "dateCreated": "2024-09-20T13:56:29.44"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2024-04-05T18:32:31",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920183323_2024_04_05_RANKING-Duatlon-Masculino.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920183324_strip_2024_04_05_RANKING-Duatlon-Masculino.xls",
+    "isActive": false,
+    "Key": "1712341951000",
+    "dateCreated": "2024-09-20T18:33:24.33"
+  },
+  {
+    "rankingID": 0,
+    "rankingTypeId": 7.0,
+    "date": "2024-03-19T13:51:23",
+    "sourceDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920135139_2024_03_19_RANKING-Duatlon-Masculina.xls",
+    "strippedDocumentUrl": "https://conersys-data.s3.amazonaws.com/pablo/rankings/7/20240920135140_strip_2024_03_19_RANKING-Duatlon-Masculina.xls",
+    "isActive": false,
+    "Key": "1710856283000",
+    "dateCreated": "2024-09-20T13:51:40.453"
+  }
+]
