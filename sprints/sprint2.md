@@ -1,10 +1,3 @@
-## ✅ Definition of Done
-
-- [ ] Dataset procesado en Azure Blob Storage capa `processed/`
-- [ ] Notebook de EDA revisado por el equipo
-- [ ] Tabla de enriquecimiento de pruebas completada y versionada
-- [ ] Informe de calidad de datos entregado al Product Owner
-- [ ] Decisión sobre DSQ documentada y acordada
 # Sprint 2 — Motor Predictivo ML
 
 > **Fechas:** 25/05/2026 → 05/06/2026 · 2 semanas  
