@@ -24,16 +24,16 @@ Mario García · Alejandro Benítez
 | Identificar registros DSQ/DNF | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Buscar si hay columna de resultado en el dataset y crear la variable `descalificado` (0/1) — condiciona el clasificador</sub> | | |
 | **— INFRAESTRUCTURA —** | | |
-| Crear Azure ML Workspace | ❓ Por asignar | ⚪ Pendiente |
+| Crear Azure ML Workspace | Alejandro | ⚪ Pendiente |
 | <sub>Azure Portal → Machine Learning → Create · crea automáticamente su Key Vault y App Insights</sub> | | |
 | **— FEATURE ENGINEERING —** | | |
-| Calcular variables de rendimiento del atleta | ❓ Por asignar | ⚪ Pendiente |
+| Calcular variables de rendimiento del atleta | Alejandro | ⚪ Pendiente |
 | <sub>Calcular: media últimas 5 pruebas, mejor marca personal, nº pruebas completadas en la temporada</sub> | | |
-| Calcular variables de contexto de la prueba | ❓ Por asignar | ⚪ Pendiente |
+| Calcular variables de contexto de la prueba | Alejandro | ⚪ Pendiente |
 | <sub>Unir altitud, temperatura, humedad, desnivel y tipo de agua (ya enriquecidos en Sprint 1) al dataset del modelo</sub> | | |
-| Calcular variable de recuperación | ❓ Por asignar | ⚪ Pendiente |
+| Calcular variable de recuperación | Alejandro | ⚪ Pendiente |
 | <sub>Calcular `dias_desde_ultima_prueba` por atleta para cada fila del dataset</sub> | | |
-| Documentar todas las features | ❓ Por asignar | ⚪ Pendiente |
+| Documentar todas las features | Alejandro | ⚪ Pendiente |
 | <sub>Crear tabla en `docs/` con nombre, descripción, unidad, rango esperado y cómo se calcula cada variable</sub> | | |
 | Verificar que no hay data leakage | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Comprobar que ninguna feature usa información posterior a la fecha de la prueba que se predice</sub> | | |
