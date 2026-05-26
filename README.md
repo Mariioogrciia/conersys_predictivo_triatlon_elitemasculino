@@ -21,7 +21,7 @@ Mario García · Alejandro Benítez
 | <sub>Fichero original del cliente sin tocar en el contenedor `raw/`</sub> | | |
 | Limpieza inicial y carga a bronze | Mario | ✅ Hecho |
 | <sub>Primera pasada de limpieza básica y subida al contenedor `bronze/`</sub> | | |
-| Notebook EDA | Ambos | ✅ Hecho  |
+| Notebook EDA | Ambos | ⚪ Pendiente  |
 | <sub>Explorar el dataset: distribuciones, % nulos por columna, outliers y correlaciones básicas</sub> | | |
 | Limpieza de nulos y outliers | Mario | ✅ Hecho  |
 | <sub>Aplicar estrategia de nulos (no imputar tiempos faltantes) y eliminar/flaggear outliers estadísticos</sub> | | |
@@ -44,7 +44,7 @@ Mario García · Alejandro Benítez
 |---|---|
 | Entender el proyecto desde cero | [📄 Contexto del proyecto](docs/CONTEXTO_PROYECTO.md) |
 | Ver qué ficheros de datos tenemos | [📋 Excels](docs/lista_todos_los_excel.md) |
-| Ver o tocar el esquema de base de datos | [🗄️ Esquema de la BBDD](database/azure_sql_schema.sql) |
+| Ver o tocar el esquema de base de datos | [🗄️ Esquema de la BBDD](database/azure_sql_scalejandrobenitez1@lagomar.comhema.sql) |
 | Cargar datos en Azure SQL | [⬆️ Carga a la BBDD](database/load_to_azure_sql.py) |
 | Ejecutar el ETL | [🔧 Importación y limpieza](ml_pipeline/importacion_y_limpieza.ipynb) |
 | Preparar datos para AutoML | [🤖 ML Pipeline](ml_pipeline/) |
