@@ -19,9 +19,9 @@ Mario García · Alejandro Benítez
 | 📖 Leer [sprint2.md](sprints/sprint2.md) | Alejandro | ✅ Hecho |
 | <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
 | **— PENDIENTES DE SPRINT 1 —** | | |
-| Notebook EDA | Ambos | ⚪ Pendiente |
+| Notebook EDA | Mario | ⚪ Pendiente |
 | <sub>Explorar el dataset: distribuciones, % nulos por columna, outliers y correlaciones básicas</sub> | | |
-| Identificar registros DSQ/DNF | ❓ Por asignar | ⚪ Pendiente |
+| Identificar registros DSQ/DNF | Ambos | ⚪ Pendiente |
 | <sub>Buscar si hay columna de resultado en el dataset y crear la variable `descalificado` (0/1) — condiciona el clasificador</sub> | | |
 | **— INFRAESTRUCTURA —** | | |
 | Crear Azure ML Workspace | Alejandro | ⚪ Pendiente |
