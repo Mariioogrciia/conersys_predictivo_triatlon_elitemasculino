@@ -1,8 +1,22 @@
+## ✅ Definition of Done
+
+- [ ] Dataset procesado en Azure Blob Storage capa `processed/`
+- [ ] Notebook de EDA revisado por el equipo
+- [ ] Tabla de enriquecimiento de pruebas completada y versionada
+- [ ] Informe de calidad de datos entregado al Product Owner
+- [ ] Decisión sobre DSQ documentada y acordada
 # Sprint 2 — Motor Predictivo ML
 
 > **Fechas:** 25/05/2026 → 05/06/2026 · 2 semanas  
 > **Equipo:** Mario García · Alejandro Benítez  
-> **Proyecto:** Predictivo Triatlón Élite Masculino — Conersys
+> **Proyecto:** Predictivo Triatlón Élite Masculino — Conersys## ✅ Definition of Done
+
+- [ ] Dataset procesado en Azure Blob Storage capa `processed/`
+- [ ] Notebook de EDA revisado por el equipo
+- [ ] Tabla de enriquecimiento de pruebas completada y versionada
+- [ ] Informe de calidad de datos entregado al Product Owner
+- [ ] Decisión sobre DSQ documentada y acordada
+
 
 ---
 
@@ -46,7 +60,14 @@ Esto permite al locutor saber, antes de la salida, qué tiempo es esperable y **
 
 ## ¿Qué modelo elegimos?
 
-Entrenamos dos candidatos y elegimos el mejor por RMSE en validación cruzada:
+Entrenamos dos candidatos y elegimos el mejor por RMSE en validación ## ✅ Definition of Done
+
+- [ ] Dataset procesado en Azure Blob Storage capa `processed/`
+- [ ] Notebook de EDA revisado por el equipo
+- [ ] Tabla de enriquecimiento de pruebas completada y versionada
+- [ ] Informe de calidad de datos entregado al Product Owner
+- [ ] Decisión sobre DSQ documentada y acordada
+cruzada:
 
 | Modelo | Ventaja | Cuándo lo elegimos |
 |---|---|---|
@@ -122,11 +143,3 @@ Condicional según los datos disponibles (ver tabla arriba).
 | DSQ insuficientes para clasificador | Alto | Alta | Isolation Forest como alternativa |
 
 ---
-
-## ✅ Definition of Done
-
-- [ ] Modelo registrado en Azure ML Model Registry con métricas documentadas
-- [ ] RMSE en test documentado (objetivo <120s)
-- [ ] Pipeline de entrenamiento reproducible con un solo comando
-- [ ] Módulo SHAP funcional y probado
-- [ ] Decisión sobre DSQ documentada y aprobada por el PO
