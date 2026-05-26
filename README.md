@@ -16,7 +16,7 @@ Mario García · Alejandro Benítez
 |---|---|---|
 | 📖 Leer [sprint2.md](sprints/sprint2.md) | Mario | ⚪ Pendiente |
 | <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
-| 📖 Leer [sprint2.md](sprints/sprint2.md) | Alejandro | ⚪ Pendiente |
+| 📖 Leer [sprint2.md](sprints/sprint2.md) | Alejandro | ✅ Hecho |
 | <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
 | **— PENDIENTES DE SPRINT 1 —** | | |
 | Notebook EDA | Ambos | ⚪ Pendiente |
@@ -40,7 +40,7 @@ Mario García · Alejandro Benítez
 | **— MODELO —** | | |
 | Preparar splits de entrenamiento y test | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Separar temporalmente: pruebas antiguas = train, pruebas recientes = test · nunca aleatorio</sub> | | |
-| Entrenar Random Forest | ❓ Por asignar | ⚪ Pendiente |
+| Entrenar Random Forest | ❓ Por asignar | ⚪ Pendiente |✅ Hecho
 | <sub>Entrenar con k-fold temporal (k=5) y registrar RMSE, MAE y R² en Azure ML Experiments</sub> | | |
 | Entrenar XGBoost | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Entrenar con los mismos splits y métricas que Random Forest para que la comparación sea justa</sub> | | |
