@@ -1,6 +1,6 @@
 # Sprint 4 — Dashboard UI, Integración Final y Entrega
 
-> **Fechas:** 01/06/2026 → 22/06/2026 · 3 semanas  
+> **Fechas:** 22/06/2026 → 26/06/2026 · 3 semanas  
 > **Equipo:** Mario García · Alejandro Benítez  
 > **Proyecto:** Predictivo Triatlón Élite Masculino — Conersys
 
