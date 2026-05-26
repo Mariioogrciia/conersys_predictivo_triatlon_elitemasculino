@@ -1,7 +1,7 @@
 # 🏊🚴🏃 Predictivo Triatlón Élite Masculino
 **Conersys · TFM Máster IA · Tajamar Tech 2025-26**
 Mario García · Alejandro Benítez
- 
+ A
 ---
  
 ## 🟡 Sprint actual — Sprint 2: Modelo predictivo ML
@@ -82,8 +82,8 @@ Mario García · Alejandro Benítez
  
 | Sprint | Qué hace | Fechas | Estado |
 |---|---|---|---|
-| [📁 Sprint 1](sprints/sprint1.md) | ETL, limpieza y enriquecimiento de datos | 07/04 – 04/05 | 🟡 En curso |
-| [📁 Sprint 2](sprints/sprint2.md) | Entrenamiento del modelo predictivo (AutoML) | 04/05 – 18/05 | ⚪ Pendiente |
+| [📁 Sprint 1](sprints/sprint1.md) | ETL, limpieza y enriquecimiento de datos | 07/04 – 04/05 | ✅ Completado |
+| [📁 Sprint 2](sprints/sprint2.md) | Entrenamiento del modelo predictivo (AutoML) | 04/05 – 18/05 | 🟡 En curso |
 | [📁 Sprint 3](sprints/sprint3.md) | API REST + Chatbot con Azure OpenAI | 18/05 – 01/06 | ⚪ Pendiente |
 | [📁 Sprint 4](sprints/sprint4.md) | Dashboard Blazor + integración final | 01/06 – 22/06 | ⚪ Pendiente |
  
