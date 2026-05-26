@@ -14,9 +14,11 @@ Mario García · Alejandro Benítez
  
 | Tarea | Responsable | Estado |
 |---|---|---|
-| 📖 Leer [sprint2.md](sprints/sprint2.md) | Ambos | ⚪ Pendiente |
+| 📖 Leer [sprint2.md](sprints/sprint2.md) | Mario | ⚪ Pendiente |
 | <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
-| Notebook EDA _(arrastrado del Sprint 1)_ | Ambos | ⚪ Pendiente |
+| 📖 Leer [sprint2.md](sprints/sprint2.md) | Alejandro | ⚪ Pendiente |
+| <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
+| Notebook EDA _(arrastrado del Sprint 1)_ | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Explorar el dataset: distribuciones, % nulos por columna, outliers y correlaciones básicas</sub> | | |
 | Identificar registros DSQ/DNF _(arrastrado del Sprint 1)_ | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Buscar si hay columna de resultado en el dataset y crear la variable `descalificado` (0/1) — condiciona la tarea de clasificador</sub> | | |
