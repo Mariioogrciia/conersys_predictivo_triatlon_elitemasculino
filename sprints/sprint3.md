@@ -1,6 +1,6 @@
 # Sprint 3 — API REST, Despliegue en Azure y Chatbot
 
-> **Fechas:** 18/05/2026 → 01/06/2026 · 2 semanas  
+> **Fechas:** 08/06/2026 → 19/06/2026 · 2 semanas  
 > **Equipo:** Mario García · Alejandro Benítez  
 > **Proyecto:** Predictivo Triatlón Élite Masculino — Conersys
 
@@ -144,12 +144,3 @@ Desplegar en Azure Container Apps con HTTPS, Key Vault y GitHub Actions.
 | Costes de OpenAI altos en demo | Bajo | Alta | Caché de respuestas frecuentes + limitar contexto inyectado |
 
 ---
-
-## ✅ Definition of Done
-
-- [ ] API desplegada en Azure Container Apps con HTTPS y autenticación
-- [ ] `/predict` responde en <500ms (p95) con 20 usuarios concurrentes
-- [ ] Chatbot responde en <2s y dice "Dato no disponible" cuando toca (probado)
-- [ ] Mocks publicados desde el día 1 para desbloquear el Sprint 4
-- [ ] Cero claves en el repositorio — todo en Azure Key Vault
-- [ ] Swagger documentado y revisado por el Product Owner
