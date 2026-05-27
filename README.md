@@ -14,14 +14,14 @@ Mario García · Alejandro Benítez
  
 | Tarea | Responsable | Estado |
 |---|---|---|
-| 📖 Leer [sprint2.md](sprints/sprint2.md) | Mario | ⚪ Pendiente |
+| 📖 Leer [sprint2.md](sprints/sprint2.md) | Mario | ✅ Hecho  |
 | <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
 | 📖 Leer [sprint2.md](sprints/sprint2.md) | Alejandro | ✅ Hecho |
 | <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
 | **— PENDIENTES DE SPRINT 1 —** | | |
-| Notebook EDA | Mario | ⚪ Pendiente |
+| Notebook EDA | Mario | ✅ Hecho  |
 | <sub>Explorar el dataset: distribuciones, % nulos por columna, outliers y correlaciones básicas</sub> | | |
-| Identificar registros DSQ/DNF | Ambos | ⚪ Pendiente |
+| Identificar registros DSQ/DNF | Ambos | 🔴 AVISAR YA |
 | <sub>Buscar si hay columna de resultado en el dataset y crear la variable `descalificado` (0/1) — condiciona el clasificador</sub> | | |
 | **— INFRAESTRUCTURA —** | | |
 | Crear Azure ML Workspace | Alejandro | ⚪ Pendiente |
@@ -34,7 +34,7 @@ Mario García · Alejandro Benítez
 | Calcular variable de recuperación | Alejandro | ⚪ Pendiente |
 | <sub>Calcular `dias_desde_ultima_prueba` por atleta para cada fila del dataset</sub> | | |
 | Documentar todas las features | Alejandro | ⚪ Pendiente |
-| <sub>Crear tabla en `docs/` con nombre, descripción, unidad, rango esperado y cómo se calcula cada variable</sub> | | |
+| <sub>Crear tabla en `docs/` con nombre, descripción, un🟡 En cursoidad, rango esperado y cómo se calcula cada variable</sub> | | |
 | Verificar que no hay data leakage | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Comprobar que ninguna feature usa información posterior a la fecha de la prueba que se predice</sub> | | |
 | **— MODELO —** | | |
