@@ -1,0 +1,142 @@
+{
+  "athleteBasicInfo": {
+    "license": "72594720",
+    "fullName": "PERU URKOLA GOROSTITZU",
+    "clubName": "INDEPENDIENTE",
+    "autonomy": "GIP",
+    "birthDate": "28/05/2007",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_142105_amLJq.jpeg",
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "72594720",
+    "name": "PERU URKOLA GOROSTITZU",
+    "license": "72594720",
+    "club": "INDEPENDIENTE",
+    "federation": "GIP",
+    "birthDate": "28/05/2007",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_142105_amLJq.jpeg",
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:59.0721328Z"
+  },
+  "results": [
+    {
+      "ChId": 2448,
+      "ChdName": "Campeonato de España de Triatlón de Invierno - Reinosa 2026",
+      "ChdCity": "Reinosa",
+      "ChdDate": "01/02/2026",
+      "ChSeason": 2026,
+      "ChdDateSort": "2026-02-01",
+      "License": "72594720G",
+      "Name": "Peru Urkola Gorostitzu",
+      "FamilyName": "",
+      "Fed": "FETRI",
+      "Noc": "",
+      "EvDes": "Élite Masculina",
+      "EvDate": "01/02/2026",
+      "EvTime": "11:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 1,
+      "StartOrder": 19,
+      "Rk": "26",
+      "IRM": "",
+      "Res": "3:10:16",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "2448:5801:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Carrera",
+          "Status": "0",
+          "Type": "RU",
+          "RK": "26",
+          "RkInterval": "26",
+          "RkIntervalTot": "26",
+          "RkIntervalPo": 0,
+          "Interval": "0:32:21",
+          "IntervalTot": "0:32:21",
+          "Time": "0:32:21"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Status": "0",
+          "Type": "T1",
+          "RK": "26",
+          "RkInterval": "26",
+          "RkIntervalTot": "26",
+          "RkIntervalPo": 0,
+          "Interval": "0:02:23",
+          "IntervalTot": "0:02:23",
+          "Time": "0:34:44"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Status": "0",
+          "Type": "CY",
+          "RK": "26",
+          "RkInterval": "26",
+          "RkIntervalTot": "26",
+          "RkIntervalPo": 0,
+          "Interval": "1:39:05",
+          "IntervalTot": "1:39:05",
+          "Time": "2:13:49"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Status": "0",
+          "Type": "T2",
+          "RK": "26",
+          "RkInterval": "26",
+          "RkIntervalTot": "26",
+          "RkIntervalPo": 0,
+          "Interval": "0:05:06",
+          "IntervalTot": "0:05:06",
+          "Time": "2:18:55"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Natacion",
+          "Status": "0",
+          "Type": "SW",
+          "RK": "26",
+          "RkInterval": "26",
+          "RkIntervalTot": "26",
+          "RkIntervalPo": 0,
+          "Interval": "0:51:20",
+          "IntervalTot": "0:51:20",
+          "Time": "3:10:15"
+        }
+      ]
+    }
+  ],
+  "exportDate": "2026-06-03T10:36:01.6289862Z"
+}

@@ -1,0 +1,224 @@
+{
+  "athleteBasicInfo": {
+    "license": "35473394",
+    "fullName": "GONZALO FERNANDEZ OTERO",
+    "clubName": "TRIATLON VILAGARCIA",
+    "autonomy": "GAL",
+    "birthDate": "17/09/1979",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_110446_ZatzD.jpg",
+    "rankings": {
+      "triatlon": 336,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "35473394",
+    "name": "GONZALO FERNANDEZ OTERO",
+    "license": "35473394",
+    "club": "TRIATLON VILAGARCIA",
+    "federation": "GAL",
+    "birthDate": "17/09/1979",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_110446_ZatzD.jpg",
+    "rankings": {
+      "triatlon": 336,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:15.9048034Z"
+  },
+  "results": [
+    {
+      "ChId": 1242,
+      "ChdName": "AUT - Campeonato de Extremadura de Triatlón",
+      "ChdCity": "Jerez de los Caballeros",
+      "ChdDate": "28/07/2024",
+      "ChSeason": 2024,
+      "ChdDateSort": "2024-07-28",
+      "License": "35473394",
+      "Name": "Gonzalo Fernandez Otero",
+      "FamilyName": null,
+      "Fed": "GAL",
+      "Noc": "",
+      "EvDes": "ELITE MASCULINA",
+      "EvDate": "07/28/2024",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 67,
+      "StartOrder": 67,
+      "Rk": "",
+      "IRM": "",
+      "Res": "1:07:09",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1242:70387:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "32",
+          "RKPo": null,
+          "RkInterval": "32",
+          "RkIntervalTot": "32",
+          "RkIntervalPo": 0,
+          "Interval": "12:40",
+          "IntervalTot": "12:40",
+          "Time": "12:40"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "18",
+          "RKPo": null,
+          "RkInterval": "18",
+          "RkIntervalTot": "13",
+          "RkIntervalPo": 0,
+          "Interval": "35:18",
+          "IntervalTot": "35:18",
+          "Time": "47:58"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "17",
+          "RKPo": null,
+          "RkInterval": "17",
+          "RkIntervalTot": "9",
+          "RkIntervalPo": 0,
+          "Interval": "19:13",
+          "IntervalTot": "19:13",
+          "Time": "1:07:11"
+        }
+      ]
+    },
+    {
+      "ChId": 1375,
+      "ChdName": "AUT - Campeonato de Galicia de Duatlón",
+      "ChdCity": "Vimianzo",
+      "ChdDate": "03/05/2025",
+      "ChSeason": 2025,
+      "ChdDateSort": "2025-05-03",
+      "License": "35473394B",
+      "Name": "Gonzalo Fernandez Otero",
+      "FamilyName": null,
+      "Fed": "GAL",
+      "Noc": "",
+      "EvDes": "GGEE MASCULINO",
+      "EvDate": "05/03/2025",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 63,
+      "StartOrder": 63,
+      "Rk": "",
+      "IRM": "",
+      "Res": "NP",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1375:70467:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": null,
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": null,
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": null,
+          "IntervalTot": "",
+          "Time": ""
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "TRM": {
+      "rankingName": "Triatlón Masculino",
+      "identifier": "35473394B",
+      "name": "GONZALO FERNANDEZ OTERO",
+      "history": [
+        {
+          "rank": 359,
+          "points": "45",
+          "date": "2025-10-13T13:21:10.713"
+        },
+        {
+          "rank": 465,
+          "points": "2",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 465,
+          "points": "2",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 465,
+          "points": "2",
+          "date": "2025-08-26T00:00:00"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:18:21.0184950Z"
+}

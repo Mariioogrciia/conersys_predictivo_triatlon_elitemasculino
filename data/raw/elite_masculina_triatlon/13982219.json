@@ -1,0 +1,171 @@
+{
+  "athleteBasicInfo": {
+    "license": "13982219",
+    "fullName": "JUAN TORRES",
+    "clubName": "A.D. TRIATLÓN REINOSA-CAMPÓO",
+    "autonomy": "CAN",
+    "birthDate": "11/12/1976",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": null,
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": 1548,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "13982219",
+    "name": "JUAN TORRES",
+    "license": "13982219",
+    "club": "A.D. TRIATLÓN REINOSA-CAMPÓO",
+    "federation": "CAN",
+    "birthDate": "11/12/1976",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": null,
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": 1548,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:38.7948256Z"
+  },
+  "results": [
+    {
+      "ChId": 2448,
+      "ChdName": "Campeonato de España de Triatlón de Invierno - Reinosa 2026",
+      "ChdCity": "Reinosa",
+      "ChdDate": "01/02/2026",
+      "ChSeason": 2026,
+      "ChdDateSort": "2026-02-01",
+      "License": "13982219J",
+      "Name": "Juan Torres",
+      "FamilyName": "",
+      "Fed": "FETRI",
+      "Noc": "",
+      "EvDes": "Élite Masculina",
+      "EvDate": "01/02/2026",
+      "EvTime": "11:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 1,
+      "StartOrder": 28,
+      "Rk": "13",
+      "IRM": "",
+      "Res": "1:46:23",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "2448:5801:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Carrera",
+          "Status": "0",
+          "Type": "RU",
+          "RK": "13",
+          "RkInterval": "13",
+          "RkIntervalTot": "13",
+          "RkIntervalPo": 0,
+          "Interval": "0:22:48",
+          "IntervalTot": "0:22:48",
+          "Time": "0:22:48"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Status": "0",
+          "Type": "T1",
+          "RK": "13",
+          "RkInterval": "13",
+          "RkIntervalTot": "13",
+          "RkIntervalPo": 0,
+          "Interval": "0:01:05",
+          "IntervalTot": "0:01:05",
+          "Time": "0:23:53"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Status": "0",
+          "Type": "CY",
+          "RK": "13",
+          "RkInterval": "13",
+          "RkIntervalTot": "13",
+          "RkIntervalPo": 0,
+          "Interval": "0:59:36",
+          "IntervalTot": "0:59:36",
+          "Time": "1:23:29"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Status": "0",
+          "Type": "T2",
+          "RK": "13",
+          "RkInterval": "13",
+          "RkIntervalTot": "13",
+          "RkIntervalPo": 0,
+          "Interval": "0:02:45",
+          "IntervalTot": "0:02:45",
+          "Time": "1:26:14"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Natacion",
+          "Status": "0",
+          "Type": "SW",
+          "RK": "13",
+          "RkInterval": "13",
+          "RkIntervalTot": "13",
+          "RkIntervalPo": 0,
+          "Interval": "0:20:07",
+          "IntervalTot": "0:20:07",
+          "Time": "1:46:21"
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "MDLDM": {
+      "rankingName": "Media/Larga Distancia Masculino",
+      "identifier": "13982219J",
+      "name": "JUAN TORRES",
+      "history": [
+        {
+          "rank": 1531,
+          "points": "1",
+          "date": "2025-11-19T10:49:03.407"
+        },
+        {
+          "rank": 1520,
+          "points": "1",
+          "date": "2025-11-14T13:36:24.297"
+        },
+        {
+          "rank": 1601,
+          "points": "1",
+          "date": "2025-10-11T20:24:25.677"
+        },
+        {
+          "rank": 1601,
+          "points": "1",
+          "date": "2025-10-11T20:22:18.31"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:30:27.6025604Z"
+}

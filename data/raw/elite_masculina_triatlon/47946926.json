@@ -1,0 +1,278 @@
+{
+  "athleteBasicInfo": {
+    "license": "47946926",
+    "fullName": "MARC RELAT VENTURA",
+    "clubName": "TRI+9 EL MASNOU",
+    "autonomy": "CAT",
+    "birthDate": "15/08/1996",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_8582_7sJnj.jpeg",
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": 240,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "47946926",
+    "name": "MARC RELAT VENTURA",
+    "license": "47946926",
+    "club": "TRI+9 EL MASNOU",
+    "federation": "CAT",
+    "birthDate": "15/08/1996",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_8582_7sJnj.jpeg",
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": 240,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:45.9309793Z"
+  },
+  "results": [
+    {
+      "ChId": 1173,
+      "ChdName": "PRN - MD/LD IRONMAN 70.3 MALLORCA",
+      "ChdCity": "Alcudia",
+      "ChdDate": "11/05/2024",
+      "ChSeason": 2024,
+      "ChdDateSort": "2024-05-11",
+      "License": "47946926",
+      "Name": "Marc Relat Ventura",
+      "FamilyName": null,
+      "Fed": "CAT",
+      "Noc": "",
+      "EvDes": "GGEE MASCULINO",
+      "EvDate": "05/11/2024",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 20,
+      "StartOrder": 20,
+      "Rk": "7",
+      "IRM": "",
+      "Res": "4:43:50",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1173:60361:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "6",
+          "RKPo": null,
+          "RkInterval": "6",
+          "RkIntervalTot": "6",
+          "RkIntervalPo": 0,
+          "Interval": "28:50",
+          "IntervalTot": "28:50",
+          "Time": "28:50"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "4",
+          "RKPo": null,
+          "RkInterval": "4",
+          "RkIntervalTot": "6",
+          "RkIntervalPo": 0,
+          "Interval": "4:02",
+          "IntervalTot": "4:02",
+          "Time": "32:52"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "9",
+          "RKPo": null,
+          "RkInterval": "9",
+          "RkIntervalTot": "9",
+          "RkIntervalPo": 0,
+          "Interval": "3:13:04",
+          "IntervalTot": "3:13:04",
+          "Time": "3:45:56"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "8",
+          "RKPo": null,
+          "RkInterval": "8",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "2:17",
+          "IntervalTot": "2:17",
+          "Time": "3:48:13"
+        },
+        {
+          "Ord": 5,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "7",
+          "RKPo": null,
+          "RkInterval": "7",
+          "RkIntervalTot": "7",
+          "RkIntervalPo": 0,
+          "Interval": "4:43:50",
+          "IntervalTot": "4:43:50",
+          "Time": "8:32:03"
+        }
+      ]
+    },
+    {
+      "ChId": 2505,
+      "ChdName": "PRN - MD/LD TriXilxes sin Drafting 2026 [MD]",
+      "ChdCity": "Xilxes",
+      "ChdDate": "10/05/2026",
+      "ChSeason": 2026,
+      "ChdDateSort": "2026-05-10",
+      "License": "47946926E",
+      "Name": "Marc Relat Ventura",
+      "FamilyName": "",
+      "Fed": "FETRI",
+      "Noc": "",
+      "EvDes": "Elite Masculina",
+      "EvDate": "10/05/2026",
+      "EvTime": "08:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 2,
+      "StartOrder": 67,
+      "Rk": "29",
+      "IRM": "",
+      "Res": "02:58:56",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "2505:6285:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Natacion",
+          "Status": "0",
+          "Type": "SW",
+          "RK": "29",
+          "RkInterval": "29",
+          "RkIntervalTot": "29",
+          "RkIntervalPo": 0,
+          "Interval": "00:24:26",
+          "IntervalTot": "00:24:26",
+          "Time": "0:24:26"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Status": "0",
+          "Type": "T1",
+          "RK": "29",
+          "RkInterval": "29",
+          "RkIntervalTot": "29",
+          "RkIntervalPo": 0,
+          "Interval": "00:02:43",
+          "IntervalTot": "00:02:43",
+          "Time": "0:27:09"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Status": "0",
+          "Type": "CY",
+          "RK": "29",
+          "RkInterval": "29",
+          "RkIntervalTot": "29",
+          "RkIntervalPo": 0,
+          "Interval": "01:28:00",
+          "IntervalTot": "01:28:00",
+          "Time": "1:55:09"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Status": "0",
+          "Type": "T2",
+          "RK": "29",
+          "RkInterval": "29",
+          "RkIntervalTot": "29",
+          "RkIntervalPo": 0,
+          "Interval": "00:01:08",
+          "IntervalTot": "00:01:08",
+          "Time": "1:56:17"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Status": "0",
+          "Type": "RU",
+          "RK": "29",
+          "RkInterval": "29",
+          "RkIntervalTot": "29",
+          "RkIntervalPo": 0,
+          "Interval": "01:02:37",
+          "IntervalTot": "01:02:37",
+          "Time": "2:58:54"
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "MDLDM": {
+      "rankingName": "Media/Larga Distancia Masculino",
+      "identifier": "47946926E",
+      "name": "MARC RELAT VENTURA",
+      "history": [
+        {
+          "rank": 959,
+          "points": "76",
+          "date": "2025-11-19T10:49:03.407"
+        },
+        {
+          "rank": 953,
+          "points": "76",
+          "date": "2025-11-14T13:36:24.297"
+        },
+        {
+          "rank": 275,
+          "points": "307",
+          "date": "2025-10-11T20:24:25.677"
+        },
+        {
+          "rank": 275,
+          "points": "307",
+          "date": "2025-10-11T20:22:18.31"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:33:32.6044258Z"
+}

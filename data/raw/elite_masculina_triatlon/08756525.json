@@ -1,0 +1,256 @@
+{
+  "athleteBasicInfo": {
+    "license": "08756525",
+    "fullName": "RAFAEL GARCIA GONZALEZ",
+    "clubName": "CLUB TRIATLÓN JEREZ DE LOS CABALLEROS",
+    "autonomy": "EXT",
+    "birthDate": "13/08/1952",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_100796_TOI2Z.jpg",
+    "rankings": {
+      "triatlon": 1771,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "08756525",
+    "name": "RAFAEL GARCIA GONZALEZ",
+    "license": "08756525",
+    "club": "CLUB TRIATLÓN JEREZ DE LOS CABALLEROS",
+    "federation": "EXT",
+    "birthDate": "13/08/1952",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_100796_TOI2Z.jpg",
+    "rankings": {
+      "triatlon": 1771,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:20.0043483Z"
+  },
+  "results": [
+    {
+      "ChId": 1242,
+      "ChdName": "AUT - Campeonato de Extremadura de Triatlón",
+      "ChdCity": "Jerez de los Caballeros",
+      "ChdDate": "28/07/2024",
+      "ChSeason": 2024,
+      "ChdDateSort": "2024-07-28",
+      "License": "08756525",
+      "Name": "    Garcia Gonzalez",
+      "FamilyName": null,
+      "Fed": "EXT",
+      "Noc": "",
+      "EvDes": "ELITE MASCULINA",
+      "EvDate": "07/28/2024",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 52,
+      "StartOrder": 52,
+      "Rk": "",
+      "IRM": "",
+      "Res": "AB",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1242:70387:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "68",
+          "RKPo": null,
+          "RkInterval": "68",
+          "RkIntervalTot": "68",
+          "RkIntervalPo": 0,
+          "Interval": "21:27",
+          "IntervalTot": "21:27",
+          "Time": "21:27"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "65",
+          "RKPo": null,
+          "RkInterval": "65",
+          "RkIntervalTot": "65",
+          "RkIntervalPo": 0,
+          "Interval": "1:01:20",
+          "IntervalTot": "1:01:20",
+          "Time": "1:22:47"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        }
+      ]
+    },
+    {
+      "ChId": 22019,
+      "ChdName": "AUT - Campeonato de Extremadura de Triatlón Sprint",
+      "ChdCity": "Mérida",
+      "ChdDate": "16/06/2022",
+      "ChSeason": 2022,
+      "ChdDateSort": "2022-06-16",
+      "License": "08756525",
+      "Name": "RAFAEL GARCIA GONZÁLEZ",
+      "FamilyName": null,
+      "Fed": "EXT",
+      "Noc": "",
+      "EvDes": "GRUPOS DE EDAD MASCULINO",
+      "EvDate": "06/16/2022",
+      "EvTime": "09:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 116,
+      "StartOrder": 116,
+      "Rk": "116",
+      "IRM": "",
+      "Res": "",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "22019:60116:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 5,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "TRM": {
+      "rankingName": "Triatlón Masculino",
+      "identifier": "08756525B",
+      "name": "RAFAEL GARCIA GONZALEZ",
+      "history": [
+        {
+          "rank": 1851,
+          "points": "1",
+          "date": "2025-10-13T13:21:10.713"
+        },
+        {
+          "rank": 1819,
+          "points": "1",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1819,
+          "points": "1",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1819,
+          "points": "1",
+          "date": "2025-08-26T00:00:00"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:20:52.9720798Z"
+}

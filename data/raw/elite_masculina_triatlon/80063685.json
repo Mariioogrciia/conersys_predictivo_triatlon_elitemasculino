@@ -1,0 +1,256 @@
+{
+  "athleteBasicInfo": {
+    "license": "80063685",
+    "fullName": "JUAN DIEGO GARCÍA MORENO",
+    "clubName": "CLUB DE TRIATLÓN DIABLILLOS DE RIVAS",
+    "autonomy": "EXT",
+    "birthDate": "25/08/1985",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_93332_NjYK1.jpg",
+    "rankings": {
+      "triatlon": 1397,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "80063685",
+    "name": "JUAN DIEGO GARCÍA MORENO",
+    "license": "80063685",
+    "club": "CLUB DE TRIATLÓN DIABLILLOS DE RIVAS",
+    "federation": "EXT",
+    "birthDate": "25/08/1985",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_93332_NjYK1.jpg",
+    "rankings": {
+      "triatlon": 1397,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:41.7460251Z"
+  },
+  "results": [
+    {
+      "ChId": 1242,
+      "ChdName": "AUT - Campeonato de Extremadura de Triatlón",
+      "ChdCity": "Jerez de los Caballeros",
+      "ChdDate": "28/07/2024",
+      "ChSeason": 2024,
+      "ChdDateSort": "2024-07-28",
+      "License": "80063685",
+      "Name": "Juan Diego García Moreno",
+      "FamilyName": null,
+      "Fed": "EXT",
+      "Noc": "",
+      "EvDes": "ELITE MASCULINA",
+      "EvDate": "07/28/2024",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 57,
+      "StartOrder": 57,
+      "Rk": "19",
+      "IRM": "",
+      "Res": "1:10:01",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1242:70387:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "20",
+          "RKPo": null,
+          "RkInterval": "20",
+          "RkIntervalTot": "20",
+          "RkIntervalPo": 0,
+          "Interval": "11:53",
+          "IntervalTot": "11:53",
+          "Time": "11:53"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "18",
+          "RKPo": null,
+          "RkInterval": "19",
+          "RkIntervalTot": "18",
+          "RkIntervalPo": 0,
+          "Interval": "36:05",
+          "IntervalTot": "36:05",
+          "Time": "47:58"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "21",
+          "RKPo": null,
+          "RkInterval": "21",
+          "RkIntervalTot": "31",
+          "RkIntervalPo": 0,
+          "Interval": "22:05",
+          "IntervalTot": "22:05",
+          "Time": "1:10:03"
+        }
+      ]
+    },
+    {
+      "ChId": 22019,
+      "ChdName": "AUT - Campeonato de Extremadura de Triatlón Sprint",
+      "ChdCity": "Mérida",
+      "ChdDate": "16/06/2022",
+      "ChSeason": 2022,
+      "ChdDateSort": "2022-06-16",
+      "License": "80063685",
+      "Name": "JUAN DIEGO GARCÍA MORENO",
+      "FamilyName": null,
+      "Fed": "EXT",
+      "Noc": "",
+      "EvDes": "GRUPOS DE EDAD MASCULINO",
+      "EvDate": "06/16/2022",
+      "EvTime": "09:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 29,
+      "StartOrder": 29,
+      "Rk": "29",
+      "IRM": "",
+      "Res": "",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "22019:60116:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 5,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "TRM": {
+      "rankingName": "Triatlón Masculino",
+      "identifier": "80063685H",
+      "name": "JUAN DIEGO GARCÍA MORENO",
+      "history": [
+        {
+          "rank": 1468,
+          "points": "16",
+          "date": "2025-10-13T13:21:10.713"
+        },
+        {
+          "rank": 1424,
+          "points": "16",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1424,
+          "points": "16",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1424,
+          "points": "16",
+          "date": "2025-08-26T00:00:00"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:31:52.4492890Z"
+}

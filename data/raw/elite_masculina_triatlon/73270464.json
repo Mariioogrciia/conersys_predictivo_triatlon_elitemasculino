@@ -1,0 +1,429 @@
+{
+  "athleteBasicInfo": {
+    "license": "73270464",
+    "fullName": "JOANES ARREGI BARBA",
+    "clubName": "ATLETICO S.SEBASTIAN",
+    "autonomy": "GIP",
+    "birthDate": "27/11/2002",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_100424_fkjKP.jpg",
+    "rankings": {
+      "triatlon": 1520,
+      "duatlon": 814,
+      "mdld": 289,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "73270464",
+    "name": "JOANES ARREGI BARBA",
+    "license": "73270464",
+    "club": "ATLETICO S.SEBASTIAN",
+    "federation": "GIP",
+    "birthDate": "27/11/2002",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_100424_fkjKP.jpg",
+    "rankings": {
+      "triatlon": 1520,
+      "duatlon": 814,
+      "mdld": 289,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:46:05.4383502Z"
+  },
+  "results": [
+    {
+      "ChId": 1300,
+      "ChdName": "Campeonato de España de Duatlón - Cáceres 2025",
+      "ChdCity": "Cáceres",
+      "ChdDate": "29/03/2025",
+      "ChSeason": 2025,
+      "ChdDateSort": "2025-03-29",
+      "License": "73270464P",
+      "Name": "Joanes Arregi Barba",
+      "FamilyName": null,
+      "Fed": "PVA",
+      "Noc": "",
+      "EvDes": "GGEE 20-24 ESTANDAR MASCULINO",
+      "EvDate": "03/30/2025",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 1,
+      "StartOrder": 1,
+      "Rk": "1",
+      "IRM": "",
+      "Res": "2:03:50",
+      "Temperature": "7",
+      "Humidity": "",
+      "KeyResult": "1300:60420:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Carrera 1",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "2",
+          "RKPo": null,
+          "RkInterval": "2",
+          "RkIntervalTot": "2",
+          "RkIntervalPo": 0,
+          "Interval": "39:30",
+          "IntervalTot": "39:30",
+          "Time": "39:30"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "2",
+          "RKPo": null,
+          "RkInterval": "2",
+          "RkIntervalTot": "2",
+          "RkIntervalPo": 0,
+          "Interval": "0:16",
+          "IntervalTot": "0:16",
+          "Time": "39:46"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "2",
+          "RKPo": null,
+          "RkInterval": "2",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "58:47",
+          "IntervalTot": "58:47",
+          "Time": "1:38:34"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "2",
+          "RKPo": null,
+          "RkInterval": "2",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "0:23",
+          "IntervalTot": "0:23",
+          "Time": "1:38:57"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Carrera 2",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "2",
+          "RKPo": null,
+          "RkInterval": "2",
+          "RkIntervalTot": "2",
+          "RkIntervalPo": 0,
+          "Interval": "24:53",
+          "IntervalTot": "24:53",
+          "Time": "2:03:50"
+        }
+      ]
+    },
+    {
+      "ChId": 1309,
+      "ChdName": "Campeonato de España de Triatlón de Media Distancia",
+      "ChdCity": "Santa Eulària des Riu",
+      "ChdDate": "02/11/2025",
+      "ChSeason": 2025,
+      "ChdDateSort": "2025-11-02",
+      "License": "73270464P",
+      "Name": "Joanes Arregi Barba",
+      "FamilyName": null,
+      "Fed": "PVA",
+      "Noc": "",
+      "EvDes": "GGEE 20-24 MASCULINO",
+      "EvDate": "11/02/2025",
+      "EvTime": "08:05",
+      "PhDes": "Final ",
+      "OrdEvUnit": 1,
+      "StartOrder": 1,
+      "Rk": "2",
+      "IRM": "",
+      "Res": "3:50:41",
+      "Temperature": "18.8",
+      "Humidity": "22.0",
+      "KeyResult": "1309:60379:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "1",
+          "RKPo": null,
+          "RkInterval": "1",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "29:12",
+          "IntervalTot": "29:12",
+          "Time": "29:12"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "1",
+          "RKPo": null,
+          "RkInterval": "1",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "1:05",
+          "IntervalTot": "1:05",
+          "Time": "30:17"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "1",
+          "RKPo": null,
+          "RkInterval": "1",
+          "RkIntervalTot": "2",
+          "RkIntervalPo": 0,
+          "Interval": "2:00:28",
+          "IntervalTot": "2:00:28",
+          "Time": "2:30:46"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "1",
+          "RKPo": null,
+          "RkInterval": "1",
+          "RkIntervalTot": "4",
+          "RkIntervalPo": 0,
+          "Interval": "1:50",
+          "IntervalTot": "1:50",
+          "Time": "2:32:37"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "2",
+          "RKPo": null,
+          "RkInterval": "2",
+          "RkIntervalTot": "4",
+          "RkIntervalPo": 0,
+          "Interval": "1:18:03",
+          "IntervalTot": "1:18:03",
+          "Time": "3:50:41"
+        }
+      ]
+    },
+    {
+      "ChId": 2502,
+      "ChdName": "PRN - MD/LD Infinitri 113 Triathlon Peñíscola 2026 [PTO] [MD]",
+      "ChdCity": "Peñíscola",
+      "ChdDate": "26/04/2026",
+      "ChSeason": 2026,
+      "ChdDateSort": "2026-04-26",
+      "License": "73270464P",
+      "Name": "JOANES\u00A0ARREGI BARBA",
+      "FamilyName": "",
+      "Fed": "FETRI",
+      "Noc": "",
+      "EvDes": "Élite Masculino",
+      "EvDate": "26/04/2026",
+      "EvTime": "07:30",
+      "PhDes": "Final",
+      "OrdEvUnit": 1,
+      "StartOrder": 26,
+      "Rk": "33",
+      "IRM": "",
+      "Res": "4:21:35",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "2502:6251:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Natacion",
+          "Status": "0",
+          "Type": "SW",
+          "RK": "33",
+          "RkInterval": "33",
+          "RkIntervalTot": "33",
+          "RkIntervalPo": 0,
+          "Interval": "0:28:28",
+          "IntervalTot": "0:28:28",
+          "Time": "0:28:28"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Status": "0",
+          "Type": "T1",
+          "RK": "33",
+          "RkInterval": "33",
+          "RkIntervalTot": "33",
+          "RkIntervalPo": 0,
+          "Interval": "0:00:30",
+          "IntervalTot": "0:00:30",
+          "Time": "0:28:58"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Status": "0",
+          "Type": "CY",
+          "RK": "33",
+          "RkInterval": "33",
+          "RkIntervalTot": "33",
+          "RkIntervalPo": 0,
+          "Interval": "2:17:08",
+          "IntervalTot": "2:17:08",
+          "Time": "2:46:06"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Status": "0",
+          "Type": "T2",
+          "RK": "33",
+          "RkInterval": "33",
+          "RkIntervalTot": "33",
+          "RkIntervalPo": 0,
+          "Interval": "0:02:06",
+          "IntervalTot": "0:02:06",
+          "Time": "2:48:12"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Status": "0",
+          "Type": "RU",
+          "RK": "33",
+          "RkInterval": "33",
+          "RkIntervalTot": "33",
+          "RkIntervalPo": 0,
+          "Interval": "1:33:21",
+          "IntervalTot": "1:33:21",
+          "Time": "4:21:33"
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "TRM": {
+      "rankingName": "Triatlón Masculino",
+      "identifier": "73270464P",
+      "name": "JOANES ARREGI BARBA",
+      "history": [
+        {
+          "rank": 1598,
+          "points": "8",
+          "date": "2025-10-13T13:21:10.713"
+        },
+        {
+          "rank": 1554,
+          "points": "8",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1554,
+          "points": "8",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1554,
+          "points": "8",
+          "date": "2025-08-26T00:00:00"
+        }
+      ]
+    },
+    "DUM": {
+      "rankingName": "Duatlón Masculino",
+      "identifier": "73270464P",
+      "name": "JOANES ARREGI BARBA",
+      "history": [
+        {
+          "rank": 831,
+          "points": "153",
+          "date": "2025-06-09T19:45:27.507"
+        },
+        {
+          "rank": 809,
+          "points": "153",
+          "date": "2025-04-24T12:23:45.113"
+        }
+      ]
+    },
+    "MDLDM": {
+      "rankingName": "Media/Larga Distancia Masculino",
+      "identifier": "73270464P",
+      "name": "JOANES ARREGI BARBA",
+      "history": [
+        {
+          "rank": 367,
+          "points": "26",
+          "date": "2025-11-19T10:49:03.407"
+        },
+        {
+          "rank": 367,
+          "points": "26",
+          "date": "2025-11-14T13:36:24.297"
+        },
+        {
+          "rank": 1450,
+          "points": "2",
+          "date": "2025-10-11T20:24:25.677"
+        },
+        {
+          "rank": 1450,
+          "points": "2",
+          "date": "2025-10-11T20:22:18.31"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:37:21.7517142Z"
+}

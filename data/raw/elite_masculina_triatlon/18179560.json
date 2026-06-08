@@ -1,0 +1,142 @@
+{
+  "athleteBasicInfo": {
+    "license": "18179560",
+    "fullName": "RODRIGO AZABAL ESTAÚN",
+    "clubName": "STADIUM CASABLANCA MAPEI",
+    "autonomy": "ARA",
+    "birthDate": "08/01/2006",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_140609_mZqru.jpg",
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "18179560",
+    "name": "RODRIGO AZABAL ESTAÚN",
+    "license": "18179560",
+    "club": "STADIUM CASABLANCA MAPEI",
+    "federation": "ARA",
+    "birthDate": "08/01/2006",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_140609_mZqru.jpg",
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:51.8713147Z"
+  },
+  "results": [
+    {
+      "ChId": 2448,
+      "ChdName": "Campeonato de España de Triatlón de Invierno - Reinosa 2026",
+      "ChdCity": "Reinosa",
+      "ChdDate": "01/02/2026",
+      "ChSeason": 2026,
+      "ChdDateSort": "2026-02-01",
+      "License": "18179560S",
+      "Name": "Rodrigo Azabal Estaún",
+      "FamilyName": "",
+      "Fed": "FETRI",
+      "Noc": "",
+      "EvDes": "Élite Masculina",
+      "EvDate": "01/02/2026",
+      "EvTime": "11:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 1,
+      "StartOrder": 23,
+      "Rk": "1",
+      "IRM": "",
+      "Res": "1:33:53",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "2448:5801:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Carrera",
+          "Status": "0",
+          "Type": "RU",
+          "RK": "1",
+          "RkInterval": "1",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "0:20:47",
+          "IntervalTot": "0:20:47",
+          "Time": "0:20:47"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Status": "0",
+          "Type": "T1",
+          "RK": "1",
+          "RkInterval": "1",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "0:00:47",
+          "IntervalTot": "0:00:47",
+          "Time": "0:21:34"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Status": "0",
+          "Type": "CY",
+          "RK": "1",
+          "RkInterval": "1",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "0:55:35",
+          "IntervalTot": "0:55:35",
+          "Time": "1:17:09"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Status": "0",
+          "Type": "T2",
+          "RK": "1",
+          "RkInterval": "1",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "0:01:49",
+          "IntervalTot": "0:01:49",
+          "Time": "1:18:58"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Natacion",
+          "Status": "0",
+          "Type": "SW",
+          "RK": "1",
+          "RkInterval": "1",
+          "RkIntervalTot": "1",
+          "RkIntervalPo": 0,
+          "Interval": "0:14:51",
+          "IntervalTot": "0:14:51",
+          "Time": "1:33:49"
+        }
+      ]
+    }
+  ],
+  "exportDate": "2026-06-03T10:34:46.0439316Z"
+}

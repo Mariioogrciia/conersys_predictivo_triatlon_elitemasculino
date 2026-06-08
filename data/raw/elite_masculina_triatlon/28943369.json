@@ -1,0 +1,149 @@
+{
+  "athleteBasicInfo": {
+    "license": "28943369",
+    "fullName": "JUAN JOSE CORTES SIMON",
+    "clubName": "ARTE FISICO",
+    "autonomy": "EXT",
+    "birthDate": "26/05/1971",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_96961_4b3IH.jpg",
+    "rankings": {
+      "triatlon": 1761,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "28943369",
+    "name": "JUAN JOSE CORTES SIMON",
+    "license": "28943369",
+    "club": "ARTE FISICO",
+    "federation": "EXT",
+    "birthDate": "26/05/1971",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_96961_4b3IH.jpg",
+    "rankings": {
+      "triatlon": 1761,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:42.890038Z"
+  },
+  "results": [
+    {
+      "ChId": 1242,
+      "ChdName": "AUT - Campeonato de Extremadura de Triatlón",
+      "ChdCity": "Jerez de los Caballeros",
+      "ChdDate": "28/07/2024",
+      "ChSeason": 2024,
+      "ChdDateSort": "2024-07-28",
+      "License": "28943369",
+      "Name": "Juan Jose Cortes Simon",
+      "FamilyName": null,
+      "Fed": "EXT",
+      "Noc": "",
+      "EvDes": "ELITE MASCULINA",
+      "EvDate": "07/28/2024",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 35,
+      "StartOrder": 35,
+      "Rk": "",
+      "IRM": "",
+      "Res": "AB",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1242:70387:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "67",
+          "RKPo": null,
+          "RkInterval": "67",
+          "RkIntervalTot": "67",
+          "RkIntervalPo": 0,
+          "Interval": "20:49",
+          "IntervalTot": "20:49",
+          "Time": "20:49"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "",
+          "RKPo": null,
+          "RkInterval": "",
+          "RkIntervalTot": "",
+          "RkIntervalPo": 0,
+          "Interval": "",
+          "IntervalTot": "",
+          "Time": ""
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "TRM": {
+      "rankingName": "Triatlón Masculino",
+      "identifier": "28943369P",
+      "name": "JUAN JOSE CORTES SIMON",
+      "history": [
+        {
+          "rank": 1845,
+          "points": "1",
+          "date": "2025-10-13T13:21:10.713"
+        },
+        {
+          "rank": 1812,
+          "points": "1",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1812,
+          "points": "1",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1812,
+          "points": "1",
+          "date": "2025-08-26T00:00:00"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:32:26.3497075Z"
+}

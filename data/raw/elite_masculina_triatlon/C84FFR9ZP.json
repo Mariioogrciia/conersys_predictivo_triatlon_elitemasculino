@@ -1,0 +1,71 @@
+{
+  "athleteBasicInfo": {
+    "license": "C84FFR9ZP",
+    "fullName": "LEO WEIKERT",
+    "clubName": "C.D.T RESISTENTIA T3",
+    "autonomy": "VAL",
+    "birthDate": "22/06/2002",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": null,
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "C84FFR9ZP",
+    "name": "LEO WEIKERT",
+    "license": "C84FFR9ZP",
+    "club": "C.D.T RESISTENTIA T3",
+    "federation": "VAL",
+    "birthDate": "22/06/2002",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": null,
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:59.5526473Z"
+  },
+  "results": [
+    {
+      "ChId": 2448,
+      "ChdName": "Campeonato de España de Triatlón de Invierno - Reinosa 2026",
+      "ChdCity": "Reinosa",
+      "ChdDate": "01/02/2026",
+      "ChSeason": 2026,
+      "ChdDateSort": "2026-02-01",
+      "License": "C84FFR9ZP",
+      "Name": "Leo Weikert",
+      "FamilyName": "",
+      "Fed": "FETRI",
+      "Noc": "",
+      "EvDes": "Élite Masculina",
+      "EvDate": "01/02/2026",
+      "EvTime": "11:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 1,
+      "StartOrder": 29,
+      "Rk": "",
+      "IRM": "",
+      "Res": "",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "2448:5801:5:1",
+      "ResDetail": []
+    }
+  ],
+  "exportDate": "2026-06-03T10:36:06.1716217Z"
+}

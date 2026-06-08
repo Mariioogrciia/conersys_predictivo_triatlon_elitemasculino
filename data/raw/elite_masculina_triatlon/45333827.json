@@ -1,0 +1,142 @@
+{
+  "athleteBasicInfo": {
+    "license": "45333827",
+    "fullName": "MARTÍN MORALES SÁNCHEZ",
+    "clubName": "C.D. TRICLUB BABYSCHOOL",
+    "autonomy": "AND",
+    "birthDate": "25/12/2002",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": null,
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "45333827",
+    "name": "MARTÍN MORALES SÁNCHEZ",
+    "license": "45333827",
+    "club": "C.D. TRICLUB BABYSCHOOL",
+    "federation": "AND",
+    "birthDate": "25/12/2002",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": null,
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:58.4200338Z"
+  },
+  "results": [
+    {
+      "ChId": 2448,
+      "ChdName": "Campeonato de España de Triatlón de Invierno - Reinosa 2026",
+      "ChdCity": "Reinosa",
+      "ChdDate": "01/02/2026",
+      "ChSeason": 2026,
+      "ChdDateSort": "2026-02-01",
+      "License": "45333827E",
+      "Name": "Martín Morales Sánchez",
+      "FamilyName": "",
+      "Fed": "FETRI",
+      "Noc": "",
+      "EvDes": "Élite Masculina",
+      "EvDate": "01/02/2026",
+      "EvTime": "11:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 1,
+      "StartOrder": 22,
+      "Rk": "22",
+      "IRM": "",
+      "Res": "2:00:34",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "2448:5801:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Carrera",
+          "Status": "0",
+          "Type": "RU",
+          "RK": "22",
+          "RkInterval": "22",
+          "RkIntervalTot": "22",
+          "RkIntervalPo": 0,
+          "Interval": "0:24:28",
+          "IntervalTot": "0:24:28",
+          "Time": "0:24:28"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Status": "0",
+          "Type": "T1",
+          "RK": "22",
+          "RkInterval": "22",
+          "RkIntervalTot": "22",
+          "RkIntervalPo": 0,
+          "Interval": "0:01:01",
+          "IntervalTot": "0:01:01",
+          "Time": "0:25:29"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Status": "0",
+          "Type": "CY",
+          "RK": "22",
+          "RkInterval": "22",
+          "RkIntervalTot": "22",
+          "RkIntervalPo": 0,
+          "Interval": "1:12:06",
+          "IntervalTot": "1:12:06",
+          "Time": "1:37:35"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Status": "0",
+          "Type": "T2",
+          "RK": "22",
+          "RkInterval": "22",
+          "RkIntervalTot": "22",
+          "RkIntervalPo": 0,
+          "Interval": "0:04:21",
+          "IntervalTot": "0:04:21",
+          "Time": "1:41:56"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Natacion",
+          "Status": "0",
+          "Type": "SW",
+          "RK": "22",
+          "RkInterval": "22",
+          "RkIntervalTot": "22",
+          "RkIntervalPo": 0,
+          "Interval": "0:18:35",
+          "IntervalTot": "0:18:35",
+          "Time": "2:00:31"
+        }
+      ]
+    }
+  ],
+  "exportDate": "2026-06-03T10:35:55.2459263Z"
+}

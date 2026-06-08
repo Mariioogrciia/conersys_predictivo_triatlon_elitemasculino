@@ -1,0 +1,278 @@
+{
+  "athleteBasicInfo": {
+    "license": "46466101",
+    "fullName": "MARC SOLSONA MONTIEL",
+    "clubName": "INDEPENDIENTE",
+    "autonomy": "VAL",
+    "birthDate": "17/01/1986",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_131322_5SMBQ.jpeg",
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": 1223,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "46466101",
+    "name": "MARC SOLSONA MONTIEL",
+    "license": "46466101",
+    "club": "INDEPENDIENTE",
+    "federation": "VAL",
+    "birthDate": "17/01/1986",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_131322_5SMBQ.jpeg",
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": 1223,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:43.8475132Z"
+  },
+  "results": [
+    {
+      "ChId": 1360,
+      "ChdName": "PRN - MD/LD triXilxes #sindrafting by Trilavall [MD] [PTO]",
+      "ChdCity": "Chilches/Xilxes",
+      "ChdDate": "11/05/2025",
+      "ChSeason": 2025,
+      "ChdDateSort": "2025-05-11",
+      "License": "46466101Y",
+      "Name": "Marc Solsona Montiel",
+      "FamilyName": null,
+      "Fed": "VAL",
+      "Noc": "",
+      "EvDes": "GGEE MASCULINO",
+      "EvDate": "05/11/2025",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 430,
+      "StartOrder": 430,
+      "Rk": "126",
+      "IRM": "",
+      "Res": "3:22:26",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1360:60415:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "165",
+          "RKPo": null,
+          "RkInterval": "165",
+          "RkIntervalTot": "165",
+          "RkIntervalPo": 0,
+          "Interval": "30:33",
+          "IntervalTot": "30:33",
+          "Time": "30:33"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "154",
+          "RKPo": null,
+          "RkInterval": "154",
+          "RkIntervalTot": "85",
+          "RkIntervalPo": 0,
+          "Interval": "2:40",
+          "IntervalTot": "2:40",
+          "Time": "33:13"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "161",
+          "RKPo": null,
+          "RkInterval": "161",
+          "RkIntervalTot": "168",
+          "RkIntervalPo": 0,
+          "Interval": "1:45:26",
+          "IntervalTot": "1:45:26",
+          "Time": "2:18:39"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "162",
+          "RKPo": null,
+          "RkInterval": "162",
+          "RkIntervalTot": "162",
+          "RkIntervalPo": 0,
+          "Interval": "2:09",
+          "IntervalTot": "2:09",
+          "Time": "2:20:48"
+        },
+        {
+          "Ord": 5,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "131",
+          "RKPo": null,
+          "RkInterval": "131",
+          "RkIntervalTot": "72",
+          "RkIntervalPo": 0,
+          "Interval": "1:01:36",
+          "IntervalTot": "1:01:36",
+          "Time": "3:22:24"
+        }
+      ]
+    },
+    {
+      "ChId": 2505,
+      "ChdName": "PRN - MD/LD TriXilxes sin Drafting 2026 [MD]",
+      "ChdCity": "Xilxes",
+      "ChdDate": "10/05/2026",
+      "ChSeason": 2026,
+      "ChdDateSort": "2026-05-10",
+      "License": "46466101Y",
+      "Name": "Marc Solsona Montiel",
+      "FamilyName": "",
+      "Fed": "FETRI",
+      "Noc": "",
+      "EvDes": "Elite Masculina",
+      "EvDate": "10/05/2026",
+      "EvTime": "08:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 2,
+      "StartOrder": 66,
+      "Rk": "56",
+      "IRM": "",
+      "Res": "03:24:24",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "2505:6285:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Natacion",
+          "Status": "0",
+          "Type": "SW",
+          "RK": "56",
+          "RkInterval": "56",
+          "RkIntervalTot": "56",
+          "RkIntervalPo": 0,
+          "Interval": "00:31:38",
+          "IntervalTot": "00:31:38",
+          "Time": "0:31:38"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Status": "0",
+          "Type": "T1",
+          "RK": "56",
+          "RkInterval": "56",
+          "RkIntervalTot": "56",
+          "RkIntervalPo": 0,
+          "Interval": "00:02:33",
+          "IntervalTot": "00:02:33",
+          "Time": "0:34:11"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Status": "0",
+          "Type": "CY",
+          "RK": "56",
+          "RkInterval": "56",
+          "RkIntervalTot": "56",
+          "RkIntervalPo": 0,
+          "Interval": "01:43:59",
+          "IntervalTot": "01:43:59",
+          "Time": "2:18:10"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Status": "0",
+          "Type": "T2",
+          "RK": "56",
+          "RkInterval": "56",
+          "RkIntervalTot": "56",
+          "RkIntervalPo": 0,
+          "Interval": "00:01:44",
+          "IntervalTot": "00:01:44",
+          "Time": "2:19:54"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Status": "0",
+          "Type": "RU",
+          "RK": "56",
+          "RkInterval": "56",
+          "RkIntervalTot": "56",
+          "RkIntervalPo": 0,
+          "Interval": "01:04:28",
+          "IntervalTot": "01:04:28",
+          "Time": "3:24:22"
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "MDLDM": {
+      "rankingName": "Media/Larga Distancia Masculino",
+      "identifier": "46466101Y",
+      "name": "MARC SOLSONA MONTIEL",
+      "history": [
+        {
+          "rank": 1874,
+          "points": "1",
+          "date": "2025-11-19T10:49:03.407"
+        },
+        {
+          "rank": 1860,
+          "points": "1",
+          "date": "2025-11-14T13:36:24.297"
+        },
+        {
+          "rank": 2238,
+          "points": "1",
+          "date": "2025-10-11T20:24:25.677"
+        },
+        {
+          "rank": 2238,
+          "points": "1",
+          "date": "2025-10-11T20:22:18.31"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:32:52.0148255Z"
+}

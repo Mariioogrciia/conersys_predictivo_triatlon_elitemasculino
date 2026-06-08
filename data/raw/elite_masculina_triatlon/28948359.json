@@ -1,0 +1,241 @@
+{
+  "athleteBasicInfo": {
+    "license": "28948359",
+    "fullName": "JUAN BAUTISTA SANZ JIMENEZ",
+    "clubName": "TRIATLÓN PACENSE",
+    "autonomy": "EXT",
+    "birthDate": "14/06/1975",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_114820_MCxRn.jpg",
+    "rankings": {
+      "triatlon": 1233,
+      "duatlon": 1002,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "28948359",
+    "name": "JUAN BAUTISTA SANZ JIMENEZ",
+    "license": "28948359",
+    "club": "TRIATLÓN PACENSE",
+    "federation": "EXT",
+    "birthDate": "14/06/1975",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_114820_MCxRn.jpg",
+    "rankings": {
+      "triatlon": 1233,
+      "duatlon": 1002,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:16.4107746Z"
+  },
+  "results": [
+    {
+      "ChId": 1242,
+      "ChdName": "AUT - Campeonato de Extremadura de Triatlón",
+      "ChdCity": "Jerez de los Caballeros",
+      "ChdDate": "28/07/2024",
+      "ChSeason": 2024,
+      "ChdDateSort": "2024-07-28",
+      "License": "28948359",
+      "Name": "Juan Bautista Sanz Jimenez",
+      "FamilyName": null,
+      "Fed": "EXT",
+      "Noc": "",
+      "EvDes": "ELITE MASCULINA",
+      "EvDate": "07/28/2024",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 33,
+      "StartOrder": 33,
+      "Rk": "34",
+      "IRM": "",
+      "Res": "1:15:45",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1242:70387:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "41",
+          "RKPo": null,
+          "RkInterval": "41",
+          "RkIntervalTot": "41",
+          "RkIntervalPo": 0,
+          "Interval": "13:39",
+          "IntervalTot": "13:39",
+          "Time": "13:39"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "35",
+          "RKPo": null,
+          "RkInterval": "35",
+          "RkIntervalTot": "30",
+          "RkIntervalPo": 0,
+          "Interval": "38:10",
+          "IntervalTot": "38:10",
+          "Time": "51:49"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "37",
+          "RKPo": null,
+          "RkInterval": "37",
+          "RkIntervalTot": "46",
+          "RkIntervalPo": 0,
+          "Interval": "23:57",
+          "IntervalTot": "23:57",
+          "Time": "1:15:46"
+        }
+      ]
+    },
+    {
+      "ChId": 1394,
+      "ChdName": "AUT - Campeonato de Extremadura de Duatlón",
+      "ChdCity": "Moraleja",
+      "ChdDate": "16/03/2025",
+      "ChSeason": 2025,
+      "ChdDateSort": "2025-03-16",
+      "License": "28948359F",
+      "Name": "Juan Bautista Sanz Jimenez",
+      "FamilyName": null,
+      "Fed": "EXT",
+      "Noc": "",
+      "EvDes": "GGEE MASCULINO",
+      "EvDate": "03/16/2025",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 34,
+      "StartOrder": 34,
+      "Rk": "53",
+      "IRM": "",
+      "Res": "1:10:20",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1394:60377:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "47",
+          "RKPo": null,
+          "RkInterval": "47",
+          "RkIntervalTot": "47",
+          "RkIntervalPo": 0,
+          "Interval": "7:33",
+          "IntervalTot": "7:33",
+          "Time": "7:33"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "63",
+          "RKPo": null,
+          "RkInterval": "63",
+          "RkIntervalTot": "73",
+          "RkIntervalPo": 0,
+          "Interval": "50:19",
+          "IntervalTot": "50:19",
+          "Time": "57:52"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "61",
+          "RKPo": null,
+          "RkInterval": "61",
+          "RkIntervalTot": "60",
+          "RkIntervalPo": 0,
+          "Interval": "12:28",
+          "IntervalTot": "12:28",
+          "Time": "1:10:20"
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "TRM": {
+      "rankingName": "Triatlón Masculino",
+      "identifier": "28948359F",
+      "name": "JUAN BAUTISTA SANZ JIMENEZ",
+      "history": [
+        {
+          "rank": 1295,
+          "points": "35",
+          "date": "2025-10-13T13:21:10.713"
+        },
+        {
+          "rank": 1251,
+          "points": "35",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1251,
+          "points": "35",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 1251,
+          "points": "35",
+          "date": "2025-08-26T00:00:00"
+        }
+      ]
+    },
+    "DUM": {
+      "rankingName": "Duatlón Masculino",
+      "identifier": "28948359F",
+      "name": "JUAN BAUTISTA SANZ JIMENEZ",
+      "history": [
+        {
+          "rank": 1314,
+          "points": "17",
+          "date": "2025-06-09T19:45:27.507"
+        },
+        {
+          "rank": 1262,
+          "points": "17",
+          "date": "2025-04-24T12:23:45.113"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:18:36.0946194Z"
+}

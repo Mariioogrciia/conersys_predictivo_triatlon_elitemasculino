@@ -1,0 +1,315 @@
+{
+  "athleteBasicInfo": {
+    "license": "72453687",
+    "fullName": "AITOR TEJERIA AIZPURUA",
+    "clubName": "TOLOSALDEKO T.T.",
+    "autonomy": "GIP",
+    "birthDate": "18/09/1975",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_108540_qrzuz.jpg",
+    "rankings": {
+      "triatlon": 639,
+      "duatlon": null,
+      "mdld": 1268,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "72453687",
+    "name": "AITOR TEJERIA AIZPURUA",
+    "license": "72453687",
+    "club": "TOLOSALDEKO T.T.",
+    "federation": "GIP",
+    "birthDate": "18/09/1975",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_108540_qrzuz.jpg",
+    "rankings": {
+      "triatlon": 639,
+      "duatlon": null,
+      "mdld": 1268,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:46:04.2809876Z"
+  },
+  "results": [
+    {
+      "ChId": 1080,
+      "ChdName": "AUT - Campeonato de Aragón de Triatlón",
+      "ChdCity": "Tarazona",
+      "ChdDate": "06/05/2023",
+      "ChSeason": 2023,
+      "ChdDateSort": "2023-05-06",
+      "License": "72453687",
+      "Name": "AITOR TEJERIA AIZPURUA",
+      "FamilyName": null,
+      "Fed": "PVA",
+      "Noc": "",
+      "EvDes": "GGEE MASCULINO",
+      "EvDate": "05/06/2023",
+      "EvTime": "09:00",
+      "PhDes": "Final",
+      "OrdEvUnit": 24,
+      "StartOrder": 24,
+      "Rk": "",
+      "IRM": "",
+      "Res": "2:10:25",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1080:70099:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "10",
+          "RKPo": null,
+          "RkInterval": "10",
+          "RkIntervalTot": "10",
+          "RkIntervalPo": 0,
+          "Interval": "23:29",
+          "IntervalTot": "23:29",
+          "Time": "23:29"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "9",
+          "RKPo": null,
+          "RkInterval": "9",
+          "RkIntervalTot": "36",
+          "RkIntervalPo": 0,
+          "Interval": "12:33",
+          "IntervalTot": "12:33",
+          "Time": "36:02"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "6",
+          "RKPo": null,
+          "RkInterval": "6",
+          "RkIntervalTot": "5",
+          "RkIntervalPo": 0,
+          "Interval": "1:08:32",
+          "IntervalTot": "1:08:32",
+          "Time": "1:44:34"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "6",
+          "RKPo": null,
+          "RkInterval": "5",
+          "RkIntervalTot": "39",
+          "RkIntervalPo": 0,
+          "Interval": "12:36",
+          "IntervalTot": "12:36",
+          "Time": "1:57:10"
+        },
+        {
+          "Ord": 5,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "5",
+          "RKPo": null,
+          "RkInterval": "5",
+          "RkIntervalTot": "10",
+          "RkIntervalPo": 0,
+          "Interval": "36:12",
+          "IntervalTot": "36:12",
+          "Time": "2:33:22"
+        }
+      ]
+    },
+    {
+      "ChId": 1224,
+      "ChdName": "PRN - MD/LD Infinitri 113 Triathlon Peñíscola",
+      "ChdCity": "Peníscola/Peñíscola",
+      "ChdDate": "28/04/2024",
+      "ChSeason": 2024,
+      "ChdDateSort": "2024-04-28",
+      "License": "72453687",
+      "Name": "Aitor Tejeria Aizpurua",
+      "FamilyName": null,
+      "Fed": "PVA",
+      "Noc": "",
+      "EvDes": "ELITE MASCULINA",
+      "EvDate": "04/28/2024",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 48,
+      "StartOrder": 48,
+      "Rk": "21",
+      "IRM": "",
+      "Res": "4:16:24",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1224:60350:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "13",
+          "RKPo": null,
+          "RkInterval": "13",
+          "RkIntervalTot": "13",
+          "RkIntervalPo": 0,
+          "Interval": "29:07",
+          "IntervalTot": "29:07",
+          "Time": "29:07"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "13",
+          "RKPo": null,
+          "RkInterval": "13",
+          "RkIntervalTot": "15",
+          "RkIntervalPo": 0,
+          "Interval": "2:08",
+          "IntervalTot": "2:08",
+          "Time": "31:15"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "18",
+          "RKPo": null,
+          "RkInterval": "18",
+          "RkIntervalTot": "17",
+          "RkIntervalPo": 0,
+          "Interval": "2:52:25",
+          "IntervalTot": "2:52:25",
+          "Time": "3:23:40"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "18",
+          "RKPo": null,
+          "RkInterval": "18",
+          "RkIntervalTot": "24",
+          "RkIntervalPo": 0,
+          "Interval": "1:53",
+          "IntervalTot": "1:53",
+          "Time": "3:25:33"
+        },
+        {
+          "Ord": 5,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "40",
+          "RKPo": null,
+          "RkInterval": "40",
+          "RkIntervalTot": "44",
+          "RkIntervalPo": 0,
+          "Interval": "2:17:07",
+          "IntervalTot": "2:17:07",
+          "Time": "5:42:40"
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "TRM": {
+      "rankingName": "Triatlón Masculino",
+      "identifier": "72453687F",
+      "name": "AITOR TEJERIA AIZPURUA",
+      "history": [
+        {
+          "rank": 684,
+          "points": "459",
+          "date": "2025-10-13T13:21:10.713"
+        },
+        {
+          "rank": 668,
+          "points": "459",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 668,
+          "points": "459",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 668,
+          "points": "459",
+          "date": "2025-08-26T00:00:00"
+        }
+      ]
+    },
+    "MDLDM": {
+      "rankingName": "Media/Larga Distancia Masculino",
+      "identifier": "72453687F",
+      "name": "AITOR TEJERIA AIZPURUA",
+      "history": [
+        {
+          "rank": 1220,
+          "points": "9",
+          "date": "2025-11-19T10:49:03.407"
+        },
+        {
+          "rank": 1210,
+          "points": "9",
+          "date": "2025-11-14T13:36:24.297"
+        },
+        {
+          "rank": 1300,
+          "points": "9",
+          "date": "2025-10-11T20:24:25.677"
+        },
+        {
+          "rank": 1300,
+          "points": "9",
+          "date": "2025-10-11T20:22:18.31"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:37:02.8487704Z"
+}

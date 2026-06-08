@@ -1,0 +1,746 @@
+{
+  "1172": {
+    "temperature": 15.1,
+    "humidity": 65
+  },
+  "1175": {
+    "temperature": 19.8,
+    "humidity": 74
+  },
+  "1180": {
+    "temperature": 11.9,
+    "humidity": 82
+  },
+  "2470": {
+    "temperature": 21.0,
+    "humidity": 70
+  },
+  "1306": {
+    "temperature": 11.1,
+    "humidity": 65
+  },
+  "1408": {
+    "temperature": 8.7,
+    "humidity": 58
+  },
+  "2451": {
+    "temperature": 8.2,
+    "humidity": 61
+  },
+  "2502": {
+    "temperature": 16.1,
+    "humidity": 77
+  },
+  "1050": {
+    "temperature": 27.3,
+    "humidity": 38
+  },
+  "1139": {
+    "temperature": 16.2,
+    "humidity": 60
+  },
+  "1146": {
+    "temperature": 23.6,
+    "humidity": 76
+  },
+  "1163": {
+    "temperature": 20.6,
+    "humidity": 71
+  },
+  "1165": {
+    "temperature": 21.6,
+    "humidity": 73
+  },
+  "1166": {
+    "temperature": 17.6,
+    "humidity": 81
+  },
+  "1169": {
+    "temperature": 21.0,
+    "humidity": 51
+  },
+  "2471": {
+    "temperature": 25.8,
+    "humidity": 39
+  },
+  "28343": {
+    "temperature": 19.9,
+    "humidity": 60
+  },
+  "29037": {
+    "temperature": 25.2,
+    "humidity": 53
+  },
+  "29281": {
+    "temperature": 28.6,
+    "humidity": 24
+  },
+  "29283": {
+    "temperature": 28.6,
+    "humidity": 24
+  },
+  "34720": {
+    "temperature": 14.3,
+    "humidity": 63
+  },
+  "34752": {
+    "temperature": 24.3,
+    "humidity": 63
+  },
+  "1284": {
+    "temperature": 2.6,
+    "humidity": 91
+  },
+  "1285": {
+    "temperature": 19.3,
+    "humidity": 66
+  },
+  "1296": {
+    "temperature": 20.4,
+    "humidity": 92
+  },
+  "1300": {
+    "temperature": 13.6,
+    "humidity": 61
+  },
+  "1310": {
+    "temperature": 20.8,
+    "humidity": 57
+  },
+  "1318": {
+    "temperature": 21.1,
+    "humidity": 82
+  },
+  "1421": {
+    "temperature": 22.0,
+    "humidity": 48
+  },
+  "2466": {
+    "temperature": 18.1,
+    "humidity": 73
+  },
+  "2472": {
+    "temperature": 25.9,
+    "humidity": 50
+  },
+  "1144": {
+    "temperature": 7.7,
+    "humidity": 67
+  },
+  "1145": {
+    "temperature": 16.1,
+    "humidity": 72
+  },
+  "1148": {
+    "temperature": 20.6,
+    "humidity": 70
+  },
+  "1150": {
+    "temperature": 19.6,
+    "humidity": 55
+  },
+  "1152": {
+    "temperature": 19.6,
+    "humidity": 61
+  },
+  "1198": {
+    "temperature": 16.0,
+    "humidity": 58
+  },
+  "2452": {
+    "temperature": 11.2,
+    "humidity": 75
+  },
+  "2457": {
+    "temperature": 9.9,
+    "humidity": 85
+  },
+  "2460": {
+    "temperature": 10.1,
+    "humidity": 78
+  },
+  "2469": {
+    "temperature": 19.4,
+    "humidity": 68
+  },
+  "1299": {
+    "temperature": 13.6,
+    "humidity": 87
+  },
+  "1325": {
+    "temperature": 12.6,
+    "humidity": 72
+  },
+  "1326": {
+    "temperature": 11.1,
+    "humidity": 65
+  },
+  "1328": {
+    "temperature": 13.5,
+    "humidity": 85
+  },
+  "1330": {
+    "temperature": 19.7,
+    "humidity": 56
+  },
+  "2459": {
+    "temperature": 10.8,
+    "humidity": 70
+  },
+  "2461": {
+    "temperature": 9.2,
+    "humidity": 63
+  },
+  "2467": {
+    "temperature": 18.1,
+    "humidity": 73
+  },
+  "1149": {
+    "temperature": 19.6,
+    "humidity": 55
+  },
+  "1151": {
+    "temperature": 19.6,
+    "humidity": 61
+  },
+  "1164": {
+    "temperature": 20.6,
+    "humidity": 71
+  },
+  "1170": {
+    "temperature": 23.7,
+    "humidity": 43
+  },
+  "2453": {
+    "temperature": 9.9,
+    "humidity": 88
+  },
+  "2462": {
+    "temperature": 17.2,
+    "humidity": 38
+  },
+  "29317": {
+    "temperature": 28.1,
+    "humidity": 45
+  },
+  "29318": {
+    "temperature": 23.6,
+    "humidity": 63
+  },
+  "29320": {
+    "temperature": 21.3,
+    "humidity": 74
+  },
+  "35344": {
+    "temperature": 16.5,
+    "humidity": 73
+  },
+  "1286": {
+    "temperature": 19.3,
+    "humidity": 69
+  },
+  "2463": {
+    "temperature": 13.0,
+    "humidity": 73
+  },
+  "2464": {
+    "temperature": 17.5,
+    "humidity": 85
+  },
+  "29319": {
+    "temperature": 22.0,
+    "humidity": 53
+  },
+  "34734": {
+    "temperature": 19.0,
+    "humidity": 33
+  },
+  "1134": {
+    "temperature": 6.2,
+    "humidity": 63
+  },
+  "1135": {
+    "temperature": 8.9,
+    "humidity": 74
+  },
+  "1303": {
+    "temperature": 6.8,
+    "humidity": 67
+  },
+  "1307": {
+    "temperature": 9.2,
+    "humidity": 69
+  },
+  "2505": {
+    "temperature": 17.5,
+    "humidity": 77
+  },
+  "2458": {
+    "temperature": 10.8,
+    "humidity": 70
+  },
+  "34729": {
+    "temperature": 11.6,
+    "humidity": 42
+  },
+  "1329": {
+    "temperature": 19.3,
+    "humidity": 69
+  },
+  "2456": {
+    "temperature": 9.9,
+    "humidity": 85
+  },
+  "1311": {
+    "temperature": 21.4,
+    "humidity": 58
+  },
+  "1261": {
+    "temperature": 14.2,
+    "humidity": 75
+  },
+  "1155": {
+    "temperature": 16.1,
+    "humidity": 72
+  },
+  "1201": {
+    "temperature": 13.8,
+    "humidity": 78
+  },
+  "37995": {
+    "temperature": 17.8,
+    "humidity": 72
+  },
+  "1287": {
+    "temperature": 19.7,
+    "humidity": 56
+  },
+  "29316": {
+    "temperature": 3.1,
+    "humidity": 73
+  },
+  "34726": {
+    "temperature": 9.5,
+    "humidity": 57
+  },
+  "1282": {
+    "temperature": 4.1,
+    "humidity": 84
+  },
+  "1308": {
+    "temperature": 13.4,
+    "humidity": 76
+  },
+  "2444": {
+    "temperature": 7.2,
+    "humidity": 64
+  },
+  "2454": {
+    "temperature": 9.9,
+    "humidity": 88
+  },
+  "2455": {
+    "temperature": 10.3,
+    "humidity": 86
+  },
+  "1140": {
+    "temperature": 16.9,
+    "humidity": 69
+  },
+  "1168": {
+    "temperature": 21.0,
+    "humidity": 51
+  },
+  "2468": {
+    "temperature": 19.4,
+    "humidity": 68
+  },
+  "1242": {
+    "temperature": 29.6,
+    "humidity": 42
+  },
+  "33720": {
+    "temperature": 15.9,
+    "humidity": 69
+  },
+  "1321": {
+    "temperature": 21.4,
+    "humidity": 42
+  },
+  "1360": {
+    "temperature": 17.7,
+    "humidity": 73
+  },
+  "1157": {
+    "temperature": 11.5,
+    "humidity": 79
+  },
+  "1309": {
+    "temperature": 19.9,
+    "humidity": 69
+  },
+  "1352": {
+    "temperature": 17.6,
+    "humidity": 77
+  },
+  "1200": {
+    "temperature": 13.8,
+    "humidity": 78
+  },
+  "1141": {
+    "temperature": 7.7,
+    "humidity": 73
+  },
+  "1305": {
+    "temperature": 12.6,
+    "humidity": 72
+  },
+  "1312": {
+    "temperature": 20.8,
+    "humidity": 57
+  },
+  "29282": {
+    "temperature": 28.7,
+    "humidity": 25
+  },
+  "1107": {
+    "temperature": 16.0,
+    "humidity": 82
+  },
+  "22061": {
+    "temperature": 21.6,
+    "humidity": 70
+  },
+  "28323": {
+    "temperature": 19.1,
+    "humidity": 64
+  },
+  "31813": {
+    "temperature": 20.9,
+    "humidity": 86
+  },
+  "33662": {
+    "temperature": 14.1,
+    "humidity": 69
+  },
+  "1357": {
+    "temperature": 16.1,
+    "humidity": 68
+  },
+  "2449": {
+    "temperature": 12.0,
+    "humidity": 61
+  },
+  "1272": {
+    "temperature": 12.9,
+    "humidity": 71
+  },
+  "22011": {
+    "temperature": 25.6,
+    "humidity": 47
+  },
+  "1136": {
+    "temperature": 11.0,
+    "humidity": 78
+  },
+  "1137": {
+    "temperature": 11.0,
+    "humidity": 78
+  },
+  "1379": {
+    "temperature": 12.4,
+    "humidity": 83
+  },
+  "1078": {
+    "temperature": 16.2,
+    "humidity": 47
+  },
+  "29315": {
+    "temperature": 13.3,
+    "humidity": 69
+  },
+  "1283": {
+    "temperature": 15.2,
+    "humidity": 62
+  },
+  "30112": {
+    "temperature": 22.5,
+    "humidity": 74
+  },
+  "35305": {
+    "temperature": 0.2,
+    "humidity": 58
+  },
+  "1143": {
+    "temperature": 7.7,
+    "humidity": 67
+  },
+  "34725": {
+    "temperature": 15.3,
+    "humidity": 61
+  },
+  "28345": {
+    "temperature": 1.5,
+    "humidity": 72
+  },
+  "35306": {
+    "temperature": 12.2,
+    "humidity": 66
+  },
+  "964": {
+    "temperature": 11.8,
+    "humidity": 70
+  },
+  "2501": {
+    "temperature": 18.7,
+    "humidity": 64
+  },
+  "1183": {
+    "temperature": 18.5,
+    "humidity": 78
+  },
+  "30111": {
+    "temperature": 25.1,
+    "humidity": 61
+  },
+  "1291": {
+    "temperature": 18.8,
+    "humidity": 55
+  },
+  "1138": {
+    "temperature": 10.9,
+    "humidity": 59
+  },
+  "1249": {
+    "temperature": 19.0,
+    "humidity": 80
+  },
+  "1388": {
+    "temperature": 12.3,
+    "humidity": 85
+  },
+  "2541": {
+    "temperature": 10.1,
+    "humidity": 78
+  },
+  "1178": {
+    "temperature": 21.2,
+    "humidity": 44
+  },
+  "1224": {
+    "temperature": 14.6,
+    "humidity": 68
+  },
+  "1117": {
+    "temperature": 19.3,
+    "humidity": 67
+  },
+  "1167": {
+    "temperature": 21.2,
+    "humidity": 78
+  },
+  "993": {
+    "temperature": 11.5,
+    "humidity": 77
+  },
+  "1206": {
+    "temperature": 22.3,
+    "humidity": 31
+  },
+  "22063": {
+    "temperature": 24.0,
+    "humidity": 33
+  },
+  "22068": {
+    "temperature": 22.2,
+    "humidity": 59
+  },
+  "1415": {
+    "temperature": 13.6,
+    "humidity": 87
+  },
+  "1313": {
+    "temperature": 18.8,
+    "humidity": 55
+  },
+  "2542": {
+    "temperature": 13.0,
+    "humidity": 73
+  },
+  "33669": {
+    "temperature": 14.1,
+    "humidity": 69
+  },
+  "1007": {
+    "temperature": 27.3,
+    "humidity": 38
+  },
+  "1314": {
+    "temperature": 19.6,
+    "humidity": 57
+  },
+  "22019": {
+    "temperature": 28.2,
+    "humidity": 47
+  },
+  "1115": {
+    "temperature": 17.7,
+    "humidity": 76
+  },
+  "22069": {
+    "temperature": 27.7,
+    "humidity": 41
+  },
+  "27999": {
+    "temperature": 18.6,
+    "humidity": 53
+  },
+  "28344": {
+    "temperature": 9.4,
+    "humidity": 79
+  },
+  "1017": {
+    "temperature": 17.2,
+    "humidity": 74
+  },
+  "998": {
+    "temperature": 16.1,
+    "humidity": 46
+  },
+  "1203": {
+    "temperature": 18.5,
+    "humidity": 78
+  },
+  "33886": {
+    "temperature": 20.3,
+    "humidity": 68
+  },
+  "1235": {
+    "temperature": 17.5,
+    "humidity": 71
+  },
+  "1006": {
+    "temperature": 27.3,
+    "humidity": 38
+  },
+  "34716": {
+    "temperature": 2.9,
+    "humidity": 69
+  },
+  "2448": {
+    "temperature": 4.8,
+    "humidity": 88
+  },
+  "1173": {
+    "temperature": 19.4,
+    "humidity": 60
+  },
+  "2585": {
+    "temperature": 6.6,
+    "humidity": 78
+  },
+  "1196": {
+    "temperature": 18.5,
+    "humidity": 78
+  },
+  "1160": {
+    "temperature": 9.3,
+    "humidity": 59
+  },
+  "22003": {
+    "temperature": 25.1,
+    "humidity": 53
+  },
+  "22021": {
+    "temperature": 14.7,
+    "humidity": 92
+  },
+  "1320": {
+    "temperature": 21.4,
+    "humidity": 42
+  },
+  "1244": {
+    "temperature": 19.9,
+    "humidity": 50
+  },
+  "1080": {
+    "temperature": 19.6,
+    "humidity": 53
+  },
+  "1181": {
+    "temperature": 19.8,
+    "humidity": 68
+  },
+  "1279": {
+    "temperature": 23.6,
+    "humidity": 76
+  },
+  "2504": {
+    "temperature": 16.8,
+    "humidity": 81
+  },
+  "1000": {
+    "temperature": 20.5,
+    "humidity": 76
+  },
+  "1374": {
+    "temperature": 11.0,
+    "humidity": 66
+  },
+  "1370": {
+    "temperature": 6.8,
+    "humidity": 67
+  },
+  "22024": {
+    "temperature": 24.6,
+    "humidity": 50
+  },
+  "1398": {
+    "temperature": 8.8,
+    "humidity": 85
+  },
+  "22080": {
+    "temperature": 22.5,
+    "humidity": 65
+  },
+  "22079": {
+    "temperature": 22.5,
+    "humidity": 65
+  },
+  "22065": {
+    "temperature": 26.6,
+    "humidity": 47
+  },
+  "22087": {
+    "temperature": 7.7,
+    "humidity": 52
+  },
+  "22057": {
+    "temperature": 18.8,
+    "humidity": 52
+  },
+  "991": {
+    "temperature": 15.7,
+    "humidity": 72
+  },
+  "1315": {
+    "temperature": 18.8,
+    "humidity": 55
+  },
+  "22010": {
+    "temperature": 12.2,
+    "humidity": 76
+  },
+  "22082": {
+    "temperature": 27.6,
+    "humidity": 45
+  },
+  "1376": {
+    "temperature": 0.8,
+    "humidity": 83
+  },
+  "1420": {
+    "temperature": 19.9,
+    "humidity": 69
+  }
+}

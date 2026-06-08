@@ -22,6 +22,12 @@ AZURE_DB = os.getenv("AZURE_DB", "tu-base-de-datos")
 AZURE_USER = os.getenv("AZURE_USER", "tu-usuario")
 AZURE_PASSWORD = os.getenv("AZURE_PASSWORD", "tu-contraseña")
 
+# Limpiar comillas literales que puedan venir del archivo .env
+if AZURE_SERVER: AZURE_SERVER = AZURE_SERVER.replace('"', '').replace("'", "")
+if AZURE_DB: AZURE_DB = AZURE_DB.replace('"', '').replace("'", "")
+if AZURE_USER: AZURE_USER = AZURE_USER.replace('"', '').replace("'", "")
+if AZURE_PASSWORD: AZURE_PASSWORD = AZURE_PASSWORD.replace('"', '').replace("'", "")
+
 # Rutas de los CSVs generados en tu máquina local
 WORKSPACE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_CLUBES = os.path.join(WORKSPACE, "data", "processed", "clubes_geo_2025.csv")

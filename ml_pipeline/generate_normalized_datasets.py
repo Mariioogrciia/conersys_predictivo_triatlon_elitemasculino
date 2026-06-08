@@ -210,7 +210,7 @@ def run_normalization():
     # Limpiamos DNI/documento
     df_raw['DOCUMENTO'] = df_raw['DOCUMENTO'].astype(str).str.strip()
     df_raw['NOMBRE'] = df_raw['NOMBRE'].astype(str).str.strip().str.upper()
-    df_raw['CLUB'] = df_raw['CLUB'].astype(str).str.strip().str.upper().fillna("SIN CLUB")
+    df_raw['CLUB'] = df_raw['CLUB'].fillna('SIN CLUB').astype(str).str.strip().str.upper().replace('NAN', 'SIN CLUB')
     df_raw['GGEE'] = df_raw['GGEE'].astype(str).str.strip().str.upper().fillna("ABSOLUTO")
     
     # FILTRO ELITE MASCULINA: Quedarnos solo con ABSOLUTO y SUB-23

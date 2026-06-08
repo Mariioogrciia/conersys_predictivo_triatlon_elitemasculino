@@ -1,0 +1,278 @@
+{
+  "athleteBasicInfo": {
+    "license": "73040487",
+    "fullName": "PABLO GURRUTXAGA LARUNBE",
+    "clubName": "ZARAUZKO TRIATLOI ELKARTEA",
+    "autonomy": "GIP",
+    "birthDate": "28/05/2000",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": null,
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": 303,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "73040487",
+    "name": "PABLO GURRUTXAGA LARUNBE",
+    "license": "73040487",
+    "club": "ZARAUZKO TRIATLOI ELKARTEA",
+    "federation": "GIP",
+    "birthDate": "28/05/2000",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": null,
+    "rankings": {
+      "triatlon": null,
+      "duatlon": null,
+      "mdld": 303,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:46:10.4563848Z"
+  },
+  "results": [
+    {
+      "ChId": 1360,
+      "ChdName": "PRN - MD/LD triXilxes #sindrafting by Trilavall [MD] [PTO]",
+      "ChdCity": "Chilches/Xilxes",
+      "ChdDate": "11/05/2025",
+      "ChSeason": 2025,
+      "ChdDateSort": "2025-05-11",
+      "License": "73040487P",
+      "Name": "PABLO GURRUTXAGA LARUNBE",
+      "FamilyName": null,
+      "Fed": "PVA",
+      "Noc": "",
+      "EvDes": "GGEE MASCULINO",
+      "EvDate": "05/11/2025",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 456,
+      "StartOrder": 456,
+      "Rk": "53",
+      "IRM": "",
+      "Res": "3:08:17",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1360:60415:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "38",
+          "RKPo": null,
+          "RkInterval": "38",
+          "RkIntervalTot": "38",
+          "RkIntervalPo": 0,
+          "Interval": "25:07",
+          "IntervalTot": "25:07",
+          "Time": "25:07"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "37",
+          "RKPo": null,
+          "RkInterval": "37",
+          "RkIntervalTot": "49",
+          "RkIntervalPo": 0,
+          "Interval": "2:25",
+          "IntervalTot": "2:25",
+          "Time": "27:32"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "66",
+          "RKPo": null,
+          "RkInterval": "66",
+          "RkIntervalTot": "80",
+          "RkIntervalPo": 0,
+          "Interval": "1:37:22",
+          "IntervalTot": "1:37:22",
+          "Time": "2:04:54"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "70",
+          "RKPo": null,
+          "RkInterval": "70",
+          "RkIntervalTot": "214",
+          "RkIntervalPo": 0,
+          "Interval": "2:45",
+          "IntervalTot": "2:45",
+          "Time": "2:07:39"
+        },
+        {
+          "Ord": 5,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "55",
+          "RKPo": null,
+          "RkInterval": "55",
+          "RkIntervalTot": "60",
+          "RkIntervalPo": 0,
+          "Interval": "1:00:36",
+          "IntervalTot": "1:00:36",
+          "Time": "3:08:15"
+        }
+      ]
+    },
+    {
+      "ChId": 2502,
+      "ChdName": "PRN - MD/LD Infinitri 113 Triathlon Peñíscola 2026 [PTO] [MD]",
+      "ChdCity": "Peñíscola",
+      "ChdDate": "26/04/2026",
+      "ChSeason": 2026,
+      "ChdDateSort": "2026-04-26",
+      "License": "73040487P",
+      "Name": "PABLO\u00A0GURRUTXAGA LARUNBE",
+      "FamilyName": "",
+      "Fed": "FETRI",
+      "Noc": "",
+      "EvDes": "Élite Masculino",
+      "EvDate": "26/04/2026",
+      "EvTime": "07:30",
+      "PhDes": "Final",
+      "OrdEvUnit": 1,
+      "StartOrder": 51,
+      "Rk": "35",
+      "IRM": "",
+      "Res": "4:21:52",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "2502:6251:5:1",
+      "ResDetail": [
+        {
+          "Ord": 0,
+          "OrdTot": 1,
+          "Description": "Natacion",
+          "Status": "0",
+          "Type": "SW",
+          "RK": "35",
+          "RkInterval": "35",
+          "RkIntervalTot": "35",
+          "RkIntervalPo": 0,
+          "Interval": "0:28:55",
+          "IntervalTot": "0:28:55",
+          "Time": "0:28:55"
+        },
+        {
+          "Ord": 1,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Status": "0",
+          "Type": "T1",
+          "RK": "35",
+          "RkInterval": "35",
+          "RkIntervalTot": "35",
+          "RkIntervalPo": 0,
+          "Interval": "0:00:24",
+          "IntervalTot": "0:00:24",
+          "Time": "0:29:19"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Status": "0",
+          "Type": "CY",
+          "RK": "35",
+          "RkInterval": "35",
+          "RkIntervalTot": "35",
+          "RkIntervalPo": 0,
+          "Interval": "2:21:19",
+          "IntervalTot": "2:21:19",
+          "Time": "2:50:38"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Status": "0",
+          "Type": "T2",
+          "RK": "35",
+          "RkInterval": "35",
+          "RkIntervalTot": "35",
+          "RkIntervalPo": 0,
+          "Interval": "0:01:47",
+          "IntervalTot": "0:01:47",
+          "Time": "2:52:25"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Status": "0",
+          "Type": "RU",
+          "RK": "35",
+          "RkInterval": "35",
+          "RkIntervalTot": "35",
+          "RkIntervalPo": 0,
+          "Interval": "1:29:24",
+          "IntervalTot": "1:29:24",
+          "Time": "4:21:49"
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "MDLDM": {
+      "rankingName": "Media/Larga Distancia Masculino",
+      "identifier": "73040487P",
+      "name": "PABLO GURRUTXAGA LARUNBE",
+      "history": [
+        {
+          "rank": 466,
+          "points": "5",
+          "date": "2025-11-19T10:49:03.407"
+        },
+        {
+          "rank": 466,
+          "points": "5",
+          "date": "2025-11-14T13:36:24.297"
+        },
+        {
+          "rank": 556,
+          "points": "5",
+          "date": "2025-10-11T20:24:25.677"
+        },
+        {
+          "rank": 556,
+          "points": "5",
+          "date": "2025-10-11T20:22:18.31"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:38:57.5942744Z"
+}

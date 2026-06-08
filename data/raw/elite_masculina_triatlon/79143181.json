@@ -1,0 +1,305 @@
+{
+  "athleteBasicInfo": {
+    "license": "79143181",
+    "fullName": "MIKEL ARRASATE LARREA",
+    "clubName": "AMANDARRI TRIATLOI KLUBA",
+    "autonomy": "BIZ",
+    "birthDate": "09/10/2004",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_129028_WbrOr.jpg",
+    "rankings": {
+      "triatlon": 135,
+      "duatlon": 426,
+      "mdld": null,
+      "wr": null
+    }
+  },
+  "athleteBio": {
+    "athleteId": "79143181",
+    "name": "MIKEL ARRASATE LARREA",
+    "license": "79143181",
+    "club": "AMANDARRI TRIATLOI KLUBA",
+    "federation": "BIZ",
+    "birthDate": "09/10/2004",
+    "gender": "Masculino",
+    "wtId": null,
+    "picture": "https://fetri.docs-addon-sport.com/FederatedPhoto_129028_WbrOr.jpg",
+    "rankings": {
+      "triatlon": 135,
+      "duatlon": 426,
+      "mdld": null,
+      "wr": null
+    },
+    "bio": null,
+    "images": [],
+    "videos": [],
+    "sponsors": [],
+    "links": [],
+    "socialMedia": [],
+    "lastUpdated": "2026-06-03T08:45:38.3123301Z"
+  },
+  "results": [
+    {
+      "ChId": 1285,
+      "ChdName": "Clasificatorio Campeonato de España de Triatlón Sprint - Fuente Álamo 2025",
+      "ChdCity": "Fuente Álamo de Murcia",
+      "ChdDate": "26/04/2025",
+      "ChSeason": 2025,
+      "ChdDateSort": "2025-04-26",
+      "License": "79143181C",
+      "Name": "Mikel Arrasate Larrea",
+      "FamilyName": null,
+      "Fed": "PVA",
+      "Noc": "",
+      "EvDes": "ÉLITE MASCULINA",
+      "EvDate": "04/26/2025",
+      "EvTime": "17:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 145,
+      "StartOrder": 145,
+      "Rk": "17",
+      "IRM": "",
+      "Res": "1:06:11",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1285:60397:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Natación",
+          "Data": null,
+          "Status": "0",
+          "Type": "SW",
+          "RK": "42",
+          "RKPo": null,
+          "RkInterval": "42",
+          "RkIntervalTot": "42",
+          "RkIntervalPo": 0,
+          "Interval": "10:01",
+          "IntervalTot": "10:01",
+          "Time": "10:01"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "39",
+          "RKPo": null,
+          "RkInterval": "40",
+          "RkIntervalTot": "68",
+          "RkIntervalPo": 0,
+          "Interval": "0:55",
+          "IntervalTot": "0:55",
+          "Time": "10:56"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "6",
+          "RKPo": null,
+          "RkInterval": "6",
+          "RkIntervalTot": "2",
+          "RkIntervalPo": 0,
+          "Interval": "37:25",
+          "IntervalTot": "37:25",
+          "Time": "48:21"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "5",
+          "RKPo": null,
+          "RkInterval": "5",
+          "RkIntervalTot": "26",
+          "RkIntervalPo": 0,
+          "Interval": "0:35",
+          "IntervalTot": "0:35",
+          "Time": "48:56"
+        },
+        {
+          "Ord": 5,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "17",
+          "RKPo": null,
+          "RkInterval": "17",
+          "RkIntervalTot": "54",
+          "RkIntervalPo": 0,
+          "Interval": "17:15",
+          "IntervalTot": "17:15",
+          "Time": "1:06:11"
+        }
+      ]
+    },
+    {
+      "ChId": 1412,
+      "ChdName": "AUT - Campeonato de Euskadi de Duatlón",
+      "ChdCity": "Oñati",
+      "ChdDate": "29/03/2025",
+      "ChSeason": 2025,
+      "ChdDateSort": "2025-03-29",
+      "License": "79143181C",
+      "Name": "Mikel Arrasate Larrea",
+      "FamilyName": null,
+      "Fed": "PVA",
+      "Noc": "",
+      "EvDes": "GGEE MASCULINO",
+      "EvDate": "03/29/2025",
+      "EvTime": "09:00",
+      "PhDes": "Final ",
+      "OrdEvUnit": 15,
+      "StartOrder": 15,
+      "Rk": "2",
+      "IRM": "",
+      "Res": "1:52:52",
+      "Temperature": "",
+      "Humidity": "",
+      "KeyResult": "1412:60381:5:1",
+      "ResDetail": [
+        {
+          "Ord": 1,
+          "OrdTot": 1,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "3",
+          "RKPo": null,
+          "RkInterval": "3",
+          "RkIntervalTot": "3",
+          "RkIntervalPo": 0,
+          "Interval": "32:25",
+          "IntervalTot": "32:25",
+          "Time": "32:25"
+        },
+        {
+          "Ord": 2,
+          "OrdTot": 2,
+          "Description": "T1",
+          "Data": null,
+          "Status": "0",
+          "Type": "T1",
+          "RK": "3",
+          "RKPo": null,
+          "RkInterval": "3",
+          "RkIntervalTot": "3",
+          "RkIntervalPo": 0,
+          "Interval": "0:16",
+          "IntervalTot": "0:16",
+          "Time": "32:41"
+        },
+        {
+          "Ord": 3,
+          "OrdTot": 3,
+          "Description": "Ciclismo",
+          "Data": null,
+          "Status": "0",
+          "Type": "CY",
+          "RK": "2",
+          "RKPo": null,
+          "RkInterval": "2",
+          "RkIntervalTot": "2",
+          "RkIntervalPo": 0,
+          "Interval": "1:02:30",
+          "IntervalTot": "1:02:30",
+          "Time": "1:35:11"
+        },
+        {
+          "Ord": 4,
+          "OrdTot": 4,
+          "Description": "T2",
+          "Data": null,
+          "Status": "0",
+          "Type": "T2",
+          "RK": "2",
+          "RKPo": null,
+          "RkInterval": "2",
+          "RkIntervalTot": "3",
+          "RkIntervalPo": 0,
+          "Interval": "0:20",
+          "IntervalTot": "0:20",
+          "Time": "1:35:31"
+        },
+        {
+          "Ord": 5,
+          "OrdTot": 5,
+          "Description": "Carrera",
+          "Data": null,
+          "Status": "0",
+          "Type": "RU",
+          "RK": "2",
+          "RKPo": null,
+          "RkInterval": "2",
+          "RkIntervalTot": "3",
+          "RkIntervalPo": 0,
+          "Interval": "17:18",
+          "IntervalTot": "17:18",
+          "Time": "1:52:49"
+        }
+      ]
+    }
+  ],
+  "historicalRankings": {
+    "TRM": {
+      "rankingName": "Triatlón Masculino",
+      "identifier": "79143181c",
+      "name": "MIKEL ARRASATE LARREA",
+      "history": [
+        {
+          "rank": 18,
+          "points": "2157",
+          "date": "2025-10-13T13:21:10.713"
+        },
+        {
+          "rank": 181,
+          "points": "1431",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 181,
+          "points": "1431",
+          "date": "2025-08-26T00:00:00"
+        },
+        {
+          "rank": 181,
+          "points": "1431",
+          "date": "2025-08-26T00:00:00"
+        }
+      ]
+    },
+    "DUM": {
+      "rankingName": "Duatlón Masculino",
+      "identifier": "79143181C",
+      "name": "MIKEL ARRASATE LARREA",
+      "history": [
+        {
+          "rank": 464,
+          "points": "925",
+          "date": "2025-06-09T19:45:27.507"
+        },
+        {
+          "rank": 454,
+          "points": "925",
+          "date": "2025-04-24T12:23:45.113"
+        }
+      ]
+    }
+  },
+  "exportDate": "2026-06-03T10:30:15.0881172Z"
+}
