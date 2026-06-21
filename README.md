@@ -50,6 +50,8 @@ Mario García · Alejandro Benítez
 | <sub>Subir el modelo con nombre, versión, métricas y fecha · objetivo: RMSE < 120s</sub> | | |
 | Documentar métricas finales del modelo | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Añadir tabla de resultados (RMSE, MAE, R²) al `sprint2.md` y al `docs/`</sub> | | |
+| **— ESTRATEGIA DE VARIABLES TARGET (AUTOML) —** | | |
+| <sub>**Clasificación:** Creadas `categoria_target` y `peso_ejemplo`. **Regresión:** Creadas `inversa_posicion` y `log_posicion` para penalizar fallos en podio. *¡Vital desmarcar `finish_position` para evitar Data Leakage!*</sub> | | |
 | **— EXPLICABILIDAD Y DSQ —** | | |
 | Implementar módulo SHAP | ❓ Por asignar | ⚪ Pendiente |
 | <sub>Para cada predicción devolver los 3 factores más influyentes con su efecto en segundos (+/-)</sub> | | |
