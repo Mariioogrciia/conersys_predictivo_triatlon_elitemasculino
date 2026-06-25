@@ -89,17 +89,13 @@ def _to_features(row: pd.Series) -> dict:
         pass
 
     feats = {
-        "CHAMPIONSHIP_LEVEL": int(row.get("championship_level") or 2),
-        "ALTITUD": float(row.get("altitud") or 0),
-        "TEMPERATURA_MAX": temp,
-        "HUMEDAD_MEDIA": hum,
-        "PRECIPITACION": prec,
-        "VIENTO_MAX": float(row.get("viento_max") or 0),
-        "IS_EXTREME_HEAT": 1 if temp >= 35 else 0,
-        "IS_WET_RACE": 1 if prec >= 1.0 else 0,
+        "race_temperature": temp,
+        "race_humidity": hum,
+        "race_altitude_m": float(row.get("altitud") or 0),
+        "race_city": str(row.get("ciudad") or ""),
     }
     if mes:
-        feats["MES_CARRERA"] = mes
+        feats["race_month"] = mes
     return feats
 
 

@@ -70,10 +70,30 @@ def connect_and_load():
     try:
         print("Estableciendo conexión segura con Azure SQL Database...")
         engine = create_engine(connection_string, fast_executemany=True)
-        # fast_executemany=True acelera la inserción masiva en SQL Server hasta 100 veces
         
-        # 1. Cargar Clubes (Debe ser primero por restricción de FK)
-        print("\n[1/4] Cargando Clubes Geocodificados...")
+        # 0. Limpiar tablas existentes para evitar conflictos
+        print("\n[0/5] Limpiando base de datos...")
+        from sqlalchemy import text
+        with engine.begin() as conn:
+            conn.execute(text("IF OBJECT_ID('dbo.resultados', 'U') IS NOT NULL DROP TABLE dbo.resultados;"))
+            conn.execute(text("IF OBJECT_ID('dbo.pruebas', 'U') IS NOT NULL DROP TABLE dbo.pruebas;"))
+            conn.execute(text("IF OBJECT_ID('dbo.deportistas', 'U') IS NOT NULL DROP TABLE dbo.deportistas;"))
+            conn.execute(text("IF OBJECT_ID('dbo.clubes_geo', 'U') IS NOT NULL DROP TABLE dbo.clubes_geo;"))
+            conn.execute(text("IF OBJECT_ID('dbo.dataset_entrenamiento', 'U') IS NOT NULL DROP TABLE dbo.dataset_entrenamiento;"))
+        print("-> ¡Tablas limpiadas!")
+
+        # 1. Cargar Dataset Entrenamiento Azure AutoML
+        print("\n[1/5] Cargando Dataset Entrenamiento Azure AutoML...")
+        CSV_AUTOML = os.path.join(WORKSPACE, "data", "raw", "elite_masculina_triatlon", "dataset", "dataset_automl_entrenamiento.csv")
+        if os.path.exists(CSV_AUTOML):
+            df_automl = pd.read_csv(CSV_AUTOML)
+            df_automl.to_sql('dataset_entrenamiento', con=engine, if_exists='replace', index=False, schema='dbo')
+            print(f"-> ¡Éxito! {len(df_automl)} filas cargadas en 'dbo.dataset_entrenamiento'.")
+        else:
+            print("-> Aviso: No se encontró el dataset de AutoML.")
+        
+        # 2. Cargar Clubes (Debe ser primero por restricción de FK)
+        print("\n[2/5] Cargando Clubes Geocodificados...")
         df_clubes = pd.read_csv(CSV_CLUBES)
         # Limpieza de nulos si existieran
         df_clubes['club'] = normalize_missing_strings(df_clubes['club'].astype(str).str.strip())
@@ -83,8 +103,8 @@ def connect_and_load():
         df_clubes.to_sql('clubes_geo', con=engine, if_exists='replace', index=False, schema='dbo')
         print(f"-> ¡Éxito! {len(df_clubes)} clubes cargados en 'dbo.clubes_geo'.")
         
-        # 2. Cargar Deportistas
-        print("\n[2/4] Cargando Deportistas...")
+        # 3. Cargar Deportistas
+        print("\n[3/5] Cargando Deportistas...")
         df_deportistas = pd.read_csv(CSV_DEPORTISTAS)
         df_deportistas.columns = [c.lower() for c in df_deportistas.columns]
         for col in ['documento', 'nombre', 'club', 'ggee']:
@@ -101,15 +121,15 @@ def connect_and_load():
         df_deportistas.to_sql('deportistas', con=engine, if_exists='replace', index=False, schema='dbo')
         print(f"-> ¡Éxito! {len(df_deportistas)} deportistas cargados en 'dbo.deportistas'.")
         
-        # 3. Cargar Pruebas
-        print("\n[3/4] Cargando Pruebas (Campeonatos)...")
+        # 4. Cargar Pruebas
+        print("\n[4/5] Cargando Pruebas (Campeonatos)...")
         df_pruebas = pd.read_csv(CSV_PRUEBAS)
         df_pruebas = df_pruebas.dropna(subset=['id'])
         df_pruebas.to_sql('pruebas', con=engine, if_exists='replace', index=False, schema='dbo')
         print(f"-> ¡Éxito! {len(df_pruebas)} pruebas cargadas en 'dbo.pruebas'.")
         
-        # 4. Cargar Resultados (Tabla de Hechos Central)
-        print("\n[4/4] Cargando Resultados (Tabla de Hechos)...")
+        # 5. Cargar Resultados (Tabla de Hechos Central)
+        print("\n[5/5] Cargando Resultados (Tabla de Hechos)...")
         df_resultados = pd.read_csv(CSV_RESULTADOS)
         
         # Validaciones de integridad referencial locales antes de subir a Azure

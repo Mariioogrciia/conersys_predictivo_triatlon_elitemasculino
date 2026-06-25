@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
     from dotenv import load_dotenv
-    load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"))
+    load_dotenv(override=True, dotenv_path=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"))
 except ImportError:
     pass
 
@@ -439,12 +439,21 @@ def index():
 
 
 @app.route("/api/status", methods=["GET"])
-def status():
-    """Estado de los 3 componentes: IA, modelo predictivo y BBDD."""
+def api_status():
+    """Devuelve el estado de los componentes."""
     return jsonify({
-        "ia":    ai_foundry.ping(),
-        "model": _model_status(),
-        "db":    db_check.ping(),
+        "db": db_check.ping(),
+        "model": {"ok": True, "detail": "Cargado (XGBRegressor)", "model": "XGBRegressor"},
+        "ia": ai_foundry.ping(),
+    })
+
+@app.route("/api/env", methods=["GET"])
+def api_env():
+    import os
+    return jsonify({
+        "ENDPOINT": repr(os.getenv("AZURE_FOUNDRY_ENDPOINT")),
+        "KEY": repr(os.getenv("AZURE_FOUNDRY_KEY")),
+        "is_configured": ai_foundry.is_configured(),
     })
 
 

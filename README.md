@@ -4,16 +4,21 @@ Mario García · Alejandro Benítez
  A
 ---
  
-## 🟡 Sprint actual — Sprint 2: Modelo predictivo ML
+## 🟢 Sprint actual — Sprint 3: API REST + Chatbot con Azure OpenAI
  
-> **25/05/2026 → 05/06/2026** · 2 semanas  
+> **18/05/2026 → 01/06/2026** · 2 semanas  
  
-**Objetivo:** Entrenar el modelo que predice el tiempo final de cada atleta y dejarlo registrado en Azure ML listo para ser consumido por una API.
- 
+**Objetivo:** Desarrollar la API REST en Python (Flask) y crear el Chatbot conversacional con Azure OpenAI (GPT-4o) para interactuar con los datos y el modelo de Azure ML.
+
 ### ¿En qué estamos ahora mismo?
  
 | Tarea | Responsable | Estado |
 |---|---|---|
+| Crear API Flask base | Mario | ✅ Hecho |
+| Integrar Endpoint Azure ML | Alejandro | ✅ Hecho |
+| Integrar SHAP Explainer en la API | Ambos | ✅ Hecho |
+| Conectar Chatbot a Azure OpenAI (GPT-4o) | Ambos | 🟡 En curso |
+| Validar despliegue local completo | ❓ Por asignar | ⚪ Pendiente |
 | 📖 Leer [sprint2.md](sprints/sprint2.md) | Mario | ✅ Hecho  |
 | <sub>Leer el plan completo del sprint antes de empezar — objetivos, features, modelos, riesgos y definition of done</sub> | | |
 | 📖 Leer [sprint2.md](sprints/sprint2.md) | Alejandro | ✅ Hecho |
@@ -85,8 +90,8 @@ Mario García · Alejandro Benítez
 | Sprint | Qué hace | Fechas | Estado |
 |---|---|---|---|
 | [📁 Sprint 1](sprints/sprint1.md) | ETL, limpieza y enriquecimiento de datos | 07/04 – 04/05 | ✅ Completado |
-| [📁 Sprint 2](sprints/sprint2.md) | Entrenamiento del modelo predictivo (AutoML) | 04/05 – 18/05 | 🟡 En curso |
-| [📁 Sprint 3](sprints/sprint3.md) | API REST + Chatbot con Azure OpenAI | 18/05 – 01/06 | ⚪ Pendiente |
+| [📁 Sprint 2](sprints/sprint2.md) | Entrenamiento del modelo predictivo (AutoML) | 04/05 – 18/05 | ✅ Completado |
+| [📁 Sprint 3](sprints/sprint3.md) | API REST + Chatbot con Azure OpenAI | 18/05 – 01/06 | 🟡 En curso |
 | [📁 Sprint 4](sprints/sprint4.md) | Dashboard Blazor + integración final | 01/06 – 22/06 | ⚪ Pendiente |
  
 > **Estados:** ✅ Completado · 🟡 En curso · 🔴 Bloqueado · ⚪ Pendiente
@@ -131,12 +136,18 @@ pip install pandas numpy scikit-learn xgboost shap pyodbc azure-storage-blob pyt
 ```
  
 **3. Crear el fichero `.env`** en la raíz del proyecto (nunca se sube a GitHub, ya está en `.gitignore`)
-```
-AZURE_SQL_SERVER=tu-servidor.database.windows.net
-AZURE_SQL_DATABASE=conersys-triatlon
-AZURE_SQL_USER=tu-usuario
-AZURE_SQL_PASSWORD=tu-contraseña
-AZURE_BLOB_CONNECTION_STRING=tu-cadena-de-conexion
+Puedes basarte en el archivo `.env.example` incluido en el proyecto.
+```env
+AZURE_SERVER="predictivomas-db-server.database.windows.net"
+AZURE_DB="predictivomasc_database"
+AZURE_USER="conersysadmin"
+AZURE_PASSWORD="tu-password"
+AZURE_SUBSCRIPTION_ID="tu-subscription-id"
+AZURE_ML_ENDPOINT="https://predictivo-triatlon-endpoint.../score"
+AZURE_ML_KEY="tu-key-de-ml"
+AZURE_FOUNDRY_ENDPOINT="https://conersysmodel-resource.openai.azure.com/"
+AZURE_FOUNDRY_KEY="tu-key-de-openai"
+AZURE_FOUNDRY_API_VERSION="2024-02-15-preview"
 ```
 > Las credenciales reales están en el canal de Teams del proyecto.
  

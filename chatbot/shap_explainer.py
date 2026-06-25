@@ -1,200 +1,168 @@
-"""
-SHAP Explainer para el modelo predictivo de Triatlón Élite Masculino.
-
-Carga el modelo (Azure AutoML o local XGBoost) y devuelve predicciones
-con explicaciones SHAP listas para consumir desde un chatbot.
-"""
 import os
+import json
+import urllib.request
+import ssl
 import pickle
 import warnings
 import numpy as np
 import pandas as pd
 import shap
+import joblib
 from pathlib import Path
+from dotenv import load_dotenv
 
 warnings.filterwarnings("ignore")
 
+# Cargar variables de entorno
+load_dotenv()
+AZURE_ML_ENDPOINT = os.getenv("AZURE_ML_ENDPOINT")
+AZURE_ML_KEY = os.getenv("AZURE_ML_KEY")
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-MODEL_PATH = BASE_DIR / "models" / "model.pkl"
-LOCAL_MODEL_PATH = BASE_DIR / "models" / "model_local.pkl"
-DATA_PATH = BASE_DIR / "data" / "processed" / "trm_2025_azure_automl.csv"
+LOCAL_MODEL_PATH = BASE_DIR / "models" / "model_local_v2.pkl"
+DATA_PATH = BASE_DIR / "data" / "raw" / "elite_masculina_triatlon" / "dataset" / "dataset_automl_entrenamiento.csv"
 
-# Columnas que el modelo usa (sin targets ni identificadores)
-FEATURE_COLS = [
-    "CHAMPIONSHIP_LEVEL",
-    "ALTITUD",
-    "TEMPERATURA_MAX",
-    "HUMEDAD_MEDIA",
-    "PRECIPITACION",
-    "VIENTO_MAX",
-    "IS_EXTREME_HEAT",
-    "IS_WET_RACE",
-    "VIAJE_DISTANCIA_KM",
-    "ES_LOCAL",
-    "MES_CARRERA",
-    "MES_SIN",
-    "MES_COS",
-    "DAYS_SINCE_LAST_RACE",
-    "FATIGUE_INDEX",
-    "CLUB_POWER_SCORE",
-    "RECENT_AVG_PUNTOS",
-    "HIST_AVG_PUNTOS",
-    "HIST_STD_PUNTOS",
-    "HIST_MAX_PUNTOS",
-    "HIST_COUNT_PRUEBAS",
-]
+FEATURE_COLS = ['athlete_age_at_race', 'athlete_federation', 'athlete_ranking_triatlon', 'athlete_has_wt_id', 'race_city', 'race_temperature', 'race_humidity', 'race_lat', 'race_lng', 'race_altitude_m', 'race_near_coast', 'race_climate_type', 'race_month', 'race_day_of_week', 'race_type', 'n_races_before', 'n_elite_races_before', 'avg_finish_pos_last_3', 'avg_finish_pos_last_5', 'best_finish_pos_ever', 'best_finish_pos_season', 'avg_swim_rank_last_5', 'avg_bike_rank_last_5', 'avg_run_rank_last_5', 'win_rate', 'podium_rate', 'top10_rate', 'dnf_rate', 'days_since_last_race', 'ranking_momentum', 'ranking_trend', 'ranking_change_recent', 'form_score', 'form_trend', 'avg_pos_high_altitude', 'avg_pos_low_altitude', 'avg_pos_coastal', 'avg_pos_inland', 'avg_pos_hot', 'avg_pos_cold', 'performance_altitude_bias', 'performance_coast_bias', 'performance_heat_bias', 'n_participants_race', 'avg_ranking_opponents', 'pct_opponents_ranked_higher', 'n_races_at_city', 'n_previous_wins_at_city', 'position_std_dev', 'current_podium_streak', 'current_top10_streak']
+CAT_COLS = ['athlete_federation', 'race_city', 'race_climate_type', 'race_type', 'ranking_trend', 'form_trend']
+TARGET_COL = "finish_position"
 
-TARGET_COL = "PUNTOS_TARGET"
-
-# Descripciones en español de cada feature para las explicaciones
 FEATURE_LABELS = {
-    "CHAMPIONSHIP_LEVEL": "nivel del campeonato",
-    "ALTITUD": "altitud de la prueba (m)",
-    "TEMPERATURA_MAX": "temperatura máxima (°C)",
-    "HUMEDAD_MEDIA": "humedad media (%)",
-    "PRECIPITACION": "precipitación (mm)",
-    "VIENTO_MAX": "viento máximo (km/h)",
-    "IS_EXTREME_HEAT": "calor extremo",
-    "IS_WET_RACE": "prueba mojada/lluvia",
-    "VIAJE_DISTANCIA_KM": "distancia de viaje (km)",
-    "ES_LOCAL": "prueba local",
-    "MES_CARRERA": "mes de la carrera",
-    "MES_SIN": "estacionalidad (seno)",
-    "MES_COS": "estacionalidad (coseno)",
-    "DAYS_SINCE_LAST_RACE": "días desde la última prueba",
-    "FATIGUE_INDEX": "índice de fatiga",
-    "CLUB_POWER_SCORE": "potencia del club",
-    "RECENT_AVG_PUNTOS": "media reciente de puntos",
-    "HIST_AVG_PUNTOS": "media histórica de puntos",
-    "HIST_STD_PUNTOS": "variabilidad histórica de puntos",
-    "HIST_MAX_PUNTOS": "máximo histórico de puntos",
-    "HIST_COUNT_PRUEBAS": "número total de pruebas disputadas",
+    'athlete_age_at_race': 'edad del atleta', 
+    'athlete_federation': 'federación', 
+    'athlete_ranking_triatlon': 'ranking de triatlón', 
+    'athlete_has_wt_id': 'tiene ID de World Triathlon', 
+    'race_city': 'ciudad de la carrera', 
+    'race_temperature': 'temperatura (°C)', 
+    'race_humidity': 'humedad (%)', 
+    'race_lat': 'latitud', 
+    'race_lng': 'longitud', 
+    'race_altitude_m': 'altitud (m)', 
+    'race_near_coast': 'carrera cerca de la costa', 
+    'race_climate_type': 'tipo de clima', 
+    'race_month': 'mes de la carrera', 
+    'race_day_of_week': 'día de la semana', 
+    'race_type': 'tipo de carrera', 
+    'n_races_before': 'carreras previas disputadas', 
+    'n_elite_races_before': 'carreras élite previas', 
+    'avg_finish_pos_last_3': 'posición media (últimas 3)', 
+    'avg_finish_pos_last_5': 'posición media (últimas 5)', 
+    'best_finish_pos_ever': 'mejor posición histórica', 
+    'best_finish_pos_season': 'mejor posición esta temporada', 
+    'avg_swim_rank_last_5': 'ranking medio de natación (últimas 5)', 
+    'avg_bike_rank_last_5': 'ranking medio de ciclismo (últimas 5)', 
+    'avg_run_rank_last_5': 'ranking medio de carrera (últimas 5)', 
+    'win_rate': 'porcentaje de victorias', 
+    'podium_rate': 'porcentaje de podios', 
+    'top10_rate': 'porcentaje de top 10', 
+    'dnf_rate': 'porcentaje de abandonos (DNF)', 
+    'days_since_last_race': 'días desde la última carrera', 
+    'ranking_momentum': 'momentum en el ranking', 
+    'ranking_trend': 'tendencia en el ranking', 
+    'ranking_change_recent': 'cambio reciente en el ranking', 
+    'form_score': 'puntuación de forma actual', 
+    'form_trend': 'tendencia de forma', 
+    'avg_pos_high_altitude': 'posición media en altura', 
+    'avg_pos_low_altitude': 'posición media a nivel del mar', 
+    'avg_pos_coastal': 'posición media en costa', 
+    'avg_pos_inland': 'posición media en interior', 
+    'avg_pos_hot': 'posición media con calor', 
+    'avg_pos_cold': 'posición media con frío', 
+    'performance_altitude_bias': 'sesgo de rendimiento en altitud', 
+    'performance_coast_bias': 'sesgo de rendimiento en costa', 
+    'performance_heat_bias': 'sesgo de rendimiento con calor', 
+    'n_participants_race': 'número de participantes', 
+    'avg_ranking_opponents': 'ranking medio de oponentes', 
+    'pct_opponents_ranked_higher': 'porcentaje de oponentes con mejor ranking', 
+    'n_races_at_city': 'carreras previas en esta ciudad', 
+    'n_previous_wins_at_city': 'victorias previas en esta ciudad', 
+    'position_std_dev': 'desviación estándar de posición', 
+    'current_podium_streak': 'racha actual de podios', 
+    'current_top10_streak': 'racha actual de top 10'
 }
 
-
-def _train_local_model():
-    """Entrena XGBoost local sobre el CSV de AutoML y lo guarda en models/."""
-    from xgboost import XGBRegressor
-    from sklearn.model_selection import train_test_split
-    from sklearn.metrics import mean_absolute_error, r2_score
-
-    print("[SHAP] Entrenando modelo local XGBoost desde el dataset CSV...")
-    df = pd.read_csv(DATA_PATH)
-    df = df.dropna(subset=FEATURE_COLS + [TARGET_COL])
-
-    X = df[FEATURE_COLS]
-    y = df[TARGET_COL]
-
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.15, random_state=42, shuffle=True
-    )
-
-    model = XGBRegressor(
-        n_estimators=400,
-        learning_rate=0.05,
-        max_depth=6,
-        subsample=0.8,
-        colsample_bytree=0.8,
-        random_state=42,
-        n_jobs=-1,
-        verbosity=0,
-    )
-    model.fit(X_train, y_train, eval_set=[(X_test, y_test)], verbose=False)
-
-    y_pred = model.predict(X_test)
-    mae = mean_absolute_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-    print(f"[SHAP] Modelo local entrenado — MAE: {mae:.2f} pts · R²: {r2:.3f}")
-
-    with open(LOCAL_MODEL_PATH, "wb") as f:
-        pickle.dump({"model": model, "feature_cols": FEATURE_COLS}, f)
-
-    print(f"[SHAP] Modelo guardado en {LOCAL_MODEL_PATH}")
-    return model
-
-
 def _load_model():
-    """
-    Intenta cargar el modelo Azure AutoML. Si falla por dependencias,
-    usa el modelo local XGBoost (lo entrena si no existe aún).
-    """
-    # 1. Intentar modelo local (ya entrenado)
-    if LOCAL_MODEL_PATH.exists():
-        with open(LOCAL_MODEL_PATH, "rb") as f:
-            bundle = pickle.load(f)
-        print("[SHAP] Modelo local cargado desde cache.")
-        return bundle["model"]
-
-    # 2. Intentar Azure AutoML
-    try:
-        with open(MODEL_PATH, "rb") as f:
-            azure_model = pickle.load(f)
-        print("[SHAP] Modelo Azure AutoML cargado.")
-        return azure_model
-    except (ModuleNotFoundError, ImportError, Exception) as e:
-        print(f"[SHAP] No se pudo cargar model.pkl ({type(e).__name__}). Usando modelo local.")
-
-    # 3. Entrenar modelo local como fallback
-    return _train_local_model()
-
+    if not LOCAL_MODEL_PATH.exists():
+        raise FileNotFoundError(f"No se encuentra el modelo en {LOCAL_MODEL_PATH}")
+    bundle = joblib.load(LOCAL_MODEL_PATH)
+    print("[SHAP] Modelo local v2 cargado desde cache.")
+    return bundle
 
 class TriathlonExplainer:
-    """
-    Wraps the prediction model with SHAP to generate human-readable
-    explanations for each prediction. Designed for chatbot consumption.
-    """
-
     def __init__(self):
-        self.model = _load_model()
+        bundle = _load_model()
+        self.model = bundle["model"]
+        self.encoders = bundle.get("encoders", {})
         self._explainer = None
         self._background = None
         self._init_explainer()
 
     def _init_explainer(self):
-        """Inicializa el TreeExplainer de SHAP con datos de referencia del dataset."""
         df = pd.read_csv(DATA_PATH)
+        for col in CAT_COLS:
+            df[col] = df[col].astype(str).replace('nan', 'missing')
+            if col in self.encoders:
+                df[col] = self.encoders[col].transform(df[[col]])
+        
         df = df.dropna(subset=FEATURE_COLS)
         background = df[FEATURE_COLS].sample(min(100, len(df)), random_state=42)
         self._background = background
 
         try:
-            # TreeExplainer funciona con XGBoost, RandomForest, etc.
-            self._explainer = shap.TreeExplainer(self.model, background)
+            self._explainer = shap.TreeExplainer(self.model)
             print("[SHAP] TreeExplainer inicializado.")
-        except Exception:
-            # Fallback genérico para cualquier modelo con .predict
+        except Exception as e:
+            print(f"Error al inicializar TreeExplainer: {e}")
             self._explainer = shap.Explainer(
                 self.model.predict, background, algorithm="permutation"
             )
-            print("[SHAP] Explainer genérico (permutación) inicializado.")
+            print("[SHAP] Explainer genérico inicializado.")
+
+    def _call_azure_endpoint(self, df: pd.DataFrame) -> float:
+        """Llama al endpoint real de Azure ML para obtener la predicción numérica."""
+        if not AZURE_ML_ENDPOINT or not AZURE_ML_KEY:
+            # Fallback a local si no hay credenciales
+            return float(self.model.predict(df)[0])
+            
+        data = {
+            "input_data": {
+                "columns": df.columns.tolist(),
+                "data": df.values.tolist()
+            }
+        }
+        body = str.encode(json.dumps(data))
+        url = AZURE_ML_ENDPOINT
+        api_key = AZURE_ML_KEY
+        
+        headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'blue' }
+        req = urllib.request.Request(url, body, headers)
+        
+        try:
+            # Bypass self-signed certificates
+            ctx = ssl.create_default_context()
+            ctx.check_hostname = False
+            ctx.verify_mode = ssl.CERT_NONE
+            
+            response = urllib.request.urlopen(req, context=ctx)
+            result = response.read()
+            res_json = json.loads(result)
+            return float(res_json[0])
+        except urllib.error.HTTPError as error:
+            print(f"[AZURE] Error HTTP {error.code}: {error.read().decode('utf8', 'ignore')}")
+            # Fallback a local
+            return float(self.model.predict(df)[0])
+        except Exception as e:
+            print(f"[AZURE] Error general: {e}")
+            return float(self.model.predict(df)[0])
 
     def predict(self, features: dict) -> float:
-        """Devuelve la predicción de puntos para el atleta."""
         df = self._to_dataframe(features)
-        pred = self.model.predict(df)
-        return float(pred[0])
+        return self._call_azure_endpoint(df)
 
     def explain(self, features: dict, top_n: int = 5) -> dict:
-        """
-        Genera predicción + explicación SHAP para el chatbot.
-
-        Args:
-            features: Diccionario con los valores de las features.
-            top_n: Número de factores más influyentes a devolver.
-
-        Returns:
-            dict con:
-              - prediction (float): puntos predichos
-              - top_factors (list): lista de factores con nombre, valor, impacto
-              - explanation_text (str): texto en español para el chatbot
-              - base_value (float): valor base del modelo (media global)
-              - shap_values (dict): todos los valores SHAP por feature
-        """
         df = self._to_dataframe(features)
-        prediction = float(self.model.predict(df)[0])
+        prediction = self._call_azure_endpoint(df)
 
         sv = self._explainer(df)
-        # shap.Explanation o array dependiendo de la versión
         if hasattr(sv, "values"):
             shap_vals = sv.values[0]
             base_val = float(sv.base_values[0]) if hasattr(sv, "base_values") else 0.0
@@ -202,7 +170,6 @@ class TriathlonExplainer:
             shap_vals = np.array(sv)[0]
             base_val = 0.0
 
-        # Construir ranking de factores por impacto absoluto
         factor_list = []
         for i, col in enumerate(FEATURE_COLS):
             impact = float(shap_vals[i])
@@ -213,7 +180,7 @@ class TriathlonExplainer:
                     "label": FEATURE_LABELS.get(col, col),
                     "value": value,
                     "shap_impact": impact,
-                    "direction": "positivo" if impact > 0 else "negativo",
+                    "direction": "negativo" if impact > 0 else "positivo",
                 }
             )
 
@@ -223,8 +190,8 @@ class TriathlonExplainer:
         explanation_text = self._build_explanation(prediction, top_factors, features)
 
         return {
-            "prediction": round(prediction, 2),
-            "base_value": round(base_val, 2),
+            "prediction": round(prediction, 1),
+            "base_value": round(base_val, 1),
             "top_factors": top_factors,
             "explanation_text": explanation_text,
             "shap_values": {
@@ -232,81 +199,62 @@ class TriathlonExplainer:
             },
         }
 
-    def _build_explanation(
-        self, prediction: float, top_factors: list, features: dict
-    ) -> str:
-        """Genera el texto de explicación en español para el chatbot."""
+    def _build_explanation(self, prediction: float, top_factors: list, features: dict) -> str:
         lines = []
-
-        # Interpretar nivel de predicción
-        if prediction >= 1500:
-            nivel = "muy alto (podio probable)"
-        elif prediction >= 1000:
-            nivel = "alto (clasificación top-10 probable)"
-        elif prediction >= 500:
-            nivel = "medio"
+        if prediction <= 3:
+            nivel = "excepcional (podio seguro)"
+        elif prediction <= 10:
+            nivel = "muy alto (clasificación top-10 probable)"
+        elif prediction <= 25:
+            nivel = "medio (pelotón principal)"
         else:
-            nivel = "bajo"
+            nivel = "bajo (parte trasera)"
 
-        lines.append(
-            f"El modelo predice **{prediction:.0f} puntos** para este atleta en esta prueba, "
-            f"un rendimiento {nivel}."
-        )
-
+        lines.append(f"El modelo (desde Azure ML) predice la **posición {prediction:.0f}** para este atleta en esta prueba, un rendimiento {nivel}.")
         lines.append("\nLos factores que más influyen en esta predicción son:\n")
 
         for rank, factor in enumerate(top_factors, 1):
             impact = factor["shap_impact"]
             label = factor["label"]
             value = factor["value"]
-            arrow = "(+)" if impact > 0 else "(-)"
+            arrow = "(+) sube puestos" if impact > 0 else "(-) baja puestos"
             sign = "+" if impact > 0 else ""
-
-            # Formatear valor según tipo
             if isinstance(value, float):
                 val_str = f"{value:.1f}"
             else:
                 val_str = str(value)
+            lines.append(f"  {rank}. {arrow} **{label}** ({val_str}) → {sign}{impact:.1f} posiciones")
 
-            lines.append(
-                f"  {rank}. {arrow} **{label}** ({val_str}) → {sign}{impact:.1f} pts"
-            )
-
-        # Añadir contexto deportivo para los factores más importantes
         top1 = top_factors[0] if top_factors else None
         if top1:
             lines.append(f"\n[!] El factor dominante es **{top1['label']}**.")
 
-        # Mencionar si es local
-        if features.get("ES_LOCAL") == 1:
-            lines.append("[casa] Compite en casa, lo que historicamente favorece su rendimiento.")
-
-        if features.get("IS_EXTREME_HEAT") == 1:
+        if features.get("race_near_coast") == 1:
+            lines.append("[costa] La carrera es cerca de la costa.")
+        if features.get("race_temperature", 0) >= 35:
             lines.append("[calor] Calor extremo detectado - factor de riesgo para el atleta.")
-
-        if features.get("IS_WET_RACE") == 1:
-            lines.append("[lluvia] Prueba con lluvia - condiciones variables que pueden alterar el resultado.")
-
-        hist = features.get("HIST_COUNT_PRUEBAS", 0)
+        hist = features.get("n_races_before", 10)
         if hist is not None and int(hist) < 3:
-            lines.append(
-                "[aviso] Historial reducido (< 3 pruebas): la prediccion tiene mayor incertidumbre."
-            )
+            lines.append("[aviso] Historial reducido (< 3 carreras previas): la predicción tiene mayor incertidumbre.")
 
         return "\n".join(lines)
 
     def _to_dataframe(self, features: dict) -> pd.DataFrame:
-        """Convierte el dict de features a DataFrame con las columnas correctas."""
         row = {}
         for col in FEATURE_COLS:
-            row[col] = features.get(col, self._background[col].median())
-        return pd.DataFrame([row], columns=FEATURE_COLS)
+            if col in CAT_COLS:
+                val = str(features.get(col, self._background[col].iloc[0]))
+                if col in self.encoders:
+                    df_temp = pd.DataFrame({col: [val]})
+                    row[col] = self.encoders[col].transform(df_temp)[0][0]
+                else:
+                    row[col] = val
+            else:
+                row[col] = features.get(col, self._background[col].median())
+        df = pd.DataFrame([row], columns=FEATURE_COLS)
+        return df
 
-
-# Singleton: se instancia una sola vez al importar el módulo
-_explainer_instance: TriathlonExplainer | None = None
-
-
+_explainer_instance = None
 def get_explainer() -> TriathlonExplainer:
     global _explainer_instance
     if _explainer_instance is None:

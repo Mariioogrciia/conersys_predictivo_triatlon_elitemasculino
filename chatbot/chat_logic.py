@@ -11,24 +11,24 @@ from chatbot.shap_explainer import get_explainer, FEATURE_LABELS
 # ---------------------------------------------------------------------------
 
 PARAMS_CONFIG = {
-    "HIST_COUNT_PRUEBAS": {
-        "question": "Cuantas pruebas ha disputado el atleta en total?",
-        "hint": "Ejemplo: 15",
+    "athlete_ranking_triatlon": {
+        "question": "¿Cuál es la posición actual del atleta en el ranking general de triatlón?",
+        "hint": "Ejemplo: 15 (escribe 999 si no tiene ranking o es debutante)",
         "type": "int",
     },
-    "RECENT_AVG_PUNTOS": {
-        "question": "Cual es la media de puntos en sus ultimas pruebas?",
-        "hint": "Ejemplo: 1200 — si no lo sabes escribe 0",
+    "n_races_before": {
+        "question": "¿Cuántas carreras ha disputado el atleta en total?",
+        "hint": "Ejemplo: 20",
+        "type": "int",
+    },
+    "avg_finish_pos_last_3": {
+        "question": "¿Cuál es su posición media en las últimas 3 carreras?",
+        "hint": "Ejemplo: 5.5",
         "type": "float",
-    },
-    "CHAMPIONSHIP_LEVEL": {
-        "question": "Cual es el nivel del campeonato?\n**1** = Nacional / Europeo\n**2** = Regional / Autonomico\n**3** = Provincial / Local",
-        "hint": "Escribe 1, 2 o 3",
-        "type": "int",
     },
 }
 
-REQUIRED_ORDER = ["HIST_COUNT_PRUEBAS", "RECENT_AVG_PUNTOS", "CHAMPIONSHIP_LEVEL"]
+REQUIRED_ORDER = ["athlete_ranking_triatlon", "n_races_before", "avg_finish_pos_last_3"]
 
 # ---------------------------------------------------------------------------
 # Deteccion de intencion
@@ -42,7 +42,7 @@ def detect_intent(text: str) -> str:
         return "help"
     if any(k in t for k in ["explica", "por que", "porque", "factores", "shap", "razon", "detalle", "mas info", "mas detalle"]):
         return "explain"
-    if any(k in t for k in ["predic", "rendimiento", "como quedara", "resultado", "puntos que", "analiza", "analisis", "cuantos puntos"]):
+    if any(k in t for k in ["predic", "rendimiento", "como quedara", "resultado", "posicion", "analiza", "analisis"]):
         return "predict"
     return "chat"
 
@@ -54,81 +54,43 @@ def extract_params(text: str) -> dict:
     t = text.lower()
     params = {}
 
-    # HIST_COUNT_PRUEBAS
-    m = re.search(r'(\d+)\s*(?:prueba|carrera|competici|vez|veces)', t)
+    # athlete_ranking_triatlon
+    m = re.search(r'ranking\s*(\d+)', t)
+    if not m:
+        m = re.search(r'posici[oó]n\s*(\d+)\s*(?:en\s*el\s*)?ranking', t)
     if m:
-        params["HIST_COUNT_PRUEBAS"] = int(m.group(1))
+        params["athlete_ranking_triatlon"] = int(m.group(1))
 
-    # RECENT_AVG_PUNTOS / HIST_AVG_PUNTOS
-    m = re.search(r'(?:media|promedio|avg)\s+(?:de\s+)?(\d+(?:[.,]\d+)?)\s*(?:puntos?|pts)?', t)
+    # n_races_before
+    m = re.search(r'(\d+)\s*(?:carrera|prueba|competici|vez|veces)', t)
+    if m:
+        params["n_races_before"] = int(m.group(1))
+
+    # avg_finish_pos_last_3
+    m = re.search(r'(?:media|promedio)\s*(?:de\s*)?(?:posici[oó]n\s*)?(\d+(?:[.,]\d+)?)', t)
     if not m:
-        m = re.search(r'(\d+(?:[.,]\d+)?)\s*puntos?\s*de\s*(?:media|promedio)', t)
-    if not m:
-        m = re.search(r'(\d{3,4}(?:[.,]\d+)?)\s*puntos?(?!\s*de\s*(?:nivel|campeonato))', t)
+        m = re.search(r'posici[oó]n\s*(?:media|promedio)\s*(?:de\s*)?(\d+(?:[.,]\d+)?)', t)
     if m:
         val = float(m.group(1).replace(',', '.'))
-        params["RECENT_AVG_PUNTOS"] = val
-        params.setdefault("HIST_AVG_PUNTOS", round(val * 0.9, 1))
-        params.setdefault("HIST_MAX_PUNTOS", round(val * 1.4, 1))
-        params.setdefault("HIST_STD_PUNTOS", round(val * 0.2, 1))
+        params["avg_finish_pos_last_3"] = val
+        params.setdefault("avg_finish_pos_last_5", round(val * 1.1, 1))
+        params.setdefault("best_finish_pos_ever", max(1.0, round(val * 0.5, 1)))
 
-    # CHAMPIONSHIP_LEVEL — "campeonato local/provincial" = nivel 3, no confundir con ES_LOCAL
-    if any(k in t for k in ["nacional", "europeo", "mundial", "nivel 1", "nivel uno"]):
-        params["CHAMPIONSHIP_LEVEL"] = 1
-    elif any(k in t for k in ["regional", "autonomic", "nivel 2", "nivel dos"]):
-        params["CHAMPIONSHIP_LEVEL"] = 2
-    elif any(k in t for k in ["provincial", "nivel 3", "nivel tres", "campeonato local", "camp. local"]):
-        params["CHAMPIONSHIP_LEVEL"] = 3
-
-    # ES_LOCAL — "prueba local", "compite en casa", "es local" (sin ser nivel campeonato)
-    local_pos = t.find("local")
-    if local_pos >= 0:
-        before = t[max(0, local_pos - 20):local_pos]
-        if "campeonato" not in before and "nivel" not in before and "camp." not in before:
-            params["ES_LOCAL"] = 1
-    if any(k in t for k in ["en casa", "su ciudad", "de casa", "juega en casa"]):
-        params["ES_LOCAL"] = 1
-    if any(k in t for k in ["fuera", "desplaz", "visitante", "no es local"]):
-        params["ES_LOCAL"] = 0
-
-    # TEMPERATURA_MAX
-    m = re.search(r'(\d+)\s*(?:grados?|°c|ºc|temp)', t)
+    # win_rate
+    m = re.search(r'(\d+)\s*%\s*(?:de\s*)?victorias', t)
     if m:
-        temp = float(m.group(1))
-        params["TEMPERATURA_MAX"] = temp
-        if temp >= 35:
-            params["IS_EXTREME_HEAT"] = 1
+        params["win_rate"] = float(m.group(1)) / 100.0
 
-    # IS_EXTREME_HEAT
-    if any(k in t for k in ["calor extremo", "mucho calor", "ola de calor", "calor intenso"]):
-        params["IS_EXTREME_HEAT"] = 1
-
-    # IS_WET_RACE
-    if any(k in t for k in ["lluvia", "lluvioso", "mojad", "wet", "agua"]):
-        params["IS_WET_RACE"] = 1
-
-    # DAYS_SINCE_LAST_RACE
-    m = re.search(r'(\d+)\s*d[iíi]as?\s*(?:desde|de descanso|sin competi|de recupera)', t)
+    # race_temperature
+    m = re.search(r'(\d+(?:[.,]\d+)?)\s*(?:grados?|°c|ºc|temp)', t)
     if m:
-        params["DAYS_SINCE_LAST_RACE"] = int(m.group(1))
+        temp = float(m.group(1).replace(',', '.'))
+        params["race_temperature"] = temp
 
-    # FATIGUE_INDEX
-    if any(k in t for k in ["muy fatigado", "muy cansado", "agotado", "sin fuerzas"]):
-        params["FATIGUE_INDEX"] = 0.9
-    elif any(k in t for k in ["fatigado", "cansado", "con fatiga"]):
-        params["FATIGUE_INDEX"] = 0.5
-    elif any(k in t for k in ["descansado", "fresco", "recuperado", "en forma"]):
-        params["FATIGUE_INDEX"] = 0.1
-
-    # VIAJE_DISTANCIA_KM
-    m = re.search(r'(\d+)\s*km\s*(?:de viaje|desde|de distancia|de su casa)', t)
+    # days_since_last_race
+    m = re.search(r'(\d+)\s*d[iíi]as?\s*(?:desde|sin)', t)
     if m:
-        params["VIAJE_DISTANCIA_KM"] = float(m.group(1))
-
-    # ALTITUD
-    m = re.search(r'(\d+)\s*m(?:etros?)?\s*(?:de altitud|snm|sobre el mar|sobre nivel)', t)
-    if m:
-        params["ALTITUD"] = float(m.group(1))
+        params["days_since_last_race"] = int(m.group(1))
 
     return params
 
@@ -136,23 +98,10 @@ def extract_params(text: str) -> dict:
 def try_parse_direct(text: str, param_key: str):
     """Parsea una respuesta directa a la pregunta de un parametro concreto."""
     t = text.strip().lower()
-    if param_key == "ES_LOCAL":
-        if any(k in t for k in ["si", "yes", "s", "1", "casa", "local"]):
-            return 1
-        if any(k in t for k in ["no", "n", "0", "fuera"]):
-            return 0
-        return None
-    if param_key == "CHAMPIONSHIP_LEVEL":
-        if "1" in t or "nacional" in t or "europeo" in t:
-            return 1
-        if "2" in t or "regional" in t:
-            return 2
-        if "3" in t or "provincial" in t or "local" in t:
-            return 3
     m = re.search(r'(\d+(?:[.,]\d+)?)', t)
     if m:
         val = float(m.group(1).replace(',', '.'))
-        if param_key in ("HIST_COUNT_PRUEBAS", "CHAMPIONSHIP_LEVEL", "DAYS_SINCE_LAST_RACE"):
+        if param_key in ("n_races_before", "athlete_ranking_triatlon", "days_since_last_race"):
             return int(val)
         return val
     return None
@@ -162,63 +111,54 @@ def try_parse_direct(text: str, param_key: str):
 # ---------------------------------------------------------------------------
 
 def _prediction_response(result: dict, params: dict) -> str:
-    pts = result["prediction"]
+    pos = result["prediction"]
 
-    if pts >= 1600:
+    if pos <= 3:
         nivel = "excepcional — candidato al podio"
-        icon = "Medalla de oro"
-    elif pts >= 1200:
-        nivel = "muy alto — top 5 probable"
-        icon = "Trofeo"
-    elif pts >= 800:
-        nivel = "alto — clasificacion top-10"
-        icon = "Bien"
-    elif pts >= 400:
-        nivel = "medio"
-        icon = "Grafico"
+    elif pos <= 10:
+        nivel = "muy alto — top 10 probable"
+    elif pos <= 25:
+        nivel = "medio — pelotón principal"
     else:
-        nivel = "bajo — por debajo de la media"
-        icon = "Aviso"
+        nivel = "bajo — parte trasera"
 
     lines = [
-        f"**Prediccion: {pts:.0f} puntos**",
+        f"**Predicción: Posición {pos:.0f}**",
         f"*Rendimiento {nivel}*\n",
-        "**Principales factores (analisis SHAP):**\n",
+        "**Principales factores (análisis SHAP):**\n",
     ]
 
     for i, f in enumerate(result["top_factors"], 1):
+        # Para la explicación, si impact > 0 significa que su posición sube (peor), así que penaliza.
+        # En la UI esto se mapea a rojo/verde, pero aquí mandamos texto.
         arr = "▲" if f["shap_impact"] > 0 else "▼"
         sign = "+" if f["shap_impact"] > 0 else ""
-        lines.append(f"  {i}. {arr} *{f['label']}*: {sign}{f['shap_impact']:.0f} pts")
+        lines.append(f"  {i}. {arr} *{f['label']}*: {sign}{f['shap_impact']:.1f} posiciones")
 
     lines.append("")
 
-    if params.get("ES_LOCAL") == 1:
-        lines.append("Casa: Compite en casa — ventaja local aplicada.")
-    if params.get("IS_EXTREME_HEAT") == 1:
-        lines.append("Calor: Calor extremo — factor de riesgo.")
-    if params.get("IS_WET_RACE") == 1:
-        lines.append("Lluvia: Prueba lluviosa — condiciones variables.")
-    hist = int(params.get("HIST_COUNT_PRUEBAS", 10))
+    if params.get("race_temperature", 0) >= 35:
+        lines.append("Calor: Calor extremo detectado — factor de riesgo.")
+    hist = int(params.get("n_races_before", 10))
     if hist < 3:
-        lines.append("Aviso: Historial muy reducido — prediccion con alta incertidumbre.")
+        lines.append("Aviso: Historial muy reducido — predicción con alta incertidumbre.")
 
-    lines.append("\n*Escribe **explicar mas** para el analisis SHAP completo, o **nueva prediccion** para otro atleta.*")
+    lines.append("\n*Escribe **explicar mas** para el análisis SHAP completo, o **nueva prediccion** para otro atleta.*")
     return "\n".join(lines)
 
 
 def _full_explain_response(result: dict) -> str:
     lines = [
-        f"**Analisis SHAP completo — {result['prediction']:.0f} puntos predichos**\n",
-        f"Valor base del modelo: *{result['base_value']:.0f} pts* (media global del dataset)\n",
+        f"**Análisis SHAP completo — Posición {result['prediction']:.0f} predicha**\n",
+        f"Valor base del modelo: *Posición {result['base_value']:.0f}* (media global del dataset)\n",
         "Impacto de cada variable:\n",
     ]
     for feat, val in sorted(result["shap_values"].items(), key=lambda x: abs(x[1]), reverse=True):
         sign = "+" if val > 0 else ""
-        effect = "favorece" if val > 0 else "penaliza"
+        effect = "empeora" if val > 0 else "mejora"
         label = FEATURE_LABELS.get(feat, feat)
         arr = "▲" if val > 0 else "▼"
-        lines.append(f"  {arr} **{label}**: {sign}{val:.1f} pts ({effect})")
+        lines.append(f"  {arr} **{label}**: {sign}{val:.1f} posiciones ({effect})")
     lines.append("\n*Escribe **nueva prediccion** para analizar otro atleta.*")
     return "\n".join(lines)
 
@@ -227,29 +167,26 @@ def _full_explain_response(result: dict) -> str:
 # ---------------------------------------------------------------------------
 
 WELCOME_TEXT = (
-    "Hola! Soy el asistente de prediccion del **Triatlon Elite Masculino**. "
-    "Natacion + Ciclismo + Running\n\n"
-    "Utilizo machine learning con explicaciones **SHAP** para predecir el rendimiento "
-    "de los atletas y explicarte *exactamente por que* el modelo llega a esa prediccion.\n\n"
+    "¡Hola! Soy el asistente de predicción del **Triatlón Élite Masculino**. "
+    "Natación + Ciclismo + Running\n\n"
+    "Utilizo machine learning con explicaciones **SHAP** para predecir la posición "
+    "de los atletas y explicarte *exactamente por qué* el modelo llega a esa conclusión.\n\n"
     "Puedes decirme cosas como:\n"
-    "> *\"Atleta con 15 pruebas, media de 1200 puntos, campeonato regional, prueba local\"*\n\n"
-    "O escribe **predecir** para que te guie paso a paso."
+    "> *\"Atleta con ranking 15, 20 pruebas, y posición media de 5.5\"*\n\n"
+    "O escribe **predecir** para que te guíe paso a paso."
 )
 
 HELP_TEXT = (
-    "**Como funciono?**\n\n"
+    "**¿Cómo funciono?**\n\n"
     "Soy un chatbot entrenado con datos de la FETRI. Uso **XGBoost + SHAP** para predecir "
-    "los puntos de un atleta y explicar que factores influyen.\n\n"
-    "**Para predecir necesito (minimo):**\n"
-    "1. Numero total de pruebas disputadas\n"
-    "2. Media de puntos reciente del atleta\n"
-    "3. Nivel del campeonato (1=Nacional, 2=Regional, 3=Provincial)\n\n"
-    "**Opcionales que mejoran la prediccion:**\n"
-    "Temperatura, si es local o fuera, fatiga, dias de descanso...\n\n"
+    "la posición de llegada de un atleta y explicar qué factores influyen.\n\n"
+    "**Para predecir necesito (mínimo):**\n"
+    "1. Posición actual en el ranking\n"
+    "2. Número total de carreras disputadas\n"
+    "3. Posición media en sus últimas 3 carreras\n\n"
     "**Ejemplos de frases que entiendo:**\n"
-    "> *\"20 pruebas, 1400 puntos de media, nacional, prueba local\"*\n"
-    "> *\"Atleta novato con 3 carreras y 200 puntos, regional, mucho calor\"*\n"
-    "> *\"predecir\"* — te guio con preguntas\n\n"
+    "> *\"Ranking 10, 30 carreras, media de posición 4\"*\n"
+    "> *\"predecir\"* — te guío con preguntas\n\n"
     "Escribe **predecir** para empezar."
 )
 
@@ -270,7 +207,7 @@ class ConversationSession:
 
         if intent == "reset":
             self.reset()
-            return "Sesion reiniciada! Quieres analizar a otro atleta? Escribe **predecir** o cuentame sobre el atleta."
+            return "¡Sesión reiniciada! ¿Quieres analizar a otro atleta? Escribe **predecir** o cuéntame sobre el atleta."
 
         if intent == "help":
             return HELP_TEXT
@@ -295,7 +232,7 @@ class ConversationSession:
             next_q = self._next_missing()
             if next_q is None:
                 return self._predict()
-            prefix = "Perfecto! Voy a analizar al atleta.\n\n" if not extracted else "He recogido algunos datos. "
+            prefix = "¡Perfecto! Voy a analizar al atleta.\n\n" if not extracted else "He recogido algunos datos. "
             return prefix + self._ask(next_q)
 
         return WELCOME_TEXT
@@ -321,14 +258,14 @@ class ConversationSession:
 
     def _from_predicted(self, text: str, intent: str) -> str:
         if intent == "explain":
-            return _full_explain_response(self.last_result) if self.last_result else "No hay prediccion activa."
+            return _full_explain_response(self.last_result) if self.last_result else "No hay predicción activa."
 
         if intent in ("predict", "reset") or any(k in text.lower() for k in ["nueva", "otro atleta", "analiza"]):
             self.params = {}
             self.pending_param = None
             self.last_result = None
             self.state = "collecting"
-            return "Vamos a analizar otro atleta!\n\n" + self._ask("HIST_COUNT_PRUEBAS")
+            return "¡Vamos a analizar otro atleta!\n\n" + self._ask("athlete_ranking_triatlon")
 
         extracted = extract_params(text)
         if extracted:
@@ -337,7 +274,7 @@ class ConversationSession:
 
         return (
             "Puedo ayudarte con:\n"
-            "- **explicar mas** — ver el analisis SHAP completo\n"
+            "- **explicar mas** — ver el análisis SHAP completo\n"
             "- **nueva prediccion** — analizar otro atleta\n"
             "- **ayuda** — ver todas las opciones"
         )
@@ -363,7 +300,7 @@ class ConversationSession:
             self.state = "predicted"
             return _prediction_response(result, self.params)
         except Exception as e:
-            return f"Error al calcular la prediccion: {e}\n\nEscribe **reset** para reiniciar."
+            return f"Error al calcular la predicción: {e}\n\nEscribe **reset** para reiniciar."
 
 
 # ---------------------------------------------------------------------------
