@@ -27,17 +27,25 @@ try:
 except ImportError:
     pass
 
-from flask import Flask, request, jsonify, Response, render_template
+from fastapi import FastAPI, Request, Body, HTTPException
+from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+import time
+
+# Helper to avoid changing all returns
+def jsonify(x): return x
 from chatbot.shap_explainer import get_explainer, FEATURE_LABELS, FEATURE_COLS
 from chatbot.chat_logic import get_session, reset_session
 from chatbot import ai_foundry, db_check
-from chatbot.database_service import get_active_athletes, get_athlete_info, get_athlete_history, get_available_races, get_all_clubs, get_all_athletes, get_all_competitions, get_competition_results
+from chatbot.database_service import get_active_athletes, get_athlete_info, get_athlete_history, get_athletes_history_batch, get_available_races, get_all_clubs, get_all_athletes, get_all_competitions, get_competition_results
 import urllib.request
 import xml.etree.ElementTree as ET
 
-app = Flask(__name__)
-app.config["JSON_ENSURE_ASCII"] = False
-app.config["TEMPLATES_AUTO_RELOAD"] = True
+app = FastAPI()
+templates = Jinja2Templates(directory=os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates"))
+app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")), name="static")
+_rate_limits = {}
 
 _FOUNDARY_MAX_SESSIONS = 128
 _FOUNDARY_MAX_MESSAGES = 24
@@ -81,17 +89,17 @@ def _model_status() -> dict:
 # Rutas
 # ---------------------------------------------------------------------------
 
-@app.route("/", methods=["GET"])
-def index():
-    return render_template("index.html")
+@app.get("/", response_class=HTMLResponse)
+def index(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.route("/dashboard", methods=["GET"])
-def dashboard():
-    return render_template("dashboard.html")
+@app.get("/dashboard", response_class=HTMLResponse)
+def dashboard(request: Request):
+    return templates.TemplateResponse("dashboard.html", {"request": request})
 
 
-@app.route("/api/status", methods=["GET"])
+@app.get("/api/status")
 def api_status():
     """Devuelve el estado de los componentes."""
     return jsonify({
@@ -100,7 +108,7 @@ def api_status():
         "ia": ai_foundry.ping(),
     })
 
-@app.route("/api/env", methods=["GET"])
+@app.get("/api/env")
 def api_env():
     return jsonify({
         "ENDPOINT": repr(os.getenv("AZURE_FOUNDRY_ENDPOINT")),
@@ -109,9 +117,17 @@ def api_env():
     })
 
 
-@app.route("/api/chat", methods=["POST"])
-def chat():
-    data = request.get_json(force=True, silent=True) or {}
+@app.post("/api/chat")
+async def chat(request: Request, payload: dict = Body(default={})):
+    data = payload or {}
+    client_ip = request.client.host if request.client else "127.0.0.1"
+    now = time.time()
+    if client_ip not in _rate_limits:
+        _rate_limits[client_ip] = []
+    _rate_limits[client_ip] = [t for t in _rate_limits[client_ip] if now - t < 60]
+    if len(_rate_limits[client_ip]) >= 15:
+        return JSONResponse(status_code=429, content={"response": "Has alcanzado el límite de mensajes por minuto. Por favor, espera un momento.", "mode": "error"})
+    _rate_limits[client_ip].append(now)
     msg  = data.get("message", "").strip()
     sid  = data.get("session_id", "default")
 
@@ -136,21 +152,21 @@ def chat():
     return jsonify({"response": response, "mode": "rule_based"})
 
 
-@app.route("/api/reset", methods=["POST"])
-def reset():
-    data = request.get_json(force=True, silent=True) or {}
+@app.post("/api/reset")
+async def reset(payload: dict = Body(default={})): 
+    data = payload or {}
     sid  = data.get("session_id", "default")
     reset_session(sid)
     _foundry_histories.pop(sid, None)
     return jsonify({"status": "ok"})
 
 
-@app.route("/health", methods=["GET"])
+@app.get("/health")
 def health():
     return jsonify({"status": "ok", "service": "triathlon-shap-chatbot"})
 
 
-@app.route("/features", methods=["GET"])
+@app.get("/features")
 def features_info():
     return jsonify({
         "features": [
@@ -160,28 +176,28 @@ def features_info():
     })
 
 
-@app.route("/predict", methods=["POST"])
-def predict():
-    data = request.get_json(force=True, silent=True)
+@app.post("/predict")
+async def predict(payload: dict = Body(default=None)):
+    data = payload
     if data is None:
-        return jsonify({"error": "Body JSON requerido"}), 400
+        raise HTTPException(status_code=400, detail="Body JSON requerido")
     try:
         explainer = get_explainer()
         top_n = int(data.pop("top_n", 5))
         return jsonify(explainer.explain(data, top_n=top_n))
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.route('/api/available_races', methods=['GET'])
+@app.get("/api/available_races")
 def api_available_races():
     try:
         races = get_available_races()
         return jsonify(races)
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
-@app.route('/api/news', methods=['GET'])
+@app.get("/api/news")
 def api_news():
     try:
         req = urllib.request.Request('https://triatlon.org/feed/', headers={'User-Agent': 'Mozilla/5.0'})
@@ -210,37 +226,37 @@ def api_news():
             {"title": "Nuevo modelo predictivo IA para la élite", "link": "#", "date": "Hace 2 días"}
         ])
 
-@app.route('/api/athletes_directory', methods=['GET'])
+@app.get("/api/athletes_directory")
 def api_athletes_directory():
     try:
         athletes = get_all_athletes()
         return jsonify(athletes)
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
-@app.route('/api/clubs_directory', methods=['GET'])
+@app.get("/api/clubs_directory")
 def api_clubs_directory():
     try:
         clubs = get_all_clubs()
         return jsonify(clubs)
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
-@app.route('/api/competitions_directory', methods=['GET'])
+@app.get("/api/competitions_directory")
 def api_competitions_directory():
     try:
         competitions = get_all_competitions()
         return jsonify(competitions)
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
-@app.route('/api/competition/<prueba_id>/results', methods=['GET'])
+@app.get("/api/competition/{prueba_id}/results")
 def api_competition_results(prueba_id):
     try:
         results = get_competition_results(int(prueba_id))
         return jsonify({"results": results})
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
 # ===========================================================================
 # Endpoints del Dashboard (Sprint 4)
@@ -522,10 +538,10 @@ def detect_anomaly(prediction: float, puestos: list) -> tuple:
     return False, ""
 
 
-@app.route("/api/ranking", methods=["GET"])
-def api_ranking():
-    limit = int(request.args.get("limit", 10))
-    offset = int(request.args.get("offset", 0))
+@app.get("/api/ranking")
+def api_ranking(request: Request):
+    limit = int(request.query_params.get("limit", 10))
+    offset = int(request.query_params.get("offset", 0))
 
     try:
         athletes = get_active_athletes()
@@ -591,12 +607,12 @@ def api_ranking():
             "offset": offset
         })
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.route("/api/simulate_race", methods=["POST"])
-def api_simulate_race():
-    data = request.get_json(force=True, silent=True) or {}
+@app.post("/api/simulate_race")
+async def api_simulate_race(payload: dict = Body(default={})): 
+    data = payload or {}
     race_city = data.get("race_city", "Madrid")
     race_temperature = float(data.get("race_temperature", 25.0))
     race_altitude_m = float(data.get("race_altitude_m", 600.0))
@@ -685,10 +701,10 @@ def api_simulate_race():
             }
         })
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.route("/api/races", methods=["GET"])
+@app.get("/api/races")
 def api_races():
     try:
         # Catálogo de carreras futuras de corta distancia (Sprint / Olímpico).
@@ -743,15 +759,15 @@ def api_races():
         ]
         return jsonify({"races": future_races})
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.route("/api/athlete/<documento>", methods=["GET"])
+@app.get("/api/athlete/{documento}")
 def api_athlete(documento):
     try:
         info = get_athlete_info(documento)
         if not info:
-            return jsonify({"error": "Atleta no encontrado"}), 404
+            raise HTTPException(status_code=404, detail="Atleta no encontrado")
 
         history = get_athlete_history(documento)
         # Fix: we must pass 'info' (the athlete dict) as the first parameter
@@ -774,12 +790,12 @@ def api_athlete(documento):
             "historial": history
         })
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.route("/api/demo/ranking", methods=["GET"])
-def api_demo_ranking():
-    limit = int(request.args.get("limit", 10))
+@app.get("/api/demo/ranking")
+def api_demo_ranking(request: Request):
+    limit = int(request.query_params.get("limit", 10))
     data = [
         {"posicion_predicha": 1, "nombre": "Mario Mola", "anomalia": False},
         {"posicion_predicha": 2, "nombre": "Javier Gomez Noya", "anomalia": False},
@@ -789,7 +805,7 @@ def api_demo_ranking():
     ]
     return jsonify({"ranking": data[:limit], "offline_mode": True})
 
-@app.route("/api/demo/athlete/<documento>", methods=["GET"])
+@app.get("/api/demo/athlete/{documento}")
 def api_demo_athlete(documento):
     return jsonify({
         "datos_basicos": {"nombre": "Atleta Demo", "documento": documento},

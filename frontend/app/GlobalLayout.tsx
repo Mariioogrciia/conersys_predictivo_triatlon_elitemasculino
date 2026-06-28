@@ -142,6 +142,12 @@ export default function GlobalLayout({ children }: { children: React.ReactNode }
 
       {/* Contenido Cambiante */}
       <div style={{flex: 1, paddingBottom: chatOpen ? '120px' : '0', transition: 'padding 0.3s'}}>
+        {(status.db?.ok === false || status.model?.ok === false) && (
+          <div style={{background: '#fee2e2', color: '#991b1b', padding: '12px 20px', textAlign: 'center', fontWeight: 600, borderBottom: '1px solid #f87171', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px'}}>
+            <span>⚠️</span>
+            <span>Aviso: El motor predictivo o la base de datos están inactivos. Algunas funciones del Dashboard pueden no estar disponibles temporalmente.</span>
+          </div>
+        )}
         {children}
       </div>
 

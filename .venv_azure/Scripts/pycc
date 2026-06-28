@@ -1,0 +1,3 @@
+#!C:\Users\mario\PycharmProjects\conersys_predictivo_triatlon_elitemasculino\.venv_azure\Scripts\python.exe
+from numba.pycc import main
+main()

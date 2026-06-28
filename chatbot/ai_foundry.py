@@ -550,6 +550,16 @@ def chat(history: list[dict]) -> tuple[str, list[dict]]:
     model  = os.getenv("AZURE_FOUNDRY_MODEL", "gpt-4o")
     client = _get_client()
 
+    # Evitar limite de tokens recortando mensajes antiguos
+    char_count = sum(len(str(m.get("content", ""))) for m in history)
+    while char_count > 15000 and len(history) > 2:
+        popped = history.pop(0)
+        char_count -= len(str(popped.get("content", "")))
+        # Asegurar que el historial que queda empieza con un mensaje de 'user' u 'assistant' sin colgar 'tool' responses solos
+        while history and history[0].get("role") == "tool":
+            popped = history.pop(0)
+            char_count -= len(str(popped.get("content", "")))
+
     # Construir el contexto completo con el system prompt
     messages: list[dict] = [{"role": "system", "content": SYSTEM_PROMPT}] + history
 

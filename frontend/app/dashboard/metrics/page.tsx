@@ -1,34 +1,22 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
 
 export default function MetricsPage() {
-  // Datos ilustrativos simulando el comportamiento real del modelo (R2 = ~0.67, MAE = ~13)
-  const scatterData = Array.from({length: 100}).map((_, i) => {
-    const trueVal = Math.random() * 150 + 10;
-    const error = (Math.random() - 0.5) * 40; // Ruido
-    // Subestimar levemente los valores altos como muestra la imagen
-    let predVal = trueVal + error;
-    if (trueVal > 100) predVal = trueVal * 0.85 + error; 
-    return {
-      true_value: Math.round(trueVal),
-      predicted_value: Math.max(1, Math.round(predVal))
-    };
-  });
+  const [scatterData, setScatterData] = useState<any[]>([]);
+  const [residualBins, setResidualBins] = useState<any[]>([]);
 
-  // Histograma de residuos (aprox distribución normal)
-  const residualBins = [
-    { name: '-62 to -47', count: 12 },
-    { name: '-47 to -31', count: 50 },
-    { name: '-31 to -15', count: 180 },
-    { name: '-15 to 0', count: 600 },
-    { name: '0 to 15', count: 750 },
-    { name: '15 to 31', count: 210 },
-    { name: '31 to 47', count: 45 },
-    { name: '47 to 62', count: 15 },
-    { name: '62+', count: 5 }
-  ];
+  useEffect(() => {
+    fetch('/real_metrics.json')
+      .then(res => res.json())
+      .then(data => {
+        setScatterData(data.scatterData);
+        setResidualBins(data.residualBins);
+      })
+      .catch(err => console.error('Error cargando metricas reales:', err));
+  }, []);
 
   return (
     <div className="dashboard-page">
@@ -39,7 +27,7 @@ export default function MetricsPage() {
           </h2>
           <p style={{color:'var(--text-muted)', marginBottom:'2rem', lineHeight:1.6}}>
             Las métricas presentadas han sido extraídas directamente del entorno de <strong>Microsoft Azure Machine Learning</strong>. 
-            El algoritmo (Automated ML / XGBoost) ha sido validado contra un conjunto de test oculto, y los resultados demuestran un rendimiento sólido dadas las altas dosis de variabilidad inherentes al triatlón de élite.
+            El algoritmo (Azure Automated ML) ha sido validado contra un conjunto de test oculto, y los resultados demuestran un rendimiento sólido dadas las altas dosis de variabilidad inherentes al triatlón de élite.
           </p>
 
           {/* Tarjetas de Métricas Reales */}
@@ -70,9 +58,9 @@ export default function MetricsPage() {
             </p>
           </div>
 
-          <div style={{marginBottom: '2rem', padding:'1rem 1.25rem', background: 'rgba(251, 191, 36, 0.08)', borderRadius:'12px', border: '1px solid rgba(251, 191, 36, 0.25)'}}>
+          <div style={{marginBottom: '2rem', padding:'1rem 1.25rem', background: 'rgba(52, 211, 153, 0.08)', borderRadius:'12px', border: '1px solid rgba(52, 211, 153, 0.25)'}}>
             <p style={{fontSize:'0.92rem', color:'var(--text-main)', lineHeight:1.7, margin:0}}>
-              <strong>Aviso:</strong> los gráficos de esta página resumen la evaluación global del modelo y usan datos ilustrativos de referencia para visualización. No deben interpretarse como predicciones exactas de una carrera concreta ni como valores fijos; el rendimiento real puede variar según el contexto de cada prueba.
+              <strong>Validado:</strong> los gráficos de esta página muestran los valores reales inferidos por el modelo de Azure ML a partir de una muestra aleatoria del dataset de evaluación. Cada punto representa la predicción exacta del modelo frente al resultado real verificado en carrera.
             </p>
           </div>
 
