@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Predictivo - Triatlón FETRI</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Dark Mode Palette */
+            --bg-color: #0f111a;
+            --bg-glass: rgba(22, 25, 43, 0.6);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --alert: #ef4444;
+            --alert-glow: rgba(239, 68, 68, 0.4);
+            --gold: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Nav Header */
+        header {
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-glass);
+            background: rgba(15, 17, 26, 0.8);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+
+        .mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .demo-badge {
+            background: var(--gold);
+            color: #000;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        /* Glass Panels */
+        .glass-panel {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2.section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Table */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            transition: background 0.2s ease;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
+
+        .rank-pos {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .anomaly-icon {
+            color: var(--alert);
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px var(--alert-glow);
+            margin-left: 8px;
+            cursor: help;
+        }
+
+        .btn-ver-mas {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+            background: transparent;
+            border: 1px dashed var(--border-glass);
+            color: var(--text-muted);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        .btn-ver-mas:hover {
+            border-color: var(--accent);
+            color: var(--text-main);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        /* Athlete Profile (Hidden by default) */
+        #profile-view {
+            display: none;
+        }
+
+        .btn-back {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background 0.2s;
+        }
+        .btn-back:hover { background: rgba(255,255,255,0.2); }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .profile-grid { grid-template-columns: 1fr; }
+        }
+
+        .shap-bar-container {
+            margin-bottom: 12px;
+        }
+        .shap-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+        .shap-bar-bg {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .shap-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+        .fill-pos { background: var(--alert); } /* Sube puesto = peor tiempo = rojo? O al revés. */
+        .fill-neg { background: #10b981; } /* Baja puesto = mejor tiempo = verde */
+
+        /* Modal Simulator */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            z-index: 300;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.open { display: flex; }
+        .modal-content {
+            background: var(--bg-color);
+            border: 1px solid var(--border-glass);
+            padding: 2rem;
+            border-radius: 16px;
+            width: 400px;
+            max-width: 90%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-size: 0.9rem; color: var(--text-muted); }
+        .form-group input { 
+            width: 100%; padding: 10px; border-radius: 8px; 
+            border: 1px solid var(--border-glass); background: rgba(255,255,255,0.05); color: #fff; 
+        }
+        .form-group input:focus { outline: none; border-color: var(--accent); }
+        .btn-primary {
+            background: var(--accent); color: #fff; border: none; padding: 12px; border-radius: 8px;
+            width: 100%; cursor: pointer; font-weight: 600; margin-top: 10px;
+        }
+        .btn-primary:hover { background: #2563eb; }
+
+        /* Chat Widget */
+        .fab {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            z-index: 200;
+            box-shadow: 0 8px 32px var(--accent-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .fab:hover { transform: scale(1.05); }
+        
+        .chat-panel {
+            position: fixed;
+            right: 24px;
+            bottom: 100px;
+            width: 400px;
+            height: 600px;
+            max-height: calc(100vh - 120px);
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(24px);
+            border-radius: 16px;
+            z-index: 201;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+            animation: pop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes pop {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: none; }
+        }
+
+        .chat-panel.open { display: flex; }
+
+        .chat-head {
+            padding: 16px;
+            background: rgba(0,0,0,0.2);
+            border-bottom: 1px solid var(--border-glass);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-head b { font-weight: 600; }
+        .chat-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .chat-msgs {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .chat-msgs::-webkit-scrollbar { width: 6px; }
+        .chat-msgs::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+        .msg {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            animation: fadeUp 0.3s ease;
+        }
+        .msg.bot {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-glass);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        .msg.user {
+            background: var(--accent);
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+
+        .chat-input-area {
+            padding: 16px;
+            border-top: 1px solid var(--border-glass);
+            background: rgba(0,0,0,0.2);
+            display: flex;
+            gap: 10px;
+        }
+        .chat-input-area input {
+            flex: 1;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-glass);
+            padding: 10px 16px;
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+            font-family: inherit;
+        }
+        .chat-input-area input:focus { border-color: var(--accent); }
+        .chat-input-area button {
+            background: var(--accent);
+            border: none;
+            color: #fff;
+            padding: 0 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            width: 36px; height: 36px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Model Explainer */
+        .explainer-toggle {
+            background: transparent;
+            border: 1px dashed var(--border-glass);
+            color: var(--text-muted);
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .explainer-toggle:hover {
+            border-color: var(--accent);
+            color: var(--text-main);
+            background: rgba(59,130,246,0.05);
+        }
+        .explainer-content { display: none; margin-top: 1.5rem; }
+        .explainer-content.open { display: block; }
+
+        .pipeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .pipe-step {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .pipe-step:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+        .pipe-step .step-icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .pipe-step .step-num {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 28px; height: 28px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+        .pipe-step h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .pipe-step p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .factor-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        @media (max-width: 600px) { .factor-list { grid-template-columns: 1fr; } }
+        .factor-item {
+            background: rgba(0,0,0,0.15);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .factor-item .fi-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="/" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:10px;"><span>&#x25B2;</span> FETRI <span>Predictivo</span></a>
+        </div>
+        <div class="mode-toggle">
+            <button onclick="document.getElementById('sim-modal').classList.add('open')" style="background:var(--accent);color:#fff;border:none;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:0.85rem;font-weight:600;">Simular Carrera Futura</button>
+            <button id="btn-back-ranking" style="display:none;background:rgba(255,255,255,0.1);color:#fff;border:1px solid var(--border-glass);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:0.85rem;font-weight:600;" onclick="backToGeneralRanking()">← Ranking General</button>
+            <input type="checkbox" id="demo-mode" onchange="toggleDemoMode()">
+            <label for="demo-mode">Modo Demo Offline</label>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- VISTA: RANKING -->
+        <div id="ranking-view" class="glass-panel" style="animation-delay: 0.1s;">
+            <h2 class="section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20v-4"></path></svg>
+                Ranking Predictivo - Top 10
+            </h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Atleta</th>
+                            <th>Club</th>
+                            <th>Pred. Azure ML</th>
+                            <th>Rendimiento</th>
+                            <th>Info</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-body">
+                        <!-- Generado via JS -->
+                        <tr><td colspan="6" style="text-align:center; color:var(--text-muted)">
+                            <div class="loading-spinner"></div>
+                            <div style="margin-top:12px">Consultando Azure ML...</div>
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-ver-mas" id="btn-load-more" onclick="loadRanking(true)">Cargar resto del ranking</button>
+        </div>
+
+        <!-- VISTA: PERFIL -->
+        <div id="profile-view" class="glass-panel" style="display:none;">
+            <button class="btn-back" onclick="showRanking()">&#x2190; Volver al Ranking</button>
+            <div class="profile-grid">
+                <div>
+                    <h2 class="section-title" id="p-name" style="font-size: 2rem;">Nombre Atleta</h2>
+                    <p style="color:var(--text-muted); margin-bottom:20px;" id="p-club">Club XYZ</p>
+                    
+                    <div style="background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-glass);">
+                        <div style="font-size: 0.9rem; color:var(--text-muted)">Posición Predicha</div>
+                        <div style="font-size: 3rem; font-weight: 800; color:var(--accent)" id="p-pred">#--</div>
+                        <div style="margin-top: 10px; font-size: 0.9rem;" id="p-trend">Tendencia: --</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="section-title">Factores SHAP (Impacto)</h2>
+                    <div id="shap-container">
+                        <!-- Generado via JS -->
+                        <p style="color:var(--text-muted);font-size:0.9rem">Selecciona un atleta para ver su análisis interpretado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPLICACIÓN DEL MODELO -->
+    <div class="container" style="padding-top:0">
+        <div class="glass-panel" style="animation-delay: 0.3s;">
+            <button class="explainer-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').textContent = this.nextElementSibling.classList.contains('open') ? '▲' : '▼'">
+                🧠 ¿Cómo funciona nuestro modelo predictivo? <span class="arrow">▼</span>
+            </button>
+            <div class="explainer-content">
+                <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.7; margin-bottom:1.5rem;">
+                    Nuestro sistema analiza el rendimiento de cada triatleta y predice su posición en futuras carreras.
+                    No es magia: se basa en <strong style="color:var(--text-main)">datos reales</strong> de competiciones pasadas de la FETRI
+                    y utiliza un modelo de inteligencia artificial desplegado en <strong style="color:var(--accent)">Microsoft Azure</strong>.
+                </p>
+
+                <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:1rem;">El proceso paso a paso</h3>
+                <div class="pipeline">
+                    <div class="pipe-step">
+                        <div class="step-num">1</div>
+                        <div class="step-icon">🗄️</div>
+                        <h4>Recopilación de datos</h4>
+                        <p>Recogemos los resultados de todas las carreras oficiales de la FETRI: posiciones, puntos, clubes, condiciones meteorológicas y más.</p>
+                    </div>
+                    <div class="pipe-step">
+                        <div class="step-num">2</div>
+                        <div class="step-icon">📊</div>
+                        <h4>Perfil del atleta</h4>
+                        <p>Para cada deportista calculamos su historial: rachas de victorias, consistencia, rendimiento con calor o altitud, evolución reciente...</p>
+                    </div>
+                    <div class="pipe-step">
+                        <div class="step-num">3</div>
+                        <div class="step-icon">🤖</div>
+                        <h4>Predicción con IA</h4>
+                        <p>Enviamos esos datos al modelo de Azure ML, que ha aprendido de miles de resultados históricos para estimar la posición más probable.</p>
+                    </div>
+                    <div class="pipe-step">
+                        <div class="step-num">4</div>
+                        <div class="step-icon">🔍</div>
+                        <h4>Explicación (SHAP)</h4>
+                        <p>No solo predecimos: explicamos <em>por qué</em>. Mostramos qué factores empujan al atleta hacia arriba o hacia abajo en la clasificación.</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.1rem; font-weight:700; margin:1.5rem 0 1rem;">¿Qué factores mira el modelo?</h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">El modelo analiza más de 50 variables por atleta. Estas son las más influyentes:</p>
+                <div class="factor-list">
+                    <div class="factor-item">
+                        <span class="fi-icon">🏅</span>
+                        <div><strong>Posición media reciente</strong><br><span style="color:var(--text-muted)">¿Cómo ha quedado en sus últimas 3-5 carreras?</span></div>
+                    </div>
+                    <div class="factor-item">
+                        <span class="fi-icon">📈</span>
+                        <div><strong>Racha de resultados</strong><br><span style="color:var(--text-muted)">¿Viene encadenando podios o top-10?</span></div>
+                    </div>
+                    <div class="factor-item">
+                        <span class="fi-icon">🌡️</span>
+                        <div><strong>Condiciones de carrera</strong><br><span style="color:var(--text-muted)">Temperatura, altitud y humedad del evento.</span></div>
+                    </div>
+                    <div class="factor-item">
+                        <span class="fi-icon">🏆</span>
+                        <div><strong>Tasa de victorias y podios</strong><br><span style="color:var(--text-muted)">Porcentaje histórico de veces en el podio.</span></div>
+                    </div>
+                    <div class="factor-item">
+                        <span class="fi-icon">⏱️</span>
+                        <div><strong>Días de descanso</strong><br><span style="color:var(--text-muted)">¿Cuánto tiempo lleva sin competir?</span></div>
+                    </div>
+                    <div class="factor-item">
+                        <span class="fi-icon">🎯</span>
+                        <div><strong>Consistencia</strong><br><span style="color:var(--text-muted)">¿Sus resultados son regulares o muy variables?</span></div>
+                    </div>
+                </div>
+
+                <div style="margin-top:1.5rem; padding:1rem 1.2rem; background:rgba(59,130,246,0.08); border:1px solid rgba(59,130,246,0.2); border-radius:10px;">
+                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;">
+                        <strong style="color:var(--accent)">⚠️ Detección de anomalías:</strong>
+                        Si la predicción del modelo para un atleta se desvía significativamente de su rendimiento habitual,
+                        aparecerá un icono de alerta (⚠) junto a su nombre. Esto puede indicar un cambio de forma, una lesión reciente
+                        o unas condiciones de carrera que no le favorecen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WIDGET CHAT -->
+    <button class="fab" onclick="toggleChat()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </button>
+
+    <div class="chat-panel" id="chat-panel">
+        <div class="chat-head">
+            <b>Coach Asistente</b>
+            <button class="chat-close" onclick="toggleChat()">&times;</button>
+        </div>
+        <div class="chat-msgs" id="chat-msgs">
+            <div class="msg bot">¡Hola! Soy tu asistente de datos FETRI. Pregúntame sobre el rendimiento de cualquier atleta.</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." onkeypress="if(event.key==='Enter') sendMsg()">
+            <button onclick="sendMsg()">Enviar</button>
+        </div>
+    </div>
+
+    <!-- MODAL SIMULADOR -->
+    <div class="modal-overlay" id="sim-modal">
+        <div class="modal-content">
+            <h2 class="section-title">Simular Carrera</h2>
+            
+            <div class="form-group">
+                <label>Selecciona una Carrera</label>
+                <select id="sim-race-select" onchange="onRaceSelectChange()" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-glass); background: rgba(255,255,255,0.05); color: #fff; margin-bottom:10px;">
+                    <option value="">Cargando carreras...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Ciudad</label>
+                <input type="text" id="sim-city" readonly>
+            </div>
+            <div class="form-group">
+                <label>Temperatura (°C)</label>
+                <input type="number" id="sim-temp" step="0.1" readonly>
+            </div>
+            <div class="form-group">
+                <label>Altitud (m)</label>
+                <input type="number" id="sim-alt" readonly>
+            </div>
+            <div class="form-group">
+                <label>Humedad (%)</label>
+                <input type="number" id="sim-hum" readonly>
+            </div>
+            <button class="btn-primary" onclick="runSimulation()">Predecir Ranking</button>
+            <button style="background:transparent; color:var(--text-muted); border:none; width:100%; padding:10px; margin-top:5px; cursor:pointer;" onclick="document.getElementById('sim-modal').classList.remove('open')">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        let isDemoMode = false;
+        let currentOffset = 0;
+        let chatSession = 's' + Math.random().toString(36).slice(2);
+        let availableRaces = [];
+
+        function toggleDemoMode() {
+            isDemoMode = document.getElementById('demo-mode').checked;
+            currentOffset = 0;
+            document.getElementById('ranking-body').innerHTML = '<tr><td colspan="5" style="text-align:center;">Cargando ranking...</td></tr>';
+            loadRanking();
+        }
+
+        async function loadRanking(loadMore = false) {
+            const limit = 10;
+            if(!loadMore) currentOffset = 0;
+
+            const endpoint = isDemoMode ? `/api/demo/ranking?limit=${limit}&offset=${currentOffset}` 
+                                        : `/api/ranking?limit=${limit}&offset=${currentOffset}`;
+            
+            if(!loadMore) {
+                document.getElementById('ranking-body').innerHTML = '<tr><td colspan="6" style="text-align:center; color:var(--text-muted)"><div class="loading-spinner"></div><div style="margin-top:12px">Consultando Azure ML...</div></td></tr>';
+            }
+
+            try {
+                const res = await fetch(endpoint, { cache: 'no-store' });
+                const data = await res.json();
+                
+                const tbody = document.getElementById('ranking-body');
+                if(!loadMore) tbody.innerHTML = '';
+
+                // Find max raw prediction for normalizing bars
+                const maxRaw = Math.max(...data.ranking.map(a => a.prediccion_raw || 60), 1);
+
+                data.ranking.forEach(ath => {
+                    const tr = document.createElement('tr');
+                    tr.onclick = () => openProfile(ath.documento || ath.nombre);
+                    
+                    const rawVal = ath.prediccion_raw || '—';
+                    const barWidth = Math.max(5, 100 - ((ath.prediccion_raw || 50) / maxRaw) * 80);
+                    
+                    let anomalyHtml = '';
+                    if(ath.anomalia) {
+                        const motivo = ath.anomalia_motivo || 'Rendimiento atípico detectado';
+                        anomalyHtml = `<span class="anomaly-icon" title="${motivo}">⚠</span>`;
+                    }
+                    
+                    tr.innerHTML = `
+                        <td class="rank-pos">#${Math.round(ath.posicion_predicha)}</td>
+                        <td style="font-weight:600">${ath.nombre}</td>
+                        <td style="color:var(--text-muted)">${ath.club || 'Independiente'}</td>
+                        <td><span style="font-weight:700;color:var(--accent);font-size:0.95rem">${rawVal}</span></td>
+                        <td><div style="width:100%; height:6px; background:rgba(255,255,255,0.1); border-radius:3px;"><div style="width:${barWidth}%; height:100%; background:var(--accent); border-radius:3px; transition:width 0.8s ease-out;"></div></div></td>
+                        <td>${anomalyHtml}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+                
+                currentOffset += data.ranking.length;
+                document.getElementById('btn-back-ranking').style.display = 'none';
+                if(data.simulated) {
+                    document.getElementById('btn-load-more').style.display = 'none';
+                } else if(data.ranking.length < limit && loadMore) {
+                    document.getElementById('btn-load-more').style.display = 'none';
+                } else {
+                    document.getElementById('btn-load-more').style.display = 'block';
+                }
+            } catch(e) {
+                document.getElementById('ranking-body').innerHTML = `<tr><td colspan="6" style="color:var(--alert)">Error de conexión al servidor</td></tr>`;
+            }
+        }
+
+        async function runSimulation() {
+            document.getElementById('sim-modal').classList.remove('open');
+            document.getElementById('ranking-body').innerHTML = '<tr><td colspan="6" style="text-align:center;"><div class="loading-spinner"></div><div style="margin-top:12px">Simulando carrera en Azure ML...</div></td></tr>';
+            
+            const reqData = {
+                race_city: document.getElementById('sim-city').value,
+                race_temperature: document.getElementById('sim-temp').value,
+                race_altitude_m: document.getElementById('sim-alt').value,
+                race_humidity: document.getElementById('sim-hum').value,
+                limit: 15
+            };
+
+            try {
+                const res = await fetch('/api/simulate_race', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(reqData)
+                });
+                const data = await res.json();
+                
+                const tbody = document.getElementById('ranking-body');
+                tbody.innerHTML = '';
+                
+                // Add header info row
+                const infoRow = document.createElement('tr');
+                infoRow.innerHTML = `<td colspan="6" style="background:rgba(59,130,246,0.1); color:var(--accent); font-size:0.85rem; text-align:center; padding:8px;">
+                    Simulación: ${data.conditions.city} (${data.conditions.temp}°C, ${data.conditions.alt}m altitud, ${data.conditions.hum}% humedad)
+                </td>`;
+                tbody.appendChild(infoRow);
+
+                const maxRaw = Math.max(...data.ranking.map(a => a.prediccion_raw || 60), 1);
+
+                data.ranking.forEach(ath => {
+                    const tr = document.createElement('tr');
+                    tr.onclick = () => openProfile(ath.documento || ath.nombre);
+                    
+                    const rawVal = ath.prediccion_raw || '—';
+                    const barWidth = Math.max(5, 100 - ((ath.prediccion_raw || 50) / maxRaw) * 80);
+                    
+                    let anomalyHtml = '';
+                    if(ath.anomalia) {
+                        const motivo = ath.anomalia_motivo || 'Rendimiento atípico detectado';
+                        anomalyHtml = `<span class="anomaly-icon" title="${motivo}">⚠</span>`;
+                    }
+
+                    tr.innerHTML = `
+                        <td class="rank-pos">#${Math.round(ath.posicion_predicha)}</td>
+                        <td style="font-weight:600">${ath.nombre}</td>
+                        <td style="color:var(--text-muted)">${ath.club || 'Independiente'}</td>
+                        <td><span style="font-weight:700;color:var(--gold);font-size:0.95rem">${rawVal}</span></td>
+                        <td><div style="width:100%; height:6px; background:rgba(255,255,255,0.1); border-radius:3px;"><div style="width:${barWidth}%; height:100%; background:var(--gold); border-radius:3px; transition:width 0.8s ease-out;"></div></div></td>
+                        <td>${anomalyHtml}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+                
+                document.getElementById('btn-load-more').style.display = 'none';
+                document.getElementById('btn-back-ranking').style.display = 'inline-block';
+            } catch(e) {
+                document.getElementById('ranking-body').innerHTML = `<tr><td colspan="6" style="color:var(--alert)">Error de conexión al servidor</td></tr>`;
+            }
+        }
+
+        async function openProfile(documento) {
+            document.getElementById('ranking-view').style.display = 'none';
+            document.getElementById('profile-view').style.display = 'block';
+            
+            document.getElementById('p-name').innerText = "Cargando...";
+            
+            const endpoint = isDemoMode ? `/api/demo/athlete/${encodeURIComponent(documento)}` 
+                                        : `/api/athlete/${encodeURIComponent(documento)}`;
+            
+            try {
+                const res = await fetch(endpoint, { cache: 'no-store' });
+                const data = await res.json();
+                
+                if(data.error) throw new Error(data.error);
+
+                document.getElementById('p-name').innerText = data.datos_basicos.nombre;
+                document.getElementById('p-club').innerText = data.datos_basicos.club || 'Sin club';
+                
+                const pred = data.prediccion_actual.prediction || Math.round(data.prediccion_actual);
+                document.getElementById('p-pred').innerText = `#${pred}`;
+                
+                const tr = data.tendencia_forma;
+                let t_icon = tr==='mejorando' ? '↑' : tr==='empeorando' ? '↓' : '→';
+                let t_col = tr==='mejorando' ? 'var(--accent)' : tr==='empeorando' ? 'var(--alert)' : 'var(--text-muted)';
+                document.getElementById('p-trend').innerHTML = `Tendencia: <span style="color:${t_col}; font-weight:bold">${t_icon} ${tr}</span>`;
+                
+                // Draw SHAP
+                const sc = document.getElementById('shap-container');
+                sc.innerHTML = '';
+                const factors = data.prediccion_actual.top_factors || [];
+                factors.forEach(f => {
+                    const isPos = f.direction === "positivo"; // Baja el tiempo/puesto -> bueno
+                    const fillClass = isPos ? 'fill-neg' : 'fill-pos'; // green if positive impact
+                    const w = Math.min(100, Math.abs(f.shap_impact) * 10); // scale arbitrary
+                    
+                    sc.innerHTML += `
+                    <div class="shap-bar-container">
+                        <div class="shap-label">
+                            <span>${f.label}</span>
+                            <span style="color:${isPos ? '#10b981' : 'var(--alert)'}">${f.shap_impact > 0 ? '+' : ''}${f.shap_impact.toFixed(2)}</span>
+                        </div>
+                        <div class="shap-bar-bg">
+                            <div class="shap-bar-fill ${fillClass}" style="width: ${w}%"></div>
+                        </div>
+                    </div>
+                    `;
+                });
+
+            } catch(e) {
+                document.getElementById('p-name').innerText = "Error al cargar el perfil";
+                console.error(e);
+            }
+        }
+
+        function showRanking() {
+            document.getElementById('ranking-view').style.display = 'block';
+            document.getElementById('profile-view').style.display = 'none';
+        }
+
+        function toggleChat() {
+            const p = document.getElementById('chat-panel');
+            p.classList.toggle('open');
+        }
+
+        function addChatMsg(text, isUser) {
+            const m = document.createElement('div');
+            m.className = 'msg ' + (isUser ? 'user' : 'bot');
+            m.innerHTML = text; // Permite links HTML desde el backend
+            document.getElementById('chat-msgs').appendChild(m);
+            m.scrollIntoView({behavior: 'smooth'});
+        }
+
+        async function sendMsg() {
+            const inp = document.getElementById('chat-input');
+            const txt = inp.value.trim();
+            if(!txt) return;
+            
+            inp.value = '';
+            addChatMsg(txt, true);
+            
+            try {
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({message: txt, session_id: chatSession})
+                });
+                const data = await res.json();
+                addChatMsg(data.response, false);
+            } catch(e) {
+                addChatMsg('<span style="color:var(--alert)">Error de conexión con IA.</span>', false);
+            }
+        }
+
+        function onRaceSelectChange() {
+            const sel = document.getElementById('sim-race-select').value;
+            if(!sel) return;
+            const race = availableRaces[parseInt(sel)];
+            if(race) {
+                document.getElementById('sim-city').value = race.ciudad || '';
+                document.getElementById('sim-temp').value = race.temperatura_max || 25;
+                document.getElementById('sim-alt').value = race.altitud || 0;
+                document.getElementById('sim-hum').value = race.humedad_media || 50;
+            }
+        }
+
+        async function loadAvailableRaces() {
+            try {
+                const res = await fetch('/api/races');
+                const data = await res.json();
+                if(data.races) {
+                    availableRaces = data.races;
+                    const sel = document.getElementById('sim-race-select');
+                    sel.innerHTML = '<option value="">-- Selecciona una prueba --</option>';
+                    availableRaces.forEach((r, i) => {
+                        sel.innerHTML += `<option value="${i}">${r.nombre} (${r.ciudad})</option>`;
+                    });
+                }
+            } catch(e) {
+                console.error("No se pudieron cargar las carreras", e);
+            }
+        }
+
+        function backToGeneralRanking() {
+            currentOffset = 0;
+            document.getElementById('btn-back-ranking').style.display = 'none';
+            loadRanking();
+        }
+
+        // Init
+        window.onload = () => {
+            loadRanking();
+            loadAvailableRaces();
+        };
+
+    </script>
+</body>
+</html>

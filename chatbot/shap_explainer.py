@@ -117,11 +117,11 @@ class TriathlonExplainer:
             )
             print("[SHAP] Explainer genérico inicializado.")
 
-    def _call_azure_endpoint(self, df: pd.DataFrame) -> float:
-        """Llama al endpoint real de Azure ML para obtener la predicción numérica."""
+    def _call_azure_endpoint_batch(self, df: pd.DataFrame) -> list:
+        """Llama al endpoint real de Azure ML para obtener predicciones en bloque."""
         if not AZURE_ML_ENDPOINT or not AZURE_ML_KEY:
-            # Fallback a local si no hay credenciales
-            return float(self.model.predict(df)[0])
+            print("[PREDICCIÓN] Sin credenciales Azure ML — usando modelo local en bloque")
+            return [float(p) for p in self.model.predict(df)]
             
         data = {
             "input_data": {
@@ -137,30 +137,79 @@ class TriathlonExplainer:
         req = urllib.request.Request(url, body, headers)
         
         try:
-            # Bypass self-signed certificates
             ctx = ssl.create_default_context()
             ctx.check_hostname = False
             ctx.verify_mode = ssl.CERT_NONE
             
-            response = urllib.request.urlopen(req, context=ctx)
+            response = urllib.request.urlopen(req, context=ctx, timeout=30) # Aumentar timeout por si acaso
             result = response.read()
             res_json = json.loads(result)
-            return float(res_json[0])
+            return [float(p) for p in res_json]
         except urllib.error.HTTPError as error:
-            print(f"[AZURE] Error HTTP {error.code}: {error.read().decode('utf8', 'ignore')}")
-            # Fallback a local
-            return float(self.model.predict(df)[0])
+            print(f"[AZURE ML BATCH] Error HTTP {error.code}: {error.read().decode('utf8', 'ignore')}")
+            print("[AZURE ML BATCH] Fallback a modelo local")
+            return [float(p) for p in self.model.predict(df)]
         except Exception as e:
-            print(f"[AZURE] Error general: {e}")
-            return float(self.model.predict(df)[0])
+            print(f"[AZURE ML BATCH] Error: {e} — Fallback a modelo local")
+            return [float(p) for p in self.model.predict(df)]
 
     def predict(self, features: dict) -> float:
         df = self._to_dataframe(features)
-        return self._call_azure_endpoint(df)
+        return self._call_azure_endpoint_batch(df)[0]
+
+    def predict_batch(self, features_list: list) -> list:
+        if not features_list:
+            return []
+        df_list = [self._to_dataframe(f) for f in features_list]
+        df = pd.concat(df_list, ignore_index=True)
+        return self._call_azure_endpoint_batch(df)
+
+    def explain_batch(self, features_list: list, top_n: int = 5) -> tuple[list, list]:
+        """
+        Returns (predictions: list, explanation_texts: list) for a batch of athletes.
+        """
+        if not features_list:
+            return [], []
+        df_list = [self._to_dataframe(f) for f in features_list]
+        df = pd.concat(df_list, ignore_index=True)
+        predictions = self._call_azure_endpoint_batch(df)
+
+        sv = self._explainer(df)
+        if hasattr(sv, "values"):
+            shap_vals_all = sv.values
+        else:
+            shap_vals_all = np.array(sv)
+
+        explanations = []
+        for row_idx in range(len(features_list)):
+            shap_vals = shap_vals_all[row_idx]
+            features = features_list[row_idx]
+            prediction = predictions[row_idx]
+            
+            factor_list = []
+            for i, col in enumerate(FEATURE_COLS):
+                impact = float(shap_vals[i])
+                value = features.get(col, df.iloc[row_idx][col])
+                factor_list.append(
+                    {
+                        "feature": col,
+                        "label": FEATURE_LABELS.get(col, col),
+                        "value": value,
+                        "shap_impact": impact,
+                        "direction": "negativo" if impact > 0 else "positivo",
+                    }
+                )
+
+            factor_list.sort(key=lambda x: abs(x["shap_impact"]), reverse=True)
+            top_factors = factor_list[:top_n]
+            explanation_text = self._build_explanation(prediction, top_factors, features)
+            explanations.append(explanation_text)
+
+        return predictions, explanations
 
     def explain(self, features: dict, top_n: int = 5) -> dict:
         df = self._to_dataframe(features)
-        prediction = self._call_azure_endpoint(df)
+        prediction = self._call_azure_endpoint_batch(df)[0]
 
         sv = self._explainer(df)
         if hasattr(sv, "values"):
@@ -201,16 +250,18 @@ class TriathlonExplainer:
 
     def _build_explanation(self, prediction: float, top_factors: list, features: dict) -> str:
         lines = []
-        if prediction <= 3:
-            nivel = "excepcional (podio seguro)"
-        elif prediction <= 10:
+        # The XGBoost model's raw outputs are shrunk towards the mean (range 28.0 - 45.0 approx).
+        # We need to use calibrated thresholds to translate these raw scores to human readable levels.
+        if prediction <= 30.5:
+            nivel = "excepcional (claro candidato al podio o a la victoria)"
+        elif prediction <= 33.0:
             nivel = "muy alto (clasificación top-10 probable)"
-        elif prediction <= 25:
+        elif prediction <= 36.0:
             nivel = "medio (pelotón principal)"
         else:
             nivel = "bajo (parte trasera)"
 
-        lines.append(f"El modelo (desde Azure ML) predice la **posición {prediction:.0f}** para este atleta en esta prueba, un rendimiento {nivel}.")
+        lines.append(f"El modelo predictivo estima una posición base esperada alrededor del **puesto {prediction:.0f}** para este atleta en su estado de forma actual (nivel {nivel}).")
         lines.append("\nLos factores que más influyen en esta predicción son:\n")
 
         for rank, factor in enumerate(top_factors, 1):

@@ -17,6 +17,8 @@ Rutas:
   GET  /health     -> healthcheck simple
 """
 import sys, os
+from collections import OrderedDict
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
@@ -25,15 +27,36 @@ try:
 except ImportError:
     pass
 
-from flask import Flask, request, jsonify, Response
+from flask import Flask, request, jsonify, Response, render_template
 from chatbot.shap_explainer import get_explainer, FEATURE_LABELS, FEATURE_COLS
 from chatbot.chat_logic import get_session, reset_session
 from chatbot import ai_foundry, db_check
+from chatbot.database_service import get_active_athletes, get_athlete_info, get_athlete_history, get_available_races, get_all_clubs, get_all_athletes, get_all_competitions, get_competition_results
+import urllib.request
+import xml.etree.ElementTree as ET
 
 app = Flask(__name__)
 app.config["JSON_ENSURE_ASCII"] = False
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-_foundry_histories: dict[str, list[dict]] = {}
+_FOUNDARY_MAX_SESSIONS = 128
+_FOUNDARY_MAX_MESSAGES = 24
+_foundry_histories: OrderedDict[str, list[dict]] = OrderedDict()
+
+
+def _get_foundry_history(session_id: str) -> list[dict]:
+    history = _foundry_histories.get(session_id, [])
+    if session_id in _foundry_histories:
+        _foundry_histories.move_to_end(session_id)
+    return history
+
+
+def _store_foundry_history(session_id: str, history: list[dict]) -> None:
+    trimmed = history[-_FOUNDARY_MAX_MESSAGES:]
+    _foundry_histories[session_id] = trimmed
+    _foundry_histories.move_to_end(session_id)
+    while len(_foundry_histories) > _FOUNDARY_MAX_SESSIONS:
+        _foundry_histories.popitem(last=False)
 
 
 def _model_status() -> dict:
@@ -50,381 +73,9 @@ def _model_status() -> dict:
 # UI — Landing FETRI (relleno) + widget de chat flotante
 # ===========================================================================
 
-CHAT_HTML = r"""<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Federacion Espanola de Triatlon</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --navy:#002b5c;--navy2:#013a73;--red:#e2001a;--gold:#f4b223;
-  --gray:#f2f4f7;--line:#e2e6ec;--text:#1b2733;--muted:#6b7785;
-  --ok:#34a853;--bad:#e2001a;--wait:#f4b223;
-}
-html,body{height:100%}
-body{font-family:'Segoe UI',-apple-system,system-ui,Arial,sans-serif;background:#fff;
-  color:var(--text);line-height:1.55}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-
-/* ---------- Top utility bar ---------- */
-.topbar{background:var(--navy);color:#fff;font-size:12.5px}
-.topbar .in{max-width:1180px;margin:0 auto;padding:7px 20px;display:flex;align-items:center;gap:16px}
-.topbar .sp{margin-left:auto;display:flex;gap:13px;font-size:14px}
-.topbar .sp span{opacity:.85;cursor:pointer;transition:opacity .2s}
-.topbar .sp span:hover{opacity:1}
-
-/* ---------- Navbar ---------- */
-.nav{background:#fff;border-bottom:3px solid var(--navy);position:sticky;top:0;z-index:50;
-  box-shadow:0 2px 10px rgba(0,0,0,.05)}
-.nav .in{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:center;height:70px;gap:30px}
-.logo{display:flex;align-items:center;gap:12px}
-.logo .mk{width:46px;height:46px;background:var(--navy);border-radius:50%;display:flex;
-  align-items:center;justify-content:center;font-size:24px;color:#fff;position:relative}
-.logo .mk::after{content:"";position:absolute;inset:3px;border:2px solid var(--gold);border-radius:50%}
-.logo b{font-size:15px;color:var(--navy);font-weight:800;letter-spacing:.3px;line-height:1.15}
-.logo b small{display:block;font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:1px}
-.menu{display:flex;gap:22px;margin-left:auto;font-size:13.5px;font-weight:600}
-.menu a{color:var(--navy);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}
-.menu a:hover{border-bottom-color:var(--red)}
-@media(max-width:980px){.menu{display:none}}
-
-/* ---------- Hero ---------- */
-.hero{position:relative;height:440px;background:
-  linear-gradient(120deg,rgba(0,43,92,.92) 0%,rgba(0,43,92,.55) 55%,rgba(1,58,115,.3) 100%),
-  linear-gradient(60deg,#013a73,#0a5ca8 60%,#3aa0d8);overflow:hidden}
-.hero::before{content:"\1F3CA  \1F6B4  \1F3C3";position:absolute;right:-10px;bottom:-30px;
-  font-size:200px;opacity:.10;letter-spacing:20px;white-space:nowrap}
-.hero .in{max-width:1180px;margin:0 auto;padding:0 20px;height:100%;display:flex;
-  flex-direction:column;justify-content:center;position:relative;z-index:2}
-.hero .tag{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:700;
-  padding:5px 13px;border-radius:3px;letter-spacing:1px;width:fit-content;margin-bottom:16px}
-.hero h1{color:#fff;font-size:42px;font-weight:800;max-width:680px;line-height:1.12;letter-spacing:-.5px}
-.hero p{color:#dce6f2;font-size:17px;max-width:560px;margin-top:16px}
-.hero .btn{margin-top:26px;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;
-  padding:13px 28px;border-radius:4px;width:fit-content;cursor:pointer;transition:transform .15s}
-.hero .btn:hover{transform:translateY(-2px)}
-@media(max-width:680px){.hero h1{font-size:30px}.hero{height:380px}}
-
-/* ---------- Sections ---------- */
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-.sec{padding:56px 0}
-.sec h2{font-size:13px;font-weight:800;color:var(--red);letter-spacing:2px;text-transform:uppercase;
-  margin-bottom:6px}
-.sec .h3{font-size:28px;font-weight:800;color:var(--navy);margin-bottom:30px;letter-spacing:-.4px}
-
-/* News cards */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-@media(max-width:880px){.grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.grid{grid-template-columns:1fr}}
-.card{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff;
-  transition:transform .18s,box-shadow .18s;cursor:pointer}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,43,92,.13)}
-.card .ph{height:165px;display:flex;align-items:center;justify-content:center;font-size:54px;color:#fff}
-.c1{background:linear-gradient(135deg,#013a73,#0a5ca8)}
-.c2{background:linear-gradient(135deg,#7a1018,#e2001a)}
-.c3{background:linear-gradient(135deg,#b07d10,#f4b223)}
-.c4{background:linear-gradient(135deg,#0a5ca8,#3aa0d8)}
-.c5{background:linear-gradient(135deg,#1b2733,#46566a)}
-.c6{background:linear-gradient(135deg,#0e6b4f,#2bb486)}
-.card .bd{padding:17px 18px 22px}
-.card .dt{font-size:11.5px;color:var(--red);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
-.card h4{font-size:16.5px;color:var(--navy);margin:8px 0 7px;font-weight:700;line-height:1.3}
-.card p{font-size:13.5px;color:var(--muted)}
-
-/* Stats band */
-.band{background:var(--navy);color:#fff}
-.band .in{max-width:1180px;margin:0 auto;padding:42px 20px;display:grid;
-  grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
-@media(max-width:680px){.band .in{grid-template-columns:1fr 1fr}}
-.band .n{font-size:38px;font-weight:800;color:var(--gold)}
-.band .l{font-size:13px;color:#bcd0e6;margin-top:4px;letter-spacing:.5px}
-
-/* Sponsors */
-.sponsors{background:var(--gray);padding:40px 0}
-.sponsors .row{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:center}
-.sponsors .sp{background:#fff;border:1px solid var(--line);border-radius:7px;padding:16px 30px;
-  font-weight:800;color:var(--navy);font-size:15px;opacity:.8}
-
-/* Footer */
-footer{background:#001a38;color:#9fb3c8;font-size:13px}
-footer .in{max-width:1180px;margin:0 auto;padding:36px 20px;display:flex;justify-content:space-between;
-  flex-wrap:wrap;gap:20px}
-footer b{color:#fff;display:block;margin-bottom:8px;font-size:14px}
-footer a{display:block;padding:3px 0;opacity:.85}
-
-/* =================== CHAT WIDGET =================== */
-.fab{position:fixed;right:24px;bottom:24px;width:64px;height:64px;border-radius:50%;
-  background:var(--navy);color:#fff;border:none;cursor:pointer;z-index:200;
-  box-shadow:0 8px 24px rgba(0,43,92,.4);display:flex;align-items:center;justify-content:center;
-  font-size:28px;transition:transform .2s,background .2s}
-.fab:hover{transform:scale(1.07);background:var(--navy2)}
-.fab .badge{position:absolute;top:-2px;right:-2px;width:18px;height:18px;background:var(--red);
-  border-radius:50%;border:2px solid #fff;font-size:10px;display:flex;align-items:center;justify-content:center}
-.fab.hide{display:none}
-
-.panel{position:fixed;right:24px;bottom:24px;width:390px;height:600px;max-height:calc(100vh - 40px);
-  background:#fff;border-radius:16px;z-index:201;display:none;flex-direction:column;overflow:hidden;
-  box-shadow:0 18px 50px rgba(0,0,0,.3);animation:pop .22s ease}
-@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
-.panel.open{display:flex}
-@media(max-width:480px){.panel{right:0;bottom:0;width:100%;height:100%;max-height:100%;border-radius:0}}
-
-.ph-head{background:var(--navy);color:#fff;padding:15px 16px;display:flex;align-items:center;gap:12px}
-.ph-head .ava{width:42px;height:42px;border-radius:50%;background:var(--navy2);display:flex;
-  align-items:center;justify-content:center;font-size:21px;position:relative;flex-shrink:0}
-.ph-head .ava::after{content:"";position:absolute;inset:2px;border:2px solid var(--gold);border-radius:50%}
-.ph-head .ti b{font-size:15px;display:block}
-.ph-head .ti small{font-size:11.5px;color:#bcd0e6}
-.ph-head .x{margin-left:auto;background:transparent;border:none;color:#fff;font-size:22px;
-  cursor:pointer;opacity:.8;width:30px;height:30px;border-radius:6px;transition:background .2s}
-.ph-head .x:hover{background:rgba(255,255,255,.15);opacity:1}
-
-.statusbar{display:flex;gap:6px;padding:8px 12px;background:#f7f9fb;border-bottom:1px solid var(--line);
-  font-size:11px}
-.st{display:flex;align-items:center;gap:5px;padding:3px 9px;background:#fff;border:1px solid var(--line);
-  border-radius:20px;color:var(--muted)}
-.st .led{width:7px;height:7px;border-radius:50%;background:var(--wait)}
-.st .led.ok{background:var(--ok)}.st .led.bad{background:var(--bad)}
-.st .led.wait{background:var(--wait);animation:pl 1.2s infinite}
-@keyframes pl{0%,100%{opacity:.4}50%{opacity:1}}
-
-.msgs{flex:1;overflow-y:auto;padding:18px 14px;background:#fbfcfd;display:flex;flex-direction:column;gap:14px}
-.msgs::-webkit-scrollbar{width:6px}.msgs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-.m{display:flex;gap:9px;animation:fade .22s ease}
-@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1}}
-.m .av{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;
-  justify-content:center;font-size:14px;margin-top:2px}
-.m.b .av{background:var(--navy);color:#fff}
-.m.u{flex-direction:row-reverse}
-.m.u .av{background:var(--gray);border:1px solid var(--line)}
-.m .bx{max-width:78%;padding:10px 13px;border-radius:13px;font-size:14px;line-height:1.62}
-.m.b .bx{background:#fff;border:1px solid var(--line);border-top-left-radius:4px}
-.m.u .bx{background:var(--navy);color:#fff;border-top-right-radius:4px}
-.m .bx strong{font-weight:700}
-.m .bx em{color:var(--muted);font-style:normal}
-.m .bx .pos{color:var(--ok);font-weight:700}.m .bx .neg{color:var(--bad);font-weight:700}
-.m .bx code{background:var(--gray);padding:1px 5px;border-radius:4px;font-size:12.5px}
-
-.typing{display:flex;gap:4px;padding:4px 2px}
-.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:bd 1.2s infinite}
-.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
-@keyframes bd{0%,60%,100%{opacity:.3}30%{opacity:1;transform:translateY(-4px)}}
-
-.chips2{display:flex;gap:7px;flex-wrap:wrap;padding:0 14px 8px;background:#fbfcfd}
-.chip2{font-size:11.5px;background:#fff;border:1px solid var(--line);color:var(--navy);
-  padding:6px 11px;border-radius:14px;cursor:pointer;transition:all .2s}
-.chip2:hover{border-color:var(--navy);background:var(--navy);color:#fff}
-
-.composer{padding:11px 12px;background:#fff;border-top:1px solid var(--line);display:flex;gap:9px;align-items:flex-end}
-#inp{flex:1;border:1px solid var(--line);border-radius:11px;padding:10px 12px;font-size:14px;
-  font-family:inherit;resize:none;max-height:120px;outline:none;line-height:1.45;transition:border-color .2s}
-#inp:focus{border-color:var(--navy)}
-.snd{width:40px;height:40px;border:none;border-radius:11px;background:var(--navy);color:#fff;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .1s}
-.snd:hover{background:var(--navy2)}.snd:active{transform:scale(.93)}.snd:disabled{opacity:.4;cursor:default}
-.snd svg{width:18px;height:18px;fill:#fff}
-</style>
-</head>
-<body>
-
-<!-- TOP BAR -->
-<div class="topbar"><div class="in">
-  <span>Area privada</span><span>Licencias</span><span>Tienda oficial</span>
-  <div class="sp">
-    <span>&#x1F426;</span><span>&#x1F4F7;</span><span>&#x25B6;</span><span>&#x1F44D;</span>
-  </div>
-</div></div>
-
-<!-- NAVBAR -->
-<nav class="nav"><div class="in">
-  <a class="logo" href="#">
-    <span class="mk">&#x1F3CA;</span>
-    <b>FETRI<small>FEDERACION ESPANOLA DE TRIATLON</small></b>
-  </a>
-  <div class="menu">
-    <a href="#">Competiciones</a><a href="#">Atletas</a><a href="#">Clubes</a>
-    <a href="#">Rankings</a><a href="#">Grupos de edad</a><a href="#">Documentacion</a>
-  </div>
-</div></nav>
-
-<!-- HERO -->
-<section class="hero"><div class="in">
-  <span class="tag">CAMPEONATO DE ESPANA</span>
-  <h1>El triatlon espanol corre hacia una nueva temporada</h1>
-  <p>Sigue en directo las pruebas del circuito nacional, los rankings de la elite masculina y todas las novedades de la FETRI.</p>
-  <div class="btn" onclick="openChat()">Predice el rendimiento de un atleta &#x2192;</div>
-</div></section>
-
-<!-- STATS BAND -->
-<div class="band"><div class="in">
-  <div><div class="n">128</div><div class="l">PRUEBAS 2025</div></div>
-  <div><div class="n">1.028</div><div class="l">ATLETAS</div></div>
-  <div><div class="n">476</div><div class="l">CLUBES</div></div>
-  <div><div class="n">52</div><div class="l">PROVINCIAS</div></div>
-</div></div>
-
-<!-- NEWS -->
-<section class="sec"><div class="wrap">
-  <h2>Actualidad</h2>
-  <div class="h3">Ultimas noticias</div>
-  <div class="grid">
-    <div class="card"><div class="ph c1">&#x1F3C6;</div><div class="bd">
-      <div class="dt">07 JUN 2025</div><h4>Cuatro medallas para Espana en la Copa de Europa</h4>
-      <p>El equipo nacional brilla en la primera cita continental de la temporada.</p></div></div>
-    <div class="card"><div class="ph c2">&#x1F6B4;</div><div class="bd">
-      <div class="dt">05 JUN 2025</div><h4>Arranca el Circuito Nacional de Triatlon</h4>
-      <p>Mas de 600 deportistas se citan en la prueba inaugural del calendario.</p></div></div>
-    <div class="card"><div class="ph c3">&#x1F3CA;</div><div class="bd">
-      <div class="dt">02 JUN 2025</div><h4>Nuevos criterios de clasificacion elite</h4>
-      <p>La FETRI actualiza el sistema de puntos para la temporada 2025.</p></div></div>
-    <div class="card"><div class="ph c4">&#x23F1;</div><div class="bd">
-      <div class="dt">28 MAY 2025</div><h4>Records en la prueba de Pontevedra</h4>
-      <p>Marcas historicas en natacion y segmento de bici en Galicia.</p></div></div>
-    <div class="card"><div class="ph c5">&#x1F4CA;</div><div class="bd">
-      <div class="dt">24 MAY 2025</div><h4>Analisis predictivo de la temporada</h4>
-      <p>Estrenamos herramienta de prediccion de rendimiento por atleta.</p></div></div>
-    <div class="card"><div class="ph c6">&#x1F947;</div><div class="bd">
-      <div class="dt">20 MAY 2025</div><h4>Convocatoria del equipo nacional</h4>
-      <p>Los seleccionados para el Campeonato de Europa de media distancia.</p></div></div>
-  </div>
-</div></section>
-
-<!-- SPONSORS -->
-<div class="sponsors"><div class="wrap">
-  <div class="row">
-    <div class="sp">PATROCINADOR</div><div class="sp">PARTNER OFICIAL</div>
-    <div class="sp">IBERDROLA</div><div class="sp">LOTERIAS</div><div class="sp">CSD</div>
-  </div>
-</div></div>
-
-<!-- FOOTER -->
-<footer><div class="in">
-  <div><b>FETRI</b><a href="#">Quienes somos</a><a href="#">Junta directiva</a><a href="#">Contacto</a></div>
-  <div><b>Competir</b><a href="#">Calendario</a><a href="#">Rankings</a><a href="#">Resultados</a></div>
-  <div><b>Recursos</b><a href="#">Normativa</a><a href="#">Documentacion</a><a href="#">Prensa</a></div>
-  <div><b>Federacion Espanola de Triatlon</b><span style="opacity:.7">Pagina demostrativa &middot; TFM Conersys 2025</span></div>
-</div></footer>
-
-<!-- ====== CHAT WIDGET ====== -->
-<button class="fab" id="fab" onclick="openChat()" title="Asistente de prediccion">
-  &#x1F4AC;<span class="badge">1</span>
-</button>
-
-<div class="panel" id="panel">
-  <div class="ph-head">
-    <div class="ava">&#x1F3CA;</div>
-    <div class="ti"><b>Coach Triatlon</b><small>Asistente de prediccion FETRI</small></div>
-    <button class="x" onclick="closeChat()" title="Cerrar">&times;</button>
-  </div>
-  <div class="statusbar" id="statusbar">
-    <div class="st" id="p-ia"><span class="led wait"></span>IA</div>
-    <div class="st" id="p-model"><span class="led wait"></span>Modelo</div>
-    <div class="st" id="p-db"><span class="led wait"></span>BBDD</div>
-  </div>
-  <div class="msgs" id="msgs"></div>
-  <div class="chips2" id="chips">
-    <span class="chip2" onclick="qs('Predice un atleta con 20 pruebas y media de 1400 puntos en un campeonato nacional')">Ejemplo de prediccion</span>
-    <span class="chip2" onclick="qs('Como afecta el calor a una carrera?')">El calor en carrera</span>
-  </div>
-  <div class="composer">
-    <textarea id="inp" rows="1" placeholder="Escribe tu mensaje..."
-      oninput="autogrow(this)"
-      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}"></textarea>
-    <button class="snd" id="sbtn" onclick="send()" title="Enviar">
-      <svg viewBox="0 0 24 24"><path d="M3 20.5v-17L22 12 3 20.5zm2-3.1L16.85 12 5 6.6v3.9l6 1.5-6 1.5v3.9z"/></svg>
-    </button>
-  </div>
-</div>
-
-<script>
-const fab=document.getElementById('fab');
-const panel=document.getElementById('panel');
-const msgsEl=document.getElementById('msgs');
-const inp=document.getElementById('inp');
-const sbtn=document.getElementById('sbtn');
-const chips=document.getElementById('chips');
-let sid='s'+Math.random().toString(36).slice(2);
-let busy=false, started=false;
-
-function openChat(){
-  panel.classList.add('open');fab.classList.add('hide');
-  if(!started){started=true;greet();loadStatus();setInterval(loadStatus,30000);}
-  setTimeout(()=>inp.focus(),100);
-}
-function closeChat(){panel.classList.remove('open');fab.classList.remove('hide');}
-
-function autogrow(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,120)+'px';}
-
-function fmt(t){
-  t=t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  t=t.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
-  t=t.replace(/`([^`]+)`/g,'<code>$1</code>');
-  t=t.replace(/\*([^*\n]+)\*/g,'<em>$1</em>');
-  t=t.replace(/&#x25B2;|▲/g,'<span class="pos">&#x25B2;</span>');
-  t=t.replace(/&#x25BC;|▼/g,'<span class="neg">&#x25BC;</span>');
-  t=t.replace(/\n/g,'<br>');
-  return t;
-}
-function add(role,html){
-  const m=document.createElement('div');
-  m.className='m '+(role==='b'?'b':'u');
-  const av=role==='b'?'&#x1F3CA;':'&#x1F464;';
-  m.innerHTML='<div class="av">'+av+'</div><div class="bx">'+html+'</div>';
-  msgsEl.appendChild(m);msgsEl.scrollTop=msgsEl.scrollHeight;return m;
-}
-function typing(){
-  const m=document.createElement('div');m.className='m b';m.id='typing';
-  m.innerHTML='<div class="av">&#x1F3CA;</div><div class="bx"><div class="typing"><i></i><i></i><i></i></div></div>';
-  msgsEl.appendChild(m);msgsEl.scrollTop=msgsEl.scrollHeight;
-}
-function stopTyping(){const t=document.getElementById('typing');if(t)t.remove();}
-
-function greet(){
-  add('b',fmt(
-    'Hola, soy **Coach** &#x1F3CA;&#x1F6B4;&#x1F3C3;\n\n'+
-    'Predigo el rendimiento de los atletas de triatlon y te explico por que. '+
-    'Cuentame sobre un atleta o una prueba, o usa un ejemplo de abajo.'
-  ));
-}
-
-async function send(){
-  const txt=inp.value.trim();
-  if(!txt||busy)return;
-  busy=true;sbtn.disabled=true;
-  if(chips)chips.style.display='none';
-  inp.value='';autogrow(inp);
-  add('u',txt.replace(/</g,'&lt;').replace(/\n/g,'<br>'));
-  typing();
-  try{
-    const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({message:txt,session_id:sid})});
-    const d=await r.json();
-    stopTyping();add('b',fmt(d.response||'Sin respuesta.'));
-  }catch(e){
-    stopTyping();add('b','<span class="neg">Error de conexion.</span> Comprueba que el servidor esta arrancado.');
-  }finally{busy=false;sbtn.disabled=false;inp.focus();}
-}
-function qs(t){inp.value=t;send();}
-
-function setPill(id,ok,detail){
-  const p=document.getElementById(id);
-  p.querySelector('.led').className='led '+(ok===true?'ok':ok===false?'bad':'wait');
-  if(detail)p.title=detail;
-}
-async function loadStatus(){
-  try{
-    const d=await(await fetch('/api/status')).json();
-    setPill('p-ia',d.ia.ok,'IA: '+d.ia.detail);
-    setPill('p-model',d.model.ok,'Modelo: '+d.model.detail);
-    setPill('p-db',d.db.ok,'BBDD: '+d.db.detail);
-  }catch(e){setPill('p-ia',false);setPill('p-model',false);setPill('p-db',false);}
-}
-</script>
-</body>
-</html>"""
+# ===========================================================================
+# Rutas UI
+# ===========================================================================
 
 # ---------------------------------------------------------------------------
 # Rutas
@@ -432,10 +83,12 @@ async function loadStatus(){
 
 @app.route("/", methods=["GET"])
 def index():
-    resp = Response(CHAT_HTML, content_type="text/html; charset=utf-8")
-    resp.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
-    resp.headers["Pragma"] = "no-cache"
-    return resp
+    return render_template("index.html")
+
+
+@app.route("/dashboard", methods=["GET"])
+def dashboard():
+    return render_template("dashboard.html")
 
 
 @app.route("/api/status", methods=["GET"])
@@ -449,7 +102,6 @@ def api_status():
 
 @app.route("/api/env", methods=["GET"])
 def api_env():
-    import os
     return jsonify({
         "ENDPOINT": repr(os.getenv("AZURE_FOUNDRY_ENDPOINT")),
         "KEY": repr(os.getenv("AZURE_FOUNDRY_KEY")),
@@ -468,10 +120,10 @@ def chat():
 
     if ai_foundry.is_configured():
         try:
-            history = _foundry_histories.get(sid, [])
+            history = _get_foundry_history(sid)
             history = history + [{"role": "user", "content": msg}]
             response_text, history = ai_foundry.chat(history)
-            _foundry_histories[sid] = history
+            _store_foundry_history(sid, history)
             return jsonify({"response": response_text, "mode": "ai_foundry"})
         except Exception:
             session  = get_session(sid)
@@ -519,6 +171,632 @@ def predict():
         return jsonify(explainer.explain(data, top_n=top_n))
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/available_races', methods=['GET'])
+def api_available_races():
+    try:
+        races = get_available_races()
+        return jsonify(races)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/news', methods=['GET'])
+def api_news():
+    try:
+        req = urllib.request.Request('https://triatlon.org/feed/', headers={'User-Agent': 'Mozilla/5.0'})
+        res = urllib.request.urlopen(req, timeout=5).read()
+        root = ET.fromstring(res)
+        news = []
+        for i, item in enumerate(root.findall('.//item')):
+            if i >= 3: break
+            title = item.find('title').text
+            # fix encoding issues from RSS
+            try:
+                title = title.encode('latin1').decode('utf-8')
+            except:
+                pass
+            news.append({
+                "title": title,
+                "link": item.find('link').text,
+                "date": item.find('pubDate').text if item.find('pubDate') is not None else ""
+            })
+        return jsonify(news)
+    except Exception as e:
+        # Fallback si falla el RSS
+        return jsonify([
+            {"title": "Campeonato de España de Triatlón Sprint", "link": "#", "date": "Hoy"},
+            {"title": "Convocatoria Copa del Mundo", "link": "#", "date": "Ayer"},
+            {"title": "Nuevo modelo predictivo IA para la élite", "link": "#", "date": "Hace 2 días"}
+        ])
+
+@app.route('/api/athletes_directory', methods=['GET'])
+def api_athletes_directory():
+    try:
+        athletes = get_all_athletes()
+        return jsonify(athletes)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/clubs_directory', methods=['GET'])
+def api_clubs_directory():
+    try:
+        clubs = get_all_clubs()
+        return jsonify(clubs)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/competitions_directory', methods=['GET'])
+def api_competitions_directory():
+    try:
+        competitions = get_all_competitions()
+        return jsonify(competitions)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/competition/<prueba_id>/results', methods=['GET'])
+def api_competition_results(prueba_id):
+    try:
+        results = get_competition_results(int(prueba_id))
+        return jsonify({"results": results})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# ===========================================================================
+# Endpoints del Dashboard (Sprint 4)
+# ===========================================================================
+
+# (imports already at module top — line 32)
+
+
+_PROVINCIA_TO_FEDERATION = {
+    "A Coruña": "GAL", "Álava": "PVA", "Albacete": "CLM", "Alicante": "CVA",
+    "Almería": "AND", "Asturias": "AST", "Ávila": "CYL", "Badajoz": "EXT",
+    "Barcelona": "CAT", "Bizkaia": "PVA", "Burgos": "CYL", "Cáceres": "EXT",
+    "Cádiz": "AND", "Cantabria": "CNT", "Castellón": "CVA", "Ciudad Real": "CLM",
+    "Córdoba": "AND", "Cuenca": "CLM", "Gipuzkoa": "PVA", "Girona": "CAT",
+    "Granada": "AND", "Guadalajara": "CLM", "Huelva": "AND", "Huesca": "ARA",
+    "Illes Balears": "BAL", "Jaén": "AND", "La Rioja": "RIO", "Las Palmas": "CAN",
+    "León": "CYL", "Lleida": "CAT", "Lugo": "GAL", "Madrid": "MAD",
+    "Málaga": "AND", "Melilla": "MEL", "Murcia": "MUR", "Navarra": "NAV",
+    "Ourense": "GAL", "Palencia": "CYL", "Pontevedra": "GAL", "Salamanca": "CYL",
+    "Santa Cruz de Tenerife": "CAN", "Segovia": "CYL", "Sevilla": "AND",
+    "Soria": "CYL", "Tarragona": "CAT", "Teruel": "ARA", "Toledo": "CLM",
+    "Valencia": "CVA", "Valladolid": "CYL", "Zamora": "CYL", "Zaragoza": "ARA",
+    "Ceuta": "CEU",
+}
+
+
+def _get_federation(ath: dict) -> str:
+    """Derive federation code from athlete's club province."""
+    provincia = ath.get("provincia", "") or ""
+    return _PROVINCIA_TO_FEDERATION.get(provincia, "MAD")
+
+
+def build_athlete_features(ath: dict, history: list, race_overrides: dict = None) -> dict:
+    """
+    Builds ALL 51 features expected by the XGBoost model from an athlete's
+    profile and race history.  If race_overrides is provided it overrides the
+    default race conditions (city, temp, altitude, humidity, lat, lng, etc.).
+    """
+    from datetime import datetime
+
+    n_races = len(history)
+    puestos = [h.get("puesto", 20) for h in history if h.get("puesto") is not None]
+    puntos_list = [h.get("puntos", 0) for h in history if h.get("puntos") is not None]
+
+    # ── Averages of position ──────────────────────────────────────────
+    avg_last_3 = sum(puestos[:3]) / len(puestos[:3]) if puestos else 20.0
+    avg_last_5 = sum(puestos[:5]) / len(puestos[:5]) if puestos else 20.0
+    best_ever = min(puestos) if puestos else 30.0
+    best_season = min(puestos[:10]) if puestos else 30.0
+
+    # ── Ratios ────────────────────────────────────────────────────────
+    wins = sum(1 for p in puestos if p == 1)
+    podiums = sum(1 for p in puestos if p <= 3)
+    top10s = sum(1 for p in puestos if p <= 10)
+    win_rate = wins / n_races if n_races > 0 else 0.0
+    podium_rate = podiums / n_races if n_races > 0 else 0.0
+    top10_rate = top10s / n_races if n_races > 0 else 0.0
+    dnf_rate = 0.0  # DB doesn't store DNFs explicitly
+
+    # ── Position std dev ──────────────────────────────────────────────
+    if len(puestos) >= 2:
+        mean_pos = sum(puestos) / len(puestos)
+        pos_std = (sum((p - mean_pos) ** 2 for p in puestos) / len(puestos)) ** 0.5
+    else:
+        mean_pos = puestos[0] if puestos else 20.0
+        pos_std = 10.0
+
+    # ── Streaks ───────────────────────────────────────────────────────
+    podium_streak = 0
+    for p in puestos:
+        if p <= 3:
+            podium_streak += 1
+        else:
+            break
+    top10_streak = 0
+    for p in puestos:
+        if p <= 10:
+            top10_streak += 1
+        else:
+            break
+
+    # ── Days since last race ──────────────────────────────────────────
+    days_since = 30
+    if history:
+        try:
+            last_date = str(history[0].get("fecha", ""))
+            last = datetime.strptime(last_date.strip()[:10], "%Y-%m-%d")
+            days_since = max(1, (datetime.now() - last).days)
+        except Exception:
+            pass
+
+    # ── Elite race count ──────────────────────────────────────────────
+    n_elite = sum(1 for h in history if (h.get("championship_level") or 3) <= 2)
+
+    # ── Race conditions (defaults + overrides) ────────────────────────
+    race = {
+        "race_city": "Madrid",
+        "race_temperature": 25.0,
+        "race_altitude_m": 600.0,
+        "race_humidity": 50.0,
+        "race_lat": 40.42,
+        "race_lng": -3.70,
+        "race_month": datetime.now().month,
+        "race_day_of_week": datetime.now().weekday(),
+    }
+    if race_overrides:
+        race.update(race_overrides)
+
+    race_alt = float(race.get("race_altitude_m", 600.0))
+    race_lat = float(race.get("race_lat", 40.42))
+    race_lng = float(race.get("race_lng", -3.70))
+    race_temp = float(race.get("race_temperature", 25.0))
+    race_hum = float(race.get("race_humidity", 50.0))
+    race_city = race.get("race_city", "Madrid")
+
+    # ── Derived race features ─────────────────────────────────────────
+    race_near_coast = 1 if race_alt < 50 else 0
+    # Climate type heuristic
+    if race_temp >= 30 and race_hum < 40:
+        race_climate_type = "hot_dry"
+    elif race_temp >= 28:
+        race_climate_type = "hot_humid"
+    elif race_temp <= 12:
+        race_climate_type = "cold"
+    else:
+        race_climate_type = "temperate"
+    race_type = race_overrides.get("race_type", "sprint") if race_overrides else "sprint"
+    race_month = int(race.get("race_month", datetime.now().month))
+    race_dow = int(race.get("race_day_of_week", datetime.now().weekday()))
+
+    # ── Athlete ranking & form ────────────────────────────────────────
+    athlete_ranking = ath.get("ranking_real", 9999.0)
+    form_score = ath.get("form_score", max(0.0, 100.0 - avg_last_3))
+
+    # ── Ranking momentum & trend ──────────────────────────────────────
+    # Compare points from recent races vs older ones to detect trends
+    recent_puntos = puntos_list[:3] if puntos_list else []
+    older_puntos = puntos_list[3:8] if len(puntos_list) > 3 else []
+    avg_recent_pts = sum(recent_puntos) / len(recent_puntos) if recent_puntos else 0.0
+    avg_older_pts = sum(older_puntos) / len(older_puntos) if older_puntos else avg_recent_pts
+    ranking_momentum = avg_recent_pts - avg_older_pts
+    ranking_change_recent = avg_recent_pts - avg_older_pts
+
+    if ranking_momentum > 10:
+        ranking_trend = "subiendo"
+    elif ranking_momentum < -10:
+        ranking_trend = "bajando"
+    else:
+        ranking_trend = "estable"
+
+    # ── Form trend ────────────────────────────────────────────────────
+    recent_pos = puestos[:3] if puestos else []
+    older_pos = puestos[3:6] if len(puestos) > 3 else []
+    avg_recent_pos = sum(recent_pos) / len(recent_pos) if recent_pos else 20.0
+    avg_older_pos = sum(older_pos) / len(older_pos) if older_pos else avg_recent_pos
+    pos_diff = avg_older_pos - avg_recent_pos  # positive = improving
+    if pos_diff > 3:
+        form_trend = "subiendo"
+    elif pos_diff < -3:
+        form_trend = "bajando"
+    else:
+        form_trend = "estable"
+
+    # ── Performance biases (altitude / coast / heat) ──────────────────
+    high_alt_pos = [h.get("puesto", 20) for h in history if (h.get("altitud") or 0) > 500]
+    low_alt_pos = [h.get("puesto", 20) for h in history if (h.get("altitud") or 500) <= 500]
+    coastal_pos = [h.get("puesto", 20) for h in history if (h.get("altitud") or 500) < 50]
+    inland_pos = [h.get("puesto", 20) for h in history if (h.get("altitud") or 0) >= 50]
+    hot_pos = [h.get("puesto", 20) for h in history if (h.get("temperatura_max") or 20) >= 28]
+    cold_pos = [h.get("puesto", 20) for h in history if (h.get("temperatura_max") or 20) < 15]
+
+    avg_pos_high_alt = sum(high_alt_pos) / len(high_alt_pos) if high_alt_pos else mean_pos
+    avg_pos_low_alt = sum(low_alt_pos) / len(low_alt_pos) if low_alt_pos else mean_pos
+    avg_pos_coastal = sum(coastal_pos) / len(coastal_pos) if coastal_pos else mean_pos
+    avg_pos_inland = sum(inland_pos) / len(inland_pos) if inland_pos else mean_pos
+    avg_pos_hot = sum(hot_pos) / len(hot_pos) if hot_pos else mean_pos
+    avg_pos_cold = sum(cold_pos) / len(cold_pos) if cold_pos else mean_pos
+
+    performance_altitude_bias = mean_pos - avg_pos_high_alt  # positive = better at altitude
+    performance_coast_bias = mean_pos - avg_pos_coastal
+    performance_heat_bias = mean_pos - avg_pos_hot
+
+    # ── City-specific stats ───────────────────────────────────────────
+    city_lower = race_city.lower() if race_city else ""
+    races_at_city = [h for h in history if (h.get("ciudad") or "").lower() == city_lower]
+    n_races_at_city = len(races_at_city)
+    n_wins_at_city = sum(1 for h in races_at_city if h.get("puesto") == 1)
+
+    # ── Context variables ─────────────────────────────────────────────
+    avg_ranking_opponents = race_overrides.get("avg_ranking_opponents", 50.0) if race_overrides else 50.0
+    n_participants = race_overrides.get("n_participants_race", 100) if race_overrides else 100
+    pct_opponents_better = max(0.0, min(1.0, (athlete_ranking - 1) / max(n_participants, 1)))
+
+    # ── Build the full 51-feature dict ────────────────────────────────
+    return {
+        # Athlete profile
+        "athlete_age_at_race": ath.get("age", 27),  # Not stored in DB; default elite age
+        "athlete_federation": _get_federation(ath),
+        "athlete_ranking_triatlon": round(athlete_ranking, 1),
+        "athlete_has_wt_id": ath.get("has_wt_id", 0),
+        # Race conditions
+        "race_city": race_city,
+        "race_temperature": race_temp,
+        "race_humidity": race_hum,
+        "race_lat": race_lat,
+        "race_lng": race_lng,
+        "race_altitude_m": race_alt,
+        "race_near_coast": race_near_coast,
+        "race_climate_type": race_climate_type,
+        "race_month": race_month,
+        "race_day_of_week": race_dow,
+        "race_type": race_type,
+        # Experience
+        "n_races_before": n_races,
+        "n_elite_races_before": n_elite,
+        # Recent performance
+        "avg_finish_pos_last_3": round(avg_last_3, 2),
+        "avg_finish_pos_last_5": round(avg_last_5, 2),
+        "best_finish_pos_ever": best_ever,
+        "best_finish_pos_season": best_season,
+        # Segment ranks (not available in DB — default to 0 = use background median)
+        "avg_swim_rank_last_5": 0,
+        "avg_bike_rank_last_5": 0,
+        "avg_run_rank_last_5": 0,
+        # Rates
+        "win_rate": round(win_rate, 4),
+        "podium_rate": round(podium_rate, 4),
+        "top10_rate": round(top10_rate, 4),
+        "dnf_rate": dnf_rate,
+        # Freshness
+        "days_since_last_race": days_since,
+        # Momentum & trends
+        "ranking_momentum": round(ranking_momentum, 2),
+        "ranking_trend": ranking_trend,
+        "ranking_change_recent": round(ranking_change_recent, 2),
+        "form_score": round(form_score, 1),
+        "form_trend": form_trend,
+        # Environmental performance biases
+        "avg_pos_high_altitude": round(avg_pos_high_alt, 2),
+        "avg_pos_low_altitude": round(avg_pos_low_alt, 2),
+        "avg_pos_coastal": round(avg_pos_coastal, 2),
+        "avg_pos_inland": round(avg_pos_inland, 2),
+        "avg_pos_hot": round(avg_pos_hot, 2),
+        "avg_pos_cold": round(avg_pos_cold, 2),
+        "performance_altitude_bias": round(performance_altitude_bias, 2),
+        "performance_coast_bias": round(performance_coast_bias, 2),
+        "performance_heat_bias": round(performance_heat_bias, 2),
+        # Race context
+        "n_participants_race": n_participants,
+        "avg_ranking_opponents": avg_ranking_opponents,
+        "pct_opponents_ranked_higher": round(pct_opponents_better, 4),
+        # City-specific
+        "n_races_at_city": n_races_at_city,
+        "n_previous_wins_at_city": n_wins_at_city,
+        # Consistency
+        "position_std_dev": round(pos_std, 2),
+        "current_podium_streak": podium_streak,
+        "current_top10_streak": top10_streak,
+    }
+
+
+def detect_anomaly(prediction: float, puestos: list) -> tuple:
+    """
+    Detecta anomalías comparando la predicción con el historial real.
+    Devuelve (is_anomaly: bool, reason: str).
+    """
+    if len(puestos) < 2:
+        return False, ""
+    mean_pos = sum(puestos) / len(puestos)
+    std_pos = (sum((p - mean_pos) ** 2 for p in puestos) / len(puestos)) ** 0.5
+    if std_pos < 1.0:
+        std_pos = 1.0
+    z = (prediction - mean_pos) / std_pos
+    if abs(z) > 1.5:
+        if z < -1.5:
+            return True, f"Predicción mejor de lo habitual (media hist: {mean_pos:.0f})"
+        else:
+            return True, f"Predicción peor de lo habitual (media hist: {mean_pos:.0f})"
+    return False, ""
+
+
+@app.route("/api/ranking", methods=["GET"])
+def api_ranking():
+    limit = int(request.args.get("limit", 10))
+    offset = int(request.args.get("offset", 0))
+
+    try:
+        athletes = get_active_athletes()
+        history_map = get_athletes_history_batch()
+        explainer = get_explainer()
+
+        # Calcular puntos totales de cada atleta para sacar su Ranking Real FETRI
+        for ath in athletes:
+            doc = ath["documento"]
+            hist = history_map.get(doc, [])
+            puntos = sorted([h.get("puntos", 0) for h in hist if h.get("puntos") is not None], reverse=True)[:3]
+            ath["total_puntos"] = sum(puntos)
+            ath["n_elite"] = sum(1 for h in hist if (h.get("championship_level") or 3) <= 2)
+            
+        # Ordenar por puntos totales para asignar ranking de mérito (1 al N)
+        athletes.sort(key=lambda x: x["total_puntos"], reverse=True)
+        for i, ath in enumerate(athletes):
+            if ath["total_puntos"] > 0:
+                ath["ranking_real"] = float(i + 1)
+            else:
+                # En lugar de 9999.0 (que el árbol confunde), usamos 2500.0 para novatos/sin puntos
+                ath["ranking_real"] = 2500.0
+
+        # Preparar todas las features en bloque
+        features_list = []
+        for ath in athletes:
+            doc = ath["documento"]
+            history = history_map.get(doc, [])
+            features_list.append(build_athlete_features(ath, history))
+            
+        # Predicción en bloque (1 sola llamada HTTP)
+        predictions = explainer.predict_batch(features_list)
+
+        results = []
+        for i, ath in enumerate(athletes):
+            doc = ath["documento"]
+            history = history_map.get(doc, [])
+            prediction = predictions[i]
+
+            puestos = [h.get("puesto", 20) for h in history if h.get("puesto") is not None]
+            is_anomaly, anomaly_reason = detect_anomaly(prediction, puestos)
+
+            results.append({
+                "documento": doc,
+                "nombre": ath["nombre"],
+                "club": ath["club"],
+                "prediccion_raw": round(prediction, 1),
+                "posicion_predicha": prediction,
+                "anomalia": is_anomaly,
+                "anomalia_motivo": anomaly_reason,
+            })
+
+        results.sort(key=lambda x: x["posicion_predicha"])
+
+        for i, r in enumerate(results):
+            r["posicion_predicha"] = i + 1
+            
+        paginated = results[offset : offset + limit]
+
+        return jsonify({
+            "ranking": paginated,
+            "total_returned": len(paginated),
+            "offset": offset
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/simulate_race", methods=["POST"])
+def api_simulate_race():
+    data = request.get_json(force=True, silent=True) or {}
+    race_city = data.get("race_city", "Madrid")
+    race_temperature = float(data.get("race_temperature", 25.0))
+    race_altitude_m = float(data.get("race_altitude_m", 600.0))
+    race_humidity = float(data.get("race_humidity", 50.0))
+    race_lat = float(data.get("race_lat", 40.42))
+    race_lng = float(data.get("race_lng", -3.70))
+    limit = int(data.get("limit", 15))
+
+    race_overrides = {
+        "race_city": race_city,
+        "race_temperature": race_temperature,
+        "race_altitude_m": race_altitude_m,
+        "race_humidity": race_humidity,
+        "race_lat": race_lat,
+        "race_lng": race_lng,
+    }
+
+    try:
+        athletes = get_active_athletes()
+        history_map = get_athletes_history_batch()
+        explainer = get_explainer()
+
+        # Calcular puntos totales de cada atleta para sacar su Ranking Real FETRI
+        for ath in athletes:
+            doc = ath["documento"]
+            hist = history_map.get(doc, [])
+            puntos = sorted([h.get("puntos", 0) for h in hist if h.get("puntos") is not None], reverse=True)[:3]
+            ath["total_puntos"] = sum(puntos)
+            ath["n_elite"] = sum(1 for h in hist if (h.get("championship_level") or 3) <= 2)
+            
+        # Ordenar por puntos totales para asignar ranking de mérito (1 al N)
+        athletes.sort(key=lambda x: x["total_puntos"], reverse=True)
+        for i, ath in enumerate(athletes):
+            if ath["total_puntos"] > 0:
+                ath["ranking_real"] = float(i + 1)
+            else:
+                # En lugar de 9999.0 (que el árbol confunde), usamos 2500.0 para novatos/sin puntos
+                ath["ranking_real"] = 2500.0
+
+        # Preparar todas las features en bloque con overrides de carrera
+        features_list = []
+        for ath in athletes:
+            doc = ath["documento"]
+            history = history_map.get(doc, [])
+            features_list.append(build_athlete_features(ath, history, race_overrides=race_overrides))
+            
+        # Predicción en bloque con explicaciones
+        predictions, explanations = explainer.explain_batch(features_list)
+
+        results = []
+        for i, ath in enumerate(athletes):
+            doc = ath["documento"]
+            history = history_map.get(doc, [])
+            prediction = predictions[i]
+            explicacion = explanations[i]
+
+            puestos = [h.get("puesto", 20) for h in history if h.get("puesto") is not None]
+            is_anomaly, anomaly_reason = detect_anomaly(prediction, puestos)
+
+            results.append({
+                "documento": doc,
+                "nombre": ath["nombre"],
+                "club": ath["club"],
+                "prediccion_raw": round(prediction, 1),
+                "posicion_predicha": prediction,
+                "anomalia": is_anomaly,
+                "anomalia_motivo": anomaly_reason,
+                "explicacion": explicacion,
+            })
+
+        results.sort(key=lambda x: x["posicion_predicha"])
+
+        for i, r in enumerate(results):
+            r["posicion_predicha"] = i + 1
+            
+        paginated = results[:limit]
+
+        return jsonify({
+            "ranking": paginated,
+            "simulated": True,
+            "conditions": {
+                "city": race_city,
+                "temp": race_temperature,
+                "alt": race_altitude_m,
+                "hum": race_humidity
+            }
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/races", methods=["GET"])
+def api_races():
+    try:
+        # Catálogo de carreras futuras de corta distancia (Sprint / Olímpico).
+        # Incluye lat/lng para que build_athlete_features pueda calcular
+        # race_near_coast, race_climate_type, etc.
+        future_races = [
+            {
+                "nombre": "Campeonato de España Triatlón Sprint 2026",
+                "ciudad": "Mérida",
+                "temperatura_max": 36.0,
+                "altitud": 217.0,
+                "humedad_media": 35.0,
+                "lat": 38.92,
+                "lng": -6.34
+            },
+            {
+                "nombre": "Campeonato de España Triatlón Olímpico 2026",
+                "ciudad": "Banyoles",
+                "temperatura_max": 25.0,
+                "altitud": 173.0,
+                "humedad_media": 60.0,
+                "lat": 42.12,
+                "lng": 2.76
+            },
+            {
+                "nombre": "ProTour FETRI 2026",
+                "ciudad": "Madrid",
+                "temperatura_max": 32.0,
+                "altitud": 650.0,
+                "humedad_media": 35.0,
+                "lat": 40.42,
+                "lng": -3.70
+            },
+            {
+                "nombre": "Copa de Europa de Triatlón 2026",
+                "ciudad": "Melilla",
+                "temperatura_max": 27.5,
+                "altitud": 15.0,
+                "humedad_media": 72.0,
+                "lat": 35.29,
+                "lng": -2.94
+            },
+            {
+                "nombre": "Triatlón Villa de A Coruña 2026",
+                "ciudad": "A Coruña",
+                "temperatura_max": 19.0,
+                "altitud": 5.0,
+                "humedad_media": 78.0,
+                "lat": 43.37,
+                "lng": -8.40
+            }
+        ]
+        return jsonify({"races": future_races})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/athlete/<documento>", methods=["GET"])
+def api_athlete(documento):
+    try:
+        info = get_athlete_info(documento)
+        if not info:
+            return jsonify({"error": "Atleta no encontrado"}), 404
+
+        history = get_athlete_history(documento)
+        # Fix: we must pass 'info' (the athlete dict) as the first parameter
+        features = build_athlete_features(info, history)
+
+        explainer = get_explainer()
+        explanation = explainer.explain(features, top_n=5)
+
+        tendencia = "estable"
+        if len(history) >= 2:
+            if history[0]["puesto"] < history[1]["puesto"]:
+                tendencia = "mejorando"
+            elif history[0]["puesto"] > history[1]["puesto"]:
+                tendencia = "empeorando"
+
+        return jsonify({
+            "datos_basicos": info,
+            "tendencia_forma": tendencia,
+            "prediccion_actual": explanation,
+            "historial": history
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/demo/ranking", methods=["GET"])
+def api_demo_ranking():
+    limit = int(request.args.get("limit", 10))
+    data = [
+        {"posicion_predicha": 1, "nombre": "Mario Mola", "anomalia": False},
+        {"posicion_predicha": 2, "nombre": "Javier Gomez Noya", "anomalia": False},
+        {"posicion_predicha": 3, "nombre": "Fernando Alarza", "anomalia": True},
+        {"posicion_predicha": 4, "nombre": "Antonio Serrat", "anomalia": False},
+        {"posicion_predicha": 5, "nombre": "Roberto Sanchez", "anomalia": False}
+    ]
+    return jsonify({"ranking": data[:limit], "offline_mode": True})
+
+@app.route("/api/demo/athlete/<documento>", methods=["GET"])
+def api_demo_athlete(documento):
+    return jsonify({
+        "datos_basicos": {"nombre": "Atleta Demo", "documento": documento},
+        "tendencia_forma": "mejorando",
+        "prediccion_actual": {"prediction": 3.0, "top_factors": []},
+        "historial": [{"puesto": 1, "nombre": "Madrid"}, {"puesto": 3, "nombre": "Valencia"}]
+    })
 
 
 if __name__ == "__main__":
