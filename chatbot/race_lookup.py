@@ -193,7 +193,9 @@ def _load_resultados():
     global _resultados_cache, _deportistas_cache
     if _resultados_cache is None:
         _resultados_cache = pd.read_csv(os.path.join(BASE_DIR, "data", "processed", "resultados_2025.csv"))
-        _deportistas_cache = pd.read_csv(os.path.join(BASE_DIR, "data", "processed", "deportistas_2025.csv"))
+        dep = pd.read_csv(os.path.join(BASE_DIR, "data", "processed", "deportistas_2025.csv"))
+        dep.columns = [c.lower() for c in dep.columns]  # Normalizar a minúsculas
+        _deportistas_cache = dep
     return _resultados_cache, _deportistas_cache
 
 
@@ -232,15 +234,15 @@ def resultados(consulta: str, top_n: int = 5) -> dict:
     clasif = (
         res[res["prueba_id"] == pid]
         .sort_values("puesto")
-        .merge(dep, left_on="deportista_documento", right_on="DOCUMENTO", how="left")
+        .merge(dep, left_on="deportista_documento", right_on="documento", how="left")
     )
 
     podio = []
     for _, r in clasif.head(top_n).iterrows():
         podio.append({
             "puesto": int(r["puesto"]),
-            "atleta": r.get("NOMBRE") if pd.notna(r.get("NOMBRE")) else "Desconocido",
-            "club": r.get("CLUB") if pd.notna(r.get("CLUB")) else "",
+            "atleta": r.get("nombre") if pd.notna(r.get("nombre")) else "Desconocido",
+            "club": r.get("club") if pd.notna(r.get("club")) else "",
             "puntos": round(float(r["puntos"]), 1),
         })
 

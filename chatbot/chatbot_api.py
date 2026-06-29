@@ -1,7 +1,7 @@
 """
-Servidor Flask del chatbot de prediccion de Triatlon Elite Masculino.
+Servidor FastAPI del chatbot de prediccion de Triatlon Elite Masculino.
 
-Landing estilo FETRI (contenido de relleno) con un widget de chat flotante
+Landing estilo FETRI con un widget de chat flotante
 abajo a la derecha. El chat usa Azure AI Foundry + modelo SHAP.
 
 Verificadores de estado integrados en la cabecera del widget:
@@ -110,9 +110,12 @@ def api_status():
 
 @app.get("/api/env")
 def api_env():
+    """Devuelve el estado de configuración de AI Foundry (sin exponer claves)."""
+    key = os.getenv("AZURE_FOUNDRY_KEY", "")
+    masked_key = f"****{key[-4:]}" if len(key) > 4 else "(no configurada)"
     return jsonify({
-        "ENDPOINT": repr(os.getenv("AZURE_FOUNDRY_ENDPOINT")),
-        "KEY": repr(os.getenv("AZURE_FOUNDRY_KEY")),
+        "ENDPOINT": os.getenv("AZURE_FOUNDRY_ENDPOINT", "(no configurado)"),
+        "KEY": masked_key,
         "is_configured": ai_foundry.is_configured(),
     })
 
@@ -816,6 +819,7 @@ def api_demo_athlete(documento):
 
 
 if __name__ == "__main__":
+    import uvicorn
     print("=" * 55)
     print(" Chatbot Triatlon Predictor - Landing FETRI")
     print("=" * 55)
@@ -825,4 +829,4 @@ if __name__ == "__main__":
     print("-" * 55)
     print(" Abre:  http://localhost:5050")
     print("=" * 55)
-    app.run(host="0.0.0.0", port=5050, debug=False)
+    uvicorn.run(app, host="0.0.0.0", port=5050)

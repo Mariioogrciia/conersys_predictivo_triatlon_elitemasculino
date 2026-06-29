@@ -1,14 +1,14 @@
 # 📖 Contexto del Proyecto: Modelo Predictivo de Triatlón (FETRI)
 
-Este documento sirve como **guía de contexto global** para que cualquier asistente de inteligencia artificial o copiloto de código entienda la arquitectura de datos, las fuentes de origen, el modelo de base de datos destino (**ClickHouse**) y los objetivos de ciencia de datos del proyecto.
+Este documento sirve como **guía de contexto global** para que cualquier asistente de inteligencia artificial o copiloto de código entienda la arquitectura de datos, las fuentes de origen, el modelo de base de datos destino (**Azure SQL Database**) y los objetivos de ciencia de datos del proyecto.
 
 ---
 
 ## 1. Visión General del Proyecto
 
-* **Objetivo principal:** Desarrollar un **modelo predictivo de triatlón** que estime el rendimiento de los atletas en futuras competiciones, determine las probabilidades de victoria de cada participante en una carrera dada y clasifique a los competidores según su nivel de habilidad esperado.
+* **Objetivo principal:** Desarrollar un **modelo predictivo de triatlón** que estime la posición de llegada de los atletas en futuras competiciones, analice las probabilidades de victoria de cada participante y clasifique a los competidores según su nivel de habilidad esperado.
 * **Dominio de negocio:** Datos oficiales de la **Federación Española de Triatlón (FETRI)**.
-* **Tecnologías clave:** Python (Pandas, ClickHouse-connect, Scikit-Learn/XGBoost), **ClickHouse** (Base de datos analítica orientada a columnas) y Jupyter Notebooks para experimentación.
+* **Tecnologías clave:** Python (Pandas, Scikit-Learn, XGBoost, SHAP), **Azure SQL Database** (base de datos relacional en la nube), **Azure Machine Learning** (AutoML + Online Endpoint), **Azure OpenAI** (GPT-4o para chatbot), **FastAPI** (backend), **Next.js** (frontend) y Jupyter Notebooks para experimentación.
 
 ---
 
@@ -38,93 +38,115 @@ Los archivos JSON de rankings actúan como un **índice de versiones** que conti
 
 ---
 
-## 3. Arquitectura y Diseño de la Base de Datos: ClickHouse
+## 3. Arquitectura y Diseño de la Base de Datos: Azure SQL Database
 
-Dado que ClickHouse es una base de datos columnar optimizada para analítica e inserciones rápidas, diseñamos un esquema denormalizado y optimizado con el motor **`MergeTree`**:
+El proyecto utiliza **Azure SQL Database**, un servicio gestionado de base de datos relacional en Microsoft Azure. El esquema está diseñado con un modelo estrella optimizado para consultas analíticas:
 
 ### Tabla 1: `ranking_types` (Catálogo)
 Mapea los IDs numéricos a disciplinas (TRW, TRM, DUM, etc.).
 ```sql
-CREATE TABLE IF NOT EXISTS fetri.ranking_types (
-    id UInt8,
-    nombre String,
-    siglas String
-) ENGINE = MergeTree()
-ORDER BY id;
+CREATE TABLE dbo.ranking_types (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    siglas VARCHAR(10) NOT NULL
+);
 ```
 
-### Tabla 2: `deportistas` (Dimensión Mutable)
-Almacena la información demográfica y de afiliación de los atletas.
-```sql
-CREATE TABLE IF NOT EXISTS fetri.deportistas (
-    documento String,             -- DNI o Licencia (Clave Primaria)
-    nombre String,
-    club String,
-    ggee String,                  -- Grupo de Edad
-    fecha_actualizacion DateTime DEFAULT now() -- Para resolución de conflictos en ReplacingMergeTree
-) ENGINE = ReplacingMergeTree(fecha_actualizacion)
-ORDER BY documento;
-```
-
-### Tabla 3: `pruebas` (Dimensión Estática)
-Almacena los metadatos del calendario e importancia de las carreras.
-```sql
-CREATE TABLE IF NOT EXISTS fetri.pruebas (
-    id UInt32,                    -- ID de la prueba en el JSON
-    season UInt16,                -- Temporada (Ej. 2025)
-    nombre String,
-    championship_level String,    -- Nivel competitivo (para ponderar la dificultad)
-    fecha Date,                   -- Fecha de la competición
-    ciudad String,
-    provincia String,
-    lat Float64,                  -- Para calcular fatiga de viaje (Haversine)
-    lng Float64
-) ENGINE = MergeTree()
-ORDER BY (season, fecha, id);
-```
-
-### Tabla 4: `resultados` (Tabla de Hechos Central)
-Almacena los resultados históricos individuales obtenidos por cada atleta en cada prueba.
-```sql
-CREATE TABLE IF NOT EXISTS fetri.resultados (
-    season UInt16,
-    ranking_type_id UInt8,        -- FK a ranking_types
-    deportista_documento String,  -- FK a deportistas
-    prueba_id UInt32,             -- FK a pruebas
-    puntos Float32,               -- Variable objetivo principal
-    puesto UInt16                 -- Variable objetivo secundaria (Target para Rank:NDCG)
-) ENGINE = MergeTree()
-ORDER BY (season, ranking_type_id, deportista_documento, prueba_id);
-```
-
-### Tabla 5: `clubes_geo` (Dimensión de Enriquecimiento)
+### Tabla 2: `clubes_geo` (Dimensión de Enriquecimiento)
 Almacena las coordenadas geográficas de las sedes de los clubes para calcular distancias de viaje.
 ```sql
-CREATE TABLE IF NOT EXISTS fetri.clubes_geo (
-    club String,
-    ciudad_sede String,
-    lat Float64,
-    lng Float64
-) ENGINE = MergeTree()
-ORDER BY club;
+CREATE TABLE dbo.clubes_geo (
+    club VARCHAR(255) PRIMARY KEY,
+    ciudad_sede VARCHAR(255) NOT NULL,
+    provincia VARCHAR(100) NOT NULL,
+    lat FLOAT NOT NULL,
+    lng FLOAT NOT NULL
+);
+```
+
+### Tabla 3: `deportistas` (Dimensión de Atletas)
+Almacena la información demográfica y de afiliación de los atletas.
+```sql
+CREATE TABLE dbo.deportistas (
+    documento VARCHAR(50) PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    club VARCHAR(255) NULL,
+    ggee VARCHAR(50) NULL,
+    fecha_actualizacion DATETIME DEFAULT GETDATE(),
+    CONSTRAINT FK_deportistas_club FOREIGN KEY (club) REFERENCES dbo.clubes_geo(club)
+);
+```
+
+### Tabla 4: `pruebas` (Dimensión de Campeonatos)
+Almacena los metadatos del calendario, ubicación y condiciones meteorológicas de las carreras.
+```sql
+CREATE TABLE dbo.pruebas (
+    id INT PRIMARY KEY,
+    season INT NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    championship_level VARCHAR(10) NOT NULL,
+    fecha DATE NOT NULL,
+    ciudad VARCHAR(255) NOT NULL,
+    provincia VARCHAR(255) NOT NULL,
+    lat FLOAT NOT NULL,
+    lng FLOAT NOT NULL,
+    altitud FLOAT NULL,
+    temperatura_max FLOAT NULL,
+    humedad_media FLOAT NULL,
+    precipitacion FLOAT NULL,
+    viento_max FLOAT NULL
+);
+```
+
+### Tabla 5: `resultados` (Tabla de Hechos Central)
+Almacena los resultados históricos individuales obtenidos por cada atleta en cada prueba.
+```sql
+CREATE TABLE dbo.resultados (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    season INT NOT NULL,
+    ranking_type_id INT NOT NULL,
+    deportista_documento VARCHAR(50) NOT NULL,
+    prueba_id INT NOT NULL,
+    puntos REAL NOT NULL,
+    puesto INT NOT NULL,
+    CONSTRAINT FK_resultados_ranking FOREIGN KEY (ranking_type_id) REFERENCES dbo.ranking_types(id),
+    CONSTRAINT FK_resultados_deportista FOREIGN KEY (deportista_documento) REFERENCES dbo.deportistas(documento),
+    CONSTRAINT FK_resultados_prueba FOREIGN KEY (prueba_id) REFERENCES dbo.pruebas(id)
+);
 ```
 
 ---
 
 ## 4. Estrategia para el Modelo Predictivo
 
-Cualquier asistente de código encargado de desarrollar la lógica del modelo predictivo debe considerar las siguientes pautas de ciencia de datos:
+### A. Modelo Implementado: XGBoost con 51 Features + Azure AutoML
 
-### A. Preparación de Variables (*Feature Engineering*)
-1. **Historial de Habilidad del Atleta:** Media móvil de puntos obtenidos por carrera, desviación estándar (consistencia) y número de pruebas finalizadas.
-2. **Nivel del Evento:** El nivel de campeonato (`ChampionshipLevel`) influye en la cantidad de puntos que se reparten y en la dureza de la competencia.
-3. **Efecto de Fatiga de Viaje:** Distancia geográfica (usando la fórmula de Haversine) entre la provincia del Club del atleta y las coordenadas (`Lat`, `Lng`) de la carrera.
-4. **Grupo de Edad / Experiencia:** Agrupación y tendencias de rendimiento por edad (`GGEE`).
+El modelo final utiliza **XGBoost Regressor** entrenado con un dataset de **51 variables de ingeniería** que cubren:
 
-### B. Enfoques de Modelado Sugeridos
-* **Modelo de Rating Multijugador (TrueSkill o Elo):** Generar una puntuación dinámica de habilidad para cada deportista que aumente cuando supera a rivales fuertes y disminuya cuando es superado por rivales con menor puntuación.
-* **Modelo Bradley-Terry / Plackett-Luce:** Modelar probabilísticamente clasificaciones de carreras de múltiples competidores para obtener la probabilidad exacta de victoria de cada uno.
-* **Regresión (XGBoost) + Simulación Monte Carlo:** 
-  1. Entrenar un regresor para predecir los puntos esperados de un deportista en una prueba dada.
-  2. Añadir un factor de variabilidad/error aleatorio basado en el histórico de cada atleta.
-  3. Simular la carrera 10,000 veces para estimar la probabilidad final de victoria (porcentaje de veces que el atleta termina en 1ª posición).
+1. **Perfil del atleta:** Edad, federación, ranking FETRI, ID World Triathlon.
+2. **Historial de rendimiento:** Posición media en últimas 3/5 carreras, mejor marca histórica y de temporada, tasas de victoria/podio/top10/DNF.
+3. **Momentum y forma:** Momentum de ranking, tendencia (subiendo/estable/bajando), racha de podios y top10, puntuación de forma.
+4. **Rendimiento por segmentos:** Rankings medios de natación, ciclismo y carrera a pie.
+5. **Adaptabilidad ambiental:** Sesgos de rendimiento en altitud, costa y calor. Posición media en condiciones extremas.
+6. **Contexto de la carrera:** Ciudad, temperatura, humedad, altitud, latitud/longitud, tipo de carrera, mes, día de la semana.
+7. **Contexto competitivo:** Número de participantes, ranking medio de rivales, porcentaje de rivales con mejor ranking.
+8. **Experiencia en la ciudad:** Carreras previas y victorias en la misma ciudad.
+
+### B. Explicabilidad: SHAP (SHapley Additive exPlanations)
+
+Para cada predicción, el sistema calcula los **valores SHAP** que explican qué factores empujan la posición del atleta hacia arriba (peor) o hacia abajo (mejor). Esto permite:
+- **Explicaciones individuales:** Los 5 factores más influyentes para cada atleta.
+- **Explicaciones globales:** Gráficos beeswarm, bar plots y dependence plots que revelan las variables más importantes del modelo a nivel agregado.
+
+### C. Métricas de Evaluación
+
+| Métrica | Valor |
+|---|---|
+| MAE (Error Absoluto Medio) | 13.21 posiciones |
+| RMSE (Error Cuadrático Medio) | 17.82 posiciones |
+| R² (Varianza Explicada) | 0.678 |
+| Correlación Spearman | 0.784 |
+
+### D. Detección de Anomalías
+
+El sistema detecta predicciones atípicas comparando la posición predicha con el historial real del atleta mediante z-scores. Si la predicción se desvía más de 1.5 desviaciones estándar de su media histórica, se marca como anomalía con una explicación.
